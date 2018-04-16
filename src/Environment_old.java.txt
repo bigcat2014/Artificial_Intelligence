@@ -1,0 +1,388 @@
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Random;
+import java.util.Stack;
+import java.util.concurrent.LinkedBlockingDeque;
+
+public class Environment_old {
+    private final int mapSize = 4;
+
+    private OrderedPair currPosition;
+    private LinkedList<OrderedPair> positions;
+
+    private Direction currDirection;
+    private LinkedList<Direction> directions;
+
+    private SignalColor currSignal;
+
+    private LinkedList<MoveType> moves;
+
+    private boolean bump;
+    private int time;
+    private LinkedList<Integer> times;
+
+    private OrderedPair accident;
+    private boolean accidentFound;
+
+    public enum SignalColor {
+        RED_LIGHT(false),
+        GREEN_LIGHT(true);
+
+        private final boolean color;
+
+        SignalColor(boolean color) {
+            this.color = color;
+        }
+
+        private boolean getColor() {
+            return this.color;
+        }
+    }
+    public enum Direction {
+        NORTH(0) {
+            @Override
+            public Direction previous() {
+                return values()[3];
+            }
+        },
+        EAST(1),
+        SOUTH(2),
+        WEST(3) {
+            @Override
+            public Direction next() {
+                return values()[0];
+            }
+        };
+
+        private final int direction;
+
+        Direction(int direction) {
+            this.direction = direction;
+        }
+
+        public Direction next() {
+            return values()[ordinal() + 1];
+        }
+
+        public Direction previous() {
+            return values()[ordinal() - 1];
+        }
+
+        private int getDirection() {
+            return this.direction;
+        }
+    }
+    public enum MoveType {
+        STRAIGHT(0),
+        TURN_LEFT(1),
+        TURN_RIGHT(2),
+        BUMP(3);
+
+        private final int moveType;
+
+        MoveType(int moveType) {
+            this.moveType = moveType;
+        }
+
+        private int getMoveType() {
+            return this.moveType;
+        }
+    }
+
+    public Environment_old() {
+        this.currPosition = new OrderedPair();
+        this.positions = new LinkedList<OrderedPair>();
+        this.positions.add(new OrderedPair(this.currPosition));
+
+        this.currDirection = Direction.EAST;
+        this.directions = new LinkedList<Direction>();
+        this.directions.add(this.currDirection);
+
+        this.currSignal = SignalColor.GREEN_LIGHT;
+
+        this.bump = false;
+        this.time = 0;
+        this.times = new LinkedList<Integer>();
+        this.times.push(time);
+
+        this.moves = new LinkedList<MoveType>();
+        Random rand = new Random();
+        int x = rand.nextInt(this.mapSize);
+        int y = rand.nextInt(this.mapSize);
+        this.accident = new OrderedPair(x, y);
+        this.accidentFound = false;
+    }
+
+    public Percept getPercept() {
+        Percept percepts = new Percept(this.currPosition, this.bump, this.currSignal, this.accidentFound);
+        this.bump = false;
+        return percepts;
+    }
+
+    public OrderedPair getAccident(){ return this.accident; }
+
+    public void goStraight() {
+        if(currSignal == SignalColor.RED_LIGHT){ waitOnARedLight(); }
+
+        // Store the move type
+        this.moves.add(MoveType.STRAIGHT);
+
+        // Store the new direction
+        this.directions.add(currDirection);
+
+        // Increment time
+        this.time += 3;
+        this.times.add(3);
+
+        // Update the currPosition of the car
+        switch (this.currDirection) {
+            case NORTH:
+                this.currPosition.decY();
+                break;
+            case EAST:
+                this.currPosition.incX();
+                break;
+            case SOUTH:
+                this.currPosition.incY();
+                break;
+            case WEST:
+                this.currPosition.decX();
+                break;
+        }
+        this.positions.add(new OrderedPair(this.currPosition));
+
+        // Change to a red light
+        this.currSignal = SignalColor.RED_LIGHT;
+
+        if (currPosition.equals(this.accident)) { stop(); }
+        if(     this.currPosition.getX() < 0 ||
+                this.currPosition.getX() == this.mapSize ||
+                this.currPosition.getY() < 0 ||
+                this.currPosition.getY() == this.mapSize){
+
+            bump();
+        }
+    }
+
+    public void turnLeft() {
+        if(currSignal == SignalColor.RED_LIGHT){ waitOnARedLight(); }
+
+        // Store the move type
+        this.moves.add(MoveType.TURN_LEFT);
+
+        // Update the currDirection of the car
+        this.currDirection = this.currDirection.previous();
+        // Store the new direction
+        this.directions.add(this.currDirection);
+
+        // Increment time
+        this.time += 4;
+        this.times.add(4);
+
+        // Update the currPosition of the car
+        switch (this.currDirection) {
+            case NORTH:
+                this.currPosition.decY();
+                break;
+            case EAST:
+                this.currPosition.incX();
+                break;
+            case SOUTH:
+                this.currPosition.incY();
+                break;
+            case WEST:
+                this.currPosition.decX();
+                break;
+        }
+        this.positions.add(new OrderedPair(this.currPosition));
+
+        // If the car has reached the accident site, stop
+        if (currPosition.equals(this.accident)) { stop(); }
+        if(     this.currPosition.getX() < 0 ||
+                this.currPosition.getX() == this.mapSize ||
+                this.currPosition.getY() < 0 ||
+                this.currPosition.getY() == this.mapSize){
+
+            bump();
+        }
+    }
+
+    public void turnRight() {
+        if(currSignal == SignalColor.RED_LIGHT){ waitOnARedLight(); }
+
+        // Store the move type
+        this.moves.add(MoveType.TURN_RIGHT);
+
+        // Update the currDirection of the car
+        this.currDirection = this.currDirection.next();
+        // Store the new direction
+        this.directions.add(this.currDirection);
+
+        // Increment time
+        this.time += 4;
+        this.times.add(4);
+
+        // Update the currPosition of the car
+        switch (this.currDirection) {
+            case NORTH:
+                this.currPosition.decY();
+                break;
+            case EAST:
+                this.currPosition.incX();
+                break;
+            case SOUTH:
+                this.currPosition.incY();
+                break;
+            case WEST:
+                this.currPosition.decX();
+                break;
+        }
+        this.positions.add(new OrderedPair(this.currPosition));
+
+        if (currPosition.equals(this.accident)) { stop(); }
+        if(     this.currPosition.getX() < 0 ||
+                this.currPosition.getX() == this.mapSize ||
+                this.currPosition.getY() < 0 ||
+                this.currPosition.getY() == this.mapSize){
+
+            bump();
+        }
+    }
+
+    public void waitOnARedLight() {
+        // Increment time by one minute
+        int currTime = this.times.removeLast();
+        this.times.add(++currTime);
+        // Reset the light color
+        this.currSignal = SignalColor.GREEN_LIGHT;
+    }
+
+    public void stop() { this.accidentFound = true; }
+
+    public void printPath(){
+        int currTime = 0;
+        Direction dir;
+        MoveType move;
+        String lightDirection;
+
+        System.out.println("The path of the car:");
+        System.out.println("Time\tCar Location\tCar Direction\tGreen Light Direction\tMove Chosen");
+
+        while (!this.moves.isEmpty()){
+            currTime += this.times.remove();
+            dir = this.directions.removeFirst();
+            move = this.moves.removeFirst();
+
+            if (currTime % 2 == 1) {
+                lightDirection = "N-S";
+                //if(dir == Direction.EAST || dir == Direction.WEST) { currTime++; }
+            }else{
+                lightDirection = "E-W";
+                //if(dir == Direction.NORTH || dir == Direction.SOUTH) { currTime++; }
+            }
+
+            System.out.print(currTime + "\t");
+            System.out.print(this.positions.removeFirst() + "\t");
+            System.out.print(dir + "\t");
+            System.out.print(lightDirection + "\t");
+
+            System.out.println(move);
+
+            /*switch (move){
+                case BUMP:
+                    currTime += 10;
+                    break;
+                case STRAIGHT:
+                    currTime += 3;
+                    break;
+                default:
+                    currTime += 4;
+            }*/
+        }
+        currTime += this.times.remove();
+        dir = this.directions.removeFirst();
+
+        if (currTime % 2 == 1) {
+            lightDirection = "N-S";
+            //if(dir == Direction.EAST || dir == Direction.WEST) { currTime++; }
+        }else{
+            lightDirection = "E-W";
+            //if(dir == Direction.NORTH || dir == Direction.SOUTH) { currTime++; }
+        }
+
+        System.out.print(currTime + "\t");
+        System.out.print(this.positions.removeFirst() + "\t");
+        System.out.print(dir + "\t");
+        System.out.print(lightDirection + "\t");
+    }
+
+    private void bump(){
+        this.bump = true;
+        this.times.removeLast();
+        this.time += 10;
+        this.times.add(10);
+
+        // Pop the position, direction, and move type just stored as the new ones because there was a bump
+        this.positions.removeLast();
+        this.directions.removeLast();
+        this.moves.removeLast();
+
+        // Peek the position and direction that the car was previously at
+        this.currPosition = new OrderedPair(this.positions.peek());
+        this.currDirection = this.directions.peek();
+
+        // Push the new position, direction, and move type
+        this.positions.add(new OrderedPair(this.currPosition));
+        this.directions.add(this.currDirection);
+        this.moves.add(MoveType.BUMP);
+    }
+
+    /*public void drawMap() {
+        //OrderedPair curr;
+        //OrderedPair prev = positions.pop();
+        System.out.println(accident);
+
+        for (int i = 0; i < this.mapSize - 1; i++) {
+            //curr = positions.pop();
+            for (int j = 0; j < this.mapSize - 1; j++) {
+                //if (curr.getX() == j && curr.getY() == i) {
+                //    System.out.print("*\t\t");
+                //} else
+                if (this.accident.getX() == j && this.accident.getY() == i){
+                    System.out.print("x\t\t");
+                } else {
+                    System.out.print("0\t\t");
+                }
+            }
+            if (this.accident.getX() == this.mapSize - 1 && this.accident.getY() == i){
+                System.out.println("x");
+            } else {
+                System.out.println("0");
+            }
+            for (int j = 0; j < this.mapSize - 1; j++) {
+                System.out.print("\t\t");
+            }
+            //System.out.println("|");
+            System.out.println();
+            //prev = curr;
+        }
+        for (int j = 0; j < this.mapSize - 1; j++) {
+            //if (curr.getX() == j && curr.getY() == i) {
+            //    System.out.print("*\t\t");
+            //} else
+            if (this.accident.getX() == j && this.accident.getY() == this.mapSize - 1){
+                System.out.print("x\t\t");
+            } else {
+                System.out.print("0\t\t");
+            }
+        }
+        //if (curr.getX() == j && curr.getY() == i) {
+        //    System.out.println("*");
+        //} else
+        if (this.accident.getX() == this.mapSize - 1 && this.accident.getY() == this.mapSize - 1){
+            System.out.println("x");
+        } else {
+            System.out.println("0");
+        }
+    }*/
+}
