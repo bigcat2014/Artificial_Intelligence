@@ -12,9 +12,10 @@ public class CarAgent {
         Random rand = new Random();
         int dirChoice;
         Percept percepts;
-        do{
-            percepts = env.getPercepts();
 
+        while (true){
+            percepts = env.getPercepts();
+            if (percepts.getAccidentReached()){ break; }
             if(percepts.getBump()) { env.bumpRecovery(); }
             else if(percepts.getSignalColor() == Environment.SignalColor.RED_LIGHT){ env.waitOnARedLight(); }
 
@@ -30,7 +31,7 @@ public class CarAgent {
                     env.turnRight();
                     break;
             }
-        } while (!percepts.getAccidentReached());
+        }
         return env.stop();
     }
 
