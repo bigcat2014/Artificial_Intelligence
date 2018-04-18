@@ -30,7 +30,7 @@ public class Driver {
         }
 
         Scanner scan = new Scanner(System.in);
-        System.out.println("Which Run mode would you like to use? r/p [r]:");
+        System.out.println("Random or Planned run mode? r/p [r]:");
         System.out.print(">> ");
         String modeString = scan.nextLine();
         if(modeString != null) {
@@ -47,16 +47,18 @@ public class Driver {
         if (DEBUG) { System.out.println("Run mode selected: " + mode); }
         if (DEBUG) { System.out.println("Accident site: " + env.getAccidentSite()); }
 
+        int totalTime = 0;
         switch(mode){
             case PLANNED:
-                car.runPlanned();
+                totalTime = car.runPlanned();
                 break;
             case RANDOM:
-                car.runRandom();
+                totalTime = car.runRandom();
         }
 
         if (DEBUG) { env.printPath(); }
-
         System.out.println("Done");
+        System.out.println("Accident found at: " + car.getFinalLocation());
+        System.out.println("Total time: " + totalTime);
     }
 }

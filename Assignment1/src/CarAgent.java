@@ -2,11 +2,12 @@ import java.util.Random;
 
 public class CarAgent {
     private Environment env;
+    private OrderedPair finalLocation;
 
 
-    public CarAgent(Environment env){
-        this.env = env;
-    }
+    public CarAgent(Environment env){ this.env = env; }
+
+    public OrderedPair getFinalLocation(){ return this.finalLocation; }
 
     public int runRandom(){
         Random rand = new Random();
@@ -16,7 +17,7 @@ public class CarAgent {
         while (true){
             percepts = env.getPercepts();
 
-            if (percepts.getAccidentReached()){ return env.stop(); }
+            if (percepts.getAccidentReached()){ this.finalLocation = percepts.getLocation(); return this.env.stop(); }
 
             if(percepts.getBump()) { env.bumpRecovery(); }
 
@@ -37,8 +38,8 @@ public class CarAgent {
 
     public int runPlanned(){
         Percept percepts = env.getPercepts();
-        if(percepts.getAccidentReached()) { return env.stop(); }
-        OrderedPair currPosition = percepts.getLocation();
+        if(percepts.getAccidentReached()) { this.finalLocation = percepts.getLocation(); return this.env.stop(); }
+        OrderedPair currPosition;
         boolean bump = percepts.getBump();
         int rotations = 3;
         int mapSize = 0;
@@ -50,13 +51,13 @@ public class CarAgent {
                         env.goStraight();
 
                         percepts = env.getPercepts();
-                        if(percepts.getAccidentReached()) { return env.stop(); }
+                        if(percepts.getAccidentReached()) { this.finalLocation = percepts.getLocation(); return this.env.stop(); }
                         bump = percepts.getBump();
                     }
                     env.bumpRecovery();
 
                     percepts = env.getPercepts();
-                    if(percepts.getAccidentReached()) { return env.stop(); }
+                    if(percepts.getAccidentReached()) { this.finalLocation = percepts.getLocation(); return this.env.stop(); }
                     currPosition = percepts.getLocation();
                     mapSize = currPosition.getX();
                 } else {
@@ -64,7 +65,7 @@ public class CarAgent {
                         env.goStraight();
 
                         percepts = env.getPercepts();
-                        if (percepts.getAccidentReached()) { return env.stop(); }
+                        if (percepts.getAccidentReached()) { this.finalLocation = percepts.getLocation(); return this.env.stop(); }
                         currPosition = percepts.getLocation();
                         if(percepts.getBump()) { env.bumpRecovery(); }
                     }
@@ -72,7 +73,7 @@ public class CarAgent {
                 env.turnRight();
 
                 percepts = env.getPercepts();
-                if (percepts.getAccidentReached()) { return env.stop(); }
+                if (percepts.getAccidentReached()) { this.finalLocation = percepts.getLocation(); return this.env.stop(); }
                 currPosition = percepts.getLocation();
                 bump = percepts.getBump();
                 if(percepts.getBump()) { env.bumpRecovery(); }
