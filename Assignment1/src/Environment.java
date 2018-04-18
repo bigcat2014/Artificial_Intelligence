@@ -1,3 +1,9 @@
+/*
+ *   Logan Thomas
+ *   Artificial Intelligence Lab
+ *   Assignment 1
+ */
+
 import java.util.LinkedList;
 import java.util.Random;
 

@@ -1,3 +1,9 @@
+/*
+ *   Logan Thomas
+ *   Artificial Intelligence Lab
+ *   Assignment 1
+ */
+
 public class OrderedPair{
     private int _x;
     private int _y;

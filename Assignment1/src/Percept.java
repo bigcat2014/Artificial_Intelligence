@@ -1,3 +1,9 @@
+/*
+ *   Logan Thomas
+ *   Artificial Intelligence Lab
+ *   Assignment 1
+ */
+
 public class Percept {
     private OrderedPair _location;
     private boolean _bump;
