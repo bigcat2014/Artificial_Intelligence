@@ -6,11 +6,11 @@ public class Environment {
 
     private OrderedPair currPosition;
     private Direction currDirection;
-    private SignalColor currSignal;
+    private SignalColor eastWestSignal;
+    private int currTime;
 
     private LinkedList<OrderedPair> positions;
     private LinkedList<Direction> directions;
-    private LinkedList<SignalColor> signals;
     private LinkedList<MoveType> moves;
     private LinkedList<Integer> times;
 
@@ -67,19 +67,18 @@ public class Environment {
 
         this.currPosition = new OrderedPair();
         this.currDirection = Direction.EAST;
-        this.currSignal = SignalColor.GREEN_LIGHT;
+        this.eastWestSignal = SignalColor.GREEN_LIGHT;
+        this.currTime = MoveTime.START_TIME.getTime();
 
 
         this.positions = new LinkedList<>();
         this.directions = new LinkedList<>();
-        this.signals = new LinkedList<>();
         this.moves = new LinkedList<>();
         this.times = new LinkedList<>();
 
         this.positions.add(new OrderedPair(this.currPosition));
         this.directions.add(this.currDirection);
-        this.signals.add(this.currSignal);
-        this.times.add(MoveTime.START_TIME.getTime());
+        this.times.add(this.currTime);
 
         Random rand = new Random();
         this.accidentSite = new OrderedPair(rand.nextInt(this.mapSize), rand.nextInt(this.mapSize));
@@ -91,33 +90,36 @@ public class Environment {
     public OrderedPair getAccidentSite(){ return this.accidentSite; }
 
     public Percept getPercepts(){
-        return new Percept(new OrderedPair(this.currPosition), this.bumped, this.currSignal, this.siteReached);
+        return new Percept(new OrderedPair(this.currPosition), this.bumped, this.eastWestSignal, this.siteReached);
     }
 
     public void goStraight(){
-        if (this.currSignal == SignalColor.RED_LIGHT) { return; }
-
-        this.directions.add(this.currDirection);
-        this.signals.add(currSignal);
-        this.moves.add(MoveType.STRAIGHT);
-        this.times.add(MoveTime.STRAIGHT_TIME.getTime());
+        this.eastWestSignal = currTime % 2 == 0 ? SignalColor.GREEN_LIGHT : SignalColor.RED_LIGHT;
 
         switch (this.currDirection){
             case NORTH:
+                if (this.eastWestSignal == SignalColor.GREEN_LIGHT) { waitOnARedLight(); }
                 this.currPosition.decY();
                 break;
             case EAST:
+                if (this.eastWestSignal == SignalColor.RED_LIGHT) { waitOnARedLight(); }
                 this.currPosition.incX();
                 break;
             case SOUTH:
+                if (this.eastWestSignal == SignalColor.GREEN_LIGHT) { waitOnARedLight(); }
                 this.currPosition.incY();
                 break;
             case WEST:
+                if (this.eastWestSignal == SignalColor.RED_LIGHT) { waitOnARedLight(); }
                 this.currPosition.decX();
                 break;
         }
+
         this.positions.add(new OrderedPair(this.currPosition));
-        this.currSignal = SignalColor.RED_LIGHT;
+        this.directions.add(this.currDirection);
+        this.moves.add(MoveType.STRAIGHT);
+        this.currTime += MoveTime.STRAIGHT_TIME.getTime();
+        this.times.add(MoveTime.STRAIGHT_TIME.getTime());
 
         this.siteReached = this.currPosition.equals(this.accidentSite);
         this.bumped =   this.currPosition.getX() < 0 ||
@@ -127,30 +129,33 @@ public class Environment {
     }
 
     public void turnLeft(){
-        if (this.currSignal == SignalColor.RED_LIGHT) { return; }
-
         this.currDirection = this.currDirection.previous();
-        this.directions.add(this.currDirection);
-        this.signals.add(currSignal);
-        this.moves.add(MoveType.TURN_LEFT);
-        this.times.add(MoveTime.LEFT_TIME.getTime());
+        this.eastWestSignal = currTime % 2 == 0 ? SignalColor.GREEN_LIGHT : SignalColor.RED_LIGHT;
 
         switch (this.currDirection){
             case NORTH:
+                if (this.eastWestSignal == SignalColor.GREEN_LIGHT) { waitOnARedLight(); }
                 this.currPosition.decY();
                 break;
             case EAST:
+                if (this.eastWestSignal == SignalColor.RED_LIGHT) { waitOnARedLight(); }
                 this.currPosition.incX();
                 break;
             case SOUTH:
+                if (this.eastWestSignal == SignalColor.GREEN_LIGHT) { waitOnARedLight(); }
                 this.currPosition.incY();
                 break;
             case WEST:
+                if (this.eastWestSignal == SignalColor.RED_LIGHT) { waitOnARedLight(); }
                 this.currPosition.decX();
                 break;
         }
+
         this.positions.add(new OrderedPair(this.currPosition));
-        this.currSignal = SignalColor.RED_LIGHT;
+        this.directions.add(this.currDirection);
+        this.moves.add(MoveType.TURN_LEFT);
+        this.currTime += MoveTime.LEFT_TIME.getTime();
+        this.times.add(MoveTime.LEFT_TIME.getTime());
 
         this.siteReached = this.currPosition.equals(this.accidentSite);
         this.bumped =   this.currPosition.getX() < 0 ||
@@ -160,30 +165,33 @@ public class Environment {
     }
 
     public void turnRight(){
-        if (this.currSignal == SignalColor.RED_LIGHT) { return; }
-
         this.currDirection = this.currDirection.next();
-        this.directions.add(this.currDirection);
-        this.signals.add(currSignal);
-        this.moves.add(MoveType.TURN_RIGHT);
-        this.times.add(MoveTime.RIGHT_TIME.getTime());
+        this.eastWestSignal = currTime % 2 == 0 ? SignalColor.GREEN_LIGHT : SignalColor.RED_LIGHT;
 
         switch (this.currDirection){
             case NORTH:
+                if (this.eastWestSignal == SignalColor.GREEN_LIGHT) { waitOnARedLight(); }
                 this.currPosition.decY();
                 break;
             case EAST:
+                if (this.eastWestSignal == SignalColor.RED_LIGHT) { waitOnARedLight(); }
                 this.currPosition.incX();
                 break;
             case SOUTH:
+                if (this.eastWestSignal == SignalColor.GREEN_LIGHT) { waitOnARedLight(); }
                 this.currPosition.incY();
                 break;
             case WEST:
+                if (this.eastWestSignal == SignalColor.RED_LIGHT) { waitOnARedLight(); }
                 this.currPosition.decX();
                 break;
         }
+
         this.positions.add(new OrderedPair(this.currPosition));
-        this.currSignal = SignalColor.RED_LIGHT;
+        this.directions.add(this.currDirection);
+        this.moves.add(MoveType.TURN_RIGHT);
+        this.currTime += MoveTime.RIGHT_TIME.getTime();
+        this.times.add(MoveTime.RIGHT_TIME.getTime());
 
         this.siteReached = this.currPosition.equals(this.accidentSite);
         this.bumped =   this.currPosition.getX() < 0 ||
@@ -196,15 +204,15 @@ public class Environment {
         this.currPosition = new OrderedPair(this.positions.peekLast());
         this.positions.add(new OrderedPair(this.currPosition));
 
+        Direction tempDir = this.currDirection;
         this.currDirection = this.directions.peekLast();
         this.directions.add(this.currDirection);
+        this.currDirection = tempDir;
 
         this.moves.add(MoveType.WAIT);
 
+        this.currTime += MoveTime.WAIT_TIME.getTime();
         this.times.add(MoveTime.WAIT_TIME.getTime());
-
-        this.currSignal = SignalColor.GREEN_LIGHT;
-        this.signals.add(this.currSignal);
     }
 
     public int stop(){
@@ -226,14 +234,11 @@ public class Environment {
         this.currDirection = this.directions.peekLast();
         this.directions.add(this.currDirection);
 
-        this.signals.removeLast();
-        this.currSignal = this.signals.peekLast();
-        this.signals.add(this.currSignal);
-
         this.moves.removeLast();
         this.moves.add(MoveType.BUMP);
 
-        this.times.removeLast();
+        this.currTime -= this.times.removeLast();
+        this.currTime += MoveTime.BUMP_TIME.getTime();
         this.times.add(MoveTime.BUMP_TIME.getTime());
 
         this.bumped = false;
