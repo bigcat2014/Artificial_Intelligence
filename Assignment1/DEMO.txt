@@ -1,0 +1,138 @@
+/*
+ *   Logan Thomas
+ *   Artificial Intelligence Lab
+ *   Assignment 1
+ */
+
+Assignment 1 Demo
+
+Demo:
+    Two options, normal and debug.
+
+    Debug mode:
+        Run the program in either Random mode, with this output:
+
+            Random or Planned run mode? r/p [r]:
+            >> r
+            Run mode selected: RANDOM
+            Accident site: (3, 1)
+            The path of the car:
+            Time	Car Location	Car Direction	Green Light Direction	Move Chosen
+
+            0		(0, 0)			EAST			E-W						Wait
+            1		(0, 0)			EAST			N-S						Turn Right
+            5		(0, 1)			SOUTH			N-S						Wait
+            6		(0, 1)			SOUTH			E-W						Turn Left
+            10		(1, 1)			EAST			E-W						Wait
+            11		(1, 1)			EAST			N-S						Turn Left
+            15		(1, 0)			NORTH			N-S						Wait
+            16		(1, 0)			NORTH			E-W						Turn Left
+            20		(0, 0)			WEST			E-W						Wait
+            21		(0, 0)			WEST			N-S						Bump
+            31		(0, 0)			WEST			N-S						Wait
+            32		(0, 0)			WEST			E-W						Bump
+            42		(0, 0)			WEST			E-W						Wait
+            43		(0, 0)			WEST			N-S						Turn Left
+            47		(0, 1)			SOUTH			N-S						Go Straight
+            50		(0, 2)			SOUTH			E-W						Turn Left
+            54		(1, 2)			EAST			E-W						Go Straight
+            57		(2, 2)			EAST			N-S						Wait
+            58		(2, 2)			EAST			E-W						Go Straight
+            61		(3, 2)			EAST			N-S						Wait
+            62		(3, 2)			EAST			E-W						Bump
+            72		(3, 2)			EAST			E-W						Bump
+            82		(3, 2)			EAST			E-W						Wait
+            83		(3, 2)			EAST			N-S						Turn Right
+            87		(3, 3)			SOUTH			N-S						Wait
+            88		(3, 3)			SOUTH			E-W						Turn Right
+            92		(2, 3)			WEST			E-W						Wait
+            93		(2, 3)			WEST			N-S						Bump
+            103		(2, 3)			WEST			N-S						Bump
+            113		(2, 3)			WEST			N-S						Wait
+            114		(2, 3)			WEST			E-W						Go Straight
+            117		(1, 3)			WEST			N-S						Turn Right
+            121		(1, 2)			NORTH			N-S						Wait
+            122		(1, 2)			NORTH			E-W						Turn Left
+            126		(0, 2)			WEST			E-W						Wait
+            127		(0, 2)			WEST			N-S						Turn Right
+            131		(0, 1)			NORTH			N-S						Wait
+            132		(0, 1)			NORTH			E-W						Bump
+            142		(0, 1)			NORTH			E-W						Wait
+            143		(0, 1)			NORTH			N-S						Go Straight
+            146		(0, 0)			NORTH			E-W						Wait
+            147		(0, 0)			NORTH			N-S						Bump
+            157		(0, 0)			NORTH			N-S						Wait
+            158		(0, 0)			NORTH			E-W						Bump
+            168		(0, 0)			NORTH			E-W						Turn Right
+            172		(1, 0)			EAST			E-W						Wait
+            173		(1, 0)			EAST			N-S						Bump
+            183		(1, 0)			EAST			N-S						Wait
+            184		(1, 0)			EAST			E-W						Go Straight
+            187		(2, 0)			EAST			N-S						Wait
+            188		(2, 0)			EAST			E-W						Go Straight
+            191		(3, 0)			EAST			N-S						Bump
+            201		(3, 0)			EAST			N-S						Wait
+            202		(3, 0)			EAST			E-W						Bump
+            212		(3, 0)			EAST			E-W						Wait
+            213		(3, 0)			EAST			N-S						Turn Right
+            217		(3, 1)			SOUTH			N-S						Done
+            Accident found at: (3, 1)
+            Total time: 217
+
+
+        Or in Planned mode, with this output:
+
+            Random or Planned run mode? r/p [r]:
+            >> p
+            Run mode selected: PLANNED
+            Accident site: (1, 2)
+            The path of the car:
+            Time	Car Location	Car Direction	Green Light Direction	Move Chosen
+
+            0		(0, 0)			EAST			E-W						Go Straight
+            3		(1, 0)			EAST			N-S						Wait
+            4		(1, 0)			EAST			E-W						Go Straight
+            7		(2, 0)			EAST			N-S						Wait
+            8		(2, 0)			EAST			E-W						Go Straight
+            11		(3, 0)			EAST			N-S						Wait
+            12		(3, 0)			EAST			E-W						Bump
+            22		(3, 0)			EAST			E-W						Wait
+            23		(3, 0)			EAST			N-S						Turn Right
+            27		(3, 1)			SOUTH			N-S						Go Straight
+            30		(3, 2)			SOUTH			E-W						Wait
+            31		(3, 2)			SOUTH			N-S						Go Straight
+            34		(3, 3)			SOUTH			E-W						Turn Right
+            38		(2, 3)			WEST			E-W						Go Straight
+            41		(1, 3)			WEST			N-S						Wait
+            42		(1, 3)			WEST			E-W						Go Straight
+            45		(0, 3)			WEST			N-S						Turn Right
+            49		(0, 2)			NORTH			N-S						Go Straight
+            52		(0, 1)			NORTH			E-W						Turn Right
+            56		(1, 1)			EAST			E-W						Go Straight
+            59		(2, 1)			EAST			N-S						Turn Right
+            63		(2, 2)			SOUTH			N-S						Wait
+            64		(2, 2)			SOUTH			E-W						Turn Right
+            68		(1, 2)			WEST			E-W						Done
+            Accident found at: (1, 2)
+            Total time: 68
+
+
+    Normal mode:
+        Random mode output:
+
+            Random or Planned run mode? r/p [r]:
+            >> r
+            Disconnected from the target VM, address: '127.0.0.1:57119', transport: 'socket'
+            Done
+            Accident found at: (3, 1)
+            Total time: 55
+
+
+        Planned mode output:
+
+            Random or Planned run mode? r/p [r]:
+            >> p
+            Disconnected from the target VM, address: '127.0.0.1:57131', transport: 'socket'
+            Done
+            Accident found at: (1, 2)
+            Total time: 68
