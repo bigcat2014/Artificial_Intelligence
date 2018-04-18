@@ -16,7 +16,7 @@ public class CarAgent {
         while (true){
             percepts = env.getPercepts();
 
-            if (percepts.getAccidentReached()){ break; }
+            if (percepts.getAccidentReached()){ return env.stop(); }
 
             if(percepts.getBump()) { env.bumpRecovery(); }
 
@@ -33,25 +33,52 @@ public class CarAgent {
                     break;
             }
         }
-        return env.stop();
     }
 
     public int runPlanned(){
-        Percept percepts;
-        OrderedPair currPosition;
-        Environment.SignalColor currSignal;
-        boolean bump;
+        Percept percepts = env.getPercepts();
+        if(percepts.getAccidentReached()) { return env.stop(); }
+        OrderedPair currPosition = percepts.getLocation();
+        boolean bump = percepts.getBump();
+        int rotations = 3;
+        int mapSize = 0;
 
-        do {
-            percepts = env.getPercepts();
-            currPosition = percepts.getLocation();
-            currSignal = percepts.getSignalColor();
-            bump = percepts.getBump();
+        while (true) {
+            for (int i = 0; i < rotations; i++) {
+                if (mapSize == 0) {
+                    while(!bump) {
+                        env.goStraight();
 
+                        percepts = env.getPercepts();
+                        if(percepts.getAccidentReached()) { return env.stop(); }
+                        bump = percepts.getBump();
+                    }
+                    env.bumpRecovery();
 
+                    percepts = env.getPercepts();
+                    if(percepts.getAccidentReached()) { return env.stop(); }
+                    currPosition = percepts.getLocation();
+                    mapSize = currPosition.getX();
+                } else {
+                    for (int j = 0; j < mapSize - 1; j++) {
+                        env.goStraight();
 
-        } while (!percepts.getAccidentReached());
+                        percepts = env.getPercepts();
+                        if (percepts.getAccidentReached()) { return env.stop(); }
+                        currPosition = percepts.getLocation();
+                        if(percepts.getBump()) { env.bumpRecovery(); }
+                    }
+                }
+                env.turnRight();
 
-        return 0;
+                percepts = env.getPercepts();
+                if (percepts.getAccidentReached()) { return env.stop(); }
+                currPosition = percepts.getLocation();
+                bump = percepts.getBump();
+                if(percepts.getBump()) { env.bumpRecovery(); }
+            }
+            rotations = 2;
+            mapSize -= 1;
+        }
     }
 }
