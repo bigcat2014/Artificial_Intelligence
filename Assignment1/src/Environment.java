@@ -215,15 +215,7 @@ public class Environment {
         this.times.add(MoveTime.WAIT_TIME.getTime());
     }
 
-    public int stop(){
-        int sum = 0;
-
-        for (Integer time : this.times) {
-            sum += time;
-        }
-
-        return sum;
-    }
+    public int stop() { return this.currTime; }
 
     public void bumpRecovery(){
         this.positions.removeLast();
