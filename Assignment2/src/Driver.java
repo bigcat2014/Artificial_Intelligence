@@ -15,21 +15,58 @@ public class Driver {
     private static String fileName = "";
 
     public static void main(String args[]){
-        PathFinder uniformCostSearch = new PathFinder(new Heuristic(Driver::ucsHeuristic));
-        PathFinder aStarNormal = new PathFinder(new Heuristic(Driver::aStarNormalHeuristic));
-        PathFinder aStarCustom = new PathFinder(new Heuristic(Driver::aStarCustomHeuristic));
+        PathFinder uniformCostSearch = new PathFinder(Driver::ucsHeuristic, DEBUG);
+        PathFinder aStarNormal = new PathFinder(Driver::aStarNormalHeuristic, DEBUG);
+        PathFinder aStarCustom = new PathFinder(Driver::aStarCustomHeuristic, DEBUG);
 
         ParseArgs(args);
 
-        Board board = CreateBoard();
-        Board finalboard = board.getFinalState();
+        KeyValuePair board = CreateBoard();
         if (DEBUG) { System.out.printf("Board Size: %d\n", board.getSize()); }
         if (DEBUG) { System.out.printf("File name: %s\n", fileName); }
+
+        System.out.println("Uniform Cost search:\n");
+        System.out.print("Initial board state: ");
         board.PrintBoard();
-        finalboard.PrintBoard();
-        int cost = aStarNormal.FindPath(board);
+        int cost = uniformCostSearch.FindPath(board);
         if (cost != -1) {
             System.out.printf("Path found!\nCost: %d\n", cost);
+            ArrayList<KeyValuePair> expanded = uniformCostSearch.getExpanded();
+            ArrayList<KeyValuePair> fringe = uniformCostSearch.getFringe();
+            System.out.printf("Number of expanded nodes: %d\n", expanded.size());
+            for (KeyValuePair pair : expanded) { System.out.println(pair.toString()); }
+            System.out.printf("Number of nodes in fringe: %d\n", fringe.size());
+            for (KeyValuePair pair : fringe) { System.out.println(pair.toString()); }
+        } else {
+            System.out.println("Path not found.");
+        }
+
+        System.out.println("\nA* Normal Heuristic:\n");
+        System.out.print("Initial board state: ");
+        board.PrintBoard();
+        cost = aStarNormal.FindPath(board);
+        if (cost != -1) {
+            System.out.printf("Path found!\nCost: %d\n", cost);
+            ArrayList<KeyValuePair> expanded = aStarNormal.getExpanded();
+            ArrayList<KeyValuePair> fringe = aStarNormal.getFringe();
+            System.out.printf("Number of expanded nodes: %d\n", expanded.size());
+            //for (KeyValuePair pair : expanded) { System.out.println(pair.toString()); }
+            System.out.printf("Number of nodes in fringe: %d\n", fringe.size());
+        } else {
+            System.out.println("Path not found.");
+        }
+
+        System.out.println("\nA* Custom Heuristic:\n");
+        System.out.print("Initial board state: ");
+        board.PrintBoard();
+        cost = aStarCustom.FindPath(board);
+        if (cost != -1) {
+            System.out.printf("Path found!\nCost: %d\n", cost);
+            ArrayList<KeyValuePair> expanded = aStarCustom.getExpanded();
+            ArrayList<KeyValuePair> fringe = aStarCustom.getFringe();
+            System.out.printf("Number of expanded nodes: %d\n", expanded.size());
+            //for (KeyValuePair pair : expanded) { System.out.println(pair.toString()); }
+            System.out.printf("Number of nodes in fringe: %d\n", fringe.size());
         } else {
             System.out.println("Path not found.");
         }
@@ -52,10 +89,9 @@ public class Driver {
             }
         } else { ArgumentError(); }
     }
-    private static Board CreateBoard(){
+    private static KeyValuePair CreateBoard(){
         File f;
         Scanner fileScanner = null;
-        int numTiles = 0;
 
         try {
             f = new File("src\\" + fileName);
@@ -67,10 +103,9 @@ public class Driver {
 
         fileScanner.useDelimiter(" ");
 
-        Board board = new Board(new ArrayList<Tile>(boardSize));
-        while (fileScanner.hasNextInt() && numTiles < boardSize) { board.addTile(new Tile(fileScanner.nextInt())); numTiles++; }
-
-        return board;
+        ArrayList<Integer> tileList = new ArrayList<Integer>(boardSize);
+        while (fileScanner.hasNextInt()) { tileList.add(fileScanner.nextInt()); }
+        return new KeyValuePair(tileList, 0);
     }
     private static void ArgumentError(){
         System.out.println("Incorrect command line options and arguments");
@@ -80,14 +115,14 @@ public class Driver {
 
     private static int ucsHeuristic(KeyValuePair pair){ return 0; }
     private static int aStarNormalHeuristic(KeyValuePair pair){
+        int index = 0;
+        int val;
         int numOutOfOrder = 0;
-        Board currState = pair.getBoard();
-        Board finalState = currState.getFinalState();
 
-        for (int i = 0; i < currState.getSize(); i++){
-            if (!finalState.getCurrentTile().getValue().equals(currState.getCurrentTile().getValue())) { numOutOfOrder ++; }
-            currState.MoveForward(1);
-            finalState.MoveForward(1);
+        for (int i = 0; i < pair.getSize(); i++){
+            val = pair.get();
+            if (val != i + 1) { numOutOfOrder ++; }
+            pair.MoveForward(1);
         }
 
         return numOutOfOrder;
