@@ -130,6 +130,8 @@ public class Main {
 
         returnList.add(0, "FinalState:\t\t" + currentState.toString());
 
+        if (list.size() == 1) { return returnList; }
+
         while(cost != 1) {
             if (DEBUG) {
                 returnList.add(0, "Board State:\t" + currentState.getBoardString() + "\n");
