@@ -48,29 +48,13 @@ public class AStar {
 //    New state of the board
 
     public int FindPath(Node currentBoard){
-//        ArrayList<String> moves;
-//        ArrayList<Node> prevFringe;
-//        Node previousPair = null;
         Node currentPair;
         int finalCost = -1;
         String finalHash = Node.hash(currentBoard.getFinalBoard());
 
         this.fringe.add(new Node(currentBoard));
-//        prevFringe = (ArrayList<Node>) this.fringe.clone();
-//        System.out.println("Initial State: " + currentBoard);
         do {
             if ((currentPair = getLowestCostPair()) == null) { break; }
-
-//            if (previousPair != null) {
-//                moves = printMove(new Node(previousPair), new Node(currentPair));
-//                for (String str : moves) { System.out.print(str); }
-//            } else {
-//                System.out.print(getFringeString(prevFringe));
-//                System.out.println("Node selected for expansion: " + currentPair.getBoardString() + "\tHeuristic: " + h(currentPair));
-//            }
-//            previousPair = currentPair;
-//            prevFringe = (ArrayList<Node>) this.fringe.clone();
-
             if (expand(currentPair, finalHash)) { finalCost = currentPair.getCost(); break; }
         } while (!fringe.isEmpty());
         return finalCost;
@@ -80,8 +64,11 @@ public class AStar {
     private int h(Node pair){ return heuristic.apply(pair); }
 
     private boolean expand(Node pair, String finalHash) {
+        Node expandedNode = new Node(pair);
+        expandedNode.setFringe(getFringeString(this.fringe));
+
         this.fringe.remove(pair);
-        this.expanded.add(new Node(pair));
+        this.expanded.add(expandedNode);
         if (Node.hash(pair).equals(finalHash)) { return true; }
         getChildren(pair);
         return false;
@@ -128,24 +115,24 @@ public class AStar {
         return returnPair;
     }
 
-//    private String getFringeString(ArrayList<Node> fringe){
-//        StringBuilder returnString = new StringBuilder();
-//        Node currentNode;
-//        returnString.append("*************** Begin Fringe List *************\n");
-//        for (int i = 0; i < fringe.size(); i++){
-//            currentNode = fringe.get(i);
-//            returnString.append("Fringe node: ");
-//            returnString.append(i + 1);
-//            returnString.append(";\tstate: ");
-//            returnString.append(currentNode.getBoardString());
-//            returnString.append(";\tHeuristic: ");
-//            returnString.append(h(currentNode));
-//            returnString.append("\n");
-//        }
-//        returnString.append("**************** End Fringe List **************\n");
-//
-//        return returnString.toString();
-//    }
+    private String getFringeString(ArrayList<Node> fringe){
+        StringBuilder returnString = new StringBuilder();
+        Node currentNode;
+        returnString.append("*************** Begin Fringe List *************\n");
+        for (int i = 0; i < fringe.size(); i++){
+            currentNode = fringe.get(i);
+            returnString.append("Fringe node: ");
+            returnString.append(i + 1);
+            returnString.append(";\tstate: ");
+            returnString.append(currentNode.getBoardString());
+            returnString.append(";\tHeuristic: ");
+            returnString.append(h(currentNode));
+            returnString.append("\n");
+        }
+        returnString.append("**************** End Fringe List **************");
+
+        return returnString.toString();
+    }
 //    public ArrayList<String> printMove(Node prevState, Node currentState){
 //        ArrayList<String> returnList = new ArrayList<String>();
 //

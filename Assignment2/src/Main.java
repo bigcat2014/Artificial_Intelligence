@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.function.Function;
 import java.util.regex.Pattern;
 
 public class Main {
@@ -27,65 +28,58 @@ public class Main {
 
         System.out.println("Uniform Cost search:\n");
         int cost = uniformCostSearch.FindPath(board);
-        if (!DEBUG) {
-            if (cost != -1) {
-                System.out.println("Path found!");
+        if (cost != -1) {
+            System.out.println("Path found!");
 
-                ArrayList<Node> expanded = uniformCostSearch.getExpanded();
-                ArrayList<String> finalPath = getPath(expanded);
-                for (String str : finalPath) {
-                    System.out.println(str);
-                }
-                System.out.printf("\nNumber of nodes expanded: %d\n", expanded.size());
-
-                ArrayList<Node> fringe = uniformCostSearch.getFringe();
-                System.out.printf("Number of nodes in fringe: %d\n", fringe.size());
-                System.out.printf("Path cost: %d\n", cost);
-            } else {
-                System.out.println("Path not found.");
+            ArrayList<Node> expanded = uniformCostSearch.getExpanded();
+            ArrayList<String> finalPath = getPath(expanded, Main::ucsHeuristic);
+            for (String str : finalPath) {
+                System.out.println(str);
             }
-        }
+            System.out.printf("\nNumber of nodes expanded: %d\n", expanded.size());
 
+            ArrayList<Node> fringe = uniformCostSearch.getFringe();
+            System.out.printf("Number of nodes in fringe: %d\n", fringe.size());
+            System.out.printf("Path cost: %d\n", cost);
+        } else {
+            System.out.println("Path not found.");
+        }
         System.out.println("\n\nA* with provided heuristic:\n");
         cost = aStarNormal.FindPath(board);
-        if (!DEBUG) {
-            if (cost != -1) {
-                System.out.println("Path found!");
+        if (cost != -1) {
+            System.out.println("Path found!");
 
-                ArrayList<Node> expanded = aStarNormal.getExpanded();
-                ArrayList<String> finalPath = getPath(expanded);
-                for (String str : finalPath) {
-                    System.out.println(str);
-                }
-                System.out.printf("\nNumber of nodes expanded: %d\n", expanded.size());
-
-                ArrayList<Node> fringe = aStarNormal.getFringe();
-                System.out.printf("Number of nodes in fringe: %d\n", fringe.size());
-                System.out.printf("Path cost: %d\n", cost);
-            } else {
-                System.out.println("Path not found.");
+            ArrayList<Node> expanded = aStarNormal.getExpanded();
+            ArrayList<String> finalPath = getPath(expanded, Main::aStarNormalHeuristic);
+            for (String str : finalPath) {
+                System.out.println(str);
             }
+            System.out.printf("\nNumber of nodes expanded: %d\n", expanded.size());
+
+            ArrayList<Node> fringe = aStarNormal.getFringe();
+            System.out.printf("Number of nodes in fringe: %d\n", fringe.size());
+            System.out.printf("Path cost: %d\n", cost);
+        } else {
+            System.out.println("Path not found.");
         }
 
         System.out.println("\n\nA* with Custom heuristic:\n");
         cost = aStarCustom.FindPath(board);
-        if (!DEBUG) {
-            if (cost != -1) {
-                System.out.println("Path found!");
+        if (cost != -1) {
+            System.out.println("Path found!");
 
-                ArrayList<Node> expanded = aStarCustom.getExpanded();
-                ArrayList<String> finalPath = getPath(expanded);
-                for (String str : finalPath) {
-                    System.out.println(str);
-                }
-                System.out.printf("\nNumber of nodes expanded: %d\n", expanded.size());
-
-                ArrayList<Node> fringe = aStarCustom.getFringe();
-                System.out.printf("Number of nodes in fringe: %d\n", fringe.size());
-                System.out.printf("Path cost: %d\n", cost);
-            } else {
-                System.out.println("Path not found.");
+            ArrayList<Node> expanded = aStarCustom.getExpanded();
+            ArrayList<String> finalPath = getPath(expanded, Main::aStarCustomHeuristic);
+            for (String str : finalPath) {
+                System.out.println(str);
             }
+            System.out.printf("\nNumber of nodes expanded: %d\n", expanded.size());
+
+            ArrayList<Node> fringe = aStarCustom.getFringe();
+            System.out.printf("Number of nodes in fringe: %d\n", fringe.size());
+            System.out.printf("Path cost: %d\n", cost);
+        } else {
+            System.out.println("Path not found.");
         }
     }
 
@@ -124,7 +118,7 @@ public class Main {
         while (fileScanner.hasNextInt()) { tileList.add(fileScanner.nextInt()); }
         return new Node(tileList, 0);
     }
-    private static ArrayList<String> getPath(ArrayList<Node> list){
+    private static ArrayList<String> getPath(ArrayList<Node> list, Function<Node, Integer> h){
         ArrayList<String> returnList = new ArrayList<String>();
         Node prevState = list.get(list.size() - 1);
         Node currentState = new Node(prevState);
@@ -133,15 +127,29 @@ public class Main {
         int prevPosition;
         int index;
         int num;
+
         returnList.add(0, "FinalState:\t\t" + currentState.toString());
 
         while(cost != 1) {
+            if (DEBUG) {
+                returnList.add(0, "Board State:\t" + currentState.getBoardString() + "\n");
+                returnList.add(0, "Rotate\t");
+            } else {
+                returnList.add(0, "Board State:\t" + currentState.toString());
+            }
+
             currentState.Rotate();
-            returnList.add(0, "Rotate\t");
 
             parentIndex = list.indexOf(currentState);
             prevState = list.get(parentIndex);
             prevPosition = prevState.getPosition();
+
+            if (DEBUG) {
+                returnList.add(0, "Expanded State:\t" + currentState.getBoardString() + "\tHeuristic: " + h.apply(prevState));
+                returnList.add(0, prevState.getFringe());
+            } else {
+                returnList.add(0, "Rotate\t");
+            }
 
             num = currentState.get();
 
@@ -153,25 +161,43 @@ public class Main {
                 if (prevState.get() == num){ break; }
                 prevState.MoveForward(1);
             }
-            if (index < list.size()) {
-                returnList.add(0, "Board State:\t" + currentState.getBoardString() + "\tCost: " + cost);
-                returnList.add(0, "Move forward " + index + " Spaces");
-            }
+
             prevState.setPosition(prevPosition);
-            returnList.add(0, "Board State:\t" + prevState.toString());
+            if (index < list.size() && index != 0) {
+                if (DEBUG) {
+                    returnList.add(0, "Board State:\t" + currentState.getBoardString() + "\n");
+                    returnList.add(0, "Move forward " + index + " Spaces");
+                    returnList.add(0, "Expanded State:\t" + prevState.getBoardString() + "\tHeuristic: " + h.apply(prevState));
+                    returnList.add(0, prevState.getFringe());
+                } else {
+                    returnList.add(0, "Board State:\t" + currentState.toString());
+                    returnList.add(0, "Move forward " + index + " Spaces");
+                }
+            }
             currentState = prevState;
         }
 
+        if (DEBUG) {
+            returnList.add(0, "Board State:\t" + currentState.getBoardString() + "\n");
+            returnList.add(0, "Rotate\t");
+        } else {
+            returnList.add(0, "Board State:\t" + currentState.toString());
+        }
+
         currentState.Rotate();
-        returnList.add(0, "Rotate\t");
 
         parentIndex = list.indexOf(currentState);
         prevState = list.get(parentIndex);
         prevPosition = prevState.getPosition();
 
-        num = currentState.get();
+        if (DEBUG) {
+            returnList.add(0, "Expanded State:\t" + currentState.getBoardString() + "\tHeuristic: " + h.apply(prevState));
+            returnList.add(0, prevState.getFringe());
+        } else {
+            returnList.add(0, "Rotate\t");
+        }
 
-        cost = prevState.getCost();
+        num = currentState.get();
 
         index = -1;
         while(index < list.size()){
@@ -179,12 +205,20 @@ public class Main {
             if (prevState.get() == num){ break; }
             prevState.MoveForward(1);
         }
-        if (index < list.size()) {
-            returnList.add(0, "Board State:\t" + currentState.getBoardString() + "\tCost: " + cost);
-            returnList.add(0, "Move forward " + index + " Spaces");
-        }
+
         prevState.setPosition(prevPosition);
-        returnList.add(0, "Initial State:\t" + prevState.toString());
+        if (index < list.size() && index != 0) {
+            if (DEBUG) {
+                returnList.add(0, "Board State:\t" + currentState.getBoardString() + "\n");
+                returnList.add(0, "Move forward " + index + " Spaces");
+                returnList.add(0, "Expanded State:\t" + prevState.getBoardString() + "\tHeuristic: " + h.apply(prevState));
+                returnList.add(0, prevState.getFringe());
+            } else {
+                returnList.add(0, "Board State:\t" + currentState.toString());
+                returnList.add(0, "Move forward " + index + " Spaces");
+            }
+        }
+        returnList.add(0, "Initial State:\t" + prevState.toString() + "\n");
 
         return returnList;
     }
@@ -207,14 +241,18 @@ public class Main {
         return numOutOfOrder;
     }
     private static int aStarCustomHeuristic(Node pair){
-        int numOutOfOrder = 0;
+        Node pairClone = new Node(pair);
+        int dist = 0;
+        int val;
         int maxVal = 0;
 
-        for (int i = 0; i < pair.getSize(); i++){
-            numOutOfOrder += (pair.get() - i);
-            pair.MoveForward(1);
+        for (int i = 0; i < pairClone.getSize(); i++){
+            val = pairClone.get();
+            dist += (val - i);
+            if (val > maxVal) { maxVal = val; }
+            pairClone.MoveForward(1);
         }
 
-        return numOutOfOrder;
+        return dist / maxVal;
     }
 }

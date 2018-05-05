@@ -11,21 +11,25 @@ public class Node {
     private State board;
     private int position;
     private int cost;
+    private String fringe;
 
     public Node(ArrayList<Integer> currentBoard, int cost){
         this.board = new State(currentBoard);
         this.position = 0;
         this.cost = cost;
+        this.fringe = "";
     }
     public Node(Node pair, int cost){
         this.board = pair.getState();
         this.position = pair.getPosition();
         this.cost = cost;
+        this.fringe = pair.getFringe();
     }
     public Node(Node pair){
         this.board = pair.getState();
         this.position = pair.getPosition();
         this.cost = pair.getCost();
+        this.fringe = pair.getFringe();
     }
 
     public int get() { return this.board.get(this.position); }
@@ -36,6 +40,8 @@ public class Node {
     public void setPosition(int position) { this.position = position; }
     public int getCost(){ return this.cost; }
     public void setCost(int cost) { this.cost = cost; }
+    public String getFringe() {return this.fringe; }
+    public void setFringe(String fringe) { this.fringe = fringe; }
     public Node getFinalBoard(){
         return this.board.getFinalBoard();
     }
