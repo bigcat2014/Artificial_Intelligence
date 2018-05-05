@@ -7,15 +7,12 @@ import java.util.ArrayList;
 import java.util.function.Function;
 
 public class AStar {
-    private final boolean DEBUG;
-
     private ArrayList<Node> expanded;
     private ArrayList<Node> fringe;
 
-    private Function<Node, Integer> heuristic;
+    private Function<Node, Float> heuristic;
 
-    public AStar(Function<Node, Integer> h, boolean debug){
-        this.DEBUG = debug;
+    public AStar(Function<Node, Float> h){
         this.heuristic = h;
         this.expanded = new ArrayList<Node>();
         this.fringe = new ArrayList<Node>();
@@ -24,28 +21,6 @@ public class AStar {
     public ArrayList<Node> getExpanded(){ return this.expanded; }
 
     public ArrayList<Node> getFringe() { return this.fringe; }
-
-//    Initial state of board:
-//            *************** Begin Fringe List *************
-//    Fringe node 1 with state and heuristic
-//    Fringe node 2 with state and heuristic
-//    Fringe node 3 with state and heuristic
-//    Fringe node 4 with state and heuristic
-//    *************** End Fringe List *************
-//    Node among the fringe selected for expansion -Heuristic value
-//    Move made (rotate or shift n positions)
-//    New state of the board
-//    *************** Begin Fringe List *************
-//    Fringe node 1 with state and heuristic
-//    Fringe node 2 with state and heuristic
-//    Fringe node 3 with state and heuristic
-//    Fringe node 4 with state and heuristic
-//    Fringe node 5 with state and heuristic
-//    Fringe node 6 with state and heuristic
-//    *************** End Fringe List *************
-//    Node among the fringe selected for expansion -Heuristic value
-//    Move made (rotate or shift left/right n positions)
-//    New state of the board
 
     public int FindPath(Node currentBoard){
         Node currentPair;
@@ -61,7 +36,7 @@ public class AStar {
     }
 
     private int g(Node pair){ return pair.getCost(); }
-    private int h(Node pair){ return heuristic.apply(pair); }
+    private float h(Node pair){ return heuristic.apply(pair); }
 
     private boolean expand(Node pair, String finalHash) {
         Node expandedNode = new Node(pair);
@@ -101,8 +76,8 @@ public class AStar {
         if (this.fringe.isEmpty()) { return null; }
         Node currentPair = this.fringe.get(0);
         Node returnPair = currentPair;
-        int totalCost;
-        int cost = g(currentPair) + h(currentPair);
+        float totalCost;
+        float cost = g(currentPair) + h(currentPair);
 
         for (int i = 1; i < this.fringe.size(); i++){
             currentPair = this.fringe.get(i);
@@ -133,38 +108,4 @@ public class AStar {
 
         return returnString.toString();
     }
-//    public ArrayList<String> printMove(Node prevState, Node currentState){
-//        ArrayList<String> returnList = new ArrayList<String>();
-//
-//        int cost = prevState.getCost();
-//        int prevPosition;
-//        int index;
-//        int num;
-//
-//        returnList.add(0, "Node selected for expansion: " + currentState.getBoardString() + "\tHeuristic: " + h(prevState) + "\n");
-//        returnList.add(0, "\n" + getFringeString(this.fringe));
-//        returnList.add(0, "Board State:\t" + currentState.getBoardString() + "\tCost: " + cost + "\n\n");
-//        returnList.add(0, "Rotate\n");
-//        prevPosition = prevState.getPosition();
-//
-//        num = currentState.get();
-//
-//        cost = prevState.getCost();
-//
-//        index = -1;
-//        while(index < currentState.getSize()){
-//            index++;
-//            if (currentState.get() == num){ break; }
-//            currentState.MoveForward(1);
-//        }
-//        if (index != 0) {
-//            prevState.setPosition(prevPosition);
-//            returnList.add(0, "Node selected for expansion: " + prevState.getBoardString() + "\tHeuristic: " + h(prevState));
-//            returnList.add(0, "\n " + getFringeString(this.fringe));
-//            returnList.add(0, "Board State:\t" + prevState.getBoardString() + "\tCost: " + cost + "\n");
-//            returnList.add(0, "Move forward " + index + " Spaces\n");
-//        }
-//
-//        return returnList;
-//    }
 }

@@ -16,9 +16,9 @@ public class Main {
     private static String fileName = "";
 
     public static void main(String args[]){
-        AStar uniformCostSearch = new AStar(Main::ucsHeuristic, DEBUG);
-        AStar aStarNormal = new AStar(Main::aStarNormalHeuristic, DEBUG);
-        AStar aStarCustom = new AStar(Main::aStarCustomHeuristic, DEBUG);
+        AStar uniformCostSearch = new AStar(Main::ucsHeuristic);
+        AStar aStarNormal = new AStar(Main::aStarNormalHeuristic);
+        AStar aStarCustom = new AStar(Main::aStarCustomHeuristic);
 
         ParseArgs(args);
 
@@ -118,7 +118,7 @@ public class Main {
         while (fileScanner.hasNextInt()) { tileList.add(fileScanner.nextInt()); }
         return new Node(tileList, 0);
     }
-    private static ArrayList<String> getPath(ArrayList<Node> list, Function<Node, Integer> h){
+    private static ArrayList<String> getPath(ArrayList<Node> list, Function<Node, Float> h){
         ArrayList<String> returnList = new ArrayList<String>();
         Node prevState = list.get(list.size() - 1);
         Node currentState = new Node(prevState);
@@ -228,8 +228,8 @@ public class Main {
         System.exit(1);
     }
 
-    private static int ucsHeuristic(Node pair){ return 0; }
-    private static int aStarNormalHeuristic(Node pair){
+    private static float ucsHeuristic(Node pair){ return 0; }
+    private static float aStarNormalHeuristic(Node pair){
         Node pairClone = new Node(pair);
         int numOutOfOrder = 0;
 
@@ -240,15 +240,15 @@ public class Main {
 
         return numOutOfOrder;
     }
-    private static int aStarCustomHeuristic(Node pair){
+    private static float aStarCustomHeuristic(Node pair){
         Node pairClone = new Node(pair);
         int dist = 0;
         int val;
         int maxVal = 0;
 
-        for (int i = 0; i < pairClone.getSize(); i++){
+        for (int i = 1; i <= pairClone.getSize(); i++){
             val = pairClone.get();
-            dist += (val - i);
+            dist += Math.abs(val - i);
             if (val > maxVal) { maxVal = val; }
             pairClone.MoveForward(1);
         }
