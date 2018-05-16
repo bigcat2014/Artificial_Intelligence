@@ -1,0 +1,3749 @@
+/*
+ *   Logan Thomas
+ *   Artificial Intelligence Lab
+ *   Assignment 2
+ */
+
+Assignment 2 Demo
+
+Demo:
+    Board: 1 2 3 4 5 6
+		Uniform Cost search:
+
+		Path found!
+		FinalState:		1 2 3 4 5 6 	Cost: 0
+
+		Number of nodes expanded: 1
+		Number of nodes in fringe: 0
+		Path cost: 0
+
+
+		A* with provided heuristic:
+
+		Path found!
+		FinalState:		1 2 3 4 5 6 	Cost: 0
+
+		Number of nodes expanded: 1
+		Number of nodes in fringe: 0
+		Path cost: 0
+
+
+		A* with Custom heuristic:
+
+		Path found!
+		FinalState:		1 2 3 4 5 6 	Cost: 0
+
+		Number of nodes expanded: 1
+		Number of nodes in fringe: 0
+		Path cost: 0
+		
+		Uniform Cost search:
+
+		Path found!
+		FinalState:		1 2 3 4 5 6 	Cost: 0
+
+		Number of nodes expanded: 1
+		Number of nodes in fringe: 0
+		Path cost: 0
+
+
+		A* with provided heuristic:
+
+		Path found!
+		FinalState:		1 2 3 4 5 6 	Cost: 0
+
+		Number of nodes expanded: 1
+		Number of nodes in fringe: 0
+		Path cost: 0
+
+
+		A* with Custom heuristic:
+
+		Path found!
+		Disconnected from the target VM, address: '127.0.0.1:58929', transport: 'socket'
+		FinalState:		1 2 3 4 5 6 	Cost: 0
+
+		Number of nodes expanded: 1
+		Number of nodes in fringe: 0
+		Path cost: 0
+	
+	Board 2 3 4 6 1 5
+		Uniform Cost search:
+
+		Path found!
+		Initial State:	2 3 4 6 1 5 	Cost: 0
+
+		Rotate	
+		Board State:	6 4 3 2 1 5 	Cost: 1
+		Move forward 1 Spaces
+		Board State:	4 3 2 1 5 6 	Cost: 2
+		Rotate	
+		Board State:	1 2 3 4 5 6 	Cost: 2
+		FinalState:		1 2 3 4 5 6 	Cost: 2
+
+		Number of nodes expanded: 8
+		Number of nodes in fringe: 20
+		Path cost: 2
+
+
+		A* with provided heuristic:
+
+		Path found!
+		Initial State:	2 3 4 6 1 5 	Cost: 0
+
+		Rotate	
+		Board State:	6 4 3 2 1 5 	Cost: 1
+		Move forward 1 Spaces
+		Board State:	4 3 2 1 5 6 	Cost: 2
+		Rotate	
+		Board State:	1 2 3 4 5 6 	Cost: 2
+		FinalState:		1 2 3 4 5 6 	Cost: 2
+
+		Number of nodes expanded: 6
+		Number of nodes in fringe: 18
+		Path cost: 2
+
+
+		A* with Custom heuristic:
+
+		Path found!
+		Initial State:	2 3 4 6 1 5 	Cost: 0
+
+		Rotate	
+		Board State:	6 4 3 2 1 5 	Cost: 1
+		Move forward 1 Spaces
+		Board State:	4 3 2 1 5 6 	Cost: 2
+		Rotate	
+		Board State:	1 2 3 4 5 6 	Cost: 2
+		FinalState:		1 2 3 4 5 6 	Cost: 2
+
+		Number of nodes expanded: 5
+		Number of nodes in fringe: 15
+		Path cost: 2
+		
+		Uniform Cost search:
+
+		Path found!
+		Initial State:	2 3 4 6 1 5 	Cost: 0
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 2 3 4 6 1 5 ;	Heuristic: 0.0
+		**************** End Fringe List **************
+		Expanded State:	2 3 4 6 1 5 	Heuristic: 0.0
+		Rotate	
+		Board State:	6 4 3 2 1 5 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 6 4 3 2 1 5 ;	Heuristic: 0.0
+		Fringe node: 2;	state: 1 6 4 3 5 2 ;	Heuristic: 0.0
+		Fringe node: 3;	state: 5 1 6 4 2 3 ;	Heuristic: 0.0
+		Fringe node: 4;	state: 2 5 1 6 3 4 ;	Heuristic: 0.0
+		Fringe node: 5;	state: 3 2 5 1 4 6 ;	Heuristic: 0.0
+		Fringe node: 6;	state: 4 3 2 5 6 1 ;	Heuristic: 0.0
+		**************** End Fringe List **************
+		Expanded State:	6 4 3 2 1 5 	Heuristic: 0.0
+		Move forward 1 Spaces
+		Board State:	4 3 2 1 5 6 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 6 4 3 2 1 5 ;	Heuristic: 0.0
+		Fringe node: 2;	state: 1 6 4 3 5 2 ;	Heuristic: 0.0
+		Fringe node: 3;	state: 5 1 6 4 2 3 ;	Heuristic: 0.0
+		Fringe node: 4;	state: 2 5 1 6 3 4 ;	Heuristic: 0.0
+		Fringe node: 5;	state: 3 2 5 1 4 6 ;	Heuristic: 0.0
+		Fringe node: 6;	state: 4 3 2 5 6 1 ;	Heuristic: 0.0
+		**************** End Fringe List **************
+		Expanded State:	4 3 2 1 5 6 	Heuristic: 0.0
+		Rotate	
+		Board State:	1 2 3 4 5 6 
+
+		FinalState:		1 2 3 4 5 6 	Cost: 2
+
+		Number of nodes expanded: 8
+		Number of nodes in fringe: 20
+		Path cost: 2
+
+
+		A* with provided heuristic:
+
+		Path found!
+		Initial State:	2 3 4 6 1 5 	Cost: 0
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 2 3 4 6 1 5 ;	Heuristic: 6.0
+		**************** End Fringe List **************
+		Expanded State:	2 3 4 6 1 5 	Heuristic: 6.0
+		Rotate	
+		Board State:	6 4 3 2 1 5 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 6 4 3 2 1 5 ;	Heuristic: 5.0
+		Fringe node: 2;	state: 5 1 6 4 2 3 ;	Heuristic: 5.0
+		Fringe node: 3;	state: 2 5 1 6 3 4 ;	Heuristic: 6.0
+		Fringe node: 4;	state: 4 3 2 5 6 1 ;	Heuristic: 6.0
+		Fringe node: 5;	state: 5 3 4 6 2 1 ;	Heuristic: 6.0
+		Fringe node: 6;	state: 1 2 5 3 6 4 ;	Heuristic: 4.0
+		Fringe node: 7;	state: 6 1 2 5 4 3 ;	Heuristic: 6.0
+		Fringe node: 8;	state: 4 6 1 2 3 5 ;	Heuristic: 6.0
+		Fringe node: 9;	state: 4 1 5 2 6 3 ;	Heuristic: 6.0
+		Fringe node: 10;	state: 6 4 1 5 3 2 ;	Heuristic: 6.0
+		Fringe node: 11;	state: 2 3 6 4 5 1 ;	Heuristic: 4.0
+		Fringe node: 12;	state: 5 2 3 6 1 4 ;	Heuristic: 4.0
+		Fringe node: 13;	state: 1 4 3 5 6 2 ;	Heuristic: 4.0
+		Fringe node: 14;	state: 2 6 1 4 5 3 ;	Heuristic: 4.0
+		Fringe node: 15;	state: 5 2 6 1 3 4 ;	Heuristic: 5.0
+		Fringe node: 16;	state: 3 5 2 6 4 1 ;	Heuristic: 6.0
+		**************** End Fringe List **************
+		Expanded State:	6 4 3 2 1 5 	Heuristic: 5.0
+		Move forward 1 Spaces
+		Board State:	4 3 2 1 5 6 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 6 4 3 2 1 5 ;	Heuristic: 5.0
+		Fringe node: 2;	state: 5 1 6 4 2 3 ;	Heuristic: 5.0
+		Fringe node: 3;	state: 2 5 1 6 3 4 ;	Heuristic: 6.0
+		Fringe node: 4;	state: 4 3 2 5 6 1 ;	Heuristic: 6.0
+		Fringe node: 5;	state: 5 3 4 6 2 1 ;	Heuristic: 6.0
+		Fringe node: 6;	state: 1 2 5 3 6 4 ;	Heuristic: 4.0
+		Fringe node: 7;	state: 6 1 2 5 4 3 ;	Heuristic: 6.0
+		Fringe node: 8;	state: 4 6 1 2 3 5 ;	Heuristic: 6.0
+		Fringe node: 9;	state: 4 1 5 2 6 3 ;	Heuristic: 6.0
+		Fringe node: 10;	state: 6 4 1 5 3 2 ;	Heuristic: 6.0
+		Fringe node: 11;	state: 2 3 6 4 5 1 ;	Heuristic: 4.0
+		Fringe node: 12;	state: 5 2 3 6 1 4 ;	Heuristic: 4.0
+		Fringe node: 13;	state: 1 4 3 5 6 2 ;	Heuristic: 4.0
+		Fringe node: 14;	state: 2 6 1 4 5 3 ;	Heuristic: 4.0
+		Fringe node: 15;	state: 5 2 6 1 3 4 ;	Heuristic: 5.0
+		Fringe node: 16;	state: 3 5 2 6 4 1 ;	Heuristic: 6.0
+		**************** End Fringe List **************
+		Expanded State:	4 3 2 1 5 6 	Heuristic: 5.0
+		Rotate	
+		Board State:	1 2 3 4 5 6 
+
+		FinalState:		1 2 3 4 5 6 	Cost: 2
+
+		Number of nodes expanded: 6
+		Number of nodes in fringe: 18
+		Path cost: 2
+
+
+		A* with Custom heuristic:
+
+		Path found!
+		Initial State:	2 3 4 6 1 5 	Cost: 0
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 2 3 4 6 1 5 ;	Heuristic: 1.0
+		**************** End Fringe List **************
+		Expanded State:	2 3 4 6 1 5 	Heuristic: 1.0
+		Rotate	
+		Board State:	6 4 3 2 1 5 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 6 4 3 2 1 5 ;	Heuristic: 2.0
+		Fringe node: 2;	state: 5 1 6 4 2 3 ;	Heuristic: 2.0
+		Fringe node: 3;	state: 2 5 1 6 3 4 ;	Heuristic: 2.0
+		Fringe node: 4;	state: 4 3 2 5 6 1 ;	Heuristic: 2.0
+		Fringe node: 5;	state: 5 3 4 6 2 1 ;	Heuristic: 2.0
+		Fringe node: 6;	state: 2 5 3 4 1 6 ;	Heuristic: 1.0
+		Fringe node: 7;	state: 1 2 5 3 6 4 ;	Heuristic: 1.0
+		Fringe node: 8;	state: 6 1 2 5 4 3 ;	Heuristic: 2.0
+		Fringe node: 9;	state: 4 6 1 2 3 5 ;	Heuristic: 2.0
+		Fringe node: 10;	state: 4 1 5 2 6 3 ;	Heuristic: 2.0
+		Fringe node: 11;	state: 6 4 1 5 3 2 ;	Heuristic: 2.0
+		Fringe node: 12;	state: 2 3 6 4 5 1 ;	Heuristic: 1.0
+		Fringe node: 13;	state: 5 2 3 6 1 4 ;	Heuristic: 2.0
+		**************** End Fringe List **************
+		Expanded State:	6 4 3 2 1 5 	Heuristic: 2.0
+		Move forward 1 Spaces
+		Board State:	4 3 2 1 5 6 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 6 4 3 2 1 5 ;	Heuristic: 2.0
+		Fringe node: 2;	state: 5 1 6 4 2 3 ;	Heuristic: 2.0
+		Fringe node: 3;	state: 2 5 1 6 3 4 ;	Heuristic: 2.0
+		Fringe node: 4;	state: 4 3 2 5 6 1 ;	Heuristic: 2.0
+		Fringe node: 5;	state: 5 3 4 6 2 1 ;	Heuristic: 2.0
+		Fringe node: 6;	state: 2 5 3 4 1 6 ;	Heuristic: 1.0
+		Fringe node: 7;	state: 1 2 5 3 6 4 ;	Heuristic: 1.0
+		Fringe node: 8;	state: 6 1 2 5 4 3 ;	Heuristic: 2.0
+		Fringe node: 9;	state: 4 6 1 2 3 5 ;	Heuristic: 2.0
+		Fringe node: 10;	state: 4 1 5 2 6 3 ;	Heuristic: 2.0
+		Fringe node: 11;	state: 6 4 1 5 3 2 ;	Heuristic: 2.0
+		Fringe node: 12;	state: 2 3 6 4 5 1 ;	Heuristic: 1.0
+		Fringe node: 13;	state: 5 2 3 6 1 4 ;	Heuristic: 2.0
+		**************** End Fringe List **************
+		Expanded State:	4 3 2 1 5 6 	Heuristic: 2.0
+		Rotate	
+		Board State:	1 2 3 4 5 6 
+
+		FinalState:		1 2 3 4 5 6 	Cost: 2
+
+		Number of nodes expanded: 5
+		Number of nodes in fringe: 15
+		Path cost: 2
+		
+	Board 5 1 2 4 3 6
+		Uniform Cost search:
+
+		Path found!
+		Initial State:	5 1 2 4 3 6 	Cost: 0
+
+		Move forward 1 Spaces
+		Board State:	1 2 4 3 6 5 	Cost: 1
+		Rotate	
+		Board State:	3 4 2 1 6 5 	Cost: 1
+		Move forward 2 Spaces
+		Board State:	2 1 6 5 3 4 	Cost: 2
+		Rotate	
+		Board State:	5 6 1 2 3 4 	Cost: 2
+		FinalState:		5 6 1 2 3 4 	Cost: 2
+
+		Number of nodes expanded: 14
+		Number of nodes in fringe: 34
+		Path cost: 2
+
+
+		A* with provided heuristic:
+
+		Path found!
+		Initial State:	5 1 2 4 3 6 	Cost: 0
+
+		Move forward 1 Spaces
+		Board State:	1 2 4 3 6 5 	Cost: 1
+		Rotate	
+		Board State:	3 4 2 1 6 5 	Cost: 1
+		Move forward 2 Spaces
+		Board State:	2 1 6 5 3 4 	Cost: 2
+		Rotate	
+		Board State:	5 6 1 2 3 4 	Cost: 2
+		FinalState:		5 6 1 2 3 4 	Cost: 2
+
+		Number of nodes expanded: 53
+		Number of nodes in fringe: 60
+		Path cost: 2
+
+
+		A* with Custom heuristic:
+
+		Path found!
+		Initial State:	5 1 2 4 3 6 	Cost: 0
+
+		Move forward 1 Spaces
+		Board State:	1 2 4 3 6 5 	Cost: 1
+		Rotate	
+		Board State:	3 4 2 1 6 5 	Cost: 1
+		Move forward 2 Spaces
+		Board State:	2 1 6 5 3 4 	Cost: 2
+		Rotate	
+		Board State:	5 6 1 2 3 4 	Cost: 2
+		FinalState:		5 6 1 2 3 4 	Cost: 2
+
+		Number of nodes expanded: 20
+		Number of nodes in fringe: 50
+		Path cost: 2
+		
+		Uniform Cost search:
+
+		Path found!
+		Initial State:	5 1 2 4 3 6 	Cost: 0
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 5 1 2 4 3 6 ;	Heuristic: 0.0
+		**************** End Fringe List **************
+		Expanded State:	5 1 2 4 3 6 	Heuristic: 0.0
+		Move forward 1 Spaces
+		Board State:	1 2 4 3 6 5 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 5 1 2 4 3 6 ;	Heuristic: 0.0
+		**************** End Fringe List **************
+		Expanded State:	1 2 4 3 6 5 	Heuristic: 0.0
+		Rotate	
+		Board State:	3 4 2 1 6 5 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 3 4 2 1 6 5 ;	Heuristic: 0.0
+		Fringe node: 2;	state: 6 3 4 2 5 1 ;	Heuristic: 0.0
+		Fringe node: 3;	state: 5 6 3 4 1 2 ;	Heuristic: 0.0
+		Fringe node: 4;	state: 1 5 6 3 2 4 ;	Heuristic: 0.0
+		Fringe node: 5;	state: 2 1 5 6 4 3 ;	Heuristic: 0.0
+		Fringe node: 6;	state: 3 5 1 2 6 4 ;	Heuristic: 0.0
+		Fringe node: 7;	state: 6 3 5 1 4 2 ;	Heuristic: 0.0
+		Fringe node: 8;	state: 4 6 3 5 2 1 ;	Heuristic: 0.0
+		Fringe node: 9;	state: 2 4 6 3 1 5 ;	Heuristic: 0.0
+		Fringe node: 10;	state: 1 2 4 6 5 3 ;	Heuristic: 0.0
+		**************** End Fringe List **************
+		Expanded State:	3 4 2 1 6 5 	Heuristic: 0.0
+		Move forward 2 Spaces
+		Board State:	2 1 6 5 3 4 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 3 4 2 1 6 5 ;	Heuristic: 0.0
+		Fringe node: 2;	state: 6 3 4 2 5 1 ;	Heuristic: 0.0
+		Fringe node: 3;	state: 5 6 3 4 1 2 ;	Heuristic: 0.0
+		Fringe node: 4;	state: 1 5 6 3 2 4 ;	Heuristic: 0.0
+		Fringe node: 5;	state: 2 1 5 6 4 3 ;	Heuristic: 0.0
+		Fringe node: 6;	state: 3 5 1 2 6 4 ;	Heuristic: 0.0
+		Fringe node: 7;	state: 6 3 5 1 4 2 ;	Heuristic: 0.0
+		Fringe node: 8;	state: 4 6 3 5 2 1 ;	Heuristic: 0.0
+		Fringe node: 9;	state: 2 4 6 3 1 5 ;	Heuristic: 0.0
+		Fringe node: 10;	state: 1 2 4 6 5 3 ;	Heuristic: 0.0
+		**************** End Fringe List **************
+		Expanded State:	2 1 6 5 3 4 	Heuristic: 0.0
+		Rotate	
+		Board State:	5 6 1 2 3 4 
+
+		FinalState:		5 6 1 2 3 4 	Cost: 2
+
+		Number of nodes expanded: 14
+		Number of nodes in fringe: 34
+		Path cost: 2
+
+
+		A* with provided heuristic:
+
+		Path found!
+		Initial State:	5 1 2 4 3 6 	Cost: 0
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 5 1 2 4 3 6 ;	Heuristic: 4.0
+		**************** End Fringe List **************
+		Expanded State:	5 1 2 4 3 6 	Heuristic: 4.0
+		Move forward 1 Spaces
+		Board State:	1 2 4 3 6 5 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 5 1 2 4 3 6 ;	Heuristic: 4.0
+		**************** End Fringe List **************
+		Expanded State:	1 2 4 3 6 5 	Heuristic: 4.0
+		Rotate	
+		Board State:	3 4 2 1 6 5 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 3 4 2 1 6 5 ;	Heuristic: 6.0
+		Fringe node: 2;	state: 2 1 5 6 4 3 ;	Heuristic: 6.0
+		Fringe node: 3;	state: 3 5 1 2 6 4 ;	Heuristic: 6.0
+		Fringe node: 4;	state: 6 3 5 1 4 2 ;	Heuristic: 6.0
+		Fringe node: 5;	state: 4 6 3 5 2 1 ;	Heuristic: 5.0
+		Fringe node: 6;	state: 2 4 6 3 1 5 ;	Heuristic: 6.0
+		Fringe node: 7;	state: 6 5 2 1 3 4 ;	Heuristic: 6.0
+		Fringe node: 8;	state: 3 6 5 2 4 1 ;	Heuristic: 6.0
+		Fringe node: 9;	state: 5 6 4 2 3 1 ;	Heuristic: 6.0
+		Fringe node: 10;	state: 3 5 6 4 1 2 ;	Heuristic: 5.0
+		Fringe node: 11;	state: 1 3 5 6 2 4 ;	Heuristic: 5.0
+		Fringe node: 12;	state: 2 1 3 5 4 6 ;	Heuristic: 4.0
+		Fringe node: 13;	state: 4 2 1 3 6 5 ;	Heuristic: 5.0
+		Fringe node: 14;	state: 6 1 5 2 3 4 ;	Heuristic: 6.0
+		Fringe node: 15;	state: 3 6 1 5 4 2 ;	Heuristic: 6.0
+		Fringe node: 16;	state: 4 3 6 1 2 5 ;	Heuristic: 6.0
+		Fringe node: 17;	state: 2 3 6 5 4 1 ;	Heuristic: 6.0
+		Fringe node: 18;	state: 6 5 1 4 3 2 ;	Heuristic: 5.0
+		Fringe node: 19;	state: 5 3 2 4 6 1 ;	Heuristic: 5.0
+		Fringe node: 20;	state: 6 5 3 2 1 4 ;	Heuristic: 5.0
+		Fringe node: 21;	state: 4 1 6 5 2 3 ;	Heuristic: 6.0
+		Fringe node: 22;	state: 2 4 1 6 3 5 ;	Heuristic: 6.0
+		Fringe node: 23;	state: 5 2 6 3 1 4 ;	Heuristic: 5.0
+		Fringe node: 24;	state: 1 5 2 6 4 3 ;	Heuristic: 5.0
+		Fringe node: 25;	state: 4 1 5 2 3 6 ;	Heuristic: 5.0
+		Fringe node: 26;	state: 3 4 1 5 6 2 ;	Heuristic: 6.0
+		Fringe node: 27;	state: 5 3 4 1 6 2 ;	Heuristic: 6.0
+		Fringe node: 28;	state: 2 6 5 3 1 4 ;	Heuristic: 6.0
+		Fringe node: 29;	state: 1 2 6 5 4 3 ;	Heuristic: 4.0
+		Fringe node: 30;	state: 4 1 2 6 3 5 ;	Heuristic: 6.0
+		Fringe node: 31;	state: 1 3 4 2 6 5 ;	Heuristic: 5.0
+		Fringe node: 32;	state: 5 6 1 3 2 4 ;	Heuristic: 6.0
+		Fringe node: 33;	state: 2 5 6 1 4 3 ;	Heuristic: 6.0
+		Fringe node: 34;	state: 4 2 5 6 3 1 ;	Heuristic: 5.0
+		Fringe node: 35;	state: 1 5 4 3 2 6 ;	Heuristic: 4.0
+		Fringe node: 36;	state: 2 1 5 4 6 3 ;	Heuristic: 5.0
+		Fringe node: 37;	state: 6 2 1 5 3 4 ;	Heuristic: 5.0
+		Fringe node: 38;	state: 3 6 2 1 4 5 ;	Heuristic: 6.0
+		Fringe node: 39;	state: 6 2 5 4 1 3 ;	Heuristic: 4.0
+		Fringe node: 40;	state: 3 1 6 2 4 5 ;	Heuristic: 6.0
+		**************** End Fringe List **************
+		Expanded State:	3 4 2 1 6 5 	Heuristic: 6.0
+		Move forward 2 Spaces
+		Board State:	2 1 6 5 3 4 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 3 4 2 1 6 5 ;	Heuristic: 6.0
+		Fringe node: 2;	state: 2 1 5 6 4 3 ;	Heuristic: 6.0
+		Fringe node: 3;	state: 3 5 1 2 6 4 ;	Heuristic: 6.0
+		Fringe node: 4;	state: 6 3 5 1 4 2 ;	Heuristic: 6.0
+		Fringe node: 5;	state: 4 6 3 5 2 1 ;	Heuristic: 5.0
+		Fringe node: 6;	state: 2 4 6 3 1 5 ;	Heuristic: 6.0
+		Fringe node: 7;	state: 6 5 2 1 3 4 ;	Heuristic: 6.0
+		Fringe node: 8;	state: 3 6 5 2 4 1 ;	Heuristic: 6.0
+		Fringe node: 9;	state: 5 6 4 2 3 1 ;	Heuristic: 6.0
+		Fringe node: 10;	state: 3 5 6 4 1 2 ;	Heuristic: 5.0
+		Fringe node: 11;	state: 1 3 5 6 2 4 ;	Heuristic: 5.0
+		Fringe node: 12;	state: 2 1 3 5 4 6 ;	Heuristic: 4.0
+		Fringe node: 13;	state: 4 2 1 3 6 5 ;	Heuristic: 5.0
+		Fringe node: 14;	state: 6 1 5 2 3 4 ;	Heuristic: 6.0
+		Fringe node: 15;	state: 3 6 1 5 4 2 ;	Heuristic: 6.0
+		Fringe node: 16;	state: 4 3 6 1 2 5 ;	Heuristic: 6.0
+		Fringe node: 17;	state: 2 3 6 5 4 1 ;	Heuristic: 6.0
+		Fringe node: 18;	state: 6 5 1 4 3 2 ;	Heuristic: 5.0
+		Fringe node: 19;	state: 5 3 2 4 6 1 ;	Heuristic: 5.0
+		Fringe node: 20;	state: 6 5 3 2 1 4 ;	Heuristic: 5.0
+		Fringe node: 21;	state: 4 1 6 5 2 3 ;	Heuristic: 6.0
+		Fringe node: 22;	state: 2 4 1 6 3 5 ;	Heuristic: 6.0
+		Fringe node: 23;	state: 5 2 6 3 1 4 ;	Heuristic: 5.0
+		Fringe node: 24;	state: 1 5 2 6 4 3 ;	Heuristic: 5.0
+		Fringe node: 25;	state: 4 1 5 2 3 6 ;	Heuristic: 5.0
+		Fringe node: 26;	state: 3 4 1 5 6 2 ;	Heuristic: 6.0
+		Fringe node: 27;	state: 5 3 4 1 6 2 ;	Heuristic: 6.0
+		Fringe node: 28;	state: 2 6 5 3 1 4 ;	Heuristic: 6.0
+		Fringe node: 29;	state: 1 2 6 5 4 3 ;	Heuristic: 4.0
+		Fringe node: 30;	state: 4 1 2 6 3 5 ;	Heuristic: 6.0
+		Fringe node: 31;	state: 1 3 4 2 6 5 ;	Heuristic: 5.0
+		Fringe node: 32;	state: 5 6 1 3 2 4 ;	Heuristic: 6.0
+		Fringe node: 33;	state: 2 5 6 1 4 3 ;	Heuristic: 6.0
+		Fringe node: 34;	state: 4 2 5 6 3 1 ;	Heuristic: 5.0
+		Fringe node: 35;	state: 1 5 4 3 2 6 ;	Heuristic: 4.0
+		Fringe node: 36;	state: 2 1 5 4 6 3 ;	Heuristic: 5.0
+		Fringe node: 37;	state: 6 2 1 5 3 4 ;	Heuristic: 5.0
+		Fringe node: 38;	state: 3 6 2 1 4 5 ;	Heuristic: 6.0
+		Fringe node: 39;	state: 6 2 5 4 1 3 ;	Heuristic: 4.0
+		Fringe node: 40;	state: 3 1 6 2 4 5 ;	Heuristic: 6.0
+		**************** End Fringe List **************
+		Expanded State:	2 1 6 5 3 4 	Heuristic: 6.0
+		Rotate	
+		Board State:	5 6 1 2 3 4 
+
+		FinalState:		5 6 1 2 3 4 	Cost: 2
+
+		Number of nodes expanded: 53
+		Number of nodes in fringe: 60
+		Path cost: 2
+
+
+		A* with Custom heuristic:
+
+		Path found!
+		Initial State:	5 1 2 4 3 6 	Cost: 0
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 5 1 2 4 3 6 ;	Heuristic: 1.0
+		**************** End Fringe List **************
+		Expanded State:	5 1 2 4 3 6 	Heuristic: 1.0
+		Move forward 1 Spaces
+		Board State:	1 2 4 3 6 5 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 5 1 2 4 3 6 ;	Heuristic: 1.0
+		**************** End Fringe List **************
+		Expanded State:	1 2 4 3 6 5 	Heuristic: 1.0
+		Rotate	
+		Board State:	3 4 2 1 6 5 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 3 4 2 1 6 5 ;	Heuristic: 1.0
+		Fringe node: 2;	state: 6 3 4 2 5 1 ;	Heuristic: 2.0
+		Fringe node: 3;	state: 5 6 3 4 1 2 ;	Heuristic: 2.0
+		Fringe node: 4;	state: 1 5 6 3 2 4 ;	Heuristic: 2.0
+		Fringe node: 5;	state: 2 1 5 6 4 3 ;	Heuristic: 1.0
+		Fringe node: 6;	state: 3 5 1 2 6 4 ;	Heuristic: 2.0
+		Fringe node: 7;	state: 6 3 5 1 4 2 ;	Heuristic: 2.0
+		Fringe node: 8;	state: 4 6 3 5 2 1 ;	Heuristic: 2.0
+		Fringe node: 9;	state: 2 4 6 3 1 5 ;	Heuristic: 2.0
+		Fringe node: 10;	state: 1 2 4 6 5 3 ;	Heuristic: 1.0
+		**************** End Fringe List **************
+		Expanded State:	3 4 2 1 6 5 	Heuristic: 1.0
+		Move forward 2 Spaces
+		Board State:	2 1 6 5 3 4 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 3 4 2 1 6 5 ;	Heuristic: 1.0
+		Fringe node: 2;	state: 6 3 4 2 5 1 ;	Heuristic: 2.0
+		Fringe node: 3;	state: 5 6 3 4 1 2 ;	Heuristic: 2.0
+		Fringe node: 4;	state: 1 5 6 3 2 4 ;	Heuristic: 2.0
+		Fringe node: 5;	state: 2 1 5 6 4 3 ;	Heuristic: 1.0
+		Fringe node: 6;	state: 3 5 1 2 6 4 ;	Heuristic: 2.0
+		Fringe node: 7;	state: 6 3 5 1 4 2 ;	Heuristic: 2.0
+		Fringe node: 8;	state: 4 6 3 5 2 1 ;	Heuristic: 2.0
+		Fringe node: 9;	state: 2 4 6 3 1 5 ;	Heuristic: 2.0
+		Fringe node: 10;	state: 1 2 4 6 5 3 ;	Heuristic: 1.0
+		**************** End Fringe List **************
+		Expanded State:	2 1 6 5 3 4 	Heuristic: 1.0
+		Rotate	
+		Board State:	5 6 1 2 3 4 
+
+		FinalState:		5 6 1 2 3 4 	Cost: 2
+
+		Number of nodes expanded: 20
+		Number of nodes in fringe: 50
+		Path cost: 2
+		
+	Board 2 4 3 5 1 6
+		Uniform Cost search:
+
+		Path found!
+		Initial State:	2 4 3 5 1 6 	Cost: 0
+
+		Rotate	
+		Board State:	5 3 4 2 1 6 	Cost: 1
+		Move forward 3 Spaces
+		Board State:	2 1 6 5 3 4 	Cost: 2
+		Rotate	
+		Board State:	5 6 1 2 3 4 	Cost: 2
+		FinalState:		5 6 1 2 3 4 	Cost: 2
+
+		Number of nodes expanded: 10
+		Number of nodes in fringe: 27
+		Path cost: 2
+
+
+		A* with provided heuristic:
+
+		Path found!
+		Initial State:	2 4 3 5 1 6 	Cost: 0
+
+		Rotate	
+		Board State:	5 3 4 2 1 6 	Cost: 1
+		Move forward 3 Spaces
+		Board State:	2 1 6 5 3 4 	Cost: 2
+		Rotate	
+		Board State:	5 6 1 2 3 4 	Cost: 2
+		FinalState:		5 6 1 2 3 4 	Cost: 2
+
+		Number of nodes expanded: 44
+		Number of nodes in fringe: 67
+		Path cost: 2
+
+
+		A* with Custom heuristic:
+
+		Path found!
+		Initial State:	2 4 3 5 1 6 	Cost: 0
+
+		Rotate	
+		Board State:	5 3 4 2 1 6 	Cost: 1
+		Move forward 3 Spaces
+		Board State:	2 1 6 5 3 4 	Cost: 2
+		Rotate	
+		Board State:	5 6 1 2 3 4 	Cost: 2
+		FinalState:		5 6 1 2 3 4 	Cost: 2
+
+		Number of nodes expanded: 22
+		Number of nodes in fringe: 51
+		Path cost: 2
+		
+		Uniform Cost search:
+
+		Path found!
+		Initial State:	2 4 3 5 1 6 	Cost: 0
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 2 4 3 5 1 6 ;	Heuristic: 0.0
+		**************** End Fringe List **************
+		Expanded State:	2 4 3 5 1 6 	Heuristic: 0.0
+		Rotate	
+		Board State:	5 3 4 2 1 6 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 5 3 4 2 1 6 ;	Heuristic: 0.0
+		Fringe node: 2;	state: 1 5 3 4 6 2 ;	Heuristic: 0.0
+		Fringe node: 3;	state: 6 1 5 3 2 4 ;	Heuristic: 0.0
+		Fringe node: 4;	state: 2 6 1 5 4 3 ;	Heuristic: 0.0
+		Fringe node: 5;	state: 4 2 6 1 3 5 ;	Heuristic: 0.0
+		Fringe node: 6;	state: 3 4 2 6 5 1 ;	Heuristic: 0.0
+		**************** End Fringe List **************
+		Expanded State:	5 3 4 2 1 6 	Heuristic: 0.0
+		Move forward 3 Spaces
+		Board State:	2 1 6 5 3 4 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 5 3 4 2 1 6 ;	Heuristic: 0.0
+		Fringe node: 2;	state: 1 5 3 4 6 2 ;	Heuristic: 0.0
+		Fringe node: 3;	state: 6 1 5 3 2 4 ;	Heuristic: 0.0
+		Fringe node: 4;	state: 2 6 1 5 4 3 ;	Heuristic: 0.0
+		Fringe node: 5;	state: 4 2 6 1 3 5 ;	Heuristic: 0.0
+		Fringe node: 6;	state: 3 4 2 6 5 1 ;	Heuristic: 0.0
+		**************** End Fringe List **************
+		Expanded State:	2 1 6 5 3 4 	Heuristic: 0.0
+		Rotate	
+		Board State:	5 6 1 2 3 4 
+
+		FinalState:		5 6 1 2 3 4 	Cost: 2
+
+		Number of nodes expanded: 10
+		Number of nodes in fringe: 27
+		Path cost: 2
+
+
+		A* with provided heuristic:
+
+		Path found!
+		Initial State:	2 4 3 5 1 6 	Cost: 0
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 2 4 3 5 1 6 ;	Heuristic: 4.0
+		**************** End Fringe List **************
+		Expanded State:	2 4 3 5 1 6 	Heuristic: 4.0
+		Rotate	
+		Board State:	5 3 4 2 1 6 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 5 3 4 2 1 6 ;	Heuristic: 5.0
+		Fringe node: 2;	state: 6 1 5 3 2 4 ;	Heuristic: 6.0
+		Fringe node: 3;	state: 2 6 1 5 4 3 ;	Heuristic: 6.0
+		Fringe node: 4;	state: 4 2 6 1 3 5 ;	Heuristic: 5.0
+		Fringe node: 5;	state: 3 4 2 6 5 1 ;	Heuristic: 5.0
+		Fringe node: 6;	state: 6 4 3 5 2 1 ;	Heuristic: 5.0
+		Fringe node: 7;	state: 2 6 4 3 1 5 ;	Heuristic: 6.0
+		Fringe node: 8;	state: 5 1 2 6 3 4 ;	Heuristic: 6.0
+		Fringe node: 9;	state: 3 5 1 2 4 6 ;	Heuristic: 5.0
+		Fringe node: 10;	state: 5 4 6 2 3 1 ;	Heuristic: 6.0
+		Fringe node: 11;	state: 3 5 4 6 1 2 ;	Heuristic: 6.0
+		Fringe node: 12;	state: 2 1 3 5 6 4 ;	Heuristic: 5.0
+		Fringe node: 13;	state: 6 2 1 3 4 5 ;	Heuristic: 5.0
+		**************** End Fringe List **************
+		Expanded State:	5 3 4 2 1 6 	Heuristic: 5.0
+		Move forward 3 Spaces
+		Board State:	2 1 6 5 3 4 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 5 3 4 2 1 6 ;	Heuristic: 5.0
+		Fringe node: 2;	state: 6 1 5 3 2 4 ;	Heuristic: 6.0
+		Fringe node: 3;	state: 2 6 1 5 4 3 ;	Heuristic: 6.0
+		Fringe node: 4;	state: 4 2 6 1 3 5 ;	Heuristic: 5.0
+		Fringe node: 5;	state: 3 4 2 6 5 1 ;	Heuristic: 5.0
+		Fringe node: 6;	state: 6 4 3 5 2 1 ;	Heuristic: 5.0
+		Fringe node: 7;	state: 2 6 4 3 1 5 ;	Heuristic: 6.0
+		Fringe node: 8;	state: 5 1 2 6 3 4 ;	Heuristic: 6.0
+		Fringe node: 9;	state: 3 5 1 2 4 6 ;	Heuristic: 5.0
+		Fringe node: 10;	state: 5 4 6 2 3 1 ;	Heuristic: 6.0
+		Fringe node: 11;	state: 3 5 4 6 1 2 ;	Heuristic: 6.0
+		Fringe node: 12;	state: 2 1 3 5 6 4 ;	Heuristic: 5.0
+		Fringe node: 13;	state: 6 2 1 3 4 5 ;	Heuristic: 5.0
+		**************** End Fringe List **************
+		Expanded State:	2 1 6 5 3 4 	Heuristic: 5.0
+		Rotate	
+		Board State:	5 6 1 2 3 4 
+
+		FinalState:		5 6 1 2 3 4 	Cost: 2
+
+		Number of nodes expanded: 44
+		Number of nodes in fringe: 67
+		Path cost: 2
+
+
+		A* with Custom heuristic:
+
+		Path found!
+		Initial State:	2 4 3 5 1 6 	Cost: 0
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 2 4 3 5 1 6 ;	Heuristic: 1.0
+		**************** End Fringe List **************
+		Expanded State:	2 4 3 5 1 6 	Heuristic: 1.0
+		Rotate	
+		Board State:	5 3 4 2 1 6 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 5 3 4 2 1 6 ;	Heuristic: 2.0
+		Fringe node: 2;	state: 6 1 5 3 2 4 ;	Heuristic: 2.0
+		Fringe node: 3;	state: 2 6 1 5 4 3 ;	Heuristic: 2.0
+		Fringe node: 4;	state: 4 2 6 1 3 5 ;	Heuristic: 2.0
+		Fringe node: 5;	state: 3 4 2 6 5 1 ;	Heuristic: 2.0
+		Fringe node: 6;	state: 6 4 3 5 2 1 ;	Heuristic: 2.0
+		Fringe node: 7;	state: 2 6 4 3 1 5 ;	Heuristic: 2.0
+		Fringe node: 8;	state: 1 2 6 4 5 3 ;	Heuristic: 1.0
+		Fringe node: 9;	state: 5 1 2 6 3 4 ;	Heuristic: 2.0
+		Fringe node: 10;	state: 3 5 1 2 4 6 ;	Heuristic: 1.0
+		**************** End Fringe List **************
+		Expanded State:	5 3 4 2 1 6 	Heuristic: 2.0
+		Move forward 3 Spaces
+		Board State:	2 1 6 5 3 4 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 5 3 4 2 1 6 ;	Heuristic: 2.0
+		Fringe node: 2;	state: 6 1 5 3 2 4 ;	Heuristic: 2.0
+		Fringe node: 3;	state: 2 6 1 5 4 3 ;	Heuristic: 2.0
+		Fringe node: 4;	state: 4 2 6 1 3 5 ;	Heuristic: 2.0
+		Fringe node: 5;	state: 3 4 2 6 5 1 ;	Heuristic: 2.0
+		Fringe node: 6;	state: 6 4 3 5 2 1 ;	Heuristic: 2.0
+		Fringe node: 7;	state: 2 6 4 3 1 5 ;	Heuristic: 2.0
+		Fringe node: 8;	state: 1 2 6 4 5 3 ;	Heuristic: 1.0
+		Fringe node: 9;	state: 5 1 2 6 3 4 ;	Heuristic: 2.0
+		Fringe node: 10;	state: 3 5 1 2 4 6 ;	Heuristic: 1.0
+		**************** End Fringe List **************
+		Expanded State:	2 1 6 5 3 4 	Heuristic: 2.0
+		Rotate	
+		Board State:	5 6 1 2 3 4 
+
+		FinalState:		5 6 1 2 3 4 	Cost: 2
+
+		Number of nodes expanded: 22
+		Number of nodes in fringe: 51
+		Path cost: 2
+		
+	Board 1 6 5 4 2 3
+		Uniform Cost search:
+
+		Path found!
+		Initial State:	1 6 5 4 2 3 	Cost: 0
+
+		Rotate	
+		Board State:	4 5 6 1 2 3 	Cost: 1
+		FinalState:		4 5 6 1 2 3 	Cost: 1
+
+		Number of nodes expanded: 2
+		Number of nodes in fringe: 5
+		Path cost: 1
+
+
+		A* with provided heuristic:
+
+		Path found!
+		Initial State:	1 6 5 4 2 3 	Cost: 0
+
+		Rotate	
+		Board State:	4 5 6 1 2 3 	Cost: 1
+		FinalState:		4 5 6 1 2 3 	Cost: 1
+
+		Number of nodes expanded: 8
+		Number of nodes in fringe: 27
+		Path cost: 1
+
+
+		A* with Custom heuristic:
+
+		Path found!
+		Disconnected from the target VM, address: '127.0.0.1:58668', transport: 'socket'
+		Initial State:	1 6 5 4 2 3 	Cost: 0
+
+		Rotate	
+		Board State:	4 5 6 1 2 3 	Cost: 1
+		FinalState:		4 5 6 1 2 3 	Cost: 1
+
+		Number of nodes expanded: 14
+		Number of nodes in fringe: 40
+		Path cost: 1
+		
+		Uniform Cost search:
+
+		Path found!
+		Initial State:	1 6 5 4 2 3 	Cost: 0
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 1 6 5 4 2 3 ;	Heuristic: 0.0
+		**************** End Fringe List **************
+		Expanded State:	1 6 5 4 2 3 	Heuristic: 0.0
+		Rotate	
+		Board State:	4 5 6 1 2 3 
+
+		FinalState:		4 5 6 1 2 3 	Cost: 1
+
+		Number of nodes expanded: 2
+		Number of nodes in fringe: 5
+		Path cost: 1
+
+
+		A* with provided heuristic:
+
+		Path found!
+		Initial State:	1 6 5 4 2 3 	Cost: 0
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 1 6 5 4 2 3 ;	Heuristic: 4.0
+		**************** End Fringe List **************
+		Expanded State:	1 6 5 4 2 3 	Heuristic: 4.0
+		Rotate	
+		Board State:	4 5 6 1 2 3 
+
+		FinalState:		4 5 6 1 2 3 	Cost: 1
+
+		Number of nodes expanded: 8
+		Number of nodes in fringe: 27
+		Path cost: 1
+
+
+		A* with Custom heuristic:
+
+		Path found!
+		Initial State:	1 6 5 4 2 3 	Cost: 0
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 1 6 5 4 2 3 ;	Heuristic: 2.0
+		**************** End Fringe List **************
+		Expanded State:	1 6 5 4 2 3 	Heuristic: 2.0
+		Rotate	
+		Board State:	4 5 6 1 2 3 
+
+		FinalState:		4 5 6 1 2 3 	Cost: 1
+
+		Number of nodes expanded: 14
+		Number of nodes in fringe: 40
+		Path cost: 1
+	
+	Board 6 1 3 2 5 4
+		Uniform Cost search:
+
+		Path found!
+		Initial State:	6 1 3 2 5 4 	Cost: 0
+
+		Rotate	
+		Board State:	2 3 1 6 5 4 	Cost: 1
+		Move forward 2 Spaces
+		Board State:	1 6 5 4 2 3 	Cost: 2
+		Rotate	
+		Board State:	4 5 6 1 2 3 	Cost: 2
+		FinalState:		4 5 6 1 2 3 	Cost: 2
+
+		Number of nodes expanded: 9
+		Number of nodes in fringe: 24
+		Path cost: 2
+
+
+		A* with provided heuristic:
+
+		Path found!
+		Initial State:	6 1 3 2 5 4 	Cost: 0
+
+		Rotate	
+		Board State:	2 3 1 6 5 4 	Cost: 1
+		Move forward 2 Spaces
+		Board State:	1 6 5 4 2 3 	Cost: 2
+		Rotate	
+		Board State:	4 5 6 1 2 3 	Cost: 2
+		FinalState:		4 5 6 1 2 3 	Cost: 2
+
+		Number of nodes expanded: 30
+		Number of nodes in fringe: 58
+		Path cost: 2
+
+
+		A* with Custom heuristic:
+
+		Disconnected from the target VM, address: '127.0.0.1:58678', transport: 'socket'
+		Path found!
+		Initial State:	6 1 3 2 5 4 	Cost: 0
+
+		Rotate	
+		Board State:	2 3 1 6 5 4 	Cost: 1
+		Move forward 2 Spaces
+		Board State:	1 6 5 4 2 3 	Cost: 2
+		Rotate	
+		Board State:	4 5 6 1 2 3 	Cost: 2
+		FinalState:		4 5 6 1 2 3 	Cost: 2
+
+		Number of nodes expanded: 45
+		Number of nodes in fringe: 62
+		Path cost: 2
+		
+		Uniform Cost search:
+
+		Path found!
+		Initial State:	6 1 3 2 5 4 	Cost: 0
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 6 1 3 2 5 4 ;	Heuristic: 0.0
+		**************** End Fringe List **************
+		Expanded State:	6 1 3 2 5 4 	Heuristic: 0.0
+		Rotate	
+		Board State:	2 3 1 6 5 4 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 2 3 1 6 5 4 ;	Heuristic: 0.0
+		Fringe node: 2;	state: 5 2 3 1 4 6 ;	Heuristic: 0.0
+		Fringe node: 3;	state: 4 5 2 3 6 1 ;	Heuristic: 0.0
+		Fringe node: 4;	state: 6 4 5 2 1 3 ;	Heuristic: 0.0
+		Fringe node: 5;	state: 1 6 4 5 3 2 ;	Heuristic: 0.0
+		Fringe node: 6;	state: 3 1 6 4 2 5 ;	Heuristic: 0.0
+		**************** End Fringe List **************
+		Expanded State:	2 3 1 6 5 4 	Heuristic: 0.0
+		Move forward 2 Spaces
+		Board State:	1 6 5 4 2 3 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 2 3 1 6 5 4 ;	Heuristic: 0.0
+		Fringe node: 2;	state: 5 2 3 1 4 6 ;	Heuristic: 0.0
+		Fringe node: 3;	state: 4 5 2 3 6 1 ;	Heuristic: 0.0
+		Fringe node: 4;	state: 6 4 5 2 1 3 ;	Heuristic: 0.0
+		Fringe node: 5;	state: 1 6 4 5 3 2 ;	Heuristic: 0.0
+		Fringe node: 6;	state: 3 1 6 4 2 5 ;	Heuristic: 0.0
+		**************** End Fringe List **************
+		Expanded State:	1 6 5 4 2 3 	Heuristic: 0.0
+		Rotate	
+		Board State:	4 5 6 1 2 3 
+
+		FinalState:		4 5 6 1 2 3 	Cost: 2
+
+		Number of nodes expanded: 9
+		Number of nodes in fringe: 24
+		Path cost: 2
+
+
+		A* with provided heuristic:
+
+		Path found!
+		Initial State:	6 1 3 2 5 4 	Cost: 0
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 6 1 3 2 5 4 ;	Heuristic: 4.0
+		**************** End Fringe List **************
+		Expanded State:	6 1 3 2 5 4 	Heuristic: 4.0
+		Rotate	
+		Board State:	2 3 1 6 5 4 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 2 3 1 6 5 4 ;	Heuristic: 5.0
+		Fringe node: 2;	state: 4 5 2 3 6 1 ;	Heuristic: 6.0
+		Fringe node: 3;	state: 6 4 5 2 1 3 ;	Heuristic: 6.0
+		Fringe node: 4;	state: 1 6 4 5 3 2 ;	Heuristic: 5.0
+		Fringe node: 5;	state: 3 1 6 4 2 5 ;	Heuristic: 5.0
+		Fringe node: 6;	state: 4 1 3 2 6 5 ;	Heuristic: 5.0
+		Fringe node: 7;	state: 6 4 1 3 5 2 ;	Heuristic: 5.0
+		Fringe node: 8;	state: 5 6 4 1 2 3 ;	Heuristic: 6.0
+		Fringe node: 9;	state: 2 5 6 4 3 1 ;	Heuristic: 5.0
+		Fringe node: 10;	state: 3 2 5 6 1 4 ;	Heuristic: 5.0
+		**************** End Fringe List **************
+		Expanded State:	2 3 1 6 5 4 	Heuristic: 5.0
+		Move forward 2 Spaces
+		Board State:	1 6 5 4 2 3 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 2 3 1 6 5 4 ;	Heuristic: 5.0
+		Fringe node: 2;	state: 4 5 2 3 6 1 ;	Heuristic: 6.0
+		Fringe node: 3;	state: 6 4 5 2 1 3 ;	Heuristic: 6.0
+		Fringe node: 4;	state: 1 6 4 5 3 2 ;	Heuristic: 5.0
+		Fringe node: 5;	state: 3 1 6 4 2 5 ;	Heuristic: 5.0
+		Fringe node: 6;	state: 4 1 3 2 6 5 ;	Heuristic: 5.0
+		Fringe node: 7;	state: 6 4 1 3 5 2 ;	Heuristic: 5.0
+		Fringe node: 8;	state: 5 6 4 1 2 3 ;	Heuristic: 6.0
+		Fringe node: 9;	state: 2 5 6 4 3 1 ;	Heuristic: 5.0
+		Fringe node: 10;	state: 3 2 5 6 1 4 ;	Heuristic: 5.0
+		**************** End Fringe List **************
+		Expanded State:	1 6 5 4 2 3 	Heuristic: 5.0
+		Rotate	
+		Board State:	4 5 6 1 2 3 
+
+		FinalState:		4 5 6 1 2 3 	Cost: 2
+
+		Number of nodes expanded: 30
+		Number of nodes in fringe: 58
+		Path cost: 2
+
+
+		A* with Custom heuristic:
+
+		Path found!
+		Initial State:	6 1 3 2 5 4 	Cost: 0
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 6 1 3 2 5 4 ;	Heuristic: 1.0
+		**************** End Fringe List **************
+		Expanded State:	6 1 3 2 5 4 	Heuristic: 1.0
+		Rotate	
+		Board State:	2 3 1 6 5 4 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 2 3 1 6 5 4 ;	Heuristic: 1.0
+		Fringe node: 2;	state: 5 2 3 1 4 6 ;	Heuristic: 1.0
+		Fringe node: 3;	state: 4 5 2 3 6 1 ;	Heuristic: 2.0
+		Fringe node: 4;	state: 6 4 5 2 1 3 ;	Heuristic: 3.0
+		Fringe node: 5;	state: 1 6 4 5 3 2 ;	Heuristic: 2.0
+		Fringe node: 6;	state: 3 1 6 4 2 5 ;	Heuristic: 1.0
+		**************** End Fringe List **************
+		Expanded State:	2 3 1 6 5 4 	Heuristic: 1.0
+		Move forward 2 Spaces
+		Board State:	1 6 5 4 2 3 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 2 3 1 6 5 4 ;	Heuristic: 1.0
+		Fringe node: 2;	state: 5 2 3 1 4 6 ;	Heuristic: 1.0
+		Fringe node: 3;	state: 4 5 2 3 6 1 ;	Heuristic: 2.0
+		Fringe node: 4;	state: 6 4 5 2 1 3 ;	Heuristic: 3.0
+		Fringe node: 5;	state: 1 6 4 5 3 2 ;	Heuristic: 2.0
+		Fringe node: 6;	state: 3 1 6 4 2 5 ;	Heuristic: 1.0
+		**************** End Fringe List **************
+		Expanded State:	1 6 5 4 2 3 	Heuristic: 1.0
+		Rotate	
+		Board State:	4 5 6 1 2 3 
+
+		FinalState:		4 5 6 1 2 3 	Cost: 2
+
+		Number of nodes expanded: 45
+		Number of nodes in fringe: 62
+		Path cost: 2
+	
+8 Tiles	
+	Board 1 2 3 4 5 6 7 8
+		Uniform Cost search:
+
+		Path found!
+		FinalState:		1 2 3 4 5 6 7 8 	Cost: 0
+
+		Number of nodes expanded: 1
+		Number of nodes in fringe: 0
+		Path cost: 0
+
+
+		A* with provided heuristic:
+
+		Path found!
+		FinalState:		1 2 3 4 5 6 7 8 	Cost: 0
+
+		Number of nodes expanded: 1
+		Number of nodes in fringe: 0
+		Path cost: 0
+
+
+		A* with Custom heuristic:
+
+		Path found!
+		FinalState:		1 2 3 4 5 6 7 8 	Cost: 0
+
+		Number of nodes expanded: 1
+		Number of nodes in fringe: 0
+		Path cost: 0
+		
+		Uniform Cost search:
+
+		Path found!
+		FinalState:		1 2 3 4 5 6 7 8 	Cost: 0
+
+		Number of nodes expanded: 1
+		Number of nodes in fringe: 0
+		Path cost: 0
+
+
+		A* with provided heuristic:
+
+		Path found!
+		FinalState:		1 2 3 4 5 6 7 8 	Cost: 0
+
+		Number of nodes expanded: 1
+		Number of nodes in fringe: 0
+		Path cost: 0
+
+
+		A* with Custom heuristic:
+
+		Path found!
+		FinalState:		1 2 3 4 5 6 7 8 	Cost: 0
+
+		Number of nodes expanded: 1
+		Number of nodes in fringe: 0
+		Path cost: 0
+		
+	Board 5 4 8 7 1 2 3 6
+		Uniform Cost search:
+
+		Path found!
+		Initial State:	5 4 8 7 1 2 3 6 	Cost: 0
+
+		Rotate	
+		Board State:	7 8 4 5 1 2 3 6 	Cost: 1
+		Move forward 3 Spaces
+		Board State:	5 1 2 3 6 7 8 4 	Cost: 2
+		Rotate	
+		Board State:	3 2 1 5 6 7 8 4 	Cost: 2
+		Move forward 7 Spaces
+		Board State:	4 3 2 1 5 6 7 8 	Cost: 3
+		Rotate	
+		Board State:	1 2 3 4 5 6 7 8 	Cost: 3
+		FinalState:		1 2 3 4 5 6 7 8 	Cost: 3
+
+		Number of nodes expanded: 52
+		Number of nodes in fringe: 100
+		Path cost: 3
+
+
+		A* with provided heuristic:
+
+		Path found!
+		Initial State:	5 4 8 7 1 2 3 6 	Cost: 0
+
+		Move forward 4 Spaces
+		Board State:	1 2 3 6 5 4 8 7 	Cost: 1
+		Rotate	
+		Board State:	6 3 2 1 5 4 8 7 	Cost: 1
+		Move forward 1 Spaces
+		Board State:	3 2 1 5 4 8 7 6 	Cost: 2
+		Rotate	
+		Board State:	5 1 2 3 4 8 7 6 	Cost: 2
+		Move forward 5 Spaces
+		Board State:	8 7 6 5 1 2 3 4 	Cost: 3
+		Rotate	
+		Board State:	5 6 7 8 1 2 3 4 	Cost: 3
+		FinalState:		5 6 7 8 1 2 3 4 	Cost: 3
+
+		Number of nodes expanded: 174
+		Number of nodes in fringe: 516
+		Path cost: 3
+
+
+		A* with Custom heuristic:
+
+		Disconnected from the target VM, address: '127.0.0.1:58694', transport: 'socket'
+		Path found!
+		Initial State:	5 4 8 7 1 2 3 6 	Cost: 0
+
+		Move forward 4 Spaces
+		Board State:	1 2 3 6 5 4 8 7 	Cost: 1
+		Rotate	
+		Board State:	6 3 2 1 5 4 8 7 	Cost: 1
+		Move forward 1 Spaces
+		Board State:	3 2 1 5 4 8 7 6 	Cost: 2
+		Rotate	
+		Board State:	5 1 2 3 4 8 7 6 	Cost: 2
+		Move forward 5 Spaces
+		Board State:	8 7 6 5 1 2 3 4 	Cost: 3
+		Rotate	
+		Board State:	5 6 7 8 1 2 3 4 	Cost: 3
+		FinalState:		5 6 7 8 1 2 3 4 	Cost: 3
+
+		Number of nodes expanded: 300
+		Number of nodes in fringe: 966
+		Path cost: 3
+		
+		Uniform Cost search:
+
+		Path found!
+		Initial State:	5 4 8 7 1 2 3 6 	Cost: 0
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 5 4 8 7 1 2 3 6 ;	Heuristic: 0.0
+		**************** End Fringe List **************
+		Expanded State:	5 4 8 7 1 2 3 6 	Heuristic: 0.0
+		Rotate	
+		Board State:	7 8 4 5 1 2 3 6 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 7 8 4 5 1 2 3 6 ;	Heuristic: 0.0
+		Fringe node: 2;	state: 1 7 8 4 2 3 6 5 ;	Heuristic: 0.0
+		Fringe node: 3;	state: 2 1 7 8 3 6 5 4 ;	Heuristic: 0.0
+		Fringe node: 4;	state: 3 2 1 7 6 5 4 8 ;	Heuristic: 0.0
+		Fringe node: 5;	state: 6 3 2 1 5 4 8 7 ;	Heuristic: 0.0
+		Fringe node: 6;	state: 5 6 3 2 4 8 7 1 ;	Heuristic: 0.0
+		Fringe node: 7;	state: 4 5 6 3 8 7 1 2 ;	Heuristic: 0.0
+		Fringe node: 8;	state: 8 4 5 6 7 1 2 3 ;	Heuristic: 0.0
+		**************** End Fringe List **************
+		Expanded State:	7 8 4 5 1 2 3 6 	Heuristic: 0.0
+		Move forward 3 Spaces
+		Board State:	5 1 2 3 6 7 8 4 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 7 8 4 5 1 2 3 6 ;	Heuristic: 0.0
+		Fringe node: 2;	state: 1 7 8 4 2 3 6 5 ;	Heuristic: 0.0
+		Fringe node: 3;	state: 2 1 7 8 3 6 5 4 ;	Heuristic: 0.0
+		Fringe node: 4;	state: 3 2 1 7 6 5 4 8 ;	Heuristic: 0.0
+		Fringe node: 5;	state: 6 3 2 1 5 4 8 7 ;	Heuristic: 0.0
+		Fringe node: 6;	state: 5 6 3 2 4 8 7 1 ;	Heuristic: 0.0
+		Fringe node: 7;	state: 4 5 6 3 8 7 1 2 ;	Heuristic: 0.0
+		Fringe node: 8;	state: 8 4 5 6 7 1 2 3 ;	Heuristic: 0.0
+		**************** End Fringe List **************
+		Expanded State:	5 1 2 3 6 7 8 4 	Heuristic: 0.0
+		Rotate	
+		Board State:	3 2 1 5 6 7 8 4 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 3 2 1 5 6 7 8 4 ;	Heuristic: 0.0
+		Fringe node: 2;	state: 6 3 2 1 7 8 4 5 ;	Heuristic: 0.0
+		Fringe node: 3;	state: 7 6 3 2 8 4 5 1 ;	Heuristic: 0.0
+		Fringe node: 4;	state: 8 7 6 3 4 5 1 2 ;	Heuristic: 0.0
+		Fringe node: 5;	state: 4 8 7 6 5 1 2 3 ;	Heuristic: 0.0
+		Fringe node: 6;	state: 2 4 8 7 3 6 5 1 ;	Heuristic: 0.0
+		Fringe node: 7;	state: 3 2 4 8 6 5 1 7 ;	Heuristic: 0.0
+		Fringe node: 8;	state: 6 3 2 4 5 1 7 8 ;	Heuristic: 0.0
+		Fringe node: 9;	state: 1 5 6 3 7 8 4 2 ;	Heuristic: 0.0
+		Fringe node: 10;	state: 7 1 5 6 8 4 2 3 ;	Heuristic: 0.0
+		Fringe node: 11;	state: 8 7 1 5 4 2 3 6 ;	Heuristic: 0.0
+		Fringe node: 12;	state: 3 8 7 1 6 5 4 2 ;	Heuristic: 0.0
+		Fringe node: 13;	state: 6 3 8 7 5 4 2 1 ;	Heuristic: 0.0
+		Fringe node: 14;	state: 5 6 3 8 4 2 1 7 ;	Heuristic: 0.0
+		Fringe node: 15;	state: 2 4 5 6 1 7 8 3 ;	Heuristic: 0.0
+		Fringe node: 16;	state: 1 2 4 5 7 8 3 6 ;	Heuristic: 0.0
+		Fringe node: 17;	state: 7 1 2 4 8 3 6 5 ;	Heuristic: 0.0
+		Fringe node: 18;	state: 6 7 1 2 5 4 8 3 ;	Heuristic: 0.0
+		Fringe node: 19;	state: 5 6 7 1 4 8 3 2 ;	Heuristic: 0.0
+		Fringe node: 20;	state: 4 5 6 7 8 3 2 1 ;	Heuristic: 0.0
+		Fringe node: 21;	state: 3 8 4 5 2 1 7 6 ;	Heuristic: 0.0
+		Fringe node: 22;	state: 2 3 8 4 1 7 6 5 ;	Heuristic: 0.0
+		Fringe node: 23;	state: 1 2 3 8 7 6 5 4 ;	Heuristic: 0.0
+		Fringe node: 24;	state: 2 8 4 5 3 6 7 1 ;	Heuristic: 0.0
+		Fringe node: 25;	state: 3 2 8 4 6 7 1 5 ;	Heuristic: 0.0
+		Fringe node: 26;	state: 6 3 2 8 7 1 5 4 ;	Heuristic: 0.0
+		Fringe node: 27;	state: 1 7 6 3 5 4 8 2 ;	Heuristic: 0.0
+		Fringe node: 28;	state: 5 1 7 6 4 8 2 3 ;	Heuristic: 0.0
+		Fringe node: 29;	state: 4 5 1 7 8 2 3 6 ;	Heuristic: 0.0
+		Fringe node: 30;	state: 3 4 5 1 6 7 8 2 ;	Heuristic: 0.0
+		Fringe node: 31;	state: 6 3 4 5 7 8 2 1 ;	Heuristic: 0.0
+		Fringe node: 32;	state: 7 6 3 4 8 2 1 5 ;	Heuristic: 0.0
+		Fringe node: 33;	state: 2 8 7 6 1 5 4 3 ;	Heuristic: 0.0
+		Fringe node: 34;	state: 1 2 8 7 5 4 3 6 ;	Heuristic: 0.0
+		Fringe node: 35;	state: 5 1 2 8 4 3 6 7 ;	Heuristic: 0.0
+		**************** End Fringe List **************
+		Expanded State:	3 2 1 5 6 7 8 4 	Heuristic: 0.0
+		Move forward 7 Spaces
+		Board State:	4 3 2 1 5 6 7 8 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 3 2 1 5 6 7 8 4 ;	Heuristic: 0.0
+		Fringe node: 2;	state: 6 3 2 1 7 8 4 5 ;	Heuristic: 0.0
+		Fringe node: 3;	state: 7 6 3 2 8 4 5 1 ;	Heuristic: 0.0
+		Fringe node: 4;	state: 8 7 6 3 4 5 1 2 ;	Heuristic: 0.0
+		Fringe node: 5;	state: 4 8 7 6 5 1 2 3 ;	Heuristic: 0.0
+		Fringe node: 6;	state: 2 4 8 7 3 6 5 1 ;	Heuristic: 0.0
+		Fringe node: 7;	state: 3 2 4 8 6 5 1 7 ;	Heuristic: 0.0
+		Fringe node: 8;	state: 6 3 2 4 5 1 7 8 ;	Heuristic: 0.0
+		Fringe node: 9;	state: 1 5 6 3 7 8 4 2 ;	Heuristic: 0.0
+		Fringe node: 10;	state: 7 1 5 6 8 4 2 3 ;	Heuristic: 0.0
+		Fringe node: 11;	state: 8 7 1 5 4 2 3 6 ;	Heuristic: 0.0
+		Fringe node: 12;	state: 3 8 7 1 6 5 4 2 ;	Heuristic: 0.0
+		Fringe node: 13;	state: 6 3 8 7 5 4 2 1 ;	Heuristic: 0.0
+		Fringe node: 14;	state: 5 6 3 8 4 2 1 7 ;	Heuristic: 0.0
+		Fringe node: 15;	state: 2 4 5 6 1 7 8 3 ;	Heuristic: 0.0
+		Fringe node: 16;	state: 1 2 4 5 7 8 3 6 ;	Heuristic: 0.0
+		Fringe node: 17;	state: 7 1 2 4 8 3 6 5 ;	Heuristic: 0.0
+		Fringe node: 18;	state: 6 7 1 2 5 4 8 3 ;	Heuristic: 0.0
+		Fringe node: 19;	state: 5 6 7 1 4 8 3 2 ;	Heuristic: 0.0
+		Fringe node: 20;	state: 4 5 6 7 8 3 2 1 ;	Heuristic: 0.0
+		Fringe node: 21;	state: 3 8 4 5 2 1 7 6 ;	Heuristic: 0.0
+		Fringe node: 22;	state: 2 3 8 4 1 7 6 5 ;	Heuristic: 0.0
+		Fringe node: 23;	state: 1 2 3 8 7 6 5 4 ;	Heuristic: 0.0
+		Fringe node: 24;	state: 2 8 4 5 3 6 7 1 ;	Heuristic: 0.0
+		Fringe node: 25;	state: 3 2 8 4 6 7 1 5 ;	Heuristic: 0.0
+		Fringe node: 26;	state: 6 3 2 8 7 1 5 4 ;	Heuristic: 0.0
+		Fringe node: 27;	state: 1 7 6 3 5 4 8 2 ;	Heuristic: 0.0
+		Fringe node: 28;	state: 5 1 7 6 4 8 2 3 ;	Heuristic: 0.0
+		Fringe node: 29;	state: 4 5 1 7 8 2 3 6 ;	Heuristic: 0.0
+		Fringe node: 30;	state: 3 4 5 1 6 7 8 2 ;	Heuristic: 0.0
+		Fringe node: 31;	state: 6 3 4 5 7 8 2 1 ;	Heuristic: 0.0
+		Fringe node: 32;	state: 7 6 3 4 8 2 1 5 ;	Heuristic: 0.0
+		Fringe node: 33;	state: 2 8 7 6 1 5 4 3 ;	Heuristic: 0.0
+		Fringe node: 34;	state: 1 2 8 7 5 4 3 6 ;	Heuristic: 0.0
+		Fringe node: 35;	state: 5 1 2 8 4 3 6 7 ;	Heuristic: 0.0
+		**************** End Fringe List **************
+		Expanded State:	4 3 2 1 5 6 7 8 	Heuristic: 0.0
+		Rotate	
+		Board State:	1 2 3 4 5 6 7 8 
+
+		FinalState:		1 2 3 4 5 6 7 8 	Cost: 3
+
+		Number of nodes expanded: 52
+		Number of nodes in fringe: 100
+		Path cost: 3
+
+
+		A* with provided heuristic:
+
+		Path found!
+		Initial State:	5 4 8 7 1 2 3 6 	Cost: 0
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 5 4 8 7 1 2 3 6 ;	Heuristic: 8.0
+		**************** End Fringe List **************
+		Expanded State:	5 4 8 7 1 2 3 6 	Heuristic: 8.0
+		Move forward 4 Spaces
+		Board State:	1 2 3 6 5 4 8 7 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 5 4 8 7 1 2 3 6 ;	Heuristic: 8.0
+		**************** End Fringe List **************
+		Expanded State:	1 2 3 6 5 4 8 7 	Heuristic: 8.0
+		Rotate	
+		Board State:	6 3 2 1 5 4 8 7 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 7 8 4 5 1 2 3 6 ;	Heuristic: 8.0
+		Fringe node: 2;	state: 6 3 2 1 5 4 8 7 ;	Heuristic: 7.0
+		Fringe node: 3;	state: 4 5 6 3 8 7 1 2 ;	Heuristic: 8.0
+		Fringe node: 4;	state: 8 4 5 6 7 1 2 3 ;	Heuristic: 8.0
+		Fringe node: 5;	state: 2 4 8 7 3 6 5 1 ;	Heuristic: 7.0
+		Fringe node: 6;	state: 3 2 4 8 6 5 1 7 ;	Heuristic: 7.0
+		Fringe node: 7;	state: 5 6 3 2 1 7 8 4 ;	Heuristic: 7.0
+		Fringe node: 8;	state: 1 5 6 3 7 8 4 2 ;	Heuristic: 7.0
+		Fringe node: 9;	state: 7 1 5 6 8 4 2 3 ;	Heuristic: 8.0
+		Fringe node: 10;	state: 8 7 1 5 4 2 3 6 ;	Heuristic: 8.0
+		Fringe node: 11;	state: 5 4 2 3 1 7 8 6 ;	Heuristic: 8.0
+		Fringe node: 12;	state: 1 5 4 2 7 8 6 3 ;	Heuristic: 7.0
+		Fringe node: 13;	state: 7 1 5 4 8 6 3 2 ;	Heuristic: 6.0
+		Fringe node: 14;	state: 6 8 7 1 3 2 4 5 ;	Heuristic: 8.0
+		Fringe node: 15;	state: 3 6 8 7 2 4 5 1 ;	Heuristic: 8.0
+		Fringe node: 16;	state: 2 3 6 8 4 5 1 7 ;	Heuristic: 8.0
+		Fringe node: 17;	state: 6 7 1 2 5 4 8 3 ;	Heuristic: 7.0
+		Fringe node: 18;	state: 5 6 7 1 4 8 3 2 ;	Heuristic: 8.0
+		Fringe node: 19;	state: 4 5 6 7 8 3 2 1 ;	Heuristic: 8.0
+		Fringe node: 20;	state: 3 8 4 5 2 1 7 6 ;	Heuristic: 7.0
+		Fringe node: 21;	state: 2 3 8 4 1 7 6 5 ;	Heuristic: 7.0
+		Fringe node: 22;	state: 7 8 3 2 6 5 4 1 ;	Heuristic: 7.0
+		Fringe node: 23;	state: 6 7 8 3 5 4 1 2 ;	Heuristic: 7.0
+		Fringe node: 24;	state: 5 6 7 8 4 1 2 3 ;	Heuristic: 8.0
+		Fringe node: 25;	state: 1 4 5 6 2 3 8 7 ;	Heuristic: 7.0
+		Fringe node: 26;	state: 2 1 4 5 3 8 7 6 ;	Heuristic: 7.0
+		Fringe node: 27;	state: 3 2 1 4 8 7 6 5 ;	Heuristic: 6.0
+		Fringe node: 28;	state: 3 8 7 1 6 5 4 2 ;	Heuristic: 8.0
+		Fringe node: 29;	state: 6 3 8 7 5 4 2 1 ;	Heuristic: 7.0
+		Fringe node: 30;	state: 5 6 3 8 4 2 1 7 ;	Heuristic: 7.0
+		Fringe node: 31;	state: 2 4 5 6 1 7 8 3 ;	Heuristic: 8.0
+		Fringe node: 32;	state: 1 2 4 5 7 8 3 6 ;	Heuristic: 6.0
+		Fringe node: 33;	state: 7 1 2 4 8 3 6 5 ;	Heuristic: 7.0
+		**************** End Fringe List **************
+		Expanded State:	6 3 2 1 5 4 8 7 	Heuristic: 7.0
+		Move forward 1 Spaces
+		Board State:	3 2 1 5 4 8 7 6 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 7 8 4 5 1 2 3 6 ;	Heuristic: 8.0
+		Fringe node: 2;	state: 6 3 2 1 5 4 8 7 ;	Heuristic: 7.0
+		Fringe node: 3;	state: 4 5 6 3 8 7 1 2 ;	Heuristic: 8.0
+		Fringe node: 4;	state: 8 4 5 6 7 1 2 3 ;	Heuristic: 8.0
+		Fringe node: 5;	state: 2 4 8 7 3 6 5 1 ;	Heuristic: 7.0
+		Fringe node: 6;	state: 3 2 4 8 6 5 1 7 ;	Heuristic: 7.0
+		Fringe node: 7;	state: 5 6 3 2 1 7 8 4 ;	Heuristic: 7.0
+		Fringe node: 8;	state: 1 5 6 3 7 8 4 2 ;	Heuristic: 7.0
+		Fringe node: 9;	state: 7 1 5 6 8 4 2 3 ;	Heuristic: 8.0
+		Fringe node: 10;	state: 8 7 1 5 4 2 3 6 ;	Heuristic: 8.0
+		Fringe node: 11;	state: 5 4 2 3 1 7 8 6 ;	Heuristic: 8.0
+		Fringe node: 12;	state: 1 5 4 2 7 8 6 3 ;	Heuristic: 7.0
+		Fringe node: 13;	state: 7 1 5 4 8 6 3 2 ;	Heuristic: 6.0
+		Fringe node: 14;	state: 6 8 7 1 3 2 4 5 ;	Heuristic: 8.0
+		Fringe node: 15;	state: 3 6 8 7 2 4 5 1 ;	Heuristic: 8.0
+		Fringe node: 16;	state: 2 3 6 8 4 5 1 7 ;	Heuristic: 8.0
+		Fringe node: 17;	state: 6 7 1 2 5 4 8 3 ;	Heuristic: 7.0
+		Fringe node: 18;	state: 5 6 7 1 4 8 3 2 ;	Heuristic: 8.0
+		Fringe node: 19;	state: 4 5 6 7 8 3 2 1 ;	Heuristic: 8.0
+		Fringe node: 20;	state: 3 8 4 5 2 1 7 6 ;	Heuristic: 7.0
+		Fringe node: 21;	state: 2 3 8 4 1 7 6 5 ;	Heuristic: 7.0
+		Fringe node: 22;	state: 7 8 3 2 6 5 4 1 ;	Heuristic: 7.0
+		Fringe node: 23;	state: 6 7 8 3 5 4 1 2 ;	Heuristic: 7.0
+		Fringe node: 24;	state: 5 6 7 8 4 1 2 3 ;	Heuristic: 8.0
+		Fringe node: 25;	state: 1 4 5 6 2 3 8 7 ;	Heuristic: 7.0
+		Fringe node: 26;	state: 2 1 4 5 3 8 7 6 ;	Heuristic: 7.0
+		Fringe node: 27;	state: 3 2 1 4 8 7 6 5 ;	Heuristic: 6.0
+		Fringe node: 28;	state: 3 8 7 1 6 5 4 2 ;	Heuristic: 8.0
+		Fringe node: 29;	state: 6 3 8 7 5 4 2 1 ;	Heuristic: 7.0
+		Fringe node: 30;	state: 5 6 3 8 4 2 1 7 ;	Heuristic: 7.0
+		Fringe node: 31;	state: 2 4 5 6 1 7 8 3 ;	Heuristic: 8.0
+		Fringe node: 32;	state: 1 2 4 5 7 8 3 6 ;	Heuristic: 6.0
+		Fringe node: 33;	state: 7 1 2 4 8 3 6 5 ;	Heuristic: 7.0
+		**************** End Fringe List **************
+		Expanded State:	3 2 1 5 4 8 7 6 	Heuristic: 7.0
+		Rotate	
+		Board State:	5 1 2 3 4 8 7 6 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 7 1 5 6 8 4 2 3 ;	Heuristic: 8.0
+		Fringe node: 2;	state: 8 7 1 5 4 2 3 6 ;	Heuristic: 8.0
+		Fringe node: 3;	state: 5 4 2 3 1 7 8 6 ;	Heuristic: 8.0
+		Fringe node: 4;	state: 1 5 4 2 7 8 6 3 ;	Heuristic: 7.0
+		Fringe node: 5;	state: 6 8 7 1 3 2 4 5 ;	Heuristic: 8.0
+		Fringe node: 6;	state: 3 6 8 7 2 4 5 1 ;	Heuristic: 8.0
+		Fringe node: 7;	state: 2 3 6 8 4 5 1 7 ;	Heuristic: 8.0
+		Fringe node: 8;	state: 5 6 7 1 4 8 3 2 ;	Heuristic: 8.0
+		Fringe node: 9;	state: 4 5 6 7 8 3 2 1 ;	Heuristic: 8.0
+		Fringe node: 10;	state: 7 8 3 2 6 5 4 1 ;	Heuristic: 7.0
+		Fringe node: 11;	state: 6 7 8 3 5 4 1 2 ;	Heuristic: 7.0
+		Fringe node: 12;	state: 5 6 7 8 4 1 2 3 ;	Heuristic: 8.0
+		Fringe node: 13;	state: 1 4 5 6 2 3 8 7 ;	Heuristic: 7.0
+		Fringe node: 14;	state: 2 1 4 5 3 8 7 6 ;	Heuristic: 7.0
+		Fringe node: 15;	state: 3 8 7 1 6 5 4 2 ;	Heuristic: 8.0
+		Fringe node: 16;	state: 2 4 5 6 1 7 8 3 ;	Heuristic: 8.0
+		Fringe node: 17;	state: 5 1 2 3 4 8 7 6 ;	Heuristic: 7.0
+		Fringe node: 18;	state: 4 5 1 2 8 7 6 3 ;	Heuristic: 8.0
+		Fringe node: 19;	state: 8 4 5 1 7 6 3 2 ;	Heuristic: 7.0
+		Fringe node: 20;	state: 6 7 8 4 3 2 1 5 ;	Heuristic: 7.0
+		Fringe node: 21;	state: 3 6 7 8 2 1 5 4 ;	Heuristic: 8.0
+		Fringe node: 22;	state: 2 3 6 7 1 5 4 8 ;	Heuristic: 7.0
+		Fringe node: 23;	state: 7 5 4 2 8 3 6 1 ;	Heuristic: 8.0
+		Fringe node: 24;	state: 8 7 5 4 3 6 1 2 ;	Heuristic: 6.0
+		Fringe node: 25;	state: 3 8 7 5 6 1 2 4 ;	Heuristic: 8.0
+		Fringe node: 26;	state: 1 6 3 8 2 4 5 7 ;	Heuristic: 6.0
+		Fringe node: 27;	state: 2 1 6 3 4 5 7 8 ;	Heuristic: 6.0
+		Fringe node: 28;	state: 4 2 1 6 5 7 8 3 ;	Heuristic: 6.0
+		Fringe node: 29;	state: 3 7 8 4 6 5 1 2 ;	Heuristic: 7.0
+		Fringe node: 30;	state: 6 3 7 8 5 1 2 4 ;	Heuristic: 7.0
+		Fringe node: 31;	state: 5 6 3 7 1 2 4 8 ;	Heuristic: 6.0
+		Fringe node: 32;	state: 2 1 5 6 4 8 7 3 ;	Heuristic: 7.0
+		Fringe node: 33;	state: 4 2 1 5 8 7 3 6 ;	Heuristic: 7.0
+		Fringe node: 34;	state: 8 4 2 1 7 3 6 5 ;	Heuristic: 8.0
+		Fringe node: 35;	state: 6 8 4 2 5 1 7 3 ;	Heuristic: 6.0
+		Fringe node: 36;	state: 5 6 8 4 1 7 3 2 ;	Heuristic: 7.0
+		Fringe node: 37;	state: 1 5 6 8 7 3 2 4 ;	Heuristic: 7.0
+		Fringe node: 38;	state: 3 7 1 5 2 4 8 6 ;	Heuristic: 8.0
+		Fringe node: 39;	state: 2 3 7 1 4 8 6 5 ;	Heuristic: 8.0
+		Fringe node: 40;	state: 8 7 3 2 6 5 1 4 ;	Heuristic: 7.0
+		Fringe node: 41;	state: 6 8 7 3 5 1 4 2 ;	Heuristic: 7.0
+		Fringe node: 42;	state: 5 6 8 7 1 4 2 3 ;	Heuristic: 8.0
+		Fringe node: 43;	state: 4 1 5 6 2 3 7 8 ;	Heuristic: 6.0
+		Fringe node: 44;	state: 2 4 1 5 3 7 8 6 ;	Heuristic: 8.0
+		Fringe node: 45;	state: 3 2 4 1 7 8 6 5 ;	Heuristic: 7.0
+		Fringe node: 46;	state: 8 4 5 1 6 3 2 7 ;	Heuristic: 8.0
+		Fringe node: 47;	state: 6 8 4 5 3 2 7 1 ;	Heuristic: 7.0
+		Fringe node: 48;	state: 3 6 8 4 2 7 1 5 ;	Heuristic: 7.0
+		Fringe node: 49;	state: 7 2 3 6 1 5 4 8 ;	Heuristic: 5.0
+		Fringe node: 50;	state: 1 7 2 3 5 4 8 6 ;	Heuristic: 6.0
+		Fringe node: 51;	state: 5 1 7 2 4 8 6 3 ;	Heuristic: 8.0
+		Fringe node: 52;	state: 5 2 1 7 4 8 3 6 ;	Heuristic: 7.0
+		Fringe node: 53;	state: 4 5 2 1 8 3 6 7 ;	Heuristic: 8.0
+		Fringe node: 54;	state: 8 4 5 2 3 6 7 1 ;	Heuristic: 6.0
+		Fringe node: 55;	state: 6 3 8 4 7 1 2 5 ;	Heuristic: 7.0
+		Fringe node: 56;	state: 7 6 3 8 1 2 5 4 ;	Heuristic: 7.0
+		Fringe node: 57;	state: 1 7 6 3 2 5 4 8 ;	Heuristic: 6.0
+		Fringe node: 58;	state: 1 4 8 3 7 6 5 2 ;	Heuristic: 6.0
+		Fringe node: 59;	state: 2 5 6 7 3 8 4 1 ;	Heuristic: 8.0
+		Fringe node: 60;	state: 8 3 2 5 4 1 7 6 ;	Heuristic: 7.0
+		Fringe node: 61;	state: 5 4 1 7 2 3 8 6 ;	Heuristic: 8.0
+		Fringe node: 62;	state: 2 5 4 1 3 8 6 7 ;	Heuristic: 8.0
+		Fringe node: 63;	state: 6 8 3 2 7 1 4 5 ;	Heuristic: 7.0
+		Fringe node: 64;	state: 7 6 8 3 1 4 5 2 ;	Heuristic: 8.0
+		Fringe node: 65;	state: 1 7 6 8 4 5 2 3 ;	Heuristic: 7.0
+		Fringe node: 66;	state: 8 4 5 2 6 7 1 3 ;	Heuristic: 8.0
+		Fringe node: 67;	state: 6 8 4 5 7 1 3 2 ;	Heuristic: 8.0
+		Fringe node: 68;	state: 7 6 8 4 1 3 2 5 ;	Heuristic: 7.0
+		Fringe node: 69;	state: 3 1 7 6 2 5 4 8 ;	Heuristic: 7.0
+		Fringe node: 70;	state: 2 3 1 7 5 4 8 6 ;	Heuristic: 7.0
+		Fringe node: 71;	state: 5 2 3 1 4 8 6 7 ;	Heuristic: 6.0
+		Fringe node: 72;	state: 8 4 1 2 7 6 5 3 ;	Heuristic: 7.0
+		Fringe node: 73;	state: 7 8 4 1 6 5 3 2 ;	Heuristic: 8.0
+		Fringe node: 74;	state: 6 7 8 4 5 3 2 1 ;	Heuristic: 6.0
+		Fringe node: 75;	state: 3 5 6 7 2 1 4 8 ;	Heuristic: 7.0
+		Fringe node: 76;	state: 2 3 5 6 1 4 8 7 ;	Heuristic: 8.0
+		Fringe node: 77;	state: 4 5 3 2 8 7 6 1 ;	Heuristic: 7.0
+		Fringe node: 78;	state: 8 4 5 3 7 6 1 2 ;	Heuristic: 7.0
+		Fringe node: 79;	state: 7 8 4 5 6 1 2 3 ;	Heuristic: 8.0
+		Fringe node: 80;	state: 1 6 7 8 2 3 5 4 ;	Heuristic: 7.0
+		Fringe node: 81;	state: 2 1 6 7 3 5 4 8 ;	Heuristic: 7.0
+		Fringe node: 82;	state: 3 2 1 6 5 4 8 7 ;	Heuristic: 6.0
+		Fringe node: 83;	state: 4 8 3 6 2 1 7 5 ;	Heuristic: 6.0
+		Fringe node: 84;	state: 2 4 8 3 1 7 5 6 ;	Heuristic: 8.0
+		Fringe node: 85;	state: 1 2 4 8 7 5 6 3 ;	Heuristic: 6.0
+		Fringe node: 86;	state: 5 7 1 2 6 3 8 4 ;	Heuristic: 8.0
+		Fringe node: 87;	state: 6 5 7 1 3 8 4 2 ;	Heuristic: 8.0
+		Fringe node: 88;	state: 3 6 5 7 8 4 2 1 ;	Heuristic: 8.0
+		**************** End Fringe List **************
+		Expanded State:	5 1 2 3 4 8 7 6 	Heuristic: 7.0
+		Move forward 5 Spaces
+		Board State:	8 7 6 5 1 2 3 4 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 7 1 5 6 8 4 2 3 ;	Heuristic: 8.0
+		Fringe node: 2;	state: 8 7 1 5 4 2 3 6 ;	Heuristic: 8.0
+		Fringe node: 3;	state: 5 4 2 3 1 7 8 6 ;	Heuristic: 8.0
+		Fringe node: 4;	state: 1 5 4 2 7 8 6 3 ;	Heuristic: 7.0
+		Fringe node: 5;	state: 6 8 7 1 3 2 4 5 ;	Heuristic: 8.0
+		Fringe node: 6;	state: 3 6 8 7 2 4 5 1 ;	Heuristic: 8.0
+		Fringe node: 7;	state: 2 3 6 8 4 5 1 7 ;	Heuristic: 8.0
+		Fringe node: 8;	state: 5 6 7 1 4 8 3 2 ;	Heuristic: 8.0
+		Fringe node: 9;	state: 4 5 6 7 8 3 2 1 ;	Heuristic: 8.0
+		Fringe node: 10;	state: 7 8 3 2 6 5 4 1 ;	Heuristic: 7.0
+		Fringe node: 11;	state: 6 7 8 3 5 4 1 2 ;	Heuristic: 7.0
+		Fringe node: 12;	state: 5 6 7 8 4 1 2 3 ;	Heuristic: 8.0
+		Fringe node: 13;	state: 1 4 5 6 2 3 8 7 ;	Heuristic: 7.0
+		Fringe node: 14;	state: 2 1 4 5 3 8 7 6 ;	Heuristic: 7.0
+		Fringe node: 15;	state: 3 8 7 1 6 5 4 2 ;	Heuristic: 8.0
+		Fringe node: 16;	state: 2 4 5 6 1 7 8 3 ;	Heuristic: 8.0
+		Fringe node: 17;	state: 5 1 2 3 4 8 7 6 ;	Heuristic: 7.0
+		Fringe node: 18;	state: 4 5 1 2 8 7 6 3 ;	Heuristic: 8.0
+		Fringe node: 19;	state: 8 4 5 1 7 6 3 2 ;	Heuristic: 7.0
+		Fringe node: 20;	state: 6 7 8 4 3 2 1 5 ;	Heuristic: 7.0
+		Fringe node: 21;	state: 3 6 7 8 2 1 5 4 ;	Heuristic: 8.0
+		Fringe node: 22;	state: 2 3 6 7 1 5 4 8 ;	Heuristic: 7.0
+		Fringe node: 23;	state: 7 5 4 2 8 3 6 1 ;	Heuristic: 8.0
+		Fringe node: 24;	state: 8 7 5 4 3 6 1 2 ;	Heuristic: 6.0
+		Fringe node: 25;	state: 3 8 7 5 6 1 2 4 ;	Heuristic: 8.0
+		Fringe node: 26;	state: 1 6 3 8 2 4 5 7 ;	Heuristic: 6.0
+		Fringe node: 27;	state: 2 1 6 3 4 5 7 8 ;	Heuristic: 6.0
+		Fringe node: 28;	state: 4 2 1 6 5 7 8 3 ;	Heuristic: 6.0
+		Fringe node: 29;	state: 3 7 8 4 6 5 1 2 ;	Heuristic: 7.0
+		Fringe node: 30;	state: 6 3 7 8 5 1 2 4 ;	Heuristic: 7.0
+		Fringe node: 31;	state: 5 6 3 7 1 2 4 8 ;	Heuristic: 6.0
+		Fringe node: 32;	state: 2 1 5 6 4 8 7 3 ;	Heuristic: 7.0
+		Fringe node: 33;	state: 4 2 1 5 8 7 3 6 ;	Heuristic: 7.0
+		Fringe node: 34;	state: 8 4 2 1 7 3 6 5 ;	Heuristic: 8.0
+		Fringe node: 35;	state: 6 8 4 2 5 1 7 3 ;	Heuristic: 6.0
+		Fringe node: 36;	state: 5 6 8 4 1 7 3 2 ;	Heuristic: 7.0
+		Fringe node: 37;	state: 1 5 6 8 7 3 2 4 ;	Heuristic: 7.0
+		Fringe node: 38;	state: 3 7 1 5 2 4 8 6 ;	Heuristic: 8.0
+		Fringe node: 39;	state: 2 3 7 1 4 8 6 5 ;	Heuristic: 8.0
+		Fringe node: 40;	state: 8 7 3 2 6 5 1 4 ;	Heuristic: 7.0
+		Fringe node: 41;	state: 6 8 7 3 5 1 4 2 ;	Heuristic: 7.0
+		Fringe node: 42;	state: 5 6 8 7 1 4 2 3 ;	Heuristic: 8.0
+		Fringe node: 43;	state: 4 1 5 6 2 3 7 8 ;	Heuristic: 6.0
+		Fringe node: 44;	state: 2 4 1 5 3 7 8 6 ;	Heuristic: 8.0
+		Fringe node: 45;	state: 3 2 4 1 7 8 6 5 ;	Heuristic: 7.0
+		Fringe node: 46;	state: 8 4 5 1 6 3 2 7 ;	Heuristic: 8.0
+		Fringe node: 47;	state: 6 8 4 5 3 2 7 1 ;	Heuristic: 7.0
+		Fringe node: 48;	state: 3 6 8 4 2 7 1 5 ;	Heuristic: 7.0
+		Fringe node: 49;	state: 7 2 3 6 1 5 4 8 ;	Heuristic: 5.0
+		Fringe node: 50;	state: 1 7 2 3 5 4 8 6 ;	Heuristic: 6.0
+		Fringe node: 51;	state: 5 1 7 2 4 8 6 3 ;	Heuristic: 8.0
+		Fringe node: 52;	state: 5 2 1 7 4 8 3 6 ;	Heuristic: 7.0
+		Fringe node: 53;	state: 4 5 2 1 8 3 6 7 ;	Heuristic: 8.0
+		Fringe node: 54;	state: 8 4 5 2 3 6 7 1 ;	Heuristic: 6.0
+		Fringe node: 55;	state: 6 3 8 4 7 1 2 5 ;	Heuristic: 7.0
+		Fringe node: 56;	state: 7 6 3 8 1 2 5 4 ;	Heuristic: 7.0
+		Fringe node: 57;	state: 1 7 6 3 2 5 4 8 ;	Heuristic: 6.0
+		Fringe node: 58;	state: 1 4 8 3 7 6 5 2 ;	Heuristic: 6.0
+		Fringe node: 59;	state: 2 5 6 7 3 8 4 1 ;	Heuristic: 8.0
+		Fringe node: 60;	state: 8 3 2 5 4 1 7 6 ;	Heuristic: 7.0
+		Fringe node: 61;	state: 5 4 1 7 2 3 8 6 ;	Heuristic: 8.0
+		Fringe node: 62;	state: 2 5 4 1 3 8 6 7 ;	Heuristic: 8.0
+		Fringe node: 63;	state: 6 8 3 2 7 1 4 5 ;	Heuristic: 7.0
+		Fringe node: 64;	state: 7 6 8 3 1 4 5 2 ;	Heuristic: 8.0
+		Fringe node: 65;	state: 1 7 6 8 4 5 2 3 ;	Heuristic: 7.0
+		Fringe node: 66;	state: 8 4 5 2 6 7 1 3 ;	Heuristic: 8.0
+		Fringe node: 67;	state: 6 8 4 5 7 1 3 2 ;	Heuristic: 8.0
+		Fringe node: 68;	state: 7 6 8 4 1 3 2 5 ;	Heuristic: 7.0
+		Fringe node: 69;	state: 3 1 7 6 2 5 4 8 ;	Heuristic: 7.0
+		Fringe node: 70;	state: 2 3 1 7 5 4 8 6 ;	Heuristic: 7.0
+		Fringe node: 71;	state: 5 2 3 1 4 8 6 7 ;	Heuristic: 6.0
+		Fringe node: 72;	state: 8 4 1 2 7 6 5 3 ;	Heuristic: 7.0
+		Fringe node: 73;	state: 7 8 4 1 6 5 3 2 ;	Heuristic: 8.0
+		Fringe node: 74;	state: 6 7 8 4 5 3 2 1 ;	Heuristic: 6.0
+		Fringe node: 75;	state: 3 5 6 7 2 1 4 8 ;	Heuristic: 7.0
+		Fringe node: 76;	state: 2 3 5 6 1 4 8 7 ;	Heuristic: 8.0
+		Fringe node: 77;	state: 4 5 3 2 8 7 6 1 ;	Heuristic: 7.0
+		Fringe node: 78;	state: 8 4 5 3 7 6 1 2 ;	Heuristic: 7.0
+		Fringe node: 79;	state: 7 8 4 5 6 1 2 3 ;	Heuristic: 8.0
+		Fringe node: 80;	state: 1 6 7 8 2 3 5 4 ;	Heuristic: 7.0
+		Fringe node: 81;	state: 2 1 6 7 3 5 4 8 ;	Heuristic: 7.0
+		Fringe node: 82;	state: 3 2 1 6 5 4 8 7 ;	Heuristic: 6.0
+		Fringe node: 83;	state: 4 8 3 6 2 1 7 5 ;	Heuristic: 6.0
+		Fringe node: 84;	state: 2 4 8 3 1 7 5 6 ;	Heuristic: 8.0
+		Fringe node: 85;	state: 1 2 4 8 7 5 6 3 ;	Heuristic: 6.0
+		Fringe node: 86;	state: 5 7 1 2 6 3 8 4 ;	Heuristic: 8.0
+		Fringe node: 87;	state: 6 5 7 1 3 8 4 2 ;	Heuristic: 8.0
+		Fringe node: 88;	state: 3 6 5 7 8 4 2 1 ;	Heuristic: 8.0
+		**************** End Fringe List **************
+		Expanded State:	8 7 6 5 1 2 3 4 	Heuristic: 7.0
+		Rotate	
+		Board State:	5 6 7 8 1 2 3 4 
+
+		FinalState:		5 6 7 8 1 2 3 4 	Cost: 3
+
+		Number of nodes expanded: 174
+		Number of nodes in fringe: 516
+		Path cost: 3
+
+
+		A* with Custom heuristic:
+
+		Path found!
+		Initial State:	5 4 8 7 1 2 3 6 	Cost: 0
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 5 4 8 7 1 2 3 6 ;	Heuristic: 3.0
+		**************** End Fringe List **************
+		Expanded State:	5 4 8 7 1 2 3 6 	Heuristic: 3.0
+		Move forward 4 Spaces
+		Board State:	1 2 3 6 5 4 8 7 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 5 4 8 7 1 2 3 6 ;	Heuristic: 3.0
+		**************** End Fringe List **************
+		Expanded State:	1 2 3 6 5 4 8 7 	Heuristic: 3.0
+		Rotate	
+		Board State:	6 3 2 1 5 4 8 7 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 7 8 4 5 1 2 3 6 ;	Heuristic: 3.0
+		Fringe node: 2;	state: 1 7 8 4 2 3 6 5 ;	Heuristic: 2.0
+		Fringe node: 3;	state: 2 1 7 8 3 6 5 4 ;	Heuristic: 2.0
+		Fringe node: 4;	state: 6 3 2 1 5 4 8 7 ;	Heuristic: 1.0
+		Fringe node: 5;	state: 5 6 3 2 4 8 7 1 ;	Heuristic: 2.0
+		Fringe node: 6;	state: 4 5 6 3 8 7 1 2 ;	Heuristic: 3.0
+		Fringe node: 7;	state: 8 4 5 6 7 1 2 3 ;	Heuristic: 3.0
+		Fringe node: 8;	state: 6 7 1 2 5 4 8 3 ;	Heuristic: 2.0
+		Fringe node: 9;	state: 5 6 7 1 4 8 3 2 ;	Heuristic: 3.0
+		Fringe node: 10;	state: 4 5 6 7 8 3 2 1 ;	Heuristic: 3.0
+		Fringe node: 11;	state: 8 4 5 6 3 2 1 7 ;	Heuristic: 3.0
+		Fringe node: 12;	state: 3 8 4 5 2 1 7 6 ;	Heuristic: 2.0
+		Fringe node: 13;	state: 2 3 8 4 1 7 6 5 ;	Heuristic: 2.0
+		Fringe node: 14;	state: 1 2 3 8 7 6 5 4 ;	Heuristic: 1.0
+		**************** End Fringe List **************
+		Expanded State:	6 3 2 1 5 4 8 7 	Heuristic: 1.0
+		Move forward 1 Spaces
+		Board State:	3 2 1 5 4 8 7 6 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 7 8 4 5 1 2 3 6 ;	Heuristic: 3.0
+		Fringe node: 2;	state: 1 7 8 4 2 3 6 5 ;	Heuristic: 2.0
+		Fringe node: 3;	state: 2 1 7 8 3 6 5 4 ;	Heuristic: 2.0
+		Fringe node: 4;	state: 6 3 2 1 5 4 8 7 ;	Heuristic: 1.0
+		Fringe node: 5;	state: 5 6 3 2 4 8 7 1 ;	Heuristic: 2.0
+		Fringe node: 6;	state: 4 5 6 3 8 7 1 2 ;	Heuristic: 3.0
+		Fringe node: 7;	state: 8 4 5 6 7 1 2 3 ;	Heuristic: 3.0
+		Fringe node: 8;	state: 6 7 1 2 5 4 8 3 ;	Heuristic: 2.0
+		Fringe node: 9;	state: 5 6 7 1 4 8 3 2 ;	Heuristic: 3.0
+		Fringe node: 10;	state: 4 5 6 7 8 3 2 1 ;	Heuristic: 3.0
+		Fringe node: 11;	state: 8 4 5 6 3 2 1 7 ;	Heuristic: 3.0
+		Fringe node: 12;	state: 3 8 4 5 2 1 7 6 ;	Heuristic: 2.0
+		Fringe node: 13;	state: 2 3 8 4 1 7 6 5 ;	Heuristic: 2.0
+		Fringe node: 14;	state: 1 2 3 8 7 6 5 4 ;	Heuristic: 1.0
+		**************** End Fringe List **************
+		Expanded State:	3 2 1 5 4 8 7 6 	Heuristic: 1.0
+		Rotate	
+		Board State:	5 1 2 3 4 8 7 6 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 7 8 4 5 1 2 3 6 ;	Heuristic: 3.0
+		Fringe node: 2;	state: 4 5 6 3 8 7 1 2 ;	Heuristic: 3.0
+		Fringe node: 3;	state: 8 4 5 6 7 1 2 3 ;	Heuristic: 3.0
+		Fringe node: 4;	state: 6 7 1 2 5 4 8 3 ;	Heuristic: 2.0
+		Fringe node: 5;	state: 5 6 7 1 4 8 3 2 ;	Heuristic: 3.0
+		Fringe node: 6;	state: 4 5 6 7 8 3 2 1 ;	Heuristic: 3.0
+		Fringe node: 7;	state: 8 4 5 6 3 2 1 7 ;	Heuristic: 3.0
+		Fringe node: 8;	state: 3 8 4 5 2 1 7 6 ;	Heuristic: 2.0
+		Fringe node: 9;	state: 2 3 8 4 1 7 6 5 ;	Heuristic: 2.0
+		Fringe node: 10;	state: 5 1 2 3 4 8 7 6 ;	Heuristic: 1.0
+		Fringe node: 11;	state: 4 5 1 2 8 7 6 3 ;	Heuristic: 2.0
+		Fringe node: 12;	state: 8 4 5 1 7 6 3 2 ;	Heuristic: 3.0
+		Fringe node: 13;	state: 6 7 8 4 3 2 1 5 ;	Heuristic: 3.0
+		Fringe node: 14;	state: 3 6 7 8 2 1 5 4 ;	Heuristic: 3.0
+		Fringe node: 15;	state: 2 3 6 7 1 5 4 8 ;	Heuristic: 2.0
+		Fringe node: 16;	state: 2 4 8 7 3 6 5 1 ;	Heuristic: 2.0
+		Fringe node: 17;	state: 3 2 4 8 6 5 1 7 ;	Heuristic: 2.0
+		Fringe node: 18;	state: 6 3 2 4 5 1 7 8 ;	Heuristic: 1.0
+		Fringe node: 19;	state: 1 5 6 3 7 8 4 2 ;	Heuristic: 2.0
+		Fringe node: 20;	state: 7 1 5 6 8 4 2 3 ;	Heuristic: 3.0
+		Fringe node: 21;	state: 8 7 1 5 4 2 3 6 ;	Heuristic: 3.0
+		Fringe node: 22;	state: 3 8 7 1 6 5 4 2 ;	Heuristic: 3.0
+		Fringe node: 23;	state: 6 3 8 7 5 4 2 1 ;	Heuristic: 3.0
+		Fringe node: 24;	state: 5 6 3 8 4 2 1 7 ;	Heuristic: 3.0
+		Fringe node: 25;	state: 2 4 5 6 1 7 8 3 ;	Heuristic: 2.0
+		Fringe node: 26;	state: 1 2 4 5 7 8 3 6 ;	Heuristic: 1.0
+		Fringe node: 27;	state: 7 1 2 4 8 3 6 5 ;	Heuristic: 2.0
+		Fringe node: 28;	state: 7 8 3 2 6 5 4 1 ;	Heuristic: 3.0
+		Fringe node: 29;	state: 6 7 8 3 5 4 1 2 ;	Heuristic: 3.0
+		Fringe node: 30;	state: 5 6 7 8 4 1 2 3 ;	Heuristic: 4.0
+		Fringe node: 31;	state: 1 4 5 6 2 3 8 7 ;	Heuristic: 1.0
+		Fringe node: 32;	state: 2 1 4 5 3 8 7 6 ;	Heuristic: 1.0
+		Fringe node: 33;	state: 3 2 1 4 8 7 6 5 ;	Heuristic: 1.0
+		**************** End Fringe List **************
+		Expanded State:	5 1 2 3 4 8 7 6 	Heuristic: 1.0
+		Move forward 5 Spaces
+		Board State:	8 7 6 5 1 2 3 4 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 7 8 4 5 1 2 3 6 ;	Heuristic: 3.0
+		Fringe node: 2;	state: 4 5 6 3 8 7 1 2 ;	Heuristic: 3.0
+		Fringe node: 3;	state: 8 4 5 6 7 1 2 3 ;	Heuristic: 3.0
+		Fringe node: 4;	state: 6 7 1 2 5 4 8 3 ;	Heuristic: 2.0
+		Fringe node: 5;	state: 5 6 7 1 4 8 3 2 ;	Heuristic: 3.0
+		Fringe node: 6;	state: 4 5 6 7 8 3 2 1 ;	Heuristic: 3.0
+		Fringe node: 7;	state: 8 4 5 6 3 2 1 7 ;	Heuristic: 3.0
+		Fringe node: 8;	state: 3 8 4 5 2 1 7 6 ;	Heuristic: 2.0
+		Fringe node: 9;	state: 2 3 8 4 1 7 6 5 ;	Heuristic: 2.0
+		Fringe node: 10;	state: 5 1 2 3 4 8 7 6 ;	Heuristic: 1.0
+		Fringe node: 11;	state: 4 5 1 2 8 7 6 3 ;	Heuristic: 2.0
+		Fringe node: 12;	state: 8 4 5 1 7 6 3 2 ;	Heuristic: 3.0
+		Fringe node: 13;	state: 6 7 8 4 3 2 1 5 ;	Heuristic: 3.0
+		Fringe node: 14;	state: 3 6 7 8 2 1 5 4 ;	Heuristic: 3.0
+		Fringe node: 15;	state: 2 3 6 7 1 5 4 8 ;	Heuristic: 2.0
+		Fringe node: 16;	state: 2 4 8 7 3 6 5 1 ;	Heuristic: 2.0
+		Fringe node: 17;	state: 3 2 4 8 6 5 1 7 ;	Heuristic: 2.0
+		Fringe node: 18;	state: 6 3 2 4 5 1 7 8 ;	Heuristic: 1.0
+		Fringe node: 19;	state: 1 5 6 3 7 8 4 2 ;	Heuristic: 2.0
+		Fringe node: 20;	state: 7 1 5 6 8 4 2 3 ;	Heuristic: 3.0
+		Fringe node: 21;	state: 8 7 1 5 4 2 3 6 ;	Heuristic: 3.0
+		Fringe node: 22;	state: 3 8 7 1 6 5 4 2 ;	Heuristic: 3.0
+		Fringe node: 23;	state: 6 3 8 7 5 4 2 1 ;	Heuristic: 3.0
+		Fringe node: 24;	state: 5 6 3 8 4 2 1 7 ;	Heuristic: 3.0
+		Fringe node: 25;	state: 2 4 5 6 1 7 8 3 ;	Heuristic: 2.0
+		Fringe node: 26;	state: 1 2 4 5 7 8 3 6 ;	Heuristic: 1.0
+		Fringe node: 27;	state: 7 1 2 4 8 3 6 5 ;	Heuristic: 2.0
+		Fringe node: 28;	state: 7 8 3 2 6 5 4 1 ;	Heuristic: 3.0
+		Fringe node: 29;	state: 6 7 8 3 5 4 1 2 ;	Heuristic: 3.0
+		Fringe node: 30;	state: 5 6 7 8 4 1 2 3 ;	Heuristic: 4.0
+		Fringe node: 31;	state: 1 4 5 6 2 3 8 7 ;	Heuristic: 1.0
+		Fringe node: 32;	state: 2 1 4 5 3 8 7 6 ;	Heuristic: 1.0
+		Fringe node: 33;	state: 3 2 1 4 8 7 6 5 ;	Heuristic: 1.0
+		**************** End Fringe List **************
+		Expanded State:	8 7 6 5 1 2 3 4 	Heuristic: 1.0
+		Rotate	
+		Board State:	5 6 7 8 1 2 3 4 
+
+		FinalState:		5 6 7 8 1 2 3 4 	Cost: 3
+
+		Number of nodes expanded: 300
+		Number of nodes in fringe: 966
+		Path cost: 3
+		
+	Board 2 1 7 8 3 6 5 4
+		Uniform Cost search:
+
+		Path found!
+		Initial State:	2 1 7 8 3 6 5 4 	Cost: 0
+
+		Rotate	
+		Board State:	8 7 1 2 3 6 5 4 	Cost: 1
+		Move forward 2 Spaces
+		Board State:	1 2 3 6 5 4 8 7 	Cost: 2
+		Rotate	
+		Board State:	6 3 2 1 5 4 8 7 	Cost: 2
+		Move forward 1 Spaces
+		Board State:	3 2 1 5 4 8 7 6 	Cost: 3
+		Rotate	
+		Board State:	5 1 2 3 4 8 7 6 	Cost: 3
+		Move forward 5 Spaces
+		Board State:	8 7 6 5 1 2 3 4 	Cost: 4
+		Rotate	
+		Board State:	5 6 7 8 1 2 3 4 	Cost: 4
+		FinalState:		5 6 7 8 1 2 3 4 	Cost: 4
+
+		Number of nodes expanded: 124
+		Number of nodes in fringe: 238
+		Path cost: 4
+
+
+		A* with provided heuristic:
+
+		Path found!
+		Initial State:	2 1 7 8 3 6 5 4 	Cost: 0
+
+		Move forward 4 Spaces
+		Board State:	3 6 5 4 2 1 7 8 	Cost: 1
+		Rotate	
+		Board State:	4 5 6 3 2 1 7 8 	Cost: 1
+		Move forward 2 Spaces
+		Board State:	6 3 2 1 7 8 4 5 	Cost: 2
+		Rotate	
+		Board State:	1 2 3 6 7 8 4 5 	Cost: 2
+		Move forward 3 Spaces
+		Board State:	6 7 8 4 5 1 2 3 	Cost: 3
+		Rotate	
+		Board State:	4 8 7 6 5 1 2 3 	Cost: 3
+		Move forward 1 Spaces
+		Board State:	8 7 6 5 1 2 3 4 	Cost: 4
+		Rotate	
+		Board State:	5 6 7 8 1 2 3 4 	Cost: 4
+		FinalState:		5 6 7 8 1 2 3 4 	Cost: 4
+
+		Number of nodes expanded: 441
+		Number of nodes in fringe: 1191
+		Path cost: 4
+
+
+		A* with Custom heuristic:
+
+		Path found!
+		Initial State:	2 1 7 8 3 6 5 4 	Cost: 0
+
+		Move forward 4 Spaces
+		Board State:	3 6 5 4 2 1 7 8 	Cost: 1
+		Rotate	
+		Board State:	4 5 6 3 2 1 7 8 	Cost: 1
+		Move forward 2 Spaces
+		Board State:	6 3 2 1 7 8 4 5 	Cost: 2
+		Rotate	
+		Board State:	1 2 3 6 7 8 4 5 	Cost: 2
+		Move forward 7 Spaces
+		Board State:	5 1 2 3 6 7 8 4 	Cost: 3
+		Rotate	
+		Board State:	3 2 1 5 6 7 8 4 	Cost: 3
+		Move forward 7 Spaces
+		Board State:	4 3 2 1 5 6 7 8 	Cost: 4
+		Rotate	
+		Board State:	1 2 3 4 5 6 7 8 	Cost: 4
+		FinalState:		1 2 3 4 5 6 7 8 	Cost: 4
+
+		Number of nodes expanded: 32
+		Number of nodes in fringe: 118
+		Path cost: 4
+		
+		
+		Uniform Cost search:
+
+		Path found!
+		Initial State:	2 1 7 8 3 6 5 4 	Cost: 0
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 2 1 7 8 3 6 5 4 ;	Heuristic: 0.0
+		**************** End Fringe List **************
+		Expanded State:	2 1 7 8 3 6 5 4 	Heuristic: 0.0
+		Rotate	
+		Board State:	8 7 1 2 3 6 5 4 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 8 7 1 2 3 6 5 4 ;	Heuristic: 0.0
+		Fringe node: 2;	state: 3 8 7 1 6 5 4 2 ;	Heuristic: 0.0
+		Fringe node: 3;	state: 6 3 8 7 5 4 2 1 ;	Heuristic: 0.0
+		Fringe node: 4;	state: 5 6 3 8 4 2 1 7 ;	Heuristic: 0.0
+		Fringe node: 5;	state: 4 5 6 3 2 1 7 8 ;	Heuristic: 0.0
+		Fringe node: 6;	state: 2 4 5 6 1 7 8 3 ;	Heuristic: 0.0
+		Fringe node: 7;	state: 1 2 4 5 7 8 3 6 ;	Heuristic: 0.0
+		Fringe node: 8;	state: 7 1 2 4 8 3 6 5 ;	Heuristic: 0.0
+		**************** End Fringe List **************
+		Expanded State:	8 7 1 2 3 6 5 4 	Heuristic: 0.0
+		Move forward 2 Spaces
+		Board State:	1 2 3 6 5 4 8 7 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 8 7 1 2 3 6 5 4 ;	Heuristic: 0.0
+		Fringe node: 2;	state: 3 8 7 1 6 5 4 2 ;	Heuristic: 0.0
+		Fringe node: 3;	state: 6 3 8 7 5 4 2 1 ;	Heuristic: 0.0
+		Fringe node: 4;	state: 5 6 3 8 4 2 1 7 ;	Heuristic: 0.0
+		Fringe node: 5;	state: 4 5 6 3 2 1 7 8 ;	Heuristic: 0.0
+		Fringe node: 6;	state: 2 4 5 6 1 7 8 3 ;	Heuristic: 0.0
+		Fringe node: 7;	state: 1 2 4 5 7 8 3 6 ;	Heuristic: 0.0
+		Fringe node: 8;	state: 7 1 2 4 8 3 6 5 ;	Heuristic: 0.0
+		**************** End Fringe List **************
+		Expanded State:	1 2 3 6 5 4 8 7 	Heuristic: 0.0
+		Rotate	
+		Board State:	6 3 2 1 5 4 8 7 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 6 3 2 1 5 4 8 7 ;	Heuristic: 0.0
+		Fringe node: 2;	state: 5 6 3 2 4 8 7 1 ;	Heuristic: 0.0
+		Fringe node: 3;	state: 4 5 6 3 8 7 1 2 ;	Heuristic: 0.0
+		Fringe node: 4;	state: 8 4 5 6 7 1 2 3 ;	Heuristic: 0.0
+		Fringe node: 5;	state: 7 8 4 5 1 2 3 6 ;	Heuristic: 0.0
+		Fringe node: 6;	state: 1 7 8 4 2 3 6 5 ;	Heuristic: 0.0
+		Fringe node: 7;	state: 6 1 7 8 5 4 2 3 ;	Heuristic: 0.0
+		Fringe node: 8;	state: 5 6 1 7 4 2 3 8 ;	Heuristic: 0.0
+		Fringe node: 9;	state: 4 5 6 1 2 3 8 7 ;	Heuristic: 0.0
+		Fringe node: 10;	state: 3 2 4 5 8 7 1 6 ;	Heuristic: 0.0
+		Fringe node: 11;	state: 8 3 2 4 7 1 6 5 ;	Heuristic: 0.0
+		Fringe node: 12;	state: 7 8 3 2 1 6 5 4 ;	Heuristic: 0.0
+		Fringe node: 13;	state: 5 7 8 3 4 2 1 6 ;	Heuristic: 0.0
+		Fringe node: 14;	state: 4 5 7 8 2 1 6 3 ;	Heuristic: 0.0
+		Fringe node: 15;	state: 2 4 5 7 1 6 3 8 ;	Heuristic: 0.0
+		Fringe node: 16;	state: 6 1 2 4 3 8 7 5 ;	Heuristic: 0.0
+		Fringe node: 17;	state: 3 6 1 2 8 7 5 4 ;	Heuristic: 0.0
+		Fringe node: 18;	state: 8 3 6 1 7 5 4 2 ;	Heuristic: 0.0
+		Fringe node: 19;	state: 4 8 3 6 2 1 7 5 ;	Heuristic: 0.0
+		Fringe node: 20;	state: 2 4 8 3 1 7 5 6 ;	Heuristic: 0.0
+		Fringe node: 21;	state: 1 2 4 8 7 5 6 3 ;	Heuristic: 0.0
+		Fringe node: 22;	state: 5 7 1 2 6 3 8 4 ;	Heuristic: 0.0
+		Fringe node: 23;	state: 6 5 7 1 3 8 4 2 ;	Heuristic: 0.0
+		Fringe node: 24;	state: 3 6 5 7 8 4 2 1 ;	Heuristic: 0.0
+		Fringe node: 25;	state: 6 7 1 2 5 4 8 3 ;	Heuristic: 0.0
+		Fringe node: 26;	state: 5 6 7 1 4 8 3 2 ;	Heuristic: 0.0
+		Fringe node: 27;	state: 4 5 6 7 8 3 2 1 ;	Heuristic: 0.0
+		Fringe node: 28;	state: 3 8 4 5 2 1 7 6 ;	Heuristic: 0.0
+		Fringe node: 29;	state: 2 3 8 4 1 7 6 5 ;	Heuristic: 0.0
+		Fringe node: 30;	state: 1 2 3 8 7 6 5 4 ;	Heuristic: 0.0
+		**************** End Fringe List **************
+		Expanded State:	6 3 2 1 5 4 8 7 	Heuristic: 0.0
+		Move forward 1 Spaces
+		Board State:	3 2 1 5 4 8 7 6 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 6 3 2 1 5 4 8 7 ;	Heuristic: 0.0
+		Fringe node: 2;	state: 5 6 3 2 4 8 7 1 ;	Heuristic: 0.0
+		Fringe node: 3;	state: 4 5 6 3 8 7 1 2 ;	Heuristic: 0.0
+		Fringe node: 4;	state: 8 4 5 6 7 1 2 3 ;	Heuristic: 0.0
+		Fringe node: 5;	state: 7 8 4 5 1 2 3 6 ;	Heuristic: 0.0
+		Fringe node: 6;	state: 1 7 8 4 2 3 6 5 ;	Heuristic: 0.0
+		Fringe node: 7;	state: 6 1 7 8 5 4 2 3 ;	Heuristic: 0.0
+		Fringe node: 8;	state: 5 6 1 7 4 2 3 8 ;	Heuristic: 0.0
+		Fringe node: 9;	state: 4 5 6 1 2 3 8 7 ;	Heuristic: 0.0
+		Fringe node: 10;	state: 3 2 4 5 8 7 1 6 ;	Heuristic: 0.0
+		Fringe node: 11;	state: 8 3 2 4 7 1 6 5 ;	Heuristic: 0.0
+		Fringe node: 12;	state: 7 8 3 2 1 6 5 4 ;	Heuristic: 0.0
+		Fringe node: 13;	state: 5 7 8 3 4 2 1 6 ;	Heuristic: 0.0
+		Fringe node: 14;	state: 4 5 7 8 2 1 6 3 ;	Heuristic: 0.0
+		Fringe node: 15;	state: 2 4 5 7 1 6 3 8 ;	Heuristic: 0.0
+		Fringe node: 16;	state: 6 1 2 4 3 8 7 5 ;	Heuristic: 0.0
+		Fringe node: 17;	state: 3 6 1 2 8 7 5 4 ;	Heuristic: 0.0
+		Fringe node: 18;	state: 8 3 6 1 7 5 4 2 ;	Heuristic: 0.0
+		Fringe node: 19;	state: 4 8 3 6 2 1 7 5 ;	Heuristic: 0.0
+		Fringe node: 20;	state: 2 4 8 3 1 7 5 6 ;	Heuristic: 0.0
+		Fringe node: 21;	state: 1 2 4 8 7 5 6 3 ;	Heuristic: 0.0
+		Fringe node: 22;	state: 5 7 1 2 6 3 8 4 ;	Heuristic: 0.0
+		Fringe node: 23;	state: 6 5 7 1 3 8 4 2 ;	Heuristic: 0.0
+		Fringe node: 24;	state: 3 6 5 7 8 4 2 1 ;	Heuristic: 0.0
+		Fringe node: 25;	state: 6 7 1 2 5 4 8 3 ;	Heuristic: 0.0
+		Fringe node: 26;	state: 5 6 7 1 4 8 3 2 ;	Heuristic: 0.0
+		Fringe node: 27;	state: 4 5 6 7 8 3 2 1 ;	Heuristic: 0.0
+		Fringe node: 28;	state: 3 8 4 5 2 1 7 6 ;	Heuristic: 0.0
+		Fringe node: 29;	state: 2 3 8 4 1 7 6 5 ;	Heuristic: 0.0
+		Fringe node: 30;	state: 1 2 3 8 7 6 5 4 ;	Heuristic: 0.0
+		**************** End Fringe List **************
+		Expanded State:	3 2 1 5 4 8 7 6 	Heuristic: 0.0
+		Rotate	
+		Board State:	5 1 2 3 4 8 7 6 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 5 1 2 3 4 8 7 6 ;	Heuristic: 0.0
+		Fringe node: 2;	state: 4 5 1 2 8 7 6 3 ;	Heuristic: 0.0
+		Fringe node: 3;	state: 8 4 5 1 7 6 3 2 ;	Heuristic: 0.0
+		Fringe node: 4;	state: 6 7 8 4 3 2 1 5 ;	Heuristic: 0.0
+		Fringe node: 5;	state: 3 6 7 8 2 1 5 4 ;	Heuristic: 0.0
+		Fringe node: 6;	state: 2 3 6 7 1 5 4 8 ;	Heuristic: 0.0
+		Fringe node: 7;	state: 4 2 3 6 8 7 1 5 ;	Heuristic: 0.0
+		Fringe node: 8;	state: 8 4 2 3 7 1 5 6 ;	Heuristic: 0.0
+		Fringe node: 9;	state: 7 8 4 2 1 5 6 3 ;	Heuristic: 0.0
+		Fringe node: 10;	state: 5 1 7 8 6 3 2 4 ;	Heuristic: 0.0
+		Fringe node: 11;	state: 6 5 1 7 3 2 4 8 ;	Heuristic: 0.0
+		Fringe node: 12;	state: 3 6 5 1 2 4 8 7 ;	Heuristic: 0.0
+		Fringe node: 13;	state: 5 8 7 1 4 2 3 6 ;	Heuristic: 0.0
+		Fringe node: 14;	state: 4 5 8 7 2 3 6 1 ;	Heuristic: 0.0
+		Fringe node: 15;	state: 2 4 5 8 3 6 1 7 ;	Heuristic: 0.0
+		Fringe node: 16;	state: 6 3 2 4 1 7 8 5 ;	Heuristic: 0.0
+		Fringe node: 17;	state: 1 6 3 2 7 8 5 4 ;	Heuristic: 0.0
+		Fringe node: 18;	state: 7 1 6 3 8 5 4 2 ;	Heuristic: 0.0
+		Fringe node: 19;	state: 4 7 1 6 2 3 8 5 ;	Heuristic: 0.0
+		Fringe node: 20;	state: 2 4 7 1 3 8 5 6 ;	Heuristic: 0.0
+		Fringe node: 21;	state: 3 2 4 7 8 5 6 1 ;	Heuristic: 0.0
+		Fringe node: 22;	state: 5 8 3 2 6 1 7 4 ;	Heuristic: 0.0
+		Fringe node: 23;	state: 6 5 8 3 1 7 4 2 ;	Heuristic: 0.0
+		Fringe node: 24;	state: 1 6 5 8 7 4 2 3 ;	Heuristic: 0.0
+		Fringe node: 25;	state: 2 1 6 5 3 8 7 4 ;	Heuristic: 0.0
+		Fringe node: 26;	state: 3 2 1 6 8 7 4 5 ;	Heuristic: 0.0
+		Fringe node: 27;	state: 8 3 2 1 7 4 5 6 ;	Heuristic: 0.0
+		Fringe node: 28;	state: 4 7 8 3 5 6 1 2 ;	Heuristic: 0.0
+		Fringe node: 29;	state: 5 4 7 8 6 1 2 3 ;	Heuristic: 0.0
+		Fringe node: 30;	state: 6 5 4 7 1 2 3 8 ;	Heuristic: 0.0
+		Fringe node: 31;	state: 4 3 8 7 2 1 6 5 ;	Heuristic: 0.0
+		Fringe node: 32;	state: 2 4 3 8 1 6 5 7 ;	Heuristic: 0.0
+		Fringe node: 33;	state: 1 2 4 3 6 5 7 8 ;	Heuristic: 0.0
+		Fringe node: 34;	state: 5 6 1 2 7 8 3 4 ;	Heuristic: 0.0
+		Fringe node: 35;	state: 7 5 6 1 8 3 4 2 ;	Heuristic: 0.0
+		Fringe node: 36;	state: 8 7 5 6 3 4 2 1 ;	Heuristic: 0.0
+		Fringe node: 37;	state: 2 8 7 5 1 6 3 4 ;	Heuristic: 0.0
+		Fringe node: 38;	state: 6 1 2 8 3 4 5 7 ;	Heuristic: 0.0
+		Fringe node: 39;	state: 4 3 6 1 5 7 8 2 ;	Heuristic: 0.0
+		Fringe node: 40;	state: 7 5 4 3 8 2 1 6 ;	Heuristic: 0.0
+		Fringe node: 41;	state: 1 7 5 4 6 3 8 2 ;	Heuristic: 0.0
+		Fringe node: 42;	state: 6 1 7 5 3 8 2 4 ;	Heuristic: 0.0
+		Fringe node: 43;	state: 3 6 1 7 8 2 4 5 ;	Heuristic: 0.0
+		Fringe node: 44;	state: 2 8 3 6 4 5 7 1 ;	Heuristic: 0.0
+		Fringe node: 45;	state: 4 2 8 3 5 7 1 6 ;	Heuristic: 0.0
+		Fringe node: 46;	state: 5 4 2 8 7 1 6 3 ;	Heuristic: 0.0
+		Fringe node: 47;	state: 2 6 3 8 1 7 5 4 ;	Heuristic: 0.0
+		Fringe node: 48;	state: 1 2 6 3 7 5 4 8 ;	Heuristic: 0.0
+		Fringe node: 49;	state: 7 1 2 6 5 4 8 3 ;	Heuristic: 0.0
+		Fringe node: 50;	state: 4 5 7 1 8 3 6 2 ;	Heuristic: 0.0
+		Fringe node: 51;	state: 8 4 5 7 3 6 2 1 ;	Heuristic: 0.0
+		Fringe node: 52;	state: 3 8 4 5 6 2 1 7 ;	Heuristic: 0.0
+		Fringe node: 53;	state: 1 3 8 4 7 5 6 2 ;	Heuristic: 0.0
+		Fringe node: 54;	state: 5 7 1 3 6 2 4 8 ;	Heuristic: 0.0
+		Fringe node: 55;	state: 2 6 5 7 4 8 3 1 ;	Heuristic: 0.0
+		Fringe node: 56;	state: 8 4 2 6 3 1 7 5 ;	Heuristic: 0.0
+		Fringe node: 57;	state: 7 8 4 2 5 6 3 1 ;	Heuristic: 0.0
+		Fringe node: 58;	state: 5 7 8 4 6 3 1 2 ;	Heuristic: 0.0
+		Fringe node: 59;	state: 6 5 7 8 3 1 2 4 ;	Heuristic: 0.0
+		Fringe node: 60;	state: 1 3 6 5 2 4 8 7 ;	Heuristic: 0.0
+		Fringe node: 61;	state: 2 1 3 6 4 8 7 5 ;	Heuristic: 0.0
+		Fringe node: 62;	state: 4 2 1 3 8 7 5 6 ;	Heuristic: 0.0
+		Fringe node: 63;	state: 5 2 1 7 4 8 3 6 ;	Heuristic: 0.0
+		Fringe node: 64;	state: 4 5 2 1 8 3 6 7 ;	Heuristic: 0.0
+		Fringe node: 65;	state: 8 4 5 2 3 6 7 1 ;	Heuristic: 0.0
+		Fringe node: 66;	state: 6 3 8 4 7 1 2 5 ;	Heuristic: 0.0
+		Fringe node: 67;	state: 7 6 3 8 1 2 5 4 ;	Heuristic: 0.0
+		Fringe node: 68;	state: 1 7 6 3 2 5 4 8 ;	Heuristic: 0.0
+		Fringe node: 69;	state: 4 1 7 6 8 3 2 5 ;	Heuristic: 0.0
+		Fringe node: 70;	state: 8 4 1 7 3 2 5 6 ;	Heuristic: 0.0
+		Fringe node: 71;	state: 3 8 4 1 2 5 6 7 ;	Heuristic: 0.0
+		Fringe node: 72;	state: 5 2 3 8 6 7 1 4 ;	Heuristic: 0.0
+		Fringe node: 73;	state: 6 5 2 3 7 1 4 8 ;	Heuristic: 0.0
+		Fringe node: 74;	state: 7 6 5 2 1 4 8 3 ;	Heuristic: 0.0
+		Fringe node: 75;	state: 8 7 6 5 3 2 1 4 ;	Heuristic: 0.0
+		Fringe node: 76;	state: 3 8 7 6 2 1 4 5 ;	Heuristic: 0.0
+		Fringe node: 77;	state: 2 3 8 7 1 4 5 6 ;	Heuristic: 0.0
+		Fringe node: 78;	state: 4 1 2 3 5 6 7 8 ;	Heuristic: 0.0
+		Fringe node: 79;	state: 5 4 1 2 6 7 8 3 ;	Heuristic: 0.0
+		Fringe node: 80;	state: 6 5 4 1 7 8 3 2 ;	Heuristic: 0.0
+		**************** End Fringe List **************
+		Expanded State:	5 1 2 3 4 8 7 6 	Heuristic: 0.0
+		Move forward 5 Spaces
+		Board State:	8 7 6 5 1 2 3 4 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 5 1 2 3 4 8 7 6 ;	Heuristic: 0.0
+		Fringe node: 2;	state: 4 5 1 2 8 7 6 3 ;	Heuristic: 0.0
+		Fringe node: 3;	state: 8 4 5 1 7 6 3 2 ;	Heuristic: 0.0
+		Fringe node: 4;	state: 6 7 8 4 3 2 1 5 ;	Heuristic: 0.0
+		Fringe node: 5;	state: 3 6 7 8 2 1 5 4 ;	Heuristic: 0.0
+		Fringe node: 6;	state: 2 3 6 7 1 5 4 8 ;	Heuristic: 0.0
+		Fringe node: 7;	state: 4 2 3 6 8 7 1 5 ;	Heuristic: 0.0
+		Fringe node: 8;	state: 8 4 2 3 7 1 5 6 ;	Heuristic: 0.0
+		Fringe node: 9;	state: 7 8 4 2 1 5 6 3 ;	Heuristic: 0.0
+		Fringe node: 10;	state: 5 1 7 8 6 3 2 4 ;	Heuristic: 0.0
+		Fringe node: 11;	state: 6 5 1 7 3 2 4 8 ;	Heuristic: 0.0
+		Fringe node: 12;	state: 3 6 5 1 2 4 8 7 ;	Heuristic: 0.0
+		Fringe node: 13;	state: 5 8 7 1 4 2 3 6 ;	Heuristic: 0.0
+		Fringe node: 14;	state: 4 5 8 7 2 3 6 1 ;	Heuristic: 0.0
+		Fringe node: 15;	state: 2 4 5 8 3 6 1 7 ;	Heuristic: 0.0
+		Fringe node: 16;	state: 6 3 2 4 1 7 8 5 ;	Heuristic: 0.0
+		Fringe node: 17;	state: 1 6 3 2 7 8 5 4 ;	Heuristic: 0.0
+		Fringe node: 18;	state: 7 1 6 3 8 5 4 2 ;	Heuristic: 0.0
+		Fringe node: 19;	state: 4 7 1 6 2 3 8 5 ;	Heuristic: 0.0
+		Fringe node: 20;	state: 2 4 7 1 3 8 5 6 ;	Heuristic: 0.0
+		Fringe node: 21;	state: 3 2 4 7 8 5 6 1 ;	Heuristic: 0.0
+		Fringe node: 22;	state: 5 8 3 2 6 1 7 4 ;	Heuristic: 0.0
+		Fringe node: 23;	state: 6 5 8 3 1 7 4 2 ;	Heuristic: 0.0
+		Fringe node: 24;	state: 1 6 5 8 7 4 2 3 ;	Heuristic: 0.0
+		Fringe node: 25;	state: 2 1 6 5 3 8 7 4 ;	Heuristic: 0.0
+		Fringe node: 26;	state: 3 2 1 6 8 7 4 5 ;	Heuristic: 0.0
+		Fringe node: 27;	state: 8 3 2 1 7 4 5 6 ;	Heuristic: 0.0
+		Fringe node: 28;	state: 4 7 8 3 5 6 1 2 ;	Heuristic: 0.0
+		Fringe node: 29;	state: 5 4 7 8 6 1 2 3 ;	Heuristic: 0.0
+		Fringe node: 30;	state: 6 5 4 7 1 2 3 8 ;	Heuristic: 0.0
+		Fringe node: 31;	state: 4 3 8 7 2 1 6 5 ;	Heuristic: 0.0
+		Fringe node: 32;	state: 2 4 3 8 1 6 5 7 ;	Heuristic: 0.0
+		Fringe node: 33;	state: 1 2 4 3 6 5 7 8 ;	Heuristic: 0.0
+		Fringe node: 34;	state: 5 6 1 2 7 8 3 4 ;	Heuristic: 0.0
+		Fringe node: 35;	state: 7 5 6 1 8 3 4 2 ;	Heuristic: 0.0
+		Fringe node: 36;	state: 8 7 5 6 3 4 2 1 ;	Heuristic: 0.0
+		Fringe node: 37;	state: 2 8 7 5 1 6 3 4 ;	Heuristic: 0.0
+		Fringe node: 38;	state: 6 1 2 8 3 4 5 7 ;	Heuristic: 0.0
+		Fringe node: 39;	state: 4 3 6 1 5 7 8 2 ;	Heuristic: 0.0
+		Fringe node: 40;	state: 7 5 4 3 8 2 1 6 ;	Heuristic: 0.0
+		Fringe node: 41;	state: 1 7 5 4 6 3 8 2 ;	Heuristic: 0.0
+		Fringe node: 42;	state: 6 1 7 5 3 8 2 4 ;	Heuristic: 0.0
+		Fringe node: 43;	state: 3 6 1 7 8 2 4 5 ;	Heuristic: 0.0
+		Fringe node: 44;	state: 2 8 3 6 4 5 7 1 ;	Heuristic: 0.0
+		Fringe node: 45;	state: 4 2 8 3 5 7 1 6 ;	Heuristic: 0.0
+		Fringe node: 46;	state: 5 4 2 8 7 1 6 3 ;	Heuristic: 0.0
+		Fringe node: 47;	state: 2 6 3 8 1 7 5 4 ;	Heuristic: 0.0
+		Fringe node: 48;	state: 1 2 6 3 7 5 4 8 ;	Heuristic: 0.0
+		Fringe node: 49;	state: 7 1 2 6 5 4 8 3 ;	Heuristic: 0.0
+		Fringe node: 50;	state: 4 5 7 1 8 3 6 2 ;	Heuristic: 0.0
+		Fringe node: 51;	state: 8 4 5 7 3 6 2 1 ;	Heuristic: 0.0
+		Fringe node: 52;	state: 3 8 4 5 6 2 1 7 ;	Heuristic: 0.0
+		Fringe node: 53;	state: 1 3 8 4 7 5 6 2 ;	Heuristic: 0.0
+		Fringe node: 54;	state: 5 7 1 3 6 2 4 8 ;	Heuristic: 0.0
+		Fringe node: 55;	state: 2 6 5 7 4 8 3 1 ;	Heuristic: 0.0
+		Fringe node: 56;	state: 8 4 2 6 3 1 7 5 ;	Heuristic: 0.0
+		Fringe node: 57;	state: 7 8 4 2 5 6 3 1 ;	Heuristic: 0.0
+		Fringe node: 58;	state: 5 7 8 4 6 3 1 2 ;	Heuristic: 0.0
+		Fringe node: 59;	state: 6 5 7 8 3 1 2 4 ;	Heuristic: 0.0
+		Fringe node: 60;	state: 1 3 6 5 2 4 8 7 ;	Heuristic: 0.0
+		Fringe node: 61;	state: 2 1 3 6 4 8 7 5 ;	Heuristic: 0.0
+		Fringe node: 62;	state: 4 2 1 3 8 7 5 6 ;	Heuristic: 0.0
+		Fringe node: 63;	state: 5 2 1 7 4 8 3 6 ;	Heuristic: 0.0
+		Fringe node: 64;	state: 4 5 2 1 8 3 6 7 ;	Heuristic: 0.0
+		Fringe node: 65;	state: 8 4 5 2 3 6 7 1 ;	Heuristic: 0.0
+		Fringe node: 66;	state: 6 3 8 4 7 1 2 5 ;	Heuristic: 0.0
+		Fringe node: 67;	state: 7 6 3 8 1 2 5 4 ;	Heuristic: 0.0
+		Fringe node: 68;	state: 1 7 6 3 2 5 4 8 ;	Heuristic: 0.0
+		Fringe node: 69;	state: 4 1 7 6 8 3 2 5 ;	Heuristic: 0.0
+		Fringe node: 70;	state: 8 4 1 7 3 2 5 6 ;	Heuristic: 0.0
+		Fringe node: 71;	state: 3 8 4 1 2 5 6 7 ;	Heuristic: 0.0
+		Fringe node: 72;	state: 5 2 3 8 6 7 1 4 ;	Heuristic: 0.0
+		Fringe node: 73;	state: 6 5 2 3 7 1 4 8 ;	Heuristic: 0.0
+		Fringe node: 74;	state: 7 6 5 2 1 4 8 3 ;	Heuristic: 0.0
+		Fringe node: 75;	state: 8 7 6 5 3 2 1 4 ;	Heuristic: 0.0
+		Fringe node: 76;	state: 3 8 7 6 2 1 4 5 ;	Heuristic: 0.0
+		Fringe node: 77;	state: 2 3 8 7 1 4 5 6 ;	Heuristic: 0.0
+		Fringe node: 78;	state: 4 1 2 3 5 6 7 8 ;	Heuristic: 0.0
+		Fringe node: 79;	state: 5 4 1 2 6 7 8 3 ;	Heuristic: 0.0
+		Fringe node: 80;	state: 6 5 4 1 7 8 3 2 ;	Heuristic: 0.0
+		**************** End Fringe List **************
+		Expanded State:	8 7 6 5 1 2 3 4 	Heuristic: 0.0
+		Rotate	
+		Board State:	5 6 7 8 1 2 3 4 
+
+		FinalState:		5 6 7 8 1 2 3 4 	Cost: 4
+
+		Number of nodes expanded: 124
+		Number of nodes in fringe: 238
+		Path cost: 4
+
+
+		A* with provided heuristic:
+
+		Path found!
+		Initial State:	2 1 7 8 3 6 5 4 	Cost: 0
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 2 1 7 8 3 6 5 4 ;	Heuristic: 7.0
+		**************** End Fringe List **************
+		Expanded State:	2 1 7 8 3 6 5 4 	Heuristic: 7.0
+		Move forward 4 Spaces
+		Board State:	3 6 5 4 2 1 7 8 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 2 1 7 8 3 6 5 4 ;	Heuristic: 7.0
+		**************** End Fringe List **************
+		Expanded State:	3 6 5 4 2 1 7 8 	Heuristic: 7.0
+		Rotate	
+		Board State:	4 5 6 3 2 1 7 8 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 8 7 1 2 3 6 5 4 ;	Heuristic: 7.0
+		Fringe node: 2;	state: 3 8 7 1 6 5 4 2 ;	Heuristic: 8.0
+		Fringe node: 3;	state: 6 3 8 7 5 4 2 1 ;	Heuristic: 7.0
+		Fringe node: 4;	state: 5 6 3 8 4 2 1 7 ;	Heuristic: 7.0
+		Fringe node: 5;	state: 4 5 6 3 2 1 7 8 ;	Heuristic: 6.0
+		Fringe node: 6;	state: 2 4 5 6 1 7 8 3 ;	Heuristic: 8.0
+		Fringe node: 7;	state: 1 2 4 5 7 8 3 6 ;	Heuristic: 6.0
+		Fringe node: 8;	state: 7 1 2 4 8 3 6 5 ;	Heuristic: 7.0
+		**************** End Fringe List **************
+		Expanded State:	4 5 6 3 2 1 7 8 	Heuristic: 6.0
+		Move forward 2 Spaces
+		Board State:	6 3 2 1 7 8 4 5 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 8 7 1 2 3 6 5 4 ;	Heuristic: 7.0
+		Fringe node: 2;	state: 3 8 7 1 6 5 4 2 ;	Heuristic: 8.0
+		Fringe node: 3;	state: 6 3 8 7 5 4 2 1 ;	Heuristic: 7.0
+		Fringe node: 4;	state: 5 6 3 8 4 2 1 7 ;	Heuristic: 7.0
+		Fringe node: 5;	state: 4 5 6 3 2 1 7 8 ;	Heuristic: 6.0
+		Fringe node: 6;	state: 2 4 5 6 1 7 8 3 ;	Heuristic: 8.0
+		Fringe node: 7;	state: 1 2 4 5 7 8 3 6 ;	Heuristic: 6.0
+		Fringe node: 8;	state: 7 1 2 4 8 3 6 5 ;	Heuristic: 7.0
+		**************** End Fringe List **************
+		Expanded State:	6 3 2 1 7 8 4 5 	Heuristic: 6.0
+		Rotate	
+		Board State:	1 2 3 6 7 8 4 5 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 8 7 1 2 3 6 5 4 ;	Heuristic: 7.0
+		Fringe node: 2;	state: 3 8 7 1 6 5 4 2 ;	Heuristic: 8.0
+		Fringe node: 3;	state: 6 3 8 7 5 4 2 1 ;	Heuristic: 7.0
+		Fringe node: 4;	state: 5 6 3 8 4 2 1 7 ;	Heuristic: 7.0
+		Fringe node: 5;	state: 2 4 5 6 1 7 8 3 ;	Heuristic: 8.0
+		Fringe node: 6;	state: 7 1 2 4 8 3 6 5 ;	Heuristic: 7.0
+		Fringe node: 7;	state: 2 3 6 5 1 7 8 4 ;	Heuristic: 8.0
+		Fringe node: 8;	state: 1 2 3 6 7 8 4 5 ;	Heuristic: 5.0
+		Fringe node: 9;	state: 7 1 2 3 8 4 5 6 ;	Heuristic: 8.0
+		Fringe node: 10;	state: 8 7 1 2 4 5 6 3 ;	Heuristic: 8.0
+		Fringe node: 11;	state: 4 8 7 1 5 6 3 2 ;	Heuristic: 6.0
+		Fringe node: 12;	state: 5 4 8 7 6 3 2 1 ;	Heuristic: 8.0
+		Fringe node: 13;	state: 6 5 4 8 3 2 1 7 ;	Heuristic: 8.0
+		Fringe node: 14;	state: 7 5 4 2 8 3 6 1 ;	Heuristic: 8.0
+		Fringe node: 15;	state: 8 7 5 4 3 6 1 2 ;	Heuristic: 6.0
+		Fringe node: 16;	state: 3 8 7 5 6 1 2 4 ;	Heuristic: 8.0
+		Fringe node: 17;	state: 1 6 3 8 2 4 5 7 ;	Heuristic: 6.0
+		Fringe node: 18;	state: 2 1 6 3 4 5 7 8 ;	Heuristic: 6.0
+		Fringe node: 19;	state: 4 2 1 6 5 7 8 3 ;	Heuristic: 6.0
+		**************** End Fringe List **************
+		Expanded State:	1 2 3 6 7 8 4 5 	Heuristic: 5.0
+		Move forward 3 Spaces
+		Board State:	6 7 8 4 5 1 2 3 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 8 7 1 2 3 6 5 4 ;	Heuristic: 7.0
+		Fringe node: 2;	state: 3 8 7 1 6 5 4 2 ;	Heuristic: 8.0
+		Fringe node: 3;	state: 6 3 8 7 5 4 2 1 ;	Heuristic: 7.0
+		Fringe node: 4;	state: 5 6 3 8 4 2 1 7 ;	Heuristic: 7.0
+		Fringe node: 5;	state: 2 4 5 6 1 7 8 3 ;	Heuristic: 8.0
+		Fringe node: 6;	state: 7 1 2 4 8 3 6 5 ;	Heuristic: 7.0
+		Fringe node: 7;	state: 2 3 6 5 1 7 8 4 ;	Heuristic: 8.0
+		Fringe node: 8;	state: 1 2 3 6 7 8 4 5 ;	Heuristic: 5.0
+		Fringe node: 9;	state: 7 1 2 3 8 4 5 6 ;	Heuristic: 8.0
+		Fringe node: 10;	state: 8 7 1 2 4 5 6 3 ;	Heuristic: 8.0
+		Fringe node: 11;	state: 4 8 7 1 5 6 3 2 ;	Heuristic: 6.0
+		Fringe node: 12;	state: 5 4 8 7 6 3 2 1 ;	Heuristic: 8.0
+		Fringe node: 13;	state: 6 5 4 8 3 2 1 7 ;	Heuristic: 8.0
+		Fringe node: 14;	state: 7 5 4 2 8 3 6 1 ;	Heuristic: 8.0
+		Fringe node: 15;	state: 8 7 5 4 3 6 1 2 ;	Heuristic: 6.0
+		Fringe node: 16;	state: 3 8 7 5 6 1 2 4 ;	Heuristic: 8.0
+		Fringe node: 17;	state: 1 6 3 8 2 4 5 7 ;	Heuristic: 6.0
+		Fringe node: 18;	state: 2 1 6 3 4 5 7 8 ;	Heuristic: 6.0
+		Fringe node: 19;	state: 4 2 1 6 5 7 8 3 ;	Heuristic: 6.0
+		**************** End Fringe List **************
+		Expanded State:	6 7 8 4 5 1 2 3 	Heuristic: 5.0
+		Rotate	
+		Board State:	4 8 7 6 5 1 2 3 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 8 7 6 3 4 5 1 2 ;	Heuristic: 8.0
+		Fringe node: 2;	state: 4 8 7 6 5 1 2 3 ;	Heuristic: 7.0
+		Fringe node: 3;	state: 1 5 4 8 2 3 6 7 ;	Heuristic: 7.0
+		Fringe node: 4;	state: 3 2 1 5 6 7 8 4 ;	Heuristic: 7.0
+		Fringe node: 5;	state: 3 4 5 1 6 7 8 2 ;	Heuristic: 8.0
+		Fringe node: 6;	state: 7 6 3 4 8 2 1 5 ;	Heuristic: 6.0
+		Fringe node: 7;	state: 2 8 7 6 1 5 4 3 ;	Heuristic: 8.0
+		Fringe node: 8;	state: 5 1 2 8 4 3 6 7 ;	Heuristic: 8.0
+		Fringe node: 9;	state: 2 4 8 3 1 7 5 6 ;	Heuristic: 8.0
+		Fringe node: 10;	state: 5 7 1 2 6 3 8 4 ;	Heuristic: 8.0
+		Fringe node: 11;	state: 6 5 7 1 3 8 4 2 ;	Heuristic: 8.0
+		Fringe node: 12;	state: 3 6 5 7 8 4 2 1 ;	Heuristic: 8.0
+		Fringe node: 13;	state: 5 1 7 8 6 3 2 4 ;	Heuristic: 8.0
+		Fringe node: 14;	state: 6 5 1 7 3 2 4 8 ;	Heuristic: 7.0
+		Fringe node: 15;	state: 3 6 5 1 2 4 8 7 ;	Heuristic: 8.0
+		Fringe node: 16;	state: 8 4 2 3 7 1 5 6 ;	Heuristic: 8.0
+		Fringe node: 17;	state: 7 8 4 2 1 5 6 3 ;	Heuristic: 8.0
+		Fringe node: 18;	state: 3 4 5 7 6 1 2 8 ;	Heuristic: 7.0
+		Fringe node: 19;	state: 8 2 1 6 7 5 4 3 ;	Heuristic: 7.0
+		Fringe node: 20;	state: 5 7 8 2 4 3 6 1 ;	Heuristic: 8.0
+		Fringe node: 21;	state: 2 4 3 6 8 7 5 1 ;	Heuristic: 7.0
+		Fringe node: 22;	state: 8 2 4 3 7 5 1 6 ;	Heuristic: 7.0
+		Fringe node: 23;	state: 7 8 2 4 5 1 6 3 ;	Heuristic: 6.0
+		Fringe node: 24;	state: 1 5 7 8 6 3 4 2 ;	Heuristic: 7.0
+		Fringe node: 25;	state: 6 1 5 7 3 4 2 8 ;	Heuristic: 7.0
+		Fringe node: 26;	state: 3 6 1 5 4 2 8 7 ;	Heuristic: 8.0
+		Fringe node: 27;	state: 5 4 2 8 7 1 6 3 ;	Heuristic: 8.0
+		Fringe node: 28;	state: 6 1 7 5 3 8 2 4 ;	Heuristic: 8.0
+		Fringe node: 29;	state: 3 6 1 7 8 2 4 5 ;	Heuristic: 8.0
+		Fringe node: 30;	state: 5 6 1 2 7 8 3 4 ;	Heuristic: 8.0
+		Fringe node: 31;	state: 7 5 6 1 8 3 4 2 ;	Heuristic: 8.0
+		Fringe node: 32;	state: 8 7 5 6 3 4 2 1 ;	Heuristic: 8.0
+		Fringe node: 33;	state: 4 3 8 7 2 1 6 5 ;	Heuristic: 8.0
+		Fringe node: 34;	state: 6 3 4 2 5 7 8 1 ;	Heuristic: 7.0
+		Fringe node: 35;	state: 5 6 3 4 7 8 1 2 ;	Heuristic: 6.0
+		Fringe node: 36;	state: 7 5 6 3 8 1 2 4 ;	Heuristic: 8.0
+		Fringe node: 37;	state: 1 8 7 5 2 4 3 6 ;	Heuristic: 7.0
+		Fringe node: 38;	state: 2 1 8 7 4 3 6 5 ;	Heuristic: 8.0
+		Fringe node: 39;	state: 4 2 1 8 3 6 5 7 ;	Heuristic: 6.0
+		Fringe node: 40;	state: 2 6 3 8 1 7 5 4 ;	Heuristic: 7.0
+		Fringe node: 41;	state: 7 1 2 6 5 4 8 3 ;	Heuristic: 7.0
+		Fringe node: 42;	state: 4 5 7 1 8 3 6 2 ;	Heuristic: 8.0
+		Fringe node: 43;	state: 8 4 5 7 3 6 2 1 ;	Heuristic: 7.0
+		Fringe node: 44;	state: 3 8 4 5 6 2 1 7 ;	Heuristic: 8.0
+		Fringe node: 45;	state: 5 7 8 4 6 3 1 2 ;	Heuristic: 7.0
+		Fringe node: 46;	state: 6 5 7 8 3 1 2 4 ;	Heuristic: 8.0
+		Fringe node: 47;	state: 1 3 6 5 2 4 8 7 ;	Heuristic: 7.0
+		Fringe node: 48;	state: 4 2 1 3 8 7 5 6 ;	Heuristic: 7.0
+		Fringe node: 49;	state: 7 3 6 2 5 4 8 1 ;	Heuristic: 7.0
+		Fringe node: 50;	state: 5 7 3 6 4 8 1 2 ;	Heuristic: 7.0
+		Fringe node: 51;	state: 4 5 7 3 8 1 2 6 ;	Heuristic: 8.0
+		Fringe node: 52;	state: 1 8 4 5 2 6 3 7 ;	Heuristic: 6.0
+		Fringe node: 53;	state: 2 1 8 4 6 3 7 5 ;	Heuristic: 6.0
+		Fringe node: 54;	state: 6 2 1 8 3 7 5 4 ;	Heuristic: 7.0
+		Fringe node: 55;	state: 4 5 6 1 2 3 8 7 ;	Heuristic: 8.0
+		Fringe node: 56;	state: 5 6 1 2 4 7 8 3 ;	Heuristic: 8.0
+		Fringe node: 57;	state: 7 4 5 6 8 3 2 1 ;	Heuristic: 8.0
+		Fringe node: 58;	state: 8 7 4 5 3 2 1 6 ;	Heuristic: 8.0
+		Fringe node: 59;	state: 3 8 7 4 2 1 6 5 ;	Heuristic: 7.0
+		Fringe node: 60;	state: 5 6 8 3 4 7 1 2 ;	Heuristic: 8.0
+		Fringe node: 61;	state: 4 5 6 8 7 1 2 3 ;	Heuristic: 8.0
+		Fringe node: 62;	state: 1 7 4 5 2 3 8 6 ;	Heuristic: 7.0
+		Fringe node: 63;	state: 2 1 7 4 3 8 6 5 ;	Heuristic: 7.0
+		Fringe node: 64;	state: 3 2 1 7 8 6 5 4 ;	Heuristic: 6.0
+		Fringe node: 65;	state: 5 3 2 1 4 7 8 6 ;	Heuristic: 8.0
+		Fringe node: 66;	state: 4 5 3 2 7 8 6 1 ;	Heuristic: 7.0
+		Fringe node: 67;	state: 7 4 5 3 8 6 1 2 ;	Heuristic: 7.0
+		Fringe node: 68;	state: 6 8 7 4 1 2 3 5 ;	Heuristic: 7.0
+		Fringe node: 69;	state: 1 6 8 7 2 3 5 4 ;	Heuristic: 7.0
+		Fringe node: 70;	state: 2 1 6 8 3 5 4 7 ;	Heuristic: 8.0
+		Fringe node: 71;	state: 8 6 3 2 7 1 5 4 ;	Heuristic: 7.0
+		Fringe node: 72;	state: 7 8 6 3 1 5 4 2 ;	Heuristic: 8.0
+		Fringe node: 73;	state: 1 7 8 6 5 4 2 3 ;	Heuristic: 6.0
+		Fringe node: 74;	state: 4 5 1 7 2 3 6 8 ;	Heuristic: 7.0
+		Fringe node: 75;	state: 2 4 5 1 3 6 8 7 ;	Heuristic: 7.0
+		Fringe node: 76;	state: 3 2 4 5 6 8 7 1 ;	Heuristic: 6.0
+		Fringe node: 77;	state: 4 6 3 8 5 7 1 2 ;	Heuristic: 6.0
+		Fringe node: 78;	state: 5 4 6 3 7 1 2 8 ;	Heuristic: 7.0
+		Fringe node: 79;	state: 7 5 4 6 1 2 8 3 ;	Heuristic: 8.0
+		Fringe node: 80;	state: 2 1 7 5 8 3 6 4 ;	Heuristic: 8.0
+		Fringe node: 81;	state: 8 2 1 7 3 6 4 5 ;	Heuristic: 6.0
+		Fringe node: 82;	state: 3 8 2 1 6 4 5 7 ;	Heuristic: 8.0
+		Fringe node: 83;	state: 5 3 8 2 7 1 6 4 ;	Heuristic: 8.0
+		Fringe node: 84;	state: 7 5 3 8 1 6 4 2 ;	Heuristic: 6.0
+		Fringe node: 85;	state: 1 7 5 3 6 4 2 8 ;	Heuristic: 6.0
+		Fringe node: 86;	state: 4 6 1 7 2 8 3 5 ;	Heuristic: 8.0
+		Fringe node: 87;	state: 2 4 6 1 8 3 5 7 ;	Heuristic: 8.0
+		Fringe node: 88;	state: 8 2 4 6 3 5 7 1 ;	Heuristic: 6.0
+		Fringe node: 89;	state: 5 6 1 8 7 2 4 3 ;	Heuristic: 8.0
+		Fringe node: 90;	state: 2 7 5 6 4 3 8 1 ;	Heuristic: 8.0
+		Fringe node: 91;	state: 3 4 2 7 8 1 6 5 ;	Heuristic: 8.0
+		Fringe node: 92;	state: 6 4 3 8 5 7 2 1 ;	Heuristic: 6.0
+		Fringe node: 93;	state: 5 6 4 3 7 2 1 8 ;	Heuristic: 7.0
+		Fringe node: 94;	state: 7 5 6 4 2 1 8 3 ;	Heuristic: 7.0
+		Fringe node: 95;	state: 1 2 7 5 8 3 4 6 ;	Heuristic: 6.0
+		Fringe node: 96;	state: 8 1 2 7 3 4 6 5 ;	Heuristic: 8.0
+		Fringe node: 97;	state: 3 8 1 2 4 6 5 7 ;	Heuristic: 7.0
+		Fringe node: 98;	state: 5 2 4 8 6 3 1 7 ;	Heuristic: 7.0
+		Fringe node: 99;	state: 3 6 5 2 1 7 8 4 ;	Heuristic: 8.0
+		Fringe node: 100;	state: 7 1 3 6 8 4 2 5 ;	Heuristic: 7.0
+		Fringe node: 101;	state: 8 7 1 3 4 2 5 6 ;	Heuristic: 8.0
+		Fringe node: 102;	state: 4 8 7 1 2 5 6 3 ;	Heuristic: 8.0
+		Fringe node: 103;	state: 4 6 3 1 8 7 5 2 ;	Heuristic: 7.0
+		Fringe node: 104;	state: 7 8 4 6 5 2 1 3 ;	Heuristic: 7.0
+		Fringe node: 105;	state: 2 5 7 8 1 3 6 4 ;	Heuristic: 8.0
+		Fringe node: 106;	state: 3 1 2 5 6 4 8 7 ;	Heuristic: 8.0
+		Fringe node: 107;	state: 5 8 7 1 4 2 3 6 ;	Heuristic: 8.0
+		Fringe node: 108;	state: 4 5 8 7 2 3 6 1 ;	Heuristic: 8.0
+		Fringe node: 109;	state: 2 4 5 8 3 6 1 7 ;	Heuristic: 7.0
+		Fringe node: 110;	state: 6 3 2 4 1 7 8 5 ;	Heuristic: 7.0
+		Fringe node: 111;	state: 7 1 6 3 8 5 4 2 ;	Heuristic: 8.0
+		Fringe node: 112;	state: 4 7 1 6 2 3 8 5 ;	Heuristic: 8.0
+		Fringe node: 113;	state: 2 4 7 1 3 8 5 6 ;	Heuristic: 8.0
+		Fringe node: 114;	state: 3 2 4 7 8 5 6 1 ;	Heuristic: 7.0
+		Fringe node: 115;	state: 6 5 8 3 1 7 4 2 ;	Heuristic: 8.0
+		Fringe node: 116;	state: 1 6 5 8 7 4 2 3 ;	Heuristic: 7.0
+		Fringe node: 117;	state: 5 2 3 8 4 7 1 6 ;	Heuristic: 6.0
+		Fringe node: 118;	state: 4 5 2 3 7 1 6 8 ;	Heuristic: 7.0
+		Fringe node: 119;	state: 7 4 5 2 1 6 8 3 ;	Heuristic: 7.0
+		Fringe node: 120;	state: 6 1 7 4 8 3 2 5 ;	Heuristic: 7.0
+		Fringe node: 121;	state: 8 6 1 7 3 2 5 4 ;	Heuristic: 8.0
+		Fringe node: 122;	state: 3 8 6 1 2 5 4 7 ;	Heuristic: 8.0
+		Fringe node: 123;	state: 3 4 2 5 1 7 8 6 ;	Heuristic: 8.0
+		Fringe node: 124;	state: 1 3 4 2 7 8 6 5 ;	Heuristic: 7.0
+		Fringe node: 125;	state: 7 1 3 4 8 6 5 2 ;	Heuristic: 5.0
+		Fringe node: 126;	state: 6 8 7 1 5 2 4 3 ;	Heuristic: 7.0
+		Fringe node: 127;	state: 5 6 8 7 2 4 3 1 ;	Heuristic: 8.0
+		Fringe node: 128;	state: 2 5 6 8 4 3 1 7 ;	Heuristic: 8.0
+		Fringe node: 129;	state: 7 2 3 6 8 5 4 1 ;	Heuristic: 6.0
+		Fringe node: 130;	state: 5 8 7 2 4 1 6 3 ;	Heuristic: 8.0
+		Fringe node: 131;	state: 1 4 5 8 6 3 2 7 ;	Heuristic: 7.0
+		Fringe node: 132;	state: 3 6 1 4 2 7 8 5 ;	Heuristic: 7.0
+		Fringe node: 133;	state: 6 2 3 8 1 7 4 5 ;	Heuristic: 6.0
+		Fringe node: 134;	state: 1 6 2 3 7 4 5 8 ;	Heuristic: 6.0
+		Fringe node: 135;	state: 7 1 6 2 4 5 8 3 ;	Heuristic: 8.0
+		Fringe node: 136;	state: 5 4 7 1 8 3 2 6 ;	Heuristic: 8.0
+		Fringe node: 137;	state: 8 5 4 7 3 2 6 1 ;	Heuristic: 8.0
+		Fringe node: 138;	state: 3 8 5 4 2 6 1 7 ;	Heuristic: 6.0
+		Fringe node: 139;	state: 8 3 2 1 4 5 6 7 ;	Heuristic: 8.0
+		Fringe node: 140;	state: 5 4 8 3 6 7 1 2 ;	Heuristic: 8.0
+		Fringe node: 141;	state: 1 7 6 5 2 3 8 4 ;	Heuristic: 7.0
+		Fringe node: 142;	state: 2 1 7 6 3 8 4 5 ;	Heuristic: 8.0
+		Fringe node: 143;	state: 5 2 3 8 6 7 1 4 ;	Heuristic: 6.0
+		Fringe node: 144;	state: 6 5 2 3 7 1 4 8 ;	Heuristic: 7.0
+		Fringe node: 145;	state: 7 6 5 2 1 4 8 3 ;	Heuristic: 8.0
+		Fringe node: 146;	state: 4 1 7 6 8 3 2 5 ;	Heuristic: 8.0
+		Fringe node: 147;	state: 8 4 1 7 3 2 5 6 ;	Heuristic: 8.0
+		Fringe node: 148;	state: 3 8 4 1 2 5 6 7 ;	Heuristic: 8.0
+		Fringe node: 149;	state: 1 4 5 6 2 3 8 7 ;	Heuristic: 7.0
+		Fringe node: 150;	state: 2 1 4 5 3 8 7 6 ;	Heuristic: 7.0
+		Fringe node: 151;	state: 3 2 1 4 8 7 6 5 ;	Heuristic: 6.0
+		Fringe node: 152;	state: 7 8 3 2 6 5 4 1 ;	Heuristic: 7.0
+		Fringe node: 153;	state: 6 7 8 3 5 4 1 2 ;	Heuristic: 7.0
+		Fringe node: 154;	state: 5 6 7 8 4 1 2 3 ;	Heuristic: 8.0
+		Fringe node: 155;	state: 8 2 3 6 4 5 1 7 ;	Heuristic: 6.0
+		Fringe node: 156;	state: 4 8 2 3 5 1 7 6 ;	Heuristic: 6.0
+		Fringe node: 157;	state: 5 4 8 2 1 7 6 3 ;	Heuristic: 8.0
+		Fringe node: 158;	state: 7 1 5 4 6 3 2 8 ;	Heuristic: 6.0
+		Fringe node: 159;	state: 6 7 1 5 3 2 8 4 ;	Heuristic: 8.0
+		Fringe node: 160;	state: 3 6 7 1 2 8 4 5 ;	Heuristic: 8.0
+		**************** End Fringe List **************
+		Expanded State:	4 8 7 6 5 1 2 3 	Heuristic: 7.0
+		Move forward 1 Spaces
+		Board State:	8 7 6 5 1 2 3 4 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 8 7 6 3 4 5 1 2 ;	Heuristic: 8.0
+		Fringe node: 2;	state: 4 8 7 6 5 1 2 3 ;	Heuristic: 7.0
+		Fringe node: 3;	state: 1 5 4 8 2 3 6 7 ;	Heuristic: 7.0
+		Fringe node: 4;	state: 3 2 1 5 6 7 8 4 ;	Heuristic: 7.0
+		Fringe node: 5;	state: 3 4 5 1 6 7 8 2 ;	Heuristic: 8.0
+		Fringe node: 6;	state: 7 6 3 4 8 2 1 5 ;	Heuristic: 6.0
+		Fringe node: 7;	state: 2 8 7 6 1 5 4 3 ;	Heuristic: 8.0
+		Fringe node: 8;	state: 5 1 2 8 4 3 6 7 ;	Heuristic: 8.0
+		Fringe node: 9;	state: 2 4 8 3 1 7 5 6 ;	Heuristic: 8.0
+		Fringe node: 10;	state: 5 7 1 2 6 3 8 4 ;	Heuristic: 8.0
+		Fringe node: 11;	state: 6 5 7 1 3 8 4 2 ;	Heuristic: 8.0
+		Fringe node: 12;	state: 3 6 5 7 8 4 2 1 ;	Heuristic: 8.0
+		Fringe node: 13;	state: 5 1 7 8 6 3 2 4 ;	Heuristic: 8.0
+		Fringe node: 14;	state: 6 5 1 7 3 2 4 8 ;	Heuristic: 7.0
+		Fringe node: 15;	state: 3 6 5 1 2 4 8 7 ;	Heuristic: 8.0
+		Fringe node: 16;	state: 8 4 2 3 7 1 5 6 ;	Heuristic: 8.0
+		Fringe node: 17;	state: 7 8 4 2 1 5 6 3 ;	Heuristic: 8.0
+		Fringe node: 18;	state: 3 4 5 7 6 1 2 8 ;	Heuristic: 7.0
+		Fringe node: 19;	state: 8 2 1 6 7 5 4 3 ;	Heuristic: 7.0
+		Fringe node: 20;	state: 5 7 8 2 4 3 6 1 ;	Heuristic: 8.0
+		Fringe node: 21;	state: 2 4 3 6 8 7 5 1 ;	Heuristic: 7.0
+		Fringe node: 22;	state: 8 2 4 3 7 5 1 6 ;	Heuristic: 7.0
+		Fringe node: 23;	state: 7 8 2 4 5 1 6 3 ;	Heuristic: 6.0
+		Fringe node: 24;	state: 1 5 7 8 6 3 4 2 ;	Heuristic: 7.0
+		Fringe node: 25;	state: 6 1 5 7 3 4 2 8 ;	Heuristic: 7.0
+		Fringe node: 26;	state: 3 6 1 5 4 2 8 7 ;	Heuristic: 8.0
+		Fringe node: 27;	state: 5 4 2 8 7 1 6 3 ;	Heuristic: 8.0
+		Fringe node: 28;	state: 6 1 7 5 3 8 2 4 ;	Heuristic: 8.0
+		Fringe node: 29;	state: 3 6 1 7 8 2 4 5 ;	Heuristic: 8.0
+		Fringe node: 30;	state: 5 6 1 2 7 8 3 4 ;	Heuristic: 8.0
+		Fringe node: 31;	state: 7 5 6 1 8 3 4 2 ;	Heuristic: 8.0
+		Fringe node: 32;	state: 8 7 5 6 3 4 2 1 ;	Heuristic: 8.0
+		Fringe node: 33;	state: 4 3 8 7 2 1 6 5 ;	Heuristic: 8.0
+		Fringe node: 34;	state: 6 3 4 2 5 7 8 1 ;	Heuristic: 7.0
+		Fringe node: 35;	state: 5 6 3 4 7 8 1 2 ;	Heuristic: 6.0
+		Fringe node: 36;	state: 7 5 6 3 8 1 2 4 ;	Heuristic: 8.0
+		Fringe node: 37;	state: 1 8 7 5 2 4 3 6 ;	Heuristic: 7.0
+		Fringe node: 38;	state: 2 1 8 7 4 3 6 5 ;	Heuristic: 8.0
+		Fringe node: 39;	state: 4 2 1 8 3 6 5 7 ;	Heuristic: 6.0
+		Fringe node: 40;	state: 2 6 3 8 1 7 5 4 ;	Heuristic: 7.0
+		Fringe node: 41;	state: 7 1 2 6 5 4 8 3 ;	Heuristic: 7.0
+		Fringe node: 42;	state: 4 5 7 1 8 3 6 2 ;	Heuristic: 8.0
+		Fringe node: 43;	state: 8 4 5 7 3 6 2 1 ;	Heuristic: 7.0
+		Fringe node: 44;	state: 3 8 4 5 6 2 1 7 ;	Heuristic: 8.0
+		Fringe node: 45;	state: 5 7 8 4 6 3 1 2 ;	Heuristic: 7.0
+		Fringe node: 46;	state: 6 5 7 8 3 1 2 4 ;	Heuristic: 8.0
+		Fringe node: 47;	state: 1 3 6 5 2 4 8 7 ;	Heuristic: 7.0
+		Fringe node: 48;	state: 4 2 1 3 8 7 5 6 ;	Heuristic: 7.0
+		Fringe node: 49;	state: 7 3 6 2 5 4 8 1 ;	Heuristic: 7.0
+		Fringe node: 50;	state: 5 7 3 6 4 8 1 2 ;	Heuristic: 7.0
+		Fringe node: 51;	state: 4 5 7 3 8 1 2 6 ;	Heuristic: 8.0
+		Fringe node: 52;	state: 1 8 4 5 2 6 3 7 ;	Heuristic: 6.0
+		Fringe node: 53;	state: 2 1 8 4 6 3 7 5 ;	Heuristic: 6.0
+		Fringe node: 54;	state: 6 2 1 8 3 7 5 4 ;	Heuristic: 7.0
+		Fringe node: 55;	state: 4 5 6 1 2 3 8 7 ;	Heuristic: 8.0
+		Fringe node: 56;	state: 5 6 1 2 4 7 8 3 ;	Heuristic: 8.0
+		Fringe node: 57;	state: 7 4 5 6 8 3 2 1 ;	Heuristic: 8.0
+		Fringe node: 58;	state: 8 7 4 5 3 2 1 6 ;	Heuristic: 8.0
+		Fringe node: 59;	state: 3 8 7 4 2 1 6 5 ;	Heuristic: 7.0
+		Fringe node: 60;	state: 5 6 8 3 4 7 1 2 ;	Heuristic: 8.0
+		Fringe node: 61;	state: 4 5 6 8 7 1 2 3 ;	Heuristic: 8.0
+		Fringe node: 62;	state: 1 7 4 5 2 3 8 6 ;	Heuristic: 7.0
+		Fringe node: 63;	state: 2 1 7 4 3 8 6 5 ;	Heuristic: 7.0
+		Fringe node: 64;	state: 3 2 1 7 8 6 5 4 ;	Heuristic: 6.0
+		Fringe node: 65;	state: 5 3 2 1 4 7 8 6 ;	Heuristic: 8.0
+		Fringe node: 66;	state: 4 5 3 2 7 8 6 1 ;	Heuristic: 7.0
+		Fringe node: 67;	state: 7 4 5 3 8 6 1 2 ;	Heuristic: 7.0
+		Fringe node: 68;	state: 6 8 7 4 1 2 3 5 ;	Heuristic: 7.0
+		Fringe node: 69;	state: 1 6 8 7 2 3 5 4 ;	Heuristic: 7.0
+		Fringe node: 70;	state: 2 1 6 8 3 5 4 7 ;	Heuristic: 8.0
+		Fringe node: 71;	state: 8 6 3 2 7 1 5 4 ;	Heuristic: 7.0
+		Fringe node: 72;	state: 7 8 6 3 1 5 4 2 ;	Heuristic: 8.0
+		Fringe node: 73;	state: 1 7 8 6 5 4 2 3 ;	Heuristic: 6.0
+		Fringe node: 74;	state: 4 5 1 7 2 3 6 8 ;	Heuristic: 7.0
+		Fringe node: 75;	state: 2 4 5 1 3 6 8 7 ;	Heuristic: 7.0
+		Fringe node: 76;	state: 3 2 4 5 6 8 7 1 ;	Heuristic: 6.0
+		Fringe node: 77;	state: 4 6 3 8 5 7 1 2 ;	Heuristic: 6.0
+		Fringe node: 78;	state: 5 4 6 3 7 1 2 8 ;	Heuristic: 7.0
+		Fringe node: 79;	state: 7 5 4 6 1 2 8 3 ;	Heuristic: 8.0
+		Fringe node: 80;	state: 2 1 7 5 8 3 6 4 ;	Heuristic: 8.0
+		Fringe node: 81;	state: 8 2 1 7 3 6 4 5 ;	Heuristic: 6.0
+		Fringe node: 82;	state: 3 8 2 1 6 4 5 7 ;	Heuristic: 8.0
+		Fringe node: 83;	state: 5 3 8 2 7 1 6 4 ;	Heuristic: 8.0
+		Fringe node: 84;	state: 7 5 3 8 1 6 4 2 ;	Heuristic: 6.0
+		Fringe node: 85;	state: 1 7 5 3 6 4 2 8 ;	Heuristic: 6.0
+		Fringe node: 86;	state: 4 6 1 7 2 8 3 5 ;	Heuristic: 8.0
+		Fringe node: 87;	state: 2 4 6 1 8 3 5 7 ;	Heuristic: 8.0
+		Fringe node: 88;	state: 8 2 4 6 3 5 7 1 ;	Heuristic: 6.0
+		Fringe node: 89;	state: 5 6 1 8 7 2 4 3 ;	Heuristic: 8.0
+		Fringe node: 90;	state: 2 7 5 6 4 3 8 1 ;	Heuristic: 8.0
+		Fringe node: 91;	state: 3 4 2 7 8 1 6 5 ;	Heuristic: 8.0
+		Fringe node: 92;	state: 6 4 3 8 5 7 2 1 ;	Heuristic: 6.0
+		Fringe node: 93;	state: 5 6 4 3 7 2 1 8 ;	Heuristic: 7.0
+		Fringe node: 94;	state: 7 5 6 4 2 1 8 3 ;	Heuristic: 7.0
+		Fringe node: 95;	state: 1 2 7 5 8 3 4 6 ;	Heuristic: 6.0
+		Fringe node: 96;	state: 8 1 2 7 3 4 6 5 ;	Heuristic: 8.0
+		Fringe node: 97;	state: 3 8 1 2 4 6 5 7 ;	Heuristic: 7.0
+		Fringe node: 98;	state: 5 2 4 8 6 3 1 7 ;	Heuristic: 7.0
+		Fringe node: 99;	state: 3 6 5 2 1 7 8 4 ;	Heuristic: 8.0
+		Fringe node: 100;	state: 7 1 3 6 8 4 2 5 ;	Heuristic: 7.0
+		Fringe node: 101;	state: 8 7 1 3 4 2 5 6 ;	Heuristic: 8.0
+		Fringe node: 102;	state: 4 8 7 1 2 5 6 3 ;	Heuristic: 8.0
+		Fringe node: 103;	state: 4 6 3 1 8 7 5 2 ;	Heuristic: 7.0
+		Fringe node: 104;	state: 7 8 4 6 5 2 1 3 ;	Heuristic: 7.0
+		Fringe node: 105;	state: 2 5 7 8 1 3 6 4 ;	Heuristic: 8.0
+		Fringe node: 106;	state: 3 1 2 5 6 4 8 7 ;	Heuristic: 8.0
+		Fringe node: 107;	state: 5 8 7 1 4 2 3 6 ;	Heuristic: 8.0
+		Fringe node: 108;	state: 4 5 8 7 2 3 6 1 ;	Heuristic: 8.0
+		Fringe node: 109;	state: 2 4 5 8 3 6 1 7 ;	Heuristic: 7.0
+		Fringe node: 110;	state: 6 3 2 4 1 7 8 5 ;	Heuristic: 7.0
+		Fringe node: 111;	state: 7 1 6 3 8 5 4 2 ;	Heuristic: 8.0
+		Fringe node: 112;	state: 4 7 1 6 2 3 8 5 ;	Heuristic: 8.0
+		Fringe node: 113;	state: 2 4 7 1 3 8 5 6 ;	Heuristic: 8.0
+		Fringe node: 114;	state: 3 2 4 7 8 5 6 1 ;	Heuristic: 7.0
+		Fringe node: 115;	state: 6 5 8 3 1 7 4 2 ;	Heuristic: 8.0
+		Fringe node: 116;	state: 1 6 5 8 7 4 2 3 ;	Heuristic: 7.0
+		Fringe node: 117;	state: 5 2 3 8 4 7 1 6 ;	Heuristic: 6.0
+		Fringe node: 118;	state: 4 5 2 3 7 1 6 8 ;	Heuristic: 7.0
+		Fringe node: 119;	state: 7 4 5 2 1 6 8 3 ;	Heuristic: 7.0
+		Fringe node: 120;	state: 6 1 7 4 8 3 2 5 ;	Heuristic: 7.0
+		Fringe node: 121;	state: 8 6 1 7 3 2 5 4 ;	Heuristic: 8.0
+		Fringe node: 122;	state: 3 8 6 1 2 5 4 7 ;	Heuristic: 8.0
+		Fringe node: 123;	state: 3 4 2 5 1 7 8 6 ;	Heuristic: 8.0
+		Fringe node: 124;	state: 1 3 4 2 7 8 6 5 ;	Heuristic: 7.0
+		Fringe node: 125;	state: 7 1 3 4 8 6 5 2 ;	Heuristic: 5.0
+		Fringe node: 126;	state: 6 8 7 1 5 2 4 3 ;	Heuristic: 7.0
+		Fringe node: 127;	state: 5 6 8 7 2 4 3 1 ;	Heuristic: 8.0
+		Fringe node: 128;	state: 2 5 6 8 4 3 1 7 ;	Heuristic: 8.0
+		Fringe node: 129;	state: 7 2 3 6 8 5 4 1 ;	Heuristic: 6.0
+		Fringe node: 130;	state: 5 8 7 2 4 1 6 3 ;	Heuristic: 8.0
+		Fringe node: 131;	state: 1 4 5 8 6 3 2 7 ;	Heuristic: 7.0
+		Fringe node: 132;	state: 3 6 1 4 2 7 8 5 ;	Heuristic: 7.0
+		Fringe node: 133;	state: 6 2 3 8 1 7 4 5 ;	Heuristic: 6.0
+		Fringe node: 134;	state: 1 6 2 3 7 4 5 8 ;	Heuristic: 6.0
+		Fringe node: 135;	state: 7 1 6 2 4 5 8 3 ;	Heuristic: 8.0
+		Fringe node: 136;	state: 5 4 7 1 8 3 2 6 ;	Heuristic: 8.0
+		Fringe node: 137;	state: 8 5 4 7 3 2 6 1 ;	Heuristic: 8.0
+		Fringe node: 138;	state: 3 8 5 4 2 6 1 7 ;	Heuristic: 6.0
+		Fringe node: 139;	state: 8 3 2 1 4 5 6 7 ;	Heuristic: 8.0
+		Fringe node: 140;	state: 5 4 8 3 6 7 1 2 ;	Heuristic: 8.0
+		Fringe node: 141;	state: 1 7 6 5 2 3 8 4 ;	Heuristic: 7.0
+		Fringe node: 142;	state: 2 1 7 6 3 8 4 5 ;	Heuristic: 8.0
+		Fringe node: 143;	state: 5 2 3 8 6 7 1 4 ;	Heuristic: 6.0
+		Fringe node: 144;	state: 6 5 2 3 7 1 4 8 ;	Heuristic: 7.0
+		Fringe node: 145;	state: 7 6 5 2 1 4 8 3 ;	Heuristic: 8.0
+		Fringe node: 146;	state: 4 1 7 6 8 3 2 5 ;	Heuristic: 8.0
+		Fringe node: 147;	state: 8 4 1 7 3 2 5 6 ;	Heuristic: 8.0
+		Fringe node: 148;	state: 3 8 4 1 2 5 6 7 ;	Heuristic: 8.0
+		Fringe node: 149;	state: 1 4 5 6 2 3 8 7 ;	Heuristic: 7.0
+		Fringe node: 150;	state: 2 1 4 5 3 8 7 6 ;	Heuristic: 7.0
+		Fringe node: 151;	state: 3 2 1 4 8 7 6 5 ;	Heuristic: 6.0
+		Fringe node: 152;	state: 7 8 3 2 6 5 4 1 ;	Heuristic: 7.0
+		Fringe node: 153;	state: 6 7 8 3 5 4 1 2 ;	Heuristic: 7.0
+		Fringe node: 154;	state: 5 6 7 8 4 1 2 3 ;	Heuristic: 8.0
+		Fringe node: 155;	state: 8 2 3 6 4 5 1 7 ;	Heuristic: 6.0
+		Fringe node: 156;	state: 4 8 2 3 5 1 7 6 ;	Heuristic: 6.0
+		Fringe node: 157;	state: 5 4 8 2 1 7 6 3 ;	Heuristic: 8.0
+		Fringe node: 158;	state: 7 1 5 4 6 3 2 8 ;	Heuristic: 6.0
+		Fringe node: 159;	state: 6 7 1 5 3 2 8 4 ;	Heuristic: 8.0
+		Fringe node: 160;	state: 3 6 7 1 2 8 4 5 ;	Heuristic: 8.0
+		**************** End Fringe List **************
+		Expanded State:	8 7 6 5 1 2 3 4 	Heuristic: 7.0
+		Rotate	
+		Board State:	5 6 7 8 1 2 3 4 
+
+		FinalState:		5 6 7 8 1 2 3 4 	Cost: 4
+
+		Number of nodes expanded: 441
+		Number of nodes in fringe: 1191
+		Path cost: 4
+
+
+		A* with Custom heuristic:
+
+		Path found!
+		Initial State:	2 1 7 8 3 6 5 4 	Cost: 0
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 2 1 7 8 3 6 5 4 ;	Heuristic: 2.0
+		**************** End Fringe List **************
+		Expanded State:	2 1 7 8 3 6 5 4 	Heuristic: 2.0
+		Move forward 4 Spaces
+		Board State:	3 6 5 4 2 1 7 8 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 2 1 7 8 3 6 5 4 ;	Heuristic: 2.0
+		**************** End Fringe List **************
+		Expanded State:	3 6 5 4 2 1 7 8 	Heuristic: 2.0
+		Rotate	
+		Board State:	4 5 6 3 2 1 7 8 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 8 7 1 2 3 6 5 4 ;	Heuristic: 3.0
+		Fringe node: 2;	state: 3 8 7 1 6 5 4 2 ;	Heuristic: 3.0
+		Fringe node: 3;	state: 6 3 8 7 5 4 2 1 ;	Heuristic: 3.0
+		Fringe node: 4;	state: 5 6 3 8 4 2 1 7 ;	Heuristic: 3.0
+		Fringe node: 5;	state: 4 5 6 3 2 1 7 8 ;	Heuristic: 2.0
+		Fringe node: 6;	state: 2 4 5 6 1 7 8 3 ;	Heuristic: 2.0
+		Fringe node: 7;	state: 7 1 2 4 8 3 6 5 ;	Heuristic: 2.0
+		Fringe node: 8;	state: 7 5 4 2 8 3 6 1 ;	Heuristic: 3.0
+		Fringe node: 9;	state: 8 7 5 4 3 6 1 2 ;	Heuristic: 3.0
+		Fringe node: 10;	state: 3 8 7 5 6 1 2 4 ;	Heuristic: 3.0
+		Fringe node: 11;	state: 6 3 8 7 1 2 4 5 ;	Heuristic: 3.0
+		Fringe node: 12;	state: 1 6 3 8 2 4 5 7 ;	Heuristic: 2.0
+		Fringe node: 13;	state: 2 1 6 3 4 5 7 8 ;	Heuristic: 1.0
+		Fringe node: 14;	state: 4 2 1 6 5 7 8 3 ;	Heuristic: 1.0
+		**************** End Fringe List **************
+		Expanded State:	4 5 6 3 2 1 7 8 	Heuristic: 2.0
+		Move forward 2 Spaces
+		Board State:	6 3 2 1 7 8 4 5 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 8 7 1 2 3 6 5 4 ;	Heuristic: 3.0
+		Fringe node: 2;	state: 3 8 7 1 6 5 4 2 ;	Heuristic: 3.0
+		Fringe node: 3;	state: 6 3 8 7 5 4 2 1 ;	Heuristic: 3.0
+		Fringe node: 4;	state: 5 6 3 8 4 2 1 7 ;	Heuristic: 3.0
+		Fringe node: 5;	state: 4 5 6 3 2 1 7 8 ;	Heuristic: 2.0
+		Fringe node: 6;	state: 2 4 5 6 1 7 8 3 ;	Heuristic: 2.0
+		Fringe node: 7;	state: 7 1 2 4 8 3 6 5 ;	Heuristic: 2.0
+		Fringe node: 8;	state: 7 5 4 2 8 3 6 1 ;	Heuristic: 3.0
+		Fringe node: 9;	state: 8 7 5 4 3 6 1 2 ;	Heuristic: 3.0
+		Fringe node: 10;	state: 3 8 7 5 6 1 2 4 ;	Heuristic: 3.0
+		Fringe node: 11;	state: 6 3 8 7 1 2 4 5 ;	Heuristic: 3.0
+		Fringe node: 12;	state: 1 6 3 8 2 4 5 7 ;	Heuristic: 2.0
+		Fringe node: 13;	state: 2 1 6 3 4 5 7 8 ;	Heuristic: 1.0
+		Fringe node: 14;	state: 4 2 1 6 5 7 8 3 ;	Heuristic: 1.0
+		**************** End Fringe List **************
+		Expanded State:	6 3 2 1 7 8 4 5 	Heuristic: 2.0
+		Rotate	
+		Board State:	1 2 3 6 7 8 4 5 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 8 7 1 2 3 6 5 4 ;	Heuristic: 3.0
+		Fringe node: 2;	state: 3 8 7 1 6 5 4 2 ;	Heuristic: 3.0
+		Fringe node: 3;	state: 6 3 8 7 5 4 2 1 ;	Heuristic: 3.0
+		Fringe node: 4;	state: 5 6 3 8 4 2 1 7 ;	Heuristic: 3.0
+		Fringe node: 5;	state: 7 5 4 2 8 3 6 1 ;	Heuristic: 3.0
+		Fringe node: 6;	state: 8 7 5 4 3 6 1 2 ;	Heuristic: 3.0
+		Fringe node: 7;	state: 3 8 7 5 6 1 2 4 ;	Heuristic: 3.0
+		Fringe node: 8;	state: 6 3 8 7 1 2 4 5 ;	Heuristic: 3.0
+		Fringe node: 9;	state: 1 6 3 8 2 4 5 7 ;	Heuristic: 2.0
+		Fringe node: 10;	state: 2 3 6 5 1 7 8 4 ;	Heuristic: 2.0
+		Fringe node: 11;	state: 1 2 3 6 7 8 4 5 ;	Heuristic: 1.0
+		Fringe node: 12;	state: 7 1 2 3 8 4 5 6 ;	Heuristic: 2.0
+		Fringe node: 13;	state: 4 8 7 1 5 6 3 2 ;	Heuristic: 3.0
+		Fringe node: 14;	state: 5 4 8 7 6 3 2 1 ;	Heuristic: 3.0
+		Fringe node: 15;	state: 6 5 4 8 3 2 1 7 ;	Heuristic: 3.0
+		Fringe node: 16;	state: 1 6 5 4 7 8 3 2 ;	Heuristic: 2.0
+		Fringe node: 17;	state: 7 1 6 5 8 3 2 4 ;	Heuristic: 3.0
+		Fringe node: 18;	state: 8 7 1 6 3 2 4 5 ;	Heuristic: 3.0
+		Fringe node: 19;	state: 2 3 8 7 4 5 6 1 ;	Heuristic: 2.0
+		Fringe node: 20;	state: 4 2 3 8 5 6 1 7 ;	Heuristic: 1.0
+		Fringe node: 21;	state: 5 4 2 3 6 1 7 8 ;	Heuristic: 1.0
+		Fringe node: 22;	state: 8 4 2 1 3 6 5 7 ;	Heuristic: 2.0
+		Fringe node: 23;	state: 3 8 4 2 6 5 7 1 ;	Heuristic: 2.0
+		Fringe node: 24;	state: 6 3 8 4 5 7 1 2 ;	Heuristic: 3.0
+		Fringe node: 25;	state: 7 5 6 3 1 2 4 8 ;	Heuristic: 3.0
+		Fringe node: 26;	state: 1 7 5 6 2 4 8 3 ;	Heuristic: 2.0
+		Fringe node: 27;	state: 2 1 7 5 4 8 3 6 ;	Heuristic: 2.0
+		Fringe node: 28;	state: 4 3 6 1 5 7 8 2 ;	Heuristic: 2.0
+		Fringe node: 29;	state: 5 4 3 6 7 8 2 1 ;	Heuristic: 3.0
+		Fringe node: 30;	state: 7 5 4 3 8 2 1 6 ;	Heuristic: 3.0
+		Fringe node: 31;	state: 2 8 7 5 1 6 3 4 ;	Heuristic: 3.0
+		Fringe node: 32;	state: 1 2 8 7 6 3 4 5 ;	Heuristic: 2.0
+		Fringe node: 33;	state: 6 1 2 8 3 4 5 7 ;	Heuristic: 2.0
+		Fringe node: 34;	state: 5 6 1 2 7 8 3 4 ;	Heuristic: 3.0
+		Fringe node: 35;	state: 7 5 6 1 8 3 4 2 ;	Heuristic: 3.0
+		Fringe node: 36;	state: 8 7 5 6 3 4 2 1 ;	Heuristic: 4.0
+		Fringe node: 37;	state: 4 3 8 7 2 1 6 5 ;	Heuristic: 3.0
+		Fringe node: 38;	state: 2 4 3 8 1 6 5 7 ;	Heuristic: 1.0
+		Fringe node: 39;	state: 1 2 4 3 6 5 7 8 ;	Heuristic: 0.0
+		**************** End Fringe List **************
+		Expanded State:	1 2 3 6 7 8 4 5 	Heuristic: 1.0
+		Move forward 7 Spaces
+		Board State:	5 1 2 3 6 7 8 4 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 8 7 1 2 3 6 5 4 ;	Heuristic: 3.0
+		Fringe node: 2;	state: 3 8 7 1 6 5 4 2 ;	Heuristic: 3.0
+		Fringe node: 3;	state: 6 3 8 7 5 4 2 1 ;	Heuristic: 3.0
+		Fringe node: 4;	state: 5 6 3 8 4 2 1 7 ;	Heuristic: 3.0
+		Fringe node: 5;	state: 7 5 4 2 8 3 6 1 ;	Heuristic: 3.0
+		Fringe node: 6;	state: 8 7 5 4 3 6 1 2 ;	Heuristic: 3.0
+		Fringe node: 7;	state: 3 8 7 5 6 1 2 4 ;	Heuristic: 3.0
+		Fringe node: 8;	state: 6 3 8 7 1 2 4 5 ;	Heuristic: 3.0
+		Fringe node: 9;	state: 1 6 3 8 2 4 5 7 ;	Heuristic: 2.0
+		Fringe node: 10;	state: 2 3 6 5 1 7 8 4 ;	Heuristic: 2.0
+		Fringe node: 11;	state: 1 2 3 6 7 8 4 5 ;	Heuristic: 1.0
+		Fringe node: 12;	state: 7 1 2 3 8 4 5 6 ;	Heuristic: 2.0
+		Fringe node: 13;	state: 4 8 7 1 5 6 3 2 ;	Heuristic: 3.0
+		Fringe node: 14;	state: 5 4 8 7 6 3 2 1 ;	Heuristic: 3.0
+		Fringe node: 15;	state: 6 5 4 8 3 2 1 7 ;	Heuristic: 3.0
+		Fringe node: 16;	state: 1 6 5 4 7 8 3 2 ;	Heuristic: 2.0
+		Fringe node: 17;	state: 7 1 6 5 8 3 2 4 ;	Heuristic: 3.0
+		Fringe node: 18;	state: 8 7 1 6 3 2 4 5 ;	Heuristic: 3.0
+		Fringe node: 19;	state: 2 3 8 7 4 5 6 1 ;	Heuristic: 2.0
+		Fringe node: 20;	state: 4 2 3 8 5 6 1 7 ;	Heuristic: 1.0
+		Fringe node: 21;	state: 5 4 2 3 6 1 7 8 ;	Heuristic: 1.0
+		Fringe node: 22;	state: 8 4 2 1 3 6 5 7 ;	Heuristic: 2.0
+		Fringe node: 23;	state: 3 8 4 2 6 5 7 1 ;	Heuristic: 2.0
+		Fringe node: 24;	state: 6 3 8 4 5 7 1 2 ;	Heuristic: 3.0
+		Fringe node: 25;	state: 7 5 6 3 1 2 4 8 ;	Heuristic: 3.0
+		Fringe node: 26;	state: 1 7 5 6 2 4 8 3 ;	Heuristic: 2.0
+		Fringe node: 27;	state: 2 1 7 5 4 8 3 6 ;	Heuristic: 2.0
+		Fringe node: 28;	state: 4 3 6 1 5 7 8 2 ;	Heuristic: 2.0
+		Fringe node: 29;	state: 5 4 3 6 7 8 2 1 ;	Heuristic: 3.0
+		Fringe node: 30;	state: 7 5 4 3 8 2 1 6 ;	Heuristic: 3.0
+		Fringe node: 31;	state: 2 8 7 5 1 6 3 4 ;	Heuristic: 3.0
+		Fringe node: 32;	state: 1 2 8 7 6 3 4 5 ;	Heuristic: 2.0
+		Fringe node: 33;	state: 6 1 2 8 3 4 5 7 ;	Heuristic: 2.0
+		Fringe node: 34;	state: 5 6 1 2 7 8 3 4 ;	Heuristic: 3.0
+		Fringe node: 35;	state: 7 5 6 1 8 3 4 2 ;	Heuristic: 3.0
+		Fringe node: 36;	state: 8 7 5 6 3 4 2 1 ;	Heuristic: 4.0
+		Fringe node: 37;	state: 4 3 8 7 2 1 6 5 ;	Heuristic: 3.0
+		Fringe node: 38;	state: 2 4 3 8 1 6 5 7 ;	Heuristic: 1.0
+		Fringe node: 39;	state: 1 2 4 3 6 5 7 8 ;	Heuristic: 0.0
+		**************** End Fringe List **************
+		Expanded State:	5 1 2 3 6 7 8 4 	Heuristic: 1.0
+		Rotate	
+		Board State:	3 2 1 5 6 7 8 4 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 7 5 4 2 8 3 6 1 ;	Heuristic: 3.0
+		Fringe node: 2;	state: 8 7 5 4 3 6 1 2 ;	Heuristic: 3.0
+		Fringe node: 3;	state: 3 8 7 5 6 1 2 4 ;	Heuristic: 3.0
+		Fringe node: 4;	state: 6 3 8 7 1 2 4 5 ;	Heuristic: 3.0
+		Fringe node: 5;	state: 4 8 7 1 5 6 3 2 ;	Heuristic: 3.0
+		Fringe node: 6;	state: 5 4 8 7 6 3 2 1 ;	Heuristic: 3.0
+		Fringe node: 7;	state: 6 5 4 8 3 2 1 7 ;	Heuristic: 3.0
+		Fringe node: 8;	state: 7 1 6 5 8 3 2 4 ;	Heuristic: 3.0
+		Fringe node: 9;	state: 8 7 1 6 3 2 4 5 ;	Heuristic: 3.0
+		Fringe node: 10;	state: 6 3 8 4 5 7 1 2 ;	Heuristic: 3.0
+		Fringe node: 11;	state: 7 5 6 3 1 2 4 8 ;	Heuristic: 3.0
+		Fringe node: 12;	state: 4 3 6 1 5 7 8 2 ;	Heuristic: 2.0
+		Fringe node: 13;	state: 5 4 3 6 7 8 2 1 ;	Heuristic: 3.0
+		Fringe node: 14;	state: 7 5 4 3 8 2 1 6 ;	Heuristic: 3.0
+		Fringe node: 15;	state: 2 8 7 5 1 6 3 4 ;	Heuristic: 3.0
+		Fringe node: 16;	state: 1 2 8 7 6 3 4 5 ;	Heuristic: 2.0
+		Fringe node: 17;	state: 6 1 2 8 3 4 5 7 ;	Heuristic: 2.0
+		Fringe node: 18;	state: 5 6 1 2 7 8 3 4 ;	Heuristic: 3.0
+		Fringe node: 19;	state: 7 5 6 1 8 3 4 2 ;	Heuristic: 3.0
+		Fringe node: 20;	state: 8 7 5 6 3 4 2 1 ;	Heuristic: 4.0
+		Fringe node: 21;	state: 4 3 8 7 2 1 6 5 ;	Heuristic: 3.0
+		Fringe node: 22;	state: 7 6 3 2 8 4 5 1 ;	Heuristic: 3.0
+		Fringe node: 23;	state: 4 8 7 6 5 1 2 3 ;	Heuristic: 3.0
+		Fringe node: 24;	state: 1 5 4 8 2 3 6 7 ;	Heuristic: 2.0
+		Fringe node: 25;	state: 3 2 1 5 6 7 8 4 ;	Heuristic: 1.0
+		Fringe node: 26;	state: 5 8 3 2 6 1 7 4 ;	Heuristic: 2.0
+		Fringe node: 27;	state: 6 5 8 3 1 7 4 2 ;	Heuristic: 3.0
+		Fringe node: 28;	state: 1 6 5 8 7 4 2 3 ;	Heuristic: 3.0
+		Fringe node: 29;	state: 4 7 1 6 2 3 8 5 ;	Heuristic: 2.0
+		Fringe node: 30;	state: 2 4 7 1 3 8 5 6 ;	Heuristic: 2.0
+		Fringe node: 31;	state: 3 2 4 7 8 5 6 1 ;	Heuristic: 2.0
+		Fringe node: 32;	state: 6 3 2 4 1 7 8 5 ;	Heuristic: 2.0
+		Fringe node: 33;	state: 1 6 3 2 7 8 5 4 ;	Heuristic: 2.0
+		Fringe node: 34;	state: 7 1 6 3 8 5 4 2 ;	Heuristic: 3.0
+		Fringe node: 35;	state: 5 8 7 1 4 2 3 6 ;	Heuristic: 3.0
+		Fringe node: 36;	state: 4 5 8 7 2 3 6 1 ;	Heuristic: 3.0
+		Fringe node: 37;	state: 2 4 5 8 3 6 1 7 ;	Heuristic: 2.0
+		Fringe node: 38;	state: 6 3 4 2 5 7 8 1 ;	Heuristic: 2.0
+		Fringe node: 39;	state: 5 6 3 4 7 8 1 2 ;	Heuristic: 3.0
+		Fringe node: 40;	state: 7 5 6 3 8 1 2 4 ;	Heuristic: 3.0
+		Fringe node: 41;	state: 1 8 7 5 2 4 3 6 ;	Heuristic: 2.0
+		Fringe node: 42;	state: 2 1 8 7 4 3 6 5 ;	Heuristic: 2.0
+		Fringe node: 43;	state: 4 2 1 8 3 6 5 7 ;	Heuristic: 1.0
+		Fringe node: 44;	state: 2 8 3 6 4 5 7 1 ;	Heuristic: 2.0
+		Fringe node: 45;	state: 4 2 8 3 5 7 1 6 ;	Heuristic: 2.0
+		Fringe node: 46;	state: 5 4 2 8 7 1 6 3 ;	Heuristic: 3.0
+		Fringe node: 47;	state: 1 7 5 4 6 3 8 2 ;	Heuristic: 2.0
+		Fringe node: 48;	state: 6 1 7 5 3 8 2 4 ;	Heuristic: 3.0
+		Fringe node: 49;	state: 3 6 1 7 8 2 4 5 ;	Heuristic: 3.0
+		Fringe node: 50;	state: 1 5 6 3 7 8 4 2 ;	Heuristic: 2.0
+		Fringe node: 51;	state: 7 1 5 6 8 4 2 3 ;	Heuristic: 3.0
+		Fringe node: 52;	state: 8 7 1 5 4 2 3 6 ;	Heuristic: 3.0
+		Fringe node: 53;	state: 2 4 8 7 3 6 5 1 ;	Heuristic: 2.0
+		Fringe node: 54;	state: 3 2 4 8 6 5 1 7 ;	Heuristic: 2.0
+		Fringe node: 55;	state: 6 3 2 4 5 1 7 8 ;	Heuristic: 1.0
+		Fringe node: 56;	state: 8 3 2 1 4 5 6 7 ;	Heuristic: 2.0
+		Fringe node: 57;	state: 4 8 3 2 5 6 7 1 ;	Heuristic: 2.0
+		Fringe node: 58;	state: 5 4 8 3 6 7 1 2 ;	Heuristic: 3.0
+		Fringe node: 59;	state: 7 6 5 4 1 2 3 8 ;	Heuristic: 3.0
+		Fringe node: 60;	state: 1 7 6 5 2 3 8 4 ;	Heuristic: 2.0
+		Fringe node: 61;	state: 2 1 7 6 3 8 4 5 ;	Heuristic: 2.0
+		Fringe node: 62;	state: 7 4 5 6 8 3 2 1 ;	Heuristic: 3.0
+		Fringe node: 63;	state: 8 7 4 5 3 2 1 6 ;	Heuristic: 3.0
+		Fringe node: 64;	state: 3 8 7 4 2 1 6 5 ;	Heuristic: 3.0
+		Fringe node: 65;	state: 1 2 3 8 6 5 4 7 ;	Heuristic: 1.0
+		Fringe node: 66;	state: 6 1 2 3 5 4 7 8 ;	Heuristic: 1.0
+		Fringe node: 67;	state: 5 6 1 2 4 7 8 3 ;	Heuristic: 2.0
+		Fringe node: 68;	state: 6 3 1 2 5 7 8 4 ;	Heuristic: 2.0
+		Fringe node: 69;	state: 5 6 3 1 7 8 4 2 ;	Heuristic: 3.0
+		Fringe node: 70;	state: 8 7 5 6 4 2 1 3 ;	Heuristic: 4.0
+		Fringe node: 71;	state: 4 8 7 5 2 1 3 6 ;	Heuristic: 3.0
+		Fringe node: 72;	state: 2 4 8 7 1 3 6 5 ;	Heuristic: 2.0
+		Fringe node: 73;	state: 6 4 2 1 5 7 8 3 ;	Heuristic: 2.0
+		Fringe node: 74;	state: 5 6 4 2 7 8 3 1 ;	Heuristic: 3.0
+		Fringe node: 75;	state: 7 5 6 4 8 3 1 2 ;	Heuristic: 3.0
+		Fringe node: 76;	state: 3 8 7 5 1 2 4 6 ;	Heuristic: 3.0
+		Fringe node: 77;	state: 1 3 8 7 2 4 6 5 ;	Heuristic: 2.0
+		Fringe node: 78;	state: 2 1 3 8 4 6 5 7 ;	Heuristic: 1.0
+		Fringe node: 79;	state: 6 2 4 8 5 7 1 3 ;	Heuristic: 2.0
+		Fringe node: 80;	state: 7 5 6 2 1 3 8 4 ;	Heuristic: 3.0
+		Fringe node: 81;	state: 3 1 7 5 8 4 2 6 ;	Heuristic: 2.0
+		Fringe node: 82;	state: 4 8 3 1 2 6 5 7 ;	Heuristic: 2.0
+		Fringe node: 83;	state: 4 5 7 1 8 3 6 2 ;	Heuristic: 3.0
+		Fringe node: 84;	state: 8 4 5 7 3 6 2 1 ;	Heuristic: 3.0
+		Fringe node: 85;	state: 3 8 4 5 6 2 1 7 ;	Heuristic: 2.0
+		Fringe node: 86;	state: 2 6 3 8 1 7 5 4 ;	Heuristic: 2.0
+		Fringe node: 87;	state: 1 2 6 3 7 5 4 8 ;	Heuristic: 1.0
+		Fringe node: 88;	state: 7 1 2 6 5 4 8 3 ;	Heuristic: 2.0
+		Fringe node: 89;	state: 1 8 3 4 6 5 7 2 ;	Heuristic: 1.0
+		Fringe node: 90;	state: 6 1 8 3 5 7 2 4 ;	Heuristic: 2.0
+		Fringe node: 91;	state: 5 6 1 8 7 2 4 3 ;	Heuristic: 3.0
+		Fringe node: 92;	state: 2 7 5 6 4 3 8 1 ;	Heuristic: 2.0
+		Fringe node: 93;	state: 4 2 7 5 3 8 1 6 ;	Heuristic: 2.0
+		Fringe node: 94;	state: 3 4 2 7 8 1 6 5 ;	Heuristic: 2.0
+		**************** End Fringe List **************
+		Expanded State:	3 2 1 5 6 7 8 4 	Heuristic: 1.0
+		Move forward 7 Spaces
+		Board State:	4 3 2 1 5 6 7 8 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 7 5 4 2 8 3 6 1 ;	Heuristic: 3.0
+		Fringe node: 2;	state: 8 7 5 4 3 6 1 2 ;	Heuristic: 3.0
+		Fringe node: 3;	state: 3 8 7 5 6 1 2 4 ;	Heuristic: 3.0
+		Fringe node: 4;	state: 6 3 8 7 1 2 4 5 ;	Heuristic: 3.0
+		Fringe node: 5;	state: 4 8 7 1 5 6 3 2 ;	Heuristic: 3.0
+		Fringe node: 6;	state: 5 4 8 7 6 3 2 1 ;	Heuristic: 3.0
+		Fringe node: 7;	state: 6 5 4 8 3 2 1 7 ;	Heuristic: 3.0
+		Fringe node: 8;	state: 7 1 6 5 8 3 2 4 ;	Heuristic: 3.0
+		Fringe node: 9;	state: 8 7 1 6 3 2 4 5 ;	Heuristic: 3.0
+		Fringe node: 10;	state: 6 3 8 4 5 7 1 2 ;	Heuristic: 3.0
+		Fringe node: 11;	state: 7 5 6 3 1 2 4 8 ;	Heuristic: 3.0
+		Fringe node: 12;	state: 4 3 6 1 5 7 8 2 ;	Heuristic: 2.0
+		Fringe node: 13;	state: 5 4 3 6 7 8 2 1 ;	Heuristic: 3.0
+		Fringe node: 14;	state: 7 5 4 3 8 2 1 6 ;	Heuristic: 3.0
+		Fringe node: 15;	state: 2 8 7 5 1 6 3 4 ;	Heuristic: 3.0
+		Fringe node: 16;	state: 1 2 8 7 6 3 4 5 ;	Heuristic: 2.0
+		Fringe node: 17;	state: 6 1 2 8 3 4 5 7 ;	Heuristic: 2.0
+		Fringe node: 18;	state: 5 6 1 2 7 8 3 4 ;	Heuristic: 3.0
+		Fringe node: 19;	state: 7 5 6 1 8 3 4 2 ;	Heuristic: 3.0
+		Fringe node: 20;	state: 8 7 5 6 3 4 2 1 ;	Heuristic: 4.0
+		Fringe node: 21;	state: 4 3 8 7 2 1 6 5 ;	Heuristic: 3.0
+		Fringe node: 22;	state: 7 6 3 2 8 4 5 1 ;	Heuristic: 3.0
+		Fringe node: 23;	state: 4 8 7 6 5 1 2 3 ;	Heuristic: 3.0
+		Fringe node: 24;	state: 1 5 4 8 2 3 6 7 ;	Heuristic: 2.0
+		Fringe node: 25;	state: 3 2 1 5 6 7 8 4 ;	Heuristic: 1.0
+		Fringe node: 26;	state: 5 8 3 2 6 1 7 4 ;	Heuristic: 2.0
+		Fringe node: 27;	state: 6 5 8 3 1 7 4 2 ;	Heuristic: 3.0
+		Fringe node: 28;	state: 1 6 5 8 7 4 2 3 ;	Heuristic: 3.0
+		Fringe node: 29;	state: 4 7 1 6 2 3 8 5 ;	Heuristic: 2.0
+		Fringe node: 30;	state: 2 4 7 1 3 8 5 6 ;	Heuristic: 2.0
+		Fringe node: 31;	state: 3 2 4 7 8 5 6 1 ;	Heuristic: 2.0
+		Fringe node: 32;	state: 6 3 2 4 1 7 8 5 ;	Heuristic: 2.0
+		Fringe node: 33;	state: 1 6 3 2 7 8 5 4 ;	Heuristic: 2.0
+		Fringe node: 34;	state: 7 1 6 3 8 5 4 2 ;	Heuristic: 3.0
+		Fringe node: 35;	state: 5 8 7 1 4 2 3 6 ;	Heuristic: 3.0
+		Fringe node: 36;	state: 4 5 8 7 2 3 6 1 ;	Heuristic: 3.0
+		Fringe node: 37;	state: 2 4 5 8 3 6 1 7 ;	Heuristic: 2.0
+		Fringe node: 38;	state: 6 3 4 2 5 7 8 1 ;	Heuristic: 2.0
+		Fringe node: 39;	state: 5 6 3 4 7 8 1 2 ;	Heuristic: 3.0
+		Fringe node: 40;	state: 7 5 6 3 8 1 2 4 ;	Heuristic: 3.0
+		Fringe node: 41;	state: 1 8 7 5 2 4 3 6 ;	Heuristic: 2.0
+		Fringe node: 42;	state: 2 1 8 7 4 3 6 5 ;	Heuristic: 2.0
+		Fringe node: 43;	state: 4 2 1 8 3 6 5 7 ;	Heuristic: 1.0
+		Fringe node: 44;	state: 2 8 3 6 4 5 7 1 ;	Heuristic: 2.0
+		Fringe node: 45;	state: 4 2 8 3 5 7 1 6 ;	Heuristic: 2.0
+		Fringe node: 46;	state: 5 4 2 8 7 1 6 3 ;	Heuristic: 3.0
+		Fringe node: 47;	state: 1 7 5 4 6 3 8 2 ;	Heuristic: 2.0
+		Fringe node: 48;	state: 6 1 7 5 3 8 2 4 ;	Heuristic: 3.0
+		Fringe node: 49;	state: 3 6 1 7 8 2 4 5 ;	Heuristic: 3.0
+		Fringe node: 50;	state: 1 5 6 3 7 8 4 2 ;	Heuristic: 2.0
+		Fringe node: 51;	state: 7 1 5 6 8 4 2 3 ;	Heuristic: 3.0
+		Fringe node: 52;	state: 8 7 1 5 4 2 3 6 ;	Heuristic: 3.0
+		Fringe node: 53;	state: 2 4 8 7 3 6 5 1 ;	Heuristic: 2.0
+		Fringe node: 54;	state: 3 2 4 8 6 5 1 7 ;	Heuristic: 2.0
+		Fringe node: 55;	state: 6 3 2 4 5 1 7 8 ;	Heuristic: 1.0
+		Fringe node: 56;	state: 8 3 2 1 4 5 6 7 ;	Heuristic: 2.0
+		Fringe node: 57;	state: 4 8 3 2 5 6 7 1 ;	Heuristic: 2.0
+		Fringe node: 58;	state: 5 4 8 3 6 7 1 2 ;	Heuristic: 3.0
+		Fringe node: 59;	state: 7 6 5 4 1 2 3 8 ;	Heuristic: 3.0
+		Fringe node: 60;	state: 1 7 6 5 2 3 8 4 ;	Heuristic: 2.0
+		Fringe node: 61;	state: 2 1 7 6 3 8 4 5 ;	Heuristic: 2.0
+		Fringe node: 62;	state: 7 4 5 6 8 3 2 1 ;	Heuristic: 3.0
+		Fringe node: 63;	state: 8 7 4 5 3 2 1 6 ;	Heuristic: 3.0
+		Fringe node: 64;	state: 3 8 7 4 2 1 6 5 ;	Heuristic: 3.0
+		Fringe node: 65;	state: 1 2 3 8 6 5 4 7 ;	Heuristic: 1.0
+		Fringe node: 66;	state: 6 1 2 3 5 4 7 8 ;	Heuristic: 1.0
+		Fringe node: 67;	state: 5 6 1 2 4 7 8 3 ;	Heuristic: 2.0
+		Fringe node: 68;	state: 6 3 1 2 5 7 8 4 ;	Heuristic: 2.0
+		Fringe node: 69;	state: 5 6 3 1 7 8 4 2 ;	Heuristic: 3.0
+		Fringe node: 70;	state: 8 7 5 6 4 2 1 3 ;	Heuristic: 4.0
+		Fringe node: 71;	state: 4 8 7 5 2 1 3 6 ;	Heuristic: 3.0
+		Fringe node: 72;	state: 2 4 8 7 1 3 6 5 ;	Heuristic: 2.0
+		Fringe node: 73;	state: 6 4 2 1 5 7 8 3 ;	Heuristic: 2.0
+		Fringe node: 74;	state: 5 6 4 2 7 8 3 1 ;	Heuristic: 3.0
+		Fringe node: 75;	state: 7 5 6 4 8 3 1 2 ;	Heuristic: 3.0
+		Fringe node: 76;	state: 3 8 7 5 1 2 4 6 ;	Heuristic: 3.0
+		Fringe node: 77;	state: 1 3 8 7 2 4 6 5 ;	Heuristic: 2.0
+		Fringe node: 78;	state: 2 1 3 8 4 6 5 7 ;	Heuristic: 1.0
+		Fringe node: 79;	state: 6 2 4 8 5 7 1 3 ;	Heuristic: 2.0
+		Fringe node: 80;	state: 7 5 6 2 1 3 8 4 ;	Heuristic: 3.0
+		Fringe node: 81;	state: 3 1 7 5 8 4 2 6 ;	Heuristic: 2.0
+		Fringe node: 82;	state: 4 8 3 1 2 6 5 7 ;	Heuristic: 2.0
+		Fringe node: 83;	state: 4 5 7 1 8 3 6 2 ;	Heuristic: 3.0
+		Fringe node: 84;	state: 8 4 5 7 3 6 2 1 ;	Heuristic: 3.0
+		Fringe node: 85;	state: 3 8 4 5 6 2 1 7 ;	Heuristic: 2.0
+		Fringe node: 86;	state: 2 6 3 8 1 7 5 4 ;	Heuristic: 2.0
+		Fringe node: 87;	state: 1 2 6 3 7 5 4 8 ;	Heuristic: 1.0
+		Fringe node: 88;	state: 7 1 2 6 5 4 8 3 ;	Heuristic: 2.0
+		Fringe node: 89;	state: 1 8 3 4 6 5 7 2 ;	Heuristic: 1.0
+		Fringe node: 90;	state: 6 1 8 3 5 7 2 4 ;	Heuristic: 2.0
+		Fringe node: 91;	state: 5 6 1 8 7 2 4 3 ;	Heuristic: 3.0
+		Fringe node: 92;	state: 2 7 5 6 4 3 8 1 ;	Heuristic: 2.0
+		Fringe node: 93;	state: 4 2 7 5 3 8 1 6 ;	Heuristic: 2.0
+		Fringe node: 94;	state: 3 4 2 7 8 1 6 5 ;	Heuristic: 2.0
+		**************** End Fringe List **************
+		Expanded State:	4 3 2 1 5 6 7 8 	Heuristic: 1.0
+		Rotate	
+		Board State:	1 2 3 4 5 6 7 8 
+
+		FinalState:		1 2 3 4 5 6 7 8 	Cost: 4
+
+		Number of nodes expanded: 32
+		Number of nodes in fringe: 118
+		Path cost: 4
+
+	Board 1 2 6 5 4 3 7 8
+		Uniform Cost search:
+
+		Path found!
+		Initial State:	1 2 6 5 4 3 7 8 	Cost: 0
+
+		Move forward 2 Spaces
+		Board State:	6 5 4 3 7 8 1 2 	Cost: 1
+		Rotate	
+		Board State:	3 4 5 6 7 8 1 2 	Cost: 1
+		FinalState:		3 4 5 6 7 8 1 2 	Cost: 1
+
+		Number of nodes expanded: 4
+		Number of nodes in fringe: 18
+		Path cost: 1
+
+
+		A* with provided heuristic:
+
+		Path found!
+		Initial State:	1 2 6 5 4 3 7 8 	Cost: 0
+
+		Move forward 2 Spaces
+		Board State:	6 5 4 3 7 8 1 2 	Cost: 1
+		Rotate	
+		Board State:	3 4 5 6 7 8 1 2 	Cost: 1
+		FinalState:		3 4 5 6 7 8 1 2 	Cost: 1
+
+		Number of nodes expanded: 13
+		Number of nodes in fringe: 45
+		Path cost: 1
+
+
+		A* with Custom heuristic:
+
+		Path found!
+		Initial State:	1 2 6 5 4 3 7 8 	Cost: 0
+
+		Move forward 2 Spaces
+		Board State:	6 5 4 3 7 8 1 2 	Cost: 1
+		Rotate	
+		Board State:	3 4 5 6 7 8 1 2 	Cost: 1
+		FinalState:		3 4 5 6 7 8 1 2 	Cost: 1
+
+		Number of nodes expanded: 10
+		Number of nodes in fringe: 42
+		Path cost: 1
+	
+		
+		Uniform Cost search:
+
+		Path found!
+		Initial State:	1 2 6 5 4 3 7 8 	Cost: 0
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 1 2 6 5 4 3 7 8 ;	Heuristic: 0.0
+		**************** End Fringe List **************
+		Expanded State:	1 2 6 5 4 3 7 8 	Heuristic: 0.0
+		Move forward 2 Spaces
+		Board State:	6 5 4 3 7 8 1 2 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 1 2 6 5 4 3 7 8 ;	Heuristic: 0.0
+		**************** End Fringe List **************
+		Expanded State:	6 5 4 3 7 8 1 2 	Heuristic: 0.0
+		Rotate	
+		Board State:	3 4 5 6 7 8 1 2 
+
+		FinalState:		3 4 5 6 7 8 1 2 	Cost: 1
+
+		Number of nodes expanded: 4
+		Number of nodes in fringe: 18
+		Path cost: 1
+
+
+		A* with provided heuristic:
+
+		Path found!
+		Initial State:	1 2 6 5 4 3 7 8 	Cost: 0
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 1 2 6 5 4 3 7 8 ;	Heuristic: 4.0
+		**************** End Fringe List **************
+		Expanded State:	1 2 6 5 4 3 7 8 	Heuristic: 4.0
+		Move forward 2 Spaces
+		Board State:	6 5 4 3 7 8 1 2 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 1 2 6 5 4 3 7 8 ;	Heuristic: 4.0
+		**************** End Fringe List **************
+		Expanded State:	6 5 4 3 7 8 1 2 	Heuristic: 4.0
+		Rotate	
+		Board State:	3 4 5 6 7 8 1 2 
+
+		FinalState:		3 4 5 6 7 8 1 2 	Cost: 1
+
+		Number of nodes expanded: 13
+		Number of nodes in fringe: 45
+		Path cost: 1
+
+
+		A* with Custom heuristic:
+
+		Path found!
+		Initial State:	1 2 6 5 4 3 7 8 	Cost: 0
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 1 2 6 5 4 3 7 8 ;	Heuristic: 1.0
+		**************** End Fringe List **************
+		Expanded State:	1 2 6 5 4 3 7 8 	Heuristic: 1.0
+		Move forward 2 Spaces
+		Board State:	6 5 4 3 7 8 1 2 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 1 2 6 5 4 3 7 8 ;	Heuristic: 1.0
+		**************** End Fringe List **************
+		Expanded State:	6 5 4 3 7 8 1 2 	Heuristic: 1.0
+		Rotate	
+		Board State:	3 4 5 6 7 8 1 2 
+
+		FinalState:		3 4 5 6 7 8 1 2 	Cost: 1
+
+		Number of nodes expanded: 10
+		Number of nodes in fringe: 42
+		Path cost: 1
+	Board 1 2 6 5 8 7 3 4
+		Uniform Cost search:
+
+		Path found!
+		Initial State:	1 2 6 5 8 7 3 4 	Cost: 0
+
+		Rotate	
+		Board State:	5 6 2 1 8 7 3 4 	Cost: 1
+		Move forward 2 Spaces
+		Board State:	2 1 8 7 3 4 5 6 	Cost: 2
+		Rotate	
+		Board State:	7 8 1 2 3 4 5 6 	Cost: 2
+		FinalState:		7 8 1 2 3 4 5 6 	Cost: 2
+
+		Number of nodes expanded: 11
+		Number of nodes in fringe: 29
+		Path cost: 2
+
+
+		A* with provided heuristic:
+
+		Path found!
+		Initial State:	1 2 6 5 8 7 3 4 	Cost: 0
+
+		Rotate	
+		Board State:	5 6 2 1 8 7 3 4 	Cost: 1
+		Move forward 2 Spaces
+		Board State:	2 1 8 7 3 4 5 6 	Cost: 2
+		Rotate	
+		Board State:	7 8 1 2 3 4 5 6 	Cost: 2
+		FinalState:		7 8 1 2 3 4 5 6 	Cost: 2
+
+		Number of nodes expanded: 66
+		Number of nodes in fringe: 198
+		Path cost: 2
+
+
+		A* with Custom heuristic:
+
+		Path found!
+		Initial State:	1 2 6 5 8 7 3 4 	Cost: 0
+
+		Rotate	
+		Board State:	5 6 2 1 8 7 3 4 	Cost: 1
+		Move forward 2 Spaces
+		Board State:	2 1 8 7 3 4 5 6 	Cost: 2
+		Rotate	
+		Board State:	7 8 1 2 3 4 5 6 	Cost: 2
+		FinalState:		7 8 1 2 3 4 5 6 	Cost: 2
+
+		Number of nodes expanded: 43
+		Number of nodes in fringe: 113
+		Path cost: 2
+
+		
+		Uniform Cost search:
+
+		Path found!
+		Initial State:	1 2 6 5 8 7 3 4 	Cost: 0
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 1 2 6 5 8 7 3 4 ;	Heuristic: 0.0
+		**************** End Fringe List **************
+		Expanded State:	1 2 6 5 8 7 3 4 	Heuristic: 0.0
+		Rotate	
+		Board State:	5 6 2 1 8 7 3 4 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 5 6 2 1 8 7 3 4 ;	Heuristic: 0.0
+		Fringe node: 2;	state: 8 5 6 2 7 3 4 1 ;	Heuristic: 0.0
+		Fringe node: 3;	state: 7 8 5 6 3 4 1 2 ;	Heuristic: 0.0
+		Fringe node: 4;	state: 3 7 8 5 4 1 2 6 ;	Heuristic: 0.0
+		Fringe node: 5;	state: 4 3 7 8 1 2 6 5 ;	Heuristic: 0.0
+		Fringe node: 6;	state: 1 4 3 7 2 6 5 8 ;	Heuristic: 0.0
+		Fringe node: 7;	state: 2 1 4 3 6 5 8 7 ;	Heuristic: 0.0
+		Fringe node: 8;	state: 6 2 1 4 5 8 7 3 ;	Heuristic: 0.0
+		**************** End Fringe List **************
+		Expanded State:	5 6 2 1 8 7 3 4 	Heuristic: 0.0
+		Move forward 2 Spaces
+		Board State:	2 1 8 7 3 4 5 6 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 5 6 2 1 8 7 3 4 ;	Heuristic: 0.0
+		Fringe node: 2;	state: 8 5 6 2 7 3 4 1 ;	Heuristic: 0.0
+		Fringe node: 3;	state: 7 8 5 6 3 4 1 2 ;	Heuristic: 0.0
+		Fringe node: 4;	state: 3 7 8 5 4 1 2 6 ;	Heuristic: 0.0
+		Fringe node: 5;	state: 4 3 7 8 1 2 6 5 ;	Heuristic: 0.0
+		Fringe node: 6;	state: 1 4 3 7 2 6 5 8 ;	Heuristic: 0.0
+		Fringe node: 7;	state: 2 1 4 3 6 5 8 7 ;	Heuristic: 0.0
+		Fringe node: 8;	state: 6 2 1 4 5 8 7 3 ;	Heuristic: 0.0
+		**************** End Fringe List **************
+		Expanded State:	2 1 8 7 3 4 5 6 	Heuristic: 0.0
+		Rotate	
+		Board State:	7 8 1 2 3 4 5 6 
+
+		FinalState:		7 8 1 2 3 4 5 6 	Cost: 2
+
+		Number of nodes expanded: 11
+		Number of nodes in fringe: 29
+		Path cost: 2
+
+
+		A* with provided heuristic:
+
+		Path found!
+		Initial State:	1 2 6 5 8 7 3 4 	Cost: 0
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 1 2 6 5 8 7 3 4 ;	Heuristic: 6.0
+		**************** End Fringe List **************
+		Expanded State:	1 2 6 5 8 7 3 4 	Heuristic: 6.0
+		Rotate	
+		Board State:	5 6 2 1 8 7 3 4 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 5 6 2 1 8 7 3 4 ;	Heuristic: 8.0
+		Fringe node: 2;	state: 8 5 6 2 7 3 4 1 ;	Heuristic: 8.0
+		Fringe node: 3;	state: 7 8 5 6 3 4 1 2 ;	Heuristic: 8.0
+		Fringe node: 4;	state: 3 7 8 5 4 1 2 6 ;	Heuristic: 8.0
+		Fringe node: 5;	state: 4 3 7 8 1 2 6 5 ;	Heuristic: 8.0
+		Fringe node: 6;	state: 2 1 4 3 6 5 8 7 ;	Heuristic: 8.0
+		Fringe node: 7;	state: 5 6 2 7 8 1 4 3 ;	Heuristic: 8.0
+		Fringe node: 8;	state: 8 5 6 2 1 4 3 7 ;	Heuristic: 8.0
+		Fringe node: 9;	state: 4 1 8 5 3 7 2 6 ;	Heuristic: 8.0
+		Fringe node: 10;	state: 3 4 1 8 7 2 6 5 ;	Heuristic: 8.0
+		Fringe node: 11;	state: 5 4 1 2 8 7 3 6 ;	Heuristic: 8.0
+		Fringe node: 12;	state: 8 5 4 1 7 3 6 2 ;	Heuristic: 8.0
+		Fringe node: 13;	state: 6 3 7 8 2 1 4 5 ;	Heuristic: 8.0
+		Fringe node: 14;	state: 6 4 3 7 5 8 1 2 ;	Heuristic: 6.0
+		Fringe node: 15;	state: 5 6 4 3 8 1 2 7 ;	Heuristic: 8.0
+		Fringe node: 16;	state: 8 5 6 4 1 2 7 3 ;	Heuristic: 6.0
+		Fringe node: 17;	state: 2 1 8 5 7 3 4 6 ;	Heuristic: 8.0
+		Fringe node: 18;	state: 7 2 1 8 3 4 6 5 ;	Heuristic: 7.0
+		Fringe node: 19;	state: 3 7 2 1 4 6 5 8 ;	Heuristic: 6.0
+		Fringe node: 20;	state: 5 3 7 2 8 1 4 6 ;	Heuristic: 8.0
+		Fringe node: 21;	state: 8 5 3 7 1 4 6 2 ;	Heuristic: 7.0
+		Fringe node: 22;	state: 1 8 5 3 4 6 2 7 ;	Heuristic: 6.0
+		Fringe node: 23;	state: 6 4 1 8 2 7 3 5 ;	Heuristic: 8.0
+		Fringe node: 24;	state: 2 6 4 1 7 3 5 8 ;	Heuristic: 7.0
+		Fringe node: 25;	state: 7 2 6 4 3 5 8 1 ;	Heuristic: 6.0
+		Fringe node: 26;	state: 3 4 5 8 6 2 1 7 ;	Heuristic: 8.0
+		Fringe node: 27;	state: 6 3 4 5 2 1 7 8 ;	Heuristic: 6.0
+		Fringe node: 28;	state: 2 6 3 4 1 7 8 5 ;	Heuristic: 6.0
+		Fringe node: 29;	state: 7 1 2 6 8 5 4 3 ;	Heuristic: 8.0
+		Fringe node: 30;	state: 8 7 1 2 5 4 3 6 ;	Heuristic: 7.0
+		Fringe node: 31;	state: 5 8 7 1 4 3 6 2 ;	Heuristic: 8.0
+		Fringe node: 32;	state: 1 7 3 6 4 5 8 2 ;	Heuristic: 6.0
+		Fringe node: 33;	state: 5 4 1 7 8 2 6 3 ;	Heuristic: 8.0
+		Fringe node: 34;	state: 2 8 5 4 6 3 7 1 ;	Heuristic: 6.0
+		Fringe node: 35;	state: 3 6 2 8 7 1 4 5 ;	Heuristic: 8.0
+		**************** End Fringe List **************
+		Expanded State:	5 6 2 1 8 7 3 4 	Heuristic: 8.0
+		Move forward 2 Spaces
+		Board State:	2 1 8 7 3 4 5 6 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 5 6 2 1 8 7 3 4 ;	Heuristic: 8.0
+		Fringe node: 2;	state: 8 5 6 2 7 3 4 1 ;	Heuristic: 8.0
+		Fringe node: 3;	state: 7 8 5 6 3 4 1 2 ;	Heuristic: 8.0
+		Fringe node: 4;	state: 3 7 8 5 4 1 2 6 ;	Heuristic: 8.0
+		Fringe node: 5;	state: 4 3 7 8 1 2 6 5 ;	Heuristic: 8.0
+		Fringe node: 6;	state: 2 1 4 3 6 5 8 7 ;	Heuristic: 8.0
+		Fringe node: 7;	state: 5 6 2 7 8 1 4 3 ;	Heuristic: 8.0
+		Fringe node: 8;	state: 8 5 6 2 1 4 3 7 ;	Heuristic: 8.0
+		Fringe node: 9;	state: 4 1 8 5 3 7 2 6 ;	Heuristic: 8.0
+		Fringe node: 10;	state: 3 4 1 8 7 2 6 5 ;	Heuristic: 8.0
+		Fringe node: 11;	state: 5 4 1 2 8 7 3 6 ;	Heuristic: 8.0
+		Fringe node: 12;	state: 8 5 4 1 7 3 6 2 ;	Heuristic: 8.0
+		Fringe node: 13;	state: 6 3 7 8 2 1 4 5 ;	Heuristic: 8.0
+		Fringe node: 14;	state: 6 4 3 7 5 8 1 2 ;	Heuristic: 6.0
+		Fringe node: 15;	state: 5 6 4 3 8 1 2 7 ;	Heuristic: 8.0
+		Fringe node: 16;	state: 8 5 6 4 1 2 7 3 ;	Heuristic: 6.0
+		Fringe node: 17;	state: 2 1 8 5 7 3 4 6 ;	Heuristic: 8.0
+		Fringe node: 18;	state: 7 2 1 8 3 4 6 5 ;	Heuristic: 7.0
+		Fringe node: 19;	state: 3 7 2 1 4 6 5 8 ;	Heuristic: 6.0
+		Fringe node: 20;	state: 5 3 7 2 8 1 4 6 ;	Heuristic: 8.0
+		Fringe node: 21;	state: 8 5 3 7 1 4 6 2 ;	Heuristic: 7.0
+		Fringe node: 22;	state: 1 8 5 3 4 6 2 7 ;	Heuristic: 6.0
+		Fringe node: 23;	state: 6 4 1 8 2 7 3 5 ;	Heuristic: 8.0
+		Fringe node: 24;	state: 2 6 4 1 7 3 5 8 ;	Heuristic: 7.0
+		Fringe node: 25;	state: 7 2 6 4 3 5 8 1 ;	Heuristic: 6.0
+		Fringe node: 26;	state: 3 4 5 8 6 2 1 7 ;	Heuristic: 8.0
+		Fringe node: 27;	state: 6 3 4 5 2 1 7 8 ;	Heuristic: 6.0
+		Fringe node: 28;	state: 2 6 3 4 1 7 8 5 ;	Heuristic: 6.0
+		Fringe node: 29;	state: 7 1 2 6 8 5 4 3 ;	Heuristic: 8.0
+		Fringe node: 30;	state: 8 7 1 2 5 4 3 6 ;	Heuristic: 7.0
+		Fringe node: 31;	state: 5 8 7 1 4 3 6 2 ;	Heuristic: 8.0
+		Fringe node: 32;	state: 1 7 3 6 4 5 8 2 ;	Heuristic: 6.0
+		Fringe node: 33;	state: 5 4 1 7 8 2 6 3 ;	Heuristic: 8.0
+		Fringe node: 34;	state: 2 8 5 4 6 3 7 1 ;	Heuristic: 6.0
+		Fringe node: 35;	state: 3 6 2 8 7 1 4 5 ;	Heuristic: 8.0
+		**************** End Fringe List **************
+		Expanded State:	2 1 8 7 3 4 5 6 	Heuristic: 8.0
+		Rotate	
+		Board State:	7 8 1 2 3 4 5 6 
+
+		FinalState:		7 8 1 2 3 4 5 6 	Cost: 2
+
+		Number of nodes expanded: 66
+		Number of nodes in fringe: 198
+		Path cost: 2
+
+
+		A* with Custom heuristic:
+
+		Path found!
+		Initial State:	1 2 6 5 8 7 3 4 	Cost: 0
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 1 2 6 5 8 7 3 4 ;	Heuristic: 2.0
+		**************** End Fringe List **************
+		Expanded State:	1 2 6 5 8 7 3 4 	Heuristic: 2.0
+		Rotate	
+		Board State:	5 6 2 1 8 7 3 4 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 5 6 2 1 8 7 3 4 ;	Heuristic: 3.0
+		Fringe node: 2;	state: 8 5 6 2 7 3 4 1 ;	Heuristic: 3.0
+		Fringe node: 3;	state: 7 8 5 6 3 4 1 2 ;	Heuristic: 4.0
+		Fringe node: 4;	state: 3 7 8 5 4 1 2 6 ;	Heuristic: 3.0
+		Fringe node: 5;	state: 4 3 7 8 1 2 6 5 ;	Heuristic: 3.0
+		Fringe node: 6;	state: 2 7 3 4 6 5 8 1 ;	Heuristic: 2.0
+		Fringe node: 7;	state: 6 2 7 3 5 8 1 4 ;	Heuristic: 2.0
+		Fringe node: 8;	state: 5 6 2 7 8 1 4 3 ;	Heuristic: 3.0
+		Fringe node: 9;	state: 8 5 6 2 1 4 3 7 ;	Heuristic: 3.0
+		Fringe node: 10;	state: 1 8 5 6 4 3 7 2 ;	Heuristic: 2.0
+		Fringe node: 11;	state: 4 1 8 5 3 7 2 6 ;	Heuristic: 2.0
+		Fringe node: 12;	state: 3 4 1 8 7 2 6 5 ;	Heuristic: 2.0
+		Fringe node: 13;	state: 6 3 4 1 5 8 7 2 ;	Heuristic: 2.0
+		Fringe node: 14;	state: 5 6 3 4 8 7 2 1 ;	Heuristic: 3.0
+		Fringe node: 15;	state: 8 5 6 3 7 2 1 4 ;	Heuristic: 3.0
+		Fringe node: 16;	state: 2 7 8 5 1 4 3 6 ;	Heuristic: 3.0
+		Fringe node: 17;	state: 1 2 7 8 4 3 6 5 ;	Heuristic: 2.0
+		Fringe node: 18;	state: 5 4 1 2 8 7 3 6 ;	Heuristic: 2.0
+		Fringe node: 19;	state: 8 5 4 1 7 3 6 2 ;	Heuristic: 3.0
+		Fringe node: 20;	state: 7 8 5 4 3 6 2 1 ;	Heuristic: 3.0
+		Fringe node: 21;	state: 6 3 7 8 2 1 4 5 ;	Heuristic: 3.0
+		Fringe node: 22;	state: 2 6 3 7 1 4 5 8 ;	Heuristic: 2.0
+		Fringe node: 23;	state: 3 7 2 1 6 5 8 4 ;	Heuristic: 2.0
+		Fringe node: 24;	state: 6 3 7 2 5 8 4 1 ;	Heuristic: 3.0
+		Fringe node: 25;	state: 5 6 3 7 8 4 1 2 ;	Heuristic: 3.0
+		Fringe node: 26;	state: 4 8 5 6 1 2 7 3 ;	Heuristic: 3.0
+		Fringe node: 27;	state: 1 4 8 5 2 7 3 6 ;	Heuristic: 2.0
+		Fringe node: 28;	state: 2 1 4 8 7 3 6 5 ;	Heuristic: 2.0
+		Fringe node: 29;	state: 4 3 6 2 5 8 7 1 ;	Heuristic: 2.0
+		Fringe node: 30;	state: 5 4 3 6 8 7 1 2 ;	Heuristic: 3.0
+		Fringe node: 31;	state: 8 5 4 3 7 1 2 6 ;	Heuristic: 3.0
+		Fringe node: 32;	state: 1 7 8 5 2 6 3 4 ;	Heuristic: 2.0
+		Fringe node: 33;	state: 2 1 7 8 6 3 4 5 ;	Heuristic: 2.0
+		Fringe node: 34;	state: 6 2 1 7 3 4 5 8 ;	Heuristic: 2.0
+		**************** End Fringe List **************
+		Expanded State:	5 6 2 1 8 7 3 4 	Heuristic: 3.0
+		Move forward 2 Spaces
+		Board State:	2 1 8 7 3 4 5 6 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 5 6 2 1 8 7 3 4 ;	Heuristic: 3.0
+		Fringe node: 2;	state: 8 5 6 2 7 3 4 1 ;	Heuristic: 3.0
+		Fringe node: 3;	state: 7 8 5 6 3 4 1 2 ;	Heuristic: 4.0
+		Fringe node: 4;	state: 3 7 8 5 4 1 2 6 ;	Heuristic: 3.0
+		Fringe node: 5;	state: 4 3 7 8 1 2 6 5 ;	Heuristic: 3.0
+		Fringe node: 6;	state: 2 7 3 4 6 5 8 1 ;	Heuristic: 2.0
+		Fringe node: 7;	state: 6 2 7 3 5 8 1 4 ;	Heuristic: 2.0
+		Fringe node: 8;	state: 5 6 2 7 8 1 4 3 ;	Heuristic: 3.0
+		Fringe node: 9;	state: 8 5 6 2 1 4 3 7 ;	Heuristic: 3.0
+		Fringe node: 10;	state: 1 8 5 6 4 3 7 2 ;	Heuristic: 2.0
+		Fringe node: 11;	state: 4 1 8 5 3 7 2 6 ;	Heuristic: 2.0
+		Fringe node: 12;	state: 3 4 1 8 7 2 6 5 ;	Heuristic: 2.0
+		Fringe node: 13;	state: 6 3 4 1 5 8 7 2 ;	Heuristic: 2.0
+		Fringe node: 14;	state: 5 6 3 4 8 7 2 1 ;	Heuristic: 3.0
+		Fringe node: 15;	state: 8 5 6 3 7 2 1 4 ;	Heuristic: 3.0
+		Fringe node: 16;	state: 2 7 8 5 1 4 3 6 ;	Heuristic: 3.0
+		Fringe node: 17;	state: 1 2 7 8 4 3 6 5 ;	Heuristic: 2.0
+		Fringe node: 18;	state: 5 4 1 2 8 7 3 6 ;	Heuristic: 2.0
+		Fringe node: 19;	state: 8 5 4 1 7 3 6 2 ;	Heuristic: 3.0
+		Fringe node: 20;	state: 7 8 5 4 3 6 2 1 ;	Heuristic: 3.0
+		Fringe node: 21;	state: 6 3 7 8 2 1 4 5 ;	Heuristic: 3.0
+		Fringe node: 22;	state: 2 6 3 7 1 4 5 8 ;	Heuristic: 2.0
+		Fringe node: 23;	state: 3 7 2 1 6 5 8 4 ;	Heuristic: 2.0
+		Fringe node: 24;	state: 6 3 7 2 5 8 4 1 ;	Heuristic: 3.0
+		Fringe node: 25;	state: 5 6 3 7 8 4 1 2 ;	Heuristic: 3.0
+		Fringe node: 26;	state: 4 8 5 6 1 2 7 3 ;	Heuristic: 3.0
+		Fringe node: 27;	state: 1 4 8 5 2 7 3 6 ;	Heuristic: 2.0
+		Fringe node: 28;	state: 2 1 4 8 7 3 6 5 ;	Heuristic: 2.0
+		Fringe node: 29;	state: 4 3 6 2 5 8 7 1 ;	Heuristic: 2.0
+		Fringe node: 30;	state: 5 4 3 6 8 7 1 2 ;	Heuristic: 3.0
+		Fringe node: 31;	state: 8 5 4 3 7 1 2 6 ;	Heuristic: 3.0
+		Fringe node: 32;	state: 1 7 8 5 2 6 3 4 ;	Heuristic: 2.0
+		Fringe node: 33;	state: 2 1 7 8 6 3 4 5 ;	Heuristic: 2.0
+		Fringe node: 34;	state: 6 2 1 7 3 4 5 8 ;	Heuristic: 2.0
+		**************** End Fringe List **************
+		Expanded State:	2 1 8 7 3 4 5 6 	Heuristic: 3.0
+		Rotate	
+		Board State:	7 8 1 2 3 4 5 6 
+
+		FinalState:		7 8 1 2 3 4 5 6 	Cost: 2
+
+		Number of nodes expanded: 43
+		Number of nodes in fringe: 113
+		Path cost: 2
+20 Tiles
+	Board 2 1 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 4 3
+		Uniform Cost search:
+
+		Path found!
+		Initial State:	2 1 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 4 3 	Cost: 0
+
+		Move forward 18 Spaces
+		Board State:	4 3 2 1 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 	Cost: 1
+		Rotate	
+		Board State:	1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 	Cost: 1
+		FinalState:		1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 	Cost: 1
+
+		Number of nodes expanded: 20
+		Number of nodes in fringe: 239
+		Path cost: 1
+
+
+		A* with provided heuristic:
+
+		Path found!
+		Initial State:	2 1 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 4 3 	Cost: 0
+
+		Rotate	
+		Board State:	1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 	Cost: 1
+		FinalState:		1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 	Cost: 1
+
+		Number of nodes expanded: 2
+		Number of nodes in fringe: 19
+		Path cost: 1
+		
+		Uniform Cost search:
+
+		Path found!
+		Initial State:	2 1 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 4 3 	Cost: 0
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 2 1 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 4 3 ;	Heuristic: 0.0
+		**************** End Fringe List **************
+		Expanded State:	2 1 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 4 3 	Heuristic: 0.0
+		Move forward 18 Spaces
+		Board State:	4 3 2 1 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 2 1 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 4 3 ;	Heuristic: 0.0
+		**************** End Fringe List **************
+		Expanded State:	4 3 2 1 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 	Heuristic: 0.0
+		Rotate	
+		Board State:	1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 
+
+		FinalState:		1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 	Cost: 1
+
+		Number of nodes expanded: 20
+		Number of nodes in fringe: 239
+		Path cost: 1
+
+
+		A* with provided heuristic:
+
+		Path found!
+		Initial State:	2 1 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 4 3 	Cost: 0
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 2 1 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 4 3 ;	Heuristic: 20.0
+		**************** End Fringe List **************
+		Expanded State:	4 3 2 1 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 	Heuristic: 20.0
+		Rotate	
+		Board State:	1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 
+
+		FinalState:		1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 	Cost: 1
+
+		Number of nodes expanded: 2
+		Number of nodes in fringe: 19
+		Path cost: 1
+
+
+		A* with Custom heuristic:
+
+		Path found!
+		Initial State:	2 1 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 4 3 	Cost: 0
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 2 1 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 4 3 ;	Heuristic: 3.0
+		**************** End Fringe List **************
+		Expanded State:	4 3 2 1 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 	Heuristic: 3.0
+		Rotate	
+		Board State:	1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 
+
+		FinalState:		1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 	Cost: 1
+
+		Number of nodes expanded: 2
+		Number of nodes in fringe: 19
+		Path cost: 1
+
+
+		A* with Custom heuristic:
+
+		Path found!
+		Initial State:	2 1 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 4 3 	Cost: 0
+
+		Rotate	
+		Board State:	1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 	Cost: 1
+		FinalState:		1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 	Cost: 1
+
+		Number of nodes expanded: 2
+		Number of nodes in fringe: 19
+		Path cost: 1
+		
+	Board 5 1 2 3 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 4
+		Uniform Cost search:
+
+		Path found!
+		Initial State:	5 1 2 3 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 4 	Cost: 0
+
+		Rotate	
+		Board State:	3 2 1 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 4 	Cost: 1
+		Move forward 19 Spaces
+		Board State:	4 3 2 1 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 	Cost: 2
+		Rotate	
+		Board State:	1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 	Cost: 2
+		FinalState:		1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 	Cost: 2
+
+		Number of nodes expanded: 40
+		Number of nodes in fringe: 456
+		Path cost: 2
+
+
+		A* with provided heuristic:
+
+		Path found!
+		Initial State:	5 1 2 3 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 4 	Cost: 0
+
+		Rotate	
+		Board State:	3 2 1 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 4 	Cost: 1
+		Rotate	
+		Board State:	1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 	Cost: 2
+		FinalState:		1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 	Cost: 2
+
+		Number of nodes expanded: 6
+		Number of nodes in fringe: 91
+		Path cost: 2
+
+
+		A* with Custom heuristic:
+
+		Disconnected from the target VM, address: '127.0.0.1:58828', transport: 'socket'
+		Path found!
+		Initial State:	5 1 2 3 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 4 	Cost: 0
+
+		Rotate	
+		Board State:	3 2 1 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 4 	Cost: 1
+		Rotate	
+		Board State:	1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 	Cost: 2
+		FinalState:		1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 	Cost: 2
+
+		Number of nodes expanded: 4
+		Number of nodes in fringe: 55
+		Path cost: 2
+
+
+		Uniform Cost search:
+
+		Path found!
+		Initial State:	5 1 2 3 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 4 	Cost: 0
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 5 1 2 3 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 4 ;	Heuristic: 0.0
+		**************** End Fringe List **************
+		Expanded State:	5 1 2 3 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 4 	Heuristic: 0.0
+		Rotate	
+		Board State:	3 2 1 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 4 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 3 2 1 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 4 ;	Heuristic: 0.0
+		Fringe node: 2;	state: 6 3 2 1 7 8 9 10 11 12 13 14 15 16 17 18 19 20 4 5 ;	Heuristic: 0.0
+		Fringe node: 3;	state: 7 6 3 2 8 9 10 11 12 13 14 15 16 17 18 19 20 4 5 1 ;	Heuristic: 0.0
+		Fringe node: 4;	state: 8 7 6 3 9 10 11 12 13 14 15 16 17 18 19 20 4 5 1 2 ;	Heuristic: 0.0
+		Fringe node: 5;	state: 9 8 7 6 10 11 12 13 14 15 16 17 18 19 20 4 5 1 2 3 ;	Heuristic: 0.0
+		Fringe node: 6;	state: 10 9 8 7 11 12 13 14 15 16 17 18 19 20 4 5 1 2 3 6 ;	Heuristic: 0.0
+		Fringe node: 7;	state: 11 10 9 8 12 13 14 15 16 17 18 19 20 4 5 1 2 3 6 7 ;	Heuristic: 0.0
+		Fringe node: 8;	state: 12 11 10 9 13 14 15 16 17 18 19 20 4 5 1 2 3 6 7 8 ;	Heuristic: 0.0
+		Fringe node: 9;	state: 13 12 11 10 14 15 16 17 18 19 20 4 5 1 2 3 6 7 8 9 ;	Heuristic: 0.0
+		Fringe node: 10;	state: 14 13 12 11 15 16 17 18 19 20 4 5 1 2 3 6 7 8 9 10 ;	Heuristic: 0.0
+		Fringe node: 11;	state: 15 14 13 12 16 17 18 19 20 4 5 1 2 3 6 7 8 9 10 11 ;	Heuristic: 0.0
+		Fringe node: 12;	state: 16 15 14 13 17 18 19 20 4 5 1 2 3 6 7 8 9 10 11 12 ;	Heuristic: 0.0
+		Fringe node: 13;	state: 17 16 15 14 18 19 20 4 5 1 2 3 6 7 8 9 10 11 12 13 ;	Heuristic: 0.0
+		Fringe node: 14;	state: 18 17 16 15 19 20 4 5 1 2 3 6 7 8 9 10 11 12 13 14 ;	Heuristic: 0.0
+		Fringe node: 15;	state: 19 18 17 16 20 4 5 1 2 3 6 7 8 9 10 11 12 13 14 15 ;	Heuristic: 0.0
+		Fringe node: 16;	state: 20 19 18 17 4 5 1 2 3 6 7 8 9 10 11 12 13 14 15 16 ;	Heuristic: 0.0
+		Fringe node: 17;	state: 4 20 19 18 5 1 2 3 6 7 8 9 10 11 12 13 14 15 16 17 ;	Heuristic: 0.0
+		Fringe node: 18;	state: 5 4 20 19 1 2 3 6 7 8 9 10 11 12 13 14 15 16 17 18 ;	Heuristic: 0.0
+		Fringe node: 19;	state: 1 5 4 20 2 3 6 7 8 9 10 11 12 13 14 15 16 17 18 19 ;	Heuristic: 0.0
+		Fringe node: 20;	state: 2 1 5 4 3 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 ;	Heuristic: 0.0
+		**************** End Fringe List **************
+		Expanded State:	3 2 1 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 4 	Heuristic: 0.0
+		Move forward 19 Spaces
+		Board State:	4 3 2 1 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 3 2 1 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 4 ;	Heuristic: 0.0
+		Fringe node: 2;	state: 6 3 2 1 7 8 9 10 11 12 13 14 15 16 17 18 19 20 4 5 ;	Heuristic: 0.0
+		Fringe node: 3;	state: 7 6 3 2 8 9 10 11 12 13 14 15 16 17 18 19 20 4 5 1 ;	Heuristic: 0.0
+		Fringe node: 4;	state: 8 7 6 3 9 10 11 12 13 14 15 16 17 18 19 20 4 5 1 2 ;	Heuristic: 0.0
+		Fringe node: 5;	state: 9 8 7 6 10 11 12 13 14 15 16 17 18 19 20 4 5 1 2 3 ;	Heuristic: 0.0
+		Fringe node: 6;	state: 10 9 8 7 11 12 13 14 15 16 17 18 19 20 4 5 1 2 3 6 ;	Heuristic: 0.0
+		Fringe node: 7;	state: 11 10 9 8 12 13 14 15 16 17 18 19 20 4 5 1 2 3 6 7 ;	Heuristic: 0.0
+		Fringe node: 8;	state: 12 11 10 9 13 14 15 16 17 18 19 20 4 5 1 2 3 6 7 8 ;	Heuristic: 0.0
+		Fringe node: 9;	state: 13 12 11 10 14 15 16 17 18 19 20 4 5 1 2 3 6 7 8 9 ;	Heuristic: 0.0
+		Fringe node: 10;	state: 14 13 12 11 15 16 17 18 19 20 4 5 1 2 3 6 7 8 9 10 ;	Heuristic: 0.0
+		Fringe node: 11;	state: 15 14 13 12 16 17 18 19 20 4 5 1 2 3 6 7 8 9 10 11 ;	Heuristic: 0.0
+		Fringe node: 12;	state: 16 15 14 13 17 18 19 20 4 5 1 2 3 6 7 8 9 10 11 12 ;	Heuristic: 0.0
+		Fringe node: 13;	state: 17 16 15 14 18 19 20 4 5 1 2 3 6 7 8 9 10 11 12 13 ;	Heuristic: 0.0
+		Fringe node: 14;	state: 18 17 16 15 19 20 4 5 1 2 3 6 7 8 9 10 11 12 13 14 ;	Heuristic: 0.0
+		Fringe node: 15;	state: 19 18 17 16 20 4 5 1 2 3 6 7 8 9 10 11 12 13 14 15 ;	Heuristic: 0.0
+		Fringe node: 16;	state: 20 19 18 17 4 5 1 2 3 6 7 8 9 10 11 12 13 14 15 16 ;	Heuristic: 0.0
+		Fringe node: 17;	state: 4 20 19 18 5 1 2 3 6 7 8 9 10 11 12 13 14 15 16 17 ;	Heuristic: 0.0
+		Fringe node: 18;	state: 5 4 20 19 1 2 3 6 7 8 9 10 11 12 13 14 15 16 17 18 ;	Heuristic: 0.0
+		Fringe node: 19;	state: 1 5 4 20 2 3 6 7 8 9 10 11 12 13 14 15 16 17 18 19 ;	Heuristic: 0.0
+		Fringe node: 20;	state: 2 1 5 4 3 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 ;	Heuristic: 0.0
+		**************** End Fringe List **************
+		Expanded State:	4 3 2 1 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 	Heuristic: 0.0
+		Rotate	
+		Board State:	1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 
+
+		FinalState:		1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 	Cost: 2
+
+		Number of nodes expanded: 40
+		Number of nodes in fringe: 456
+		Path cost: 2
+
+
+		A* with provided heuristic:
+
+		Path found!
+		Initial State:	5 1 2 3 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 4 	Cost: 0
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 5 1 2 3 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 4 ;	Heuristic: 20.0
+		**************** End Fringe List **************
+		Expanded State:	5 1 2 3 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 4 	Heuristic: 20.0
+		Rotate	
+		Board State:	3 2 1 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 4 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 3 2 1 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 4 ;	Heuristic: 19.0
+		Fringe node: 2;	state: 6 3 2 1 7 8 9 10 11 12 13 14 15 16 17 18 19 20 4 5 ;	Heuristic: 20.0
+		Fringe node: 3;	state: 7 6 3 2 8 9 10 11 12 13 14 15 16 17 18 19 20 4 5 1 ;	Heuristic: 19.0
+		Fringe node: 4;	state: 8 7 6 3 9 10 11 12 13 14 15 16 17 18 19 20 4 5 1 2 ;	Heuristic: 20.0
+		Fringe node: 5;	state: 9 8 7 6 10 11 12 13 14 15 16 17 18 19 20 4 5 1 2 3 ;	Heuristic: 20.0
+		Fringe node: 6;	state: 10 9 8 7 11 12 13 14 15 16 17 18 19 20 4 5 1 2 3 6 ;	Heuristic: 20.0
+		Fringe node: 7;	state: 11 10 9 8 12 13 14 15 16 17 18 19 20 4 5 1 2 3 6 7 ;	Heuristic: 20.0
+		Fringe node: 8;	state: 12 11 10 9 13 14 15 16 17 18 19 20 4 5 1 2 3 6 7 8 ;	Heuristic: 20.0
+		Fringe node: 9;	state: 13 12 11 10 14 15 16 17 18 19 20 4 5 1 2 3 6 7 8 9 ;	Heuristic: 20.0
+		Fringe node: 10;	state: 14 13 12 11 15 16 17 18 19 20 4 5 1 2 3 6 7 8 9 10 ;	Heuristic: 20.0
+		Fringe node: 11;	state: 15 14 13 12 16 17 18 19 20 4 5 1 2 3 6 7 8 9 10 11 ;	Heuristic: 20.0
+		Fringe node: 12;	state: 16 15 14 13 17 18 19 20 4 5 1 2 3 6 7 8 9 10 11 12 ;	Heuristic: 20.0
+		Fringe node: 13;	state: 17 16 15 14 18 19 20 4 5 1 2 3 6 7 8 9 10 11 12 13 ;	Heuristic: 20.0
+		Fringe node: 14;	state: 18 17 16 15 19 20 4 5 1 2 3 6 7 8 9 10 11 12 13 14 ;	Heuristic: 20.0
+		Fringe node: 15;	state: 19 18 17 16 20 4 5 1 2 3 6 7 8 9 10 11 12 13 14 15 ;	Heuristic: 20.0
+		Fringe node: 16;	state: 20 19 18 17 4 5 1 2 3 6 7 8 9 10 11 12 13 14 15 16 ;	Heuristic: 20.0
+		Fringe node: 17;	state: 4 20 19 18 5 1 2 3 6 7 8 9 10 11 12 13 14 15 16 17 ;	Heuristic: 19.0
+		Fringe node: 18;	state: 5 4 20 19 1 2 3 6 7 8 9 10 11 12 13 14 15 16 17 18 ;	Heuristic: 20.0
+		Fringe node: 19;	state: 1 5 4 20 2 3 6 7 8 9 10 11 12 13 14 15 16 17 18 19 ;	Heuristic: 19.0
+		Fringe node: 20;	state: 3 4 5 1 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 2 ;	Heuristic: 20.0
+		Fringe node: 21;	state: 6 3 4 5 7 8 9 10 11 12 13 14 15 16 17 18 19 20 2 1 ;	Heuristic: 20.0
+		Fringe node: 22;	state: 7 6 3 4 8 9 10 11 12 13 14 15 16 17 18 19 20 2 1 5 ;	Heuristic: 18.0
+		Fringe node: 23;	state: 8 7 6 3 9 10 11 12 13 14 15 16 17 18 19 20 2 1 5 4 ;	Heuristic: 20.0
+		Fringe node: 24;	state: 9 8 7 6 10 11 12 13 14 15 16 17 18 19 20 2 1 5 4 3 ;	Heuristic: 20.0
+		Fringe node: 25;	state: 10 9 8 7 11 12 13 14 15 16 17 18 19 20 2 1 5 4 3 6 ;	Heuristic: 20.0
+		Fringe node: 26;	state: 11 10 9 8 12 13 14 15 16 17 18 19 20 2 1 5 4 3 6 7 ;	Heuristic: 20.0
+		Fringe node: 27;	state: 12 11 10 9 13 14 15 16 17 18 19 20 2 1 5 4 3 6 7 8 ;	Heuristic: 20.0
+		Fringe node: 28;	state: 13 12 11 10 14 15 16 17 18 19 20 2 1 5 4 3 6 7 8 9 ;	Heuristic: 20.0
+		Fringe node: 29;	state: 14 13 12 11 15 16 17 18 19 20 2 1 5 4 3 6 7 8 9 10 ;	Heuristic: 20.0
+		Fringe node: 30;	state: 15 14 13 12 16 17 18 19 20 2 1 5 4 3 6 7 8 9 10 11 ;	Heuristic: 20.0
+		Fringe node: 31;	state: 16 15 14 13 17 18 19 20 2 1 5 4 3 6 7 8 9 10 11 12 ;	Heuristic: 20.0
+		Fringe node: 32;	state: 17 16 15 14 18 19 20 2 1 5 4 3 6 7 8 9 10 11 12 13 ;	Heuristic: 20.0
+		Fringe node: 33;	state: 18 17 16 15 19 20 2 1 5 4 3 6 7 8 9 10 11 12 13 14 ;	Heuristic: 20.0
+		Fringe node: 34;	state: 19 18 17 16 20 2 1 5 4 3 6 7 8 9 10 11 12 13 14 15 ;	Heuristic: 20.0
+		Fringe node: 35;	state: 20 19 18 17 2 1 5 4 3 6 7 8 9 10 11 12 13 14 15 16 ;	Heuristic: 20.0
+		Fringe node: 36;	state: 2 20 19 18 1 5 4 3 6 7 8 9 10 11 12 13 14 15 16 17 ;	Heuristic: 20.0
+		Fringe node: 37;	state: 5 1 2 20 4 3 6 7 8 9 10 11 12 13 14 15 16 17 18 19 ;	Heuristic: 20.0
+		Fringe node: 38;	state: 5 19 20 2 4 3 6 7 8 9 10 11 12 13 14 15 16 17 18 1 ;	Heuristic: 20.0
+		Fringe node: 39;	state: 3 4 5 19 6 7 8 9 10 11 12 13 14 15 16 17 18 1 2 20 ;	Heuristic: 19.0
+		Fringe node: 40;	state: 6 3 4 5 7 8 9 10 11 12 13 14 15 16 17 18 1 2 20 19 ;	Heuristic: 20.0
+		Fringe node: 41;	state: 7 6 3 4 8 9 10 11 12 13 14 15 16 17 18 1 2 20 19 5 ;	Heuristic: 17.0
+		Fringe node: 42;	state: 8 7 6 3 9 10 11 12 13 14 15 16 17 18 1 2 20 19 5 4 ;	Heuristic: 20.0
+		Fringe node: 43;	state: 9 8 7 6 10 11 12 13 14 15 16 17 18 1 2 20 19 5 4 3 ;	Heuristic: 20.0
+		Fringe node: 44;	state: 10 9 8 7 11 12 13 14 15 16 17 18 1 2 20 19 5 4 3 6 ;	Heuristic: 20.0
+		Fringe node: 45;	state: 11 10 9 8 12 13 14 15 16 17 18 1 2 20 19 5 4 3 6 7 ;	Heuristic: 20.0
+		Fringe node: 46;	state: 12 11 10 9 13 14 15 16 17 18 1 2 20 19 5 4 3 6 7 8 ;	Heuristic: 20.0
+		Fringe node: 47;	state: 13 12 11 10 14 15 16 17 18 1 2 20 19 5 4 3 6 7 8 9 ;	Heuristic: 20.0
+		Fringe node: 48;	state: 14 13 12 11 15 16 17 18 1 2 20 19 5 4 3 6 7 8 9 10 ;	Heuristic: 20.0
+		Fringe node: 49;	state: 15 14 13 12 16 17 18 1 2 20 19 5 4 3 6 7 8 9 10 11 ;	Heuristic: 20.0
+		Fringe node: 50;	state: 16 15 14 13 17 18 1 2 20 19 5 4 3 6 7 8 9 10 11 12 ;	Heuristic: 20.0
+		Fringe node: 51;	state: 17 16 15 14 18 1 2 20 19 5 4 3 6 7 8 9 10 11 12 13 ;	Heuristic: 20.0
+		Fringe node: 52;	state: 18 17 16 15 1 2 20 19 5 4 3 6 7 8 9 10 11 12 13 14 ;	Heuristic: 20.0
+		Fringe node: 53;	state: 1 18 17 16 2 20 19 5 4 3 6 7 8 9 10 11 12 13 14 15 ;	Heuristic: 19.0
+		Fringe node: 54;	state: 2 1 18 17 20 19 5 4 3 6 7 8 9 10 11 12 13 14 15 16 ;	Heuristic: 20.0
+		Fringe node: 55;	state: 20 2 1 18 19 5 4 3 6 7 8 9 10 11 12 13 14 15 16 17 ;	Heuristic: 19.0
+		Fringe node: 56;	state: 3 20 19 5 6 7 8 9 10 11 12 13 14 15 16 17 18 1 2 4 ;	Heuristic: 20.0
+		Fringe node: 57;	state: 6 3 20 19 7 8 9 10 11 12 13 14 15 16 17 18 1 2 4 5 ;	Heuristic: 20.0
+		Fringe node: 58;	state: 7 6 3 20 8 9 10 11 12 13 14 15 16 17 18 1 2 4 5 19 ;	Heuristic: 19.0
+		Fringe node: 59;	state: 8 7 6 3 9 10 11 12 13 14 15 16 17 18 1 2 4 5 19 20 ;	Heuristic: 18.0
+		Fringe node: 60;	state: 9 8 7 6 10 11 12 13 14 15 16 17 18 1 2 4 5 19 20 3 ;	Heuristic: 20.0
+		Fringe node: 61;	state: 10 9 8 7 11 12 13 14 15 16 17 18 1 2 4 5 19 20 3 6 ;	Heuristic: 20.0
+		Fringe node: 62;	state: 11 10 9 8 12 13 14 15 16 17 18 1 2 4 5 19 20 3 6 7 ;	Heuristic: 20.0
+		Fringe node: 63;	state: 12 11 10 9 13 14 15 16 17 18 1 2 4 5 19 20 3 6 7 8 ;	Heuristic: 20.0
+		Fringe node: 64;	state: 13 12 11 10 14 15 16 17 18 1 2 4 5 19 20 3 6 7 8 9 ;	Heuristic: 20.0
+		Fringe node: 65;	state: 14 13 12 11 15 16 17 18 1 2 4 5 19 20 3 6 7 8 9 10 ;	Heuristic: 20.0
+		Fringe node: 66;	state: 15 14 13 12 16 17 18 1 2 4 5 19 20 3 6 7 8 9 10 11 ;	Heuristic: 20.0
+		Fringe node: 67;	state: 16 15 14 13 17 18 1 2 4 5 19 20 3 6 7 8 9 10 11 12 ;	Heuristic: 20.0
+		Fringe node: 68;	state: 17 16 15 14 18 1 2 4 5 19 20 3 6 7 8 9 10 11 12 13 ;	Heuristic: 20.0
+		Fringe node: 69;	state: 18 17 16 15 1 2 4 5 19 20 3 6 7 8 9 10 11 12 13 14 ;	Heuristic: 20.0
+		Fringe node: 70;	state: 1 18 17 16 2 4 5 19 20 3 6 7 8 9 10 11 12 13 14 15 ;	Heuristic: 19.0
+		Fringe node: 71;	state: 2 1 18 17 4 5 19 20 3 6 7 8 9 10 11 12 13 14 15 16 ;	Heuristic: 20.0
+		Fringe node: 72;	state: 4 2 1 18 5 19 20 3 6 7 8 9 10 11 12 13 14 15 16 17 ;	Heuristic: 18.0
+		Fringe node: 73;	state: 5 4 2 1 19 20 3 6 7 8 9 10 11 12 13 14 15 16 17 18 ;	Heuristic: 20.0
+		Fringe node: 74;	state: 19 5 4 2 20 3 6 7 8 9 10 11 12 13 14 15 16 17 18 1 ;	Heuristic: 20.0
+		**************** End Fringe List **************
+		Expanded State:	4 3 2 1 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 	Heuristic: 19.0
+		Rotate	
+		Board State:	1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 
+
+		FinalState:		1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 	Cost: 2
+
+		Number of nodes expanded: 6
+		Number of nodes in fringe: 91
+		Path cost: 2
+
+
+		A* with Custom heuristic:
+
+		Path found!
+		Initial State:	5 1 2 3 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 4 	Cost: 0
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 5 1 2 3 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 4 ;	Heuristic: 1.0
+		**************** End Fringe List **************
+		Expanded State:	5 1 2 3 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 4 	Heuristic: 1.0
+		Rotate	
+		Board State:	3 2 1 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 4 
+
+		*************** Begin Fringe List *************
+		Fringe node: 1;	state: 3 2 1 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 4 ;	Heuristic: 1.0
+		Fringe node: 2;	state: 6 3 2 1 7 8 9 10 11 12 13 14 15 16 17 18 19 20 4 5 ;	Heuristic: 3.0
+		Fringe node: 3;	state: 7 6 3 2 8 9 10 11 12 13 14 15 16 17 18 19 20 4 5 1 ;	Heuristic: 4.0
+		Fringe node: 4;	state: 8 7 6 3 9 10 11 12 13 14 15 16 17 18 19 20 4 5 1 2 ;	Heuristic: 6.0
+		Fringe node: 5;	state: 9 8 7 6 10 11 12 13 14 15 16 17 18 19 20 4 5 1 2 3 ;	Heuristic: 7.0
+		Fringe node: 6;	state: 10 9 8 7 11 12 13 14 15 16 17 18 19 20 4 5 1 2 3 6 ;	Heuristic: 8.0
+		Fringe node: 7;	state: 11 10 9 8 12 13 14 15 16 17 18 19 20 4 5 1 2 3 6 7 ;	Heuristic: 9.0
+		Fringe node: 8;	state: 12 11 10 9 13 14 15 16 17 18 19 20 4 5 1 2 3 6 7 8 ;	Heuristic: 9.0
+		Fringe node: 9;	state: 13 12 11 10 14 15 16 17 18 19 20 4 5 1 2 3 6 7 8 9 ;	Heuristic: 9.0
+		Fringe node: 10;	state: 14 13 12 11 15 16 17 18 19 20 4 5 1 2 3 6 7 8 9 10 ;	Heuristic: 10.0
+		Fringe node: 11;	state: 15 14 13 12 16 17 18 19 20 4 5 1 2 3 6 7 8 9 10 11 ;	Heuristic: 9.0
+		Fringe node: 12;	state: 16 15 14 13 17 18 19 20 4 5 1 2 3 6 7 8 9 10 11 12 ;	Heuristic: 9.0
+		Fringe node: 13;	state: 17 16 15 14 18 19 20 4 5 1 2 3 6 7 8 9 10 11 12 13 ;	Heuristic: 9.0
+		Fringe node: 14;	state: 18 17 16 15 19 20 4 5 1 2 3 6 7 8 9 10 11 12 13 14 ;	Heuristic: 8.0
+		Fringe node: 15;	state: 19 18 17 16 20 4 5 1 2 3 6 7 8 9 10 11 12 13 14 15 ;	Heuristic: 7.0
+		Fringe node: 16;	state: 20 19 18 17 4 5 1 2 3 6 7 8 9 10 11 12 13 14 15 16 ;	Heuristic: 6.0
+		Fringe node: 17;	state: 4 20 19 18 5 1 2 3 6 7 8 9 10 11 12 13 14 15 16 17 ;	Heuristic: 5.0
+		Fringe node: 18;	state: 5 4 20 19 1 2 3 6 7 8 9 10 11 12 13 14 15 16 17 18 ;	Heuristic: 3.0
+		Fringe node: 19;	state: 1 5 4 20 2 3 6 7 8 9 10 11 12 13 14 15 16 17 18 19 ;	Heuristic: 2.0
+		Fringe node: 20;	state: 3 4 5 1 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 2 ;	Heuristic: 2.0
+		Fringe node: 21;	state: 6 3 4 5 7 8 9 10 11 12 13 14 15 16 17 18 19 20 2 1 ;	Heuristic: 3.0
+		Fringe node: 22;	state: 7 6 3 4 8 9 10 11 12 13 14 15 16 17 18 19 20 2 1 5 ;	Heuristic: 4.0
+		Fringe node: 23;	state: 8 7 6 3 9 10 11 12 13 14 15 16 17 18 19 20 2 1 5 4 ;	Heuristic: 6.0
+		Fringe node: 24;	state: 9 8 7 6 10 11 12 13 14 15 16 17 18 19 20 2 1 5 4 3 ;	Heuristic: 7.0
+		Fringe node: 25;	state: 10 9 8 7 11 12 13 14 15 16 17 18 19 20 2 1 5 4 3 6 ;	Heuristic: 8.0
+		Fringe node: 26;	state: 11 10 9 8 12 13 14 15 16 17 18 19 20 2 1 5 4 3 6 7 ;	Heuristic: 9.0
+		Fringe node: 27;	state: 12 11 10 9 13 14 15 16 17 18 19 20 2 1 5 4 3 6 7 8 ;	Heuristic: 9.0
+		Fringe node: 28;	state: 13 12 11 10 14 15 16 17 18 19 20 2 1 5 4 3 6 7 8 9 ;	Heuristic: 9.0
+		Fringe node: 29;	state: 14 13 12 11 15 16 17 18 19 20 2 1 5 4 3 6 7 8 9 10 ;	Heuristic: 10.0
+		Fringe node: 30;	state: 15 14 13 12 16 17 18 19 20 2 1 5 4 3 6 7 8 9 10 11 ;	Heuristic: 9.0
+		Fringe node: 31;	state: 16 15 14 13 17 18 19 20 2 1 5 4 3 6 7 8 9 10 11 12 ;	Heuristic: 9.0
+		Fringe node: 32;	state: 17 16 15 14 18 19 20 2 1 5 4 3 6 7 8 9 10 11 12 13 ;	Heuristic: 9.0
+		Fringe node: 33;	state: 18 17 16 15 19 20 2 1 5 4 3 6 7 8 9 10 11 12 13 14 ;	Heuristic: 8.0
+		Fringe node: 34;	state: 19 18 17 16 20 2 1 5 4 3 6 7 8 9 10 11 12 13 14 15 ;	Heuristic: 7.0
+		Fringe node: 35;	state: 20 19 18 17 2 1 5 4 3 6 7 8 9 10 11 12 13 14 15 16 ;	Heuristic: 6.0
+		Fringe node: 36;	state: 2 20 19 18 1 5 4 3 6 7 8 9 10 11 12 13 14 15 16 17 ;	Heuristic: 4.0
+		Fringe node: 37;	state: 1 2 20 19 5 4 3 6 7 8 9 10 11 12 13 14 15 16 17 18 ;	Heuristic: 3.0
+		Fringe node: 38;	state: 5 1 2 20 4 3 6 7 8 9 10 11 12 13 14 15 16 17 18 19 ;	Heuristic: 2.0
+		**************** End Fringe List **************
+		Expanded State:	4 3 2 1 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 	Heuristic: 1.0
+		Rotate	
+		Board State:	1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 
+		Disconnected from the target VM, address: '127.0.0.1:58818', transport: 'socket'
+
+		FinalState:		1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 	Cost: 2
+
+		Number of nodes expanded: 4
+		Number of nodes in fringe: 55
+		Path cost: 2
