@@ -12,15 +12,15 @@ public class Driver {
 
         final int MAX_TIME_PER_MOVE = 5;
         //Scanner sc = new Scanner(System.in);
-        Game gameBoard = new Game(args[0]);
+        Game gameBoard = new Game();
         BlackPlayer blackPlayer = null;
         WhitePlayer whitePlayer = null;
 
-        if (args[1].equals("-c")) {
-            blackPlayer = new BlackPlayer(args[2], gameBoard.boardSize(), MAX_TIME_PER_MOVE);
+        if (args[0].equals("-c")) {
+            blackPlayer = new BlackPlayer(args[1]);
         }
-        if (args[3].equals("-c")) {
-            whitePlayer = new WhitePlayer(args[4], gameBoard.boardSize(), MAX_TIME_PER_MOVE);
+        if (args[2].equals("-c")) {
+            whitePlayer = new WhitePlayer(args[3]);
         }
 
         Move currentMove;
@@ -41,8 +41,7 @@ public class Driver {
             }
             //currentMove.printMove();
 
-            if (gameBoard.isIllegalMove(currentMove) || (gameBoard.isGameOver()) ||
-                    time_for_last_move_exceeded(MAX_TIME_PER_MOVE)) {
+            if (gameBoard.isIllegalMove(currentMove) || (gameBoard.isGameOver())) {
                 done = true;
                 // FILL CODE HERE TO PRINT WHO MADE ILLEGAL MOVE AND WHY OR IF THE GAME IS
                 // OVER WHO THE WINNER IS OR IF TIME IS EXCEEDED EXPLAIN WHO THE WINNER IS
@@ -70,9 +69,5 @@ public class Driver {
         int x2 = sc.nextInt();
         int y2 = sc.nextInt();
         return new Move(x1, y1, x2, y2);
-    }
-
-    public static boolean time_for_last_move_exceeded(int maxTimePerMove){
-        return false;
     }
 } // end class

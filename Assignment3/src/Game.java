@@ -1,17 +1,7 @@
 import java.util.ArrayList;
 
 public class Game {
-    private int boardSize;
-
-    public Game(String boardSize){
-        try {
-            this.boardSize = Integer.parseInt(boardSize);
-        } catch (NumberFormatException e){
-            this.boardSize = 8;
-        }
-    }
-
-    public int boardSize() { return this.boardSize; }
+    public static final int BOARD_SIZE = 8;
 
     public void printBoard(){
 
