@@ -1,6 +1,6 @@
 public class Game {
     public static final int BOARD_SIZE = 8;
-    private ChessPiece board[][] = new ChessPiece[BOARD_SIZE][BOARD_SIZE];
+    private ChessPiece[][] board = new ChessPiece[BOARD_SIZE][BOARD_SIZE];
 
     public void printBoard() {
 
@@ -24,12 +24,8 @@ public class Game {
 
     private boolean invalidMoveDirection(int x1, int y1, int x2, int y2) {
         if (board[x1][y1] instanceof Pawn) {
-            if ((y1 == y2) && (x1 != x2)) { //If it moves sideways
+            if ((y1 == y2) && (x1 != x2)) { //Moves sideways
                 return true;
-                //White team
-            } else if (board[x1][y1].getTeam().equalsIgnoreCase("w")) {
-
-
             }
 
         }
@@ -42,8 +38,27 @@ public class Game {
         return false;
     }
 
-    private boolean isPieceExistent(int x1, int y1) {
-        if (board[x1][y1] == null)
-            return false;
+    private boolean invalidDiagonal(int x1, int y1, int x2, int y2) {
+        return false;
+    }
+
+    private boolean pawnMovedBackwards(int x1, int y1, int x2, int y2) {
+        return false;
+    }
+
+    private boolean pawnJumpsPlayer(int x1, int y1, int x2, int y2) {
+        return false;
+    }
+
+    private boolean pawnIllegalCapture(int x1, int y1, int x2, int y2) {
+        return false;
+    }
+
+    private boolean landedOnFriendly(int x1, int y1, int x2, int y2) {
+        return false;
+    }
+
+    private boolean isPieceExistent(int x1, int x2, int y1, int y2) {
+        return false;
     }
 }

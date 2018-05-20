@@ -1,17 +1,17 @@
 public class ChessPiece<T extends Enum<T> & ChessMove> {
     protected Team pieceTeam;
-    protected Boolean ismoved=false;
+    protected Boolean isMoved = false;
 
-    public ChessPiece(Team team){
+    public ChessPiece(Team team) {
         this.pieceTeam = team;
     }
 
-
-    public Boolean getIsmoved(){
-        return ismoved;
+    public Boolean getIsmoved() {
+        return isMoved;
     }
-    public void move(ChessPiece piece){
-        this.ismoved=true;
+
+    public void move(ChessPiece piece) {
+        this.isMoved = true;
     }
 
     public enum Team {
@@ -19,10 +19,18 @@ public class ChessPiece<T extends Enum<T> & ChessMove> {
         BLACK("B");
 
         private final String team;
-        Team(String team){ this.team = team; }
+
+        Team(String team) {
+            this.team = team;
+        }
+
         @Override
-        public String toString(){ return this.team; }
+        public String toString() {
+            return this.team;
+        }
     }
 
-    public String getTeam() { return this.pieceTeam.toString(); }
+    public Team getTeam() {
+        return this.pieceTeam;
+    }
 }
