@@ -18,9 +18,15 @@ public class Game {
 
     }
 
-    //TODO error checking for moves
     private boolean inBounds(int x, int y) {
         return (x > -1 && x < BOARD_SIZE && y > -1 && y < BOARD_SIZE);
+    }
 
+    private boolean invalidMoveDirection(int x1, int y1, int x2, int y2){
+        return false;
+    }
+
+    private boolean invalidForwardMove(int x1, int x2, int y1, int y2){
+        return false;
     }
 }
