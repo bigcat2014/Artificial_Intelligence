@@ -1,4 +1,4 @@
-public enum KnightMove implements ChessMove {
+public enum KnightMove {
     LEFT_UP(new OrderedPair(-2,1)),
     UP_LEFT(new OrderedPair(-1,2)),
     UP_RIGHT(new OrderedPair(1,2)),

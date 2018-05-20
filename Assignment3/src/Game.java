@@ -70,4 +70,10 @@ public class Game {
     private boolean isPieceExistent(int x1, int x2, int y1, int y2) {
         return false;
     }
+
+    private void MovePiece(int x1, int y1, int x2, int y2){
+        ChessPiece temp = board[x1][y1];
+        board[x1][y1] = board[x2][y2];
+        board[x2][y2] = temp;
+    }
 }

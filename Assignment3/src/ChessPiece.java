@@ -1,4 +1,4 @@
-public class ChessPiece<T extends Enum<T> & ChessMove> {
+public class ChessPiece {
     protected Team pieceTeam;
     protected Boolean isMoved = false;
 
