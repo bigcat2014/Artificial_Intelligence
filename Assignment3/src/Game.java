@@ -37,7 +37,27 @@ public class Game {
         return false;
     }
 
-    private boolean invalidForwardMove(int x1, int x2, int y1, int y2){
+    private boolean invalidForwardMove(int x1, int y1, int x2, int y2){
+        return false;
+    }
+
+    private boolean invalidDiagonal(int x1, int y1, int x2, int y2){
+        return false;
+    }
+
+    private boolean pawnMovedBackwards(int x1, int y1, int x2, int y2){
+        return false;
+    }
+
+    private boolean pawnJumpsPlayer(int x1, int y1, int x2, int y2){
+        return false;
+    }
+
+    private boolean pawnIllegalCapture(int x1, int y1, int x2, int y2){
+        return false;
+    }
+
+    private boolean landedOnFriendly(int x1, int y1, int x2, int y2){
         return false;
     }
 }
