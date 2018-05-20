@@ -3,26 +3,26 @@ public class Game {
     private ChessPiece[][] board = new ChessPiece[BOARD_SIZE][BOARD_SIZE];
 
     public Game() {
-        for (int y = 0; y < BOARD_SIZE; y++) {
-            board[BOARD_SIZE - 2][y] = new Pawn(ChessPiece.Team.WHITE);
+        for (int x = 0; x < BOARD_SIZE; x++) {
+            board[BOARD_SIZE - 2][x] = new Pawn(ChessPiece.Team.WHITE);
         }
         board[BOARD_SIZE - 1][1] = new Knight(ChessPiece.Team.WHITE);
 
-        for (int y = 0; y < BOARD_SIZE; y++) {
-            board[1][y] = new Pawn(ChessPiece.Team.BLACK);
+        for (int x = 0; x < BOARD_SIZE; x++) {
+            board[1][x] = new Pawn(ChessPiece.Team.BLACK);
         }
         board[0][BOARD_SIZE - 2] = new Knight(ChessPiece.Team.BLACK);
     }
 
     public void printBoard() {
         StringBuilder boardString = new StringBuilder();
-        for (int x = BOARD_SIZE - 1; x >= 0; x--) {
             for (int y = BOARD_SIZE - 1; y >= 0; y--) {
-                if (board[x][y] == null) {
+                for (int x = 0; x < BOARD_SIZE; x++) {
+                    if (board[y][x] == null) {
                     boardString.append(" - ");
                 } else {
-                    boardString.append(board[x][y].toString());
-                    boardString.append(board[x][y].getTeam().toString());
+                        boardString.append(board[y][x].toString());
+                        boardString.append(board[y][x].getTeam().toString());
                     boardString.append(" ");
                 }
                 boardString.append(" ");
@@ -54,7 +54,10 @@ public class Game {
     }
 
     void update(Move currentMove, String turn) {
-
+        if (!isIllegalMove(currentMove)) {
+            MovePiece(currentMove);
+            board[currentMove.getY2()][currentMove.getX2()] = null;
+        }
     }
 
     private boolean inBounds(int x, int y) {
@@ -137,7 +140,11 @@ public class Game {
         return board[x1][y1] != null;
     }
 
-    private void MovePiece(int x1, int y1, int x2, int y2) {
+    private void MovePiece(Move move) {
+        int x1 = move.getX1();
+        int y1 = move.getY1();
+        int x2 = move.getX2();
+        int y2 = move.getX2();
         ChessPiece temp = board[y1][x1];
         board[y1][x1] = board[y2][x2];
         board[y2][x2] = temp;
