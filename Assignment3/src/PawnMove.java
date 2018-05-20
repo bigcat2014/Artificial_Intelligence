@@ -1,4 +1,4 @@
-public enum PawnMove implements ChessMove {
+public enum PawnMove {
 
     FORWARD(new OrderedPair(0,1)),
     FORWARD_2(new OrderedPair(0, 2)),

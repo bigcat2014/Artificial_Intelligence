@@ -1,4 +1,4 @@
-public class Knight extends ChessPiece<KnightMove> {
+public class Knight extends ChessPiece {
     public Knight(ChessPiece.Team team){
         super(team);
     }

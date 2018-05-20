@@ -1,4 +1,4 @@
-public class Pawn extends ChessPiece<PawnMove> {
+public class Pawn extends ChessPiece {
     public Pawn(ChessPiece.Team team){
         super(team);
     }
