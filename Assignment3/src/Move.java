@@ -15,5 +15,6 @@ public class Move {
     int getX2() { return x2; }
     int getY2() { return y2; }
 
-    //public void printMove() { System.out.printf("Move from (%d, %d) to (%d, %d)\n", this.x1, this.y1, this.x2, this.y2); }
+    public void printMove() { System.out.printf("Move from (%d, %d) to (%d, %d)\n", this.x1, this.y1, this.x2, this.y2); }
 }
+//TODO checking for moves

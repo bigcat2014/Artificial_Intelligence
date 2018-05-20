@@ -11,7 +11,7 @@ public class Driver {
     public static void main(String[] args) {
 
         final int MAX_TIME_PER_MOVE = 5;
-        //Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         Game gameBoard = new Game();
         BlackPlayer blackPlayer = null;
         WhitePlayer whitePlayer = null;

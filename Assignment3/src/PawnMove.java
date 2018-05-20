@@ -1,4 +1,5 @@
 public enum PawnMove implements ChessMove {
+
     FORWARD(new OrderedPair(0,1)),
     FORWARD_2(new OrderedPair(0, 2)),
     CAPTURE_LEFT(new OrderedPair(-1, 1)),
