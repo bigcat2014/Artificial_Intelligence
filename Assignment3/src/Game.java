@@ -22,9 +22,9 @@ public class Game {
         return (x > -1 && x < BOARD_SIZE && y > -1 && y < BOARD_SIZE);
     }
 
-    private boolean invalidMoveDirection(int x1, int y1, int x2, int y2){
-      if(board[x1][y1] instanceof Pawn){
-            if(( y1 == y2 ) && (x1 != x2 )){ //Moves sideways
+    private boolean invalidMoveDirection(int x1, int y1, int x2, int y2) {
+        if (board[x1][y1] instanceof Pawn) {
+            if ((y1 == y2) && (x1 != x2)) { //Moves sideways
                 return true;
             }
 
@@ -37,27 +37,28 @@ public class Game {
         // pawn checks team and the coordinate is forward to . y2-y1<1
         return false;
     }
-    private boolean invalidDiagonal(int x1, int y1, int x2, int y2){
+
+    private boolean invalidDiagonal(int x1, int y1, int x2, int y2) {
         return false;
     }
 
-    private boolean pawnMovedBackwards(int x1, int y1, int x2, int y2){
+    private boolean pawnMovedBackwards(int x1, int y1, int x2, int y2) {
         return false;
     }
 
-    private boolean pawnJumpsPlayer(int x1, int y1, int x2, int y2){
+    private boolean pawnJumpsPlayer(int x1, int y1, int x2, int y2) {
         return false;
     }
 
-    private boolean pawnIllegalCapture(int x1, int y1, int x2, int y2){
+    private boolean pawnIllegalCapture(int x1, int y1, int x2, int y2) {
         return false;
     }
 
-    private boolean landedOnFriendly(int x1, int y1, int x2, int y2){
+    private boolean landedOnFriendly(int x1, int y1, int x2, int y2) {
         return false;
     }
 
-    private boolean isPieceExistent(int x1, int x2, int y1, int y2){
+    private boolean isPieceExistent(int x1, int x2, int y1, int y2) {
         return false;
     }
 }
