@@ -1,20 +1,9 @@
 public class Game {
     public static final int BOARD_SIZE = 8;
+    private ChessPiece board[][]=new ChessPiece[BOARD_SIZE][BOARD_SIZE];
 
     public void printBoard() {
-        for (int row = 0; row < BOARD_SIZE; row++)
-        {
-            System.out.println("");
-            System.out.println("---------------------------------");
 
-            for (int column = 0; column < BOARD_SIZE; column++)
-            {
-                System.out.print("- " + " " + " ");
-            }
-            System.out.print("-");
-        }
-        System.out.println("");
-        System.out.println("---------------------------------");
     }
 
     public boolean isIllegalMove(Move currentMove) {
@@ -34,10 +23,18 @@ public class Game {
     }
 
     private boolean invalidMoveDirection(int x1, int y1, int x2, int y2){
+      if(board[x1][y1] instanceof Pawn){
+            if(( y1 == y2 ) && (x1 != x2 )){ //Moves sideways
+                return true;
+            }
+
+        }
         return false;
     }
 
     private boolean invalidForwardMove(int x1, int x2, int y1, int y2){
+        //if knight return false
+        // pawn checks team and the coordinate is forward to . y2-y1<1
         return false;
     }
     private boolean isPieceExistent(int x1, int x2, int y1, int y2){
