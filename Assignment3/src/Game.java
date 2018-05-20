@@ -50,8 +50,26 @@ public class Game {
     }
 
     private boolean invalidMoveDirection(int x1, int y1, int x2, int y2) {
-        if (board[x1][y1] instanceof Pawn) {
+        if (board[y1][x1] instanceof Pawn) {
             if ((y1 == y2) && (x1 != x2)) { //Moves sideways
+                return true;
+            }
+            if (board[y1][x1].getTeam().toString().equalsIgnoreCase("W")) { //White team
+                if (y1 - y2 > 0) { //Moves Backwards
+                    return true;
+                }
+            } else if (board[y1][x1].getTeam().toString().equalsIgnoreCase("B")) { //Black team
+                if (y2 - y1 > 0) { //Moves Backwards
+                    return true;
+                }
+            }
+
+        }
+        else if (board[y1][x1] instanceof  Knight){
+            if((Math.abs(x2-x1)==1) && (Math.abs(y2-y1)!=2)){
+                return true;
+            }
+            else if((Math.abs(x2-x1)==2) && (Math.abs(y2-y1)!=1)){
                 return true;
             }
 
@@ -59,17 +77,13 @@ public class Game {
         return false;
     }
 
-    private boolean invalidForwardMove(int x1, int x2, int y1, int y2) {
+    private boolean invalidForwardMove(int x1, int x2, int y1, int y2){
         //if knight return false
         // pawn checks team and the coordinate is forward to . y2-y1<1
         return false;
     }
 
     private boolean invalidDiagonal(int x1, int y1, int x2, int y2) {
-        return false;
-    }
-
-    private boolean pawnMovedBackwards(int x1, int y1, int x2, int y2) {
         return false;
     }
 
@@ -85,13 +99,16 @@ public class Game {
         return false;
     }
 
-    private boolean isPieceExistent(int x1, int x2, int y1, int y2) {
-        return false;
+    private boolean isPieceExistent(int x1, int y1) {
+        if(board[x1][y1]==null) {
+            return false;
+        }
+        return true;
     }
 
-    private void MovePiece(int x1, int y1, int x2, int y2) {
-        ChessPiece temp = board[x1][y1];
-        board[x1][y1] = board[x2][y2];
-        board[x2][y2] = temp;
+    private void MovePiece(int x1, int y1, int x2, int y2){
+        ChessPiece temp = board[y1][x1];
+        board[y1][x1] = board[y2][x2];
+        board[y2][x2] = temp;
     }
 }
