@@ -51,10 +51,18 @@ public class Game {
 
     private boolean invalidMoveDirection(int x1, int y1, int x2, int y2) {
         if (board[y1][x1] instanceof Pawn) {
-            if ((y1 == y2) && (x1 != x2)) { //Moves sideways
-                return true;
+            if (y2 - y1 == 1 && x1 == x2) {
+                return false;
+            } else if (y2 - y1 == 1 && (Math.abs(x1 - x2) == 1)) {
+                return false;
+            } else if (y2 - y1 == 1 && (Math.abs(x2 - x1) == 1)) {
+                return false;
             }
-            if (board[y1][x1].getTeam() == ChessPiece.Team.WHITE) { //White team
+            if (y2 - y1 == 2 && x1 == x2) {
+                return false;
+            } else if ((y1 == y2) && (x1 != x2)) { //Moves sideways
+                return true;
+            } else if (board[y1][x1].getTeam() == ChessPiece.Team.WHITE) { //White team
                 if (y2 - y1 > 0) { //Moves Backwards
                     return true;
                 }
@@ -65,6 +73,7 @@ public class Game {
             }
 
         } else if (board[y1][x1] instanceof Knight) {
+
             if ((Math.abs(x2 - x1) == 1) && (Math.abs(y2 - y1) == 2)) {
                 return false;
             } else if ((Math.abs(x2 - x1) == 2) && (Math.abs(y2 - y1) == 1)) {
@@ -79,7 +88,7 @@ public class Game {
         return true;
     }
 
-    private boolean invalidForwardMove(int x1, int x2, int y1, int y2){
+    private boolean invalidForwardMove(int x1, int x2, int y1, int y2) {
         if (board[y1][x1] instanceof Pawn) {
             if (board[y1][x1].getIsmoved()) {
                 if ((y2 - y1) == 2 && x1 == x2) {
