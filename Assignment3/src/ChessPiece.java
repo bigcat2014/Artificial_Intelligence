@@ -15,5 +15,5 @@ public class ChessPiece<T extends Enum<T> & ChessMove> {
         public String toString(){ return this.team; }
     }
 
-    public String getTeam() { return this.pieceTeam.toString(); }
+    public Team getTeam() { return this.pieceTeam; }
 }

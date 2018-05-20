@@ -1,5 +1,6 @@
 public class Game {
     public static final int BOARD_SIZE = 8;
+    private ChessPiece[][] board = new ChessPiece[BOARD_SIZE][BOARD_SIZE];
 
     public void printBoard() {
         for (int row = 0; row < BOARD_SIZE; row++)
@@ -34,6 +35,7 @@ public class Game {
     }
 
     private boolean invalidMoveDirection(int x1, int y1, int x2, int y2){
+        Pawn pawn = new Pawn(ChessPiece.Team.WHITE);
         return false;
     }
 
@@ -60,6 +62,7 @@ public class Game {
     private boolean landedOnFriendly(int x1, int y1, int x2, int y2){
         return false;
     }
+
     private boolean isPieceExistent(int x1, int x2, int y1, int y2){
         return false;
     }
