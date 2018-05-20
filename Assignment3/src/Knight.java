@@ -1,8 +1,10 @@
 public class Knight extends ChessPiece {
-    public Knight(ChessPiece.Team team){
+    public Knight(ChessPiece.Team team) {
         super(team);
     }
 
     @Override
-    public String toString() { return "K"; }
+    public String toString() {
+        return "K";
+    }
 }

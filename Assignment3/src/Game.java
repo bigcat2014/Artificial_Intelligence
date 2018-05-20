@@ -2,8 +2,35 @@ public class Game {
     public static final int BOARD_SIZE = 8;
     private ChessPiece[][] board = new ChessPiece[BOARD_SIZE][BOARD_SIZE];
 
-    public void printBoard() {
+    public Game(){
+        for (int y = 0; y < BOARD_SIZE; y++){
+            board[BOARD_SIZE - 2][y] = new Pawn(ChessPiece.Team.WHITE);
+        }
+        board[BOARD_SIZE - 1][1] = new Knight(ChessPiece.Team.WHITE);
 
+        for (int y = 0; y < BOARD_SIZE; y++){
+            board[1][y] = new Pawn(ChessPiece.Team.BLACK);
+        }
+        board[0][BOARD_SIZE - 2] = new Knight(ChessPiece.Team.BLACK);
+    }
+
+    public void printBoard() {
+        StringBuilder boardString = new StringBuilder();
+        for (int x = BOARD_SIZE-1; x >= 0; x--){
+            for (int y = BOARD_SIZE-1; y >= 0; y--){
+                if (board[x][y] == null) {
+                    boardString.append(" - ");
+                } else {
+                    boardString.append(board[x][y].toString());
+                    boardString.append(board[x][y].getTeam().toString());
+                    boardString.append(" ");
+                }
+                boardString.append(" ");
+            }
+            boardString.append("\n");
+        }
+
+        System.out.println(boardString.toString());
     }
 
     public boolean isIllegalMove(Move currentMove) {
@@ -62,7 +89,7 @@ public class Game {
         return false;
     }
 
-    private void MovePiece(int x1, int y1, int x2, int y2){
+    private void MovePiece(int x1, int y1, int x2, int y2) {
         ChessPiece temp = board[x1][y1];
         board[x1][y1] = board[x2][y2];
         board[x2][y2] = temp;
