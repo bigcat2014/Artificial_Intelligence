@@ -2,19 +2,19 @@ public class Game {
     public static final int BOARD_SIZE = 8;
     private ChessPiece board[][]=new ChessPiece[BOARD_SIZE][BOARD_SIZE];
 
-    public void printBoard() {
+    void printBoard() {
 
     }
 
-    public boolean isIllegalMove(Move currentMove) {
+    boolean isIllegalMove(Move currentMove) {
         return false;
     }
 
-    public boolean isGameOver() {
+    boolean isGameOver() {
         return false;
     }
 
-    public void update(Move currentMove, String turn) {
+    void update(Move currentMove, String turn) {
 
     }
 
@@ -58,7 +58,12 @@ public class Game {
 
     private boolean invalidForwardMove(int x1, int x2, int y1, int y2){
         if (board[y1][x1] instanceof Pawn) {
+            if (board[y1][x1].getIsmoved()) {
+                if ((y2 - y1) == 2 && x1 == x2) {
+                    return true;
+                }
 
+            }
         }
         return false;
     }
