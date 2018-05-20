@@ -34,7 +34,19 @@ public class Game {
     }
 
     public boolean isIllegalMove(Move currentMove) {
-        return false;
+        int x1 = currentMove.getX1();
+        int y1 = currentMove.getY1();
+        int x2 = currentMove.getX2();
+        int y2 = currentMove.getY2();
+
+        return !inBounds(x1, y1) &&
+                invalidMoveDirection(x1, y1, x2, y2) &&
+                invalidForwardMove(x1, y1, x2, y2) &&
+                invalidDiagonal(x1, y1, x2, y2) &&
+                pawnJumpsPlayer(x1, y1, x2, y2) &&
+                pawnIllegalCapture(x1, y1, x2, y2) &&
+                landedOnFriendly(x1, y1, x2, y2) &&
+                !isPieceExistent(x1, y1);
     }
 
     public boolean isGameOver() {
@@ -79,7 +91,7 @@ public class Game {
         return true;
     }
 
-    private boolean invalidForwardMove(int x1, int x2, int y1, int y2) {
+    private boolean invalidForwardMove(int x1, int y1, int x2, int y2) {
         if (board[y1][x1] instanceof Pawn) {
 
         }
@@ -87,6 +99,11 @@ public class Game {
     }
 
     private boolean invalidDiagonal(int x1, int y1, int x2, int y2) {
+        if (board[y1][x1] instanceof Pawn) {
+            if ((Math.abs(x2 - x1) == Math.abs(PawnMove.CAPTURE_LEFT.getMove().getX())) && (Math.abs(y2 - y1) == Math.abs(PawnMove.CAPTURE_LEFT.getMove().getY()))) {
+                return isPieceExistent(x2, y2);
+            }
+        }
         return false;
     }
 
@@ -103,10 +120,7 @@ public class Game {
     }
 
     private boolean isPieceExistent(int x1, int y1) {
-        if (board[x1][y1] == null) {
-            return false;
-        }
-        return true;
+        return board[x1][y1] != null;
     }
 
     private void MovePiece(int x1, int y1, int x2, int y2) {
