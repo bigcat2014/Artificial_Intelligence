@@ -1,6 +1,6 @@
 public class Game {
     public static final int BOARD_SIZE = 8;
-    private ChessPiece[][] board = new ChessPiece[BOARD_SIZE][BOARD_SIZE];
+    private ChessPiece board[][]=new ChessPiece[BOARD_SIZE][BOARD_SIZE];
 
     public void printBoard() {
 
@@ -27,22 +27,31 @@ public class Game {
             if ((y1 == y2) && (x1 != x2)) { //Moves sideways
                 return true;
             }
+            if (board[x1][y1].getTeam().toString().equalsIgnoreCase("W")) { //White team
+                if (y1 - y2 > 0) { //Moves Backwards
+                    return true;
+                }
+            } else if (board[x1][y1].getTeam().toString().equalsIgnoreCase("B")) { //Black team
+                if (y2 - y1 > 0) { //Moves Backwards
+                    return true;
+                }
+            }
 
         }
-        return false;
+        else if (board[x1][y1] instanceof  Knight){
+
+
+        }
+        return  false;
     }
 
-    private boolean invalidForwardMove(int x1, int x2, int y1, int y2) {
+    private boolean invalidForwardMove(int x1, int x2, int y1, int y2){
         //if knight return false
         // pawn checks team and the coordinate is forward to . y2-y1<1
         return false;
     }
 
     private boolean invalidDiagonal(int x1, int y1, int x2, int y2) {
-        return false;
-    }
-
-    private boolean pawnMovedBackwards(int x1, int y1, int x2, int y2) {
         return false;
     }
 
