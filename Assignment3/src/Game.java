@@ -64,9 +64,7 @@ public class Game {
                 }
             }
 
-        }
-        return false;
-        else if (board[y1][x1] instanceof Knight) {
+        } else if (board[y1][x1] instanceof Knight) {
             if ((Math.abs(x2 - x1) == 1) && (Math.abs(y2 - y1) == 2)) {
                 return false;
             } else if ((Math.abs(x2 - x1) == 2) && (Math.abs(y2 - y1) == 1)) {
