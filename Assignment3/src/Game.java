@@ -32,9 +32,11 @@ public class Game {
         return false;
     }
 
-    private boolean invalidForwardMove(int x1, int x2, int y1, int y2){
+    private boolean invalidForwardMove(int x1, int x2, int y1, int y2) {
         //if knight return false
         // pawn checks team and the coordinate is forward to . y2-y1<1
+        return false;
+    }
     private boolean invalidDiagonal(int x1, int y1, int x2, int y2){
         return false;
     }
