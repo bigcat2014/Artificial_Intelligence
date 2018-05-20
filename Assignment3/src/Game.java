@@ -27,32 +27,39 @@ public class Game {
             if ((y1 == y2) && (x1 != x2)) { //Moves sideways
                 return true;
             }
-            if (board[y1][x1].getTeam().toString().equalsIgnoreCase("W")) { //White team
-                if (y1 - y2 > 0) { //Moves Backwards
+            if (board[y1][x1].getTeam()==ChessPiece.Team.WHITE) { //White team
+                if (y2 - y1 > 0) { //Moves Backwards
                     return true;
                 }
-            } else if (board[y1][x1].getTeam().toString().equalsIgnoreCase("B")) { //Black team
-                if (y2 - y1 > 0) { //Moves Backwards
+            } else if (board[y1][x1].getTeam()==ChessPiece.Team.BLACK) { //Black team
+                if (y1 - y2 > 0) { //Moves Backwards
                     return true;
                 }
             }
 
         }
         else if (board[y1][x1] instanceof  Knight){
-            if((Math.abs(x2-x1)==1) && (Math.abs(y2-y1)!=2)){
-                return true;
+            if((Math.abs(x2-x1)==1) && (Math.abs(y2-y1)==2)){
+                return false;
             }
-            else if((Math.abs(x2-x1)==2) && (Math.abs(y2-y1)!=1)){
-                return true;
+            else if((Math.abs(x2-x1)==2) && (Math.abs(y2-y1)==1)){
+                return false;
+            }
+            else if((Math.abs(y2-y1)==1) && (Math.abs(x2-x1)==2)) {
+                return false;
+            }
+            else if((Math.abs(y2-y1)==2) && (Math.abs(x2-x1)==1)) {
+                return false;
             }
 
         }
-            return  false;
+            return  true;
     }
 
     private boolean invalidForwardMove(int x1, int x2, int y1, int y2){
-        //if knight return false
-        // pawn checks team and the coordinate is forward to . y2-y1<1
+        if (board[y1][x1] instanceof Pawn) {
+
+        }
         return false;
     }
 
