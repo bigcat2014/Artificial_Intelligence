@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class Game {
     public static final int BOARD_SIZE = 8;
 

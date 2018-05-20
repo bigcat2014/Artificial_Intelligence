@@ -1,11 +1,8 @@
 public class Pawn extends ChessPiece<PawnMove> {
-    public Pawn(int x, int y){
-        super(x, y);
+    public Pawn(ChessPiece.Team team){
+        super(team);
     }
 
-    public void Move(PawnMove move){
-        OrderedPair pair = move.getMove();
-        this.position.incX(pair.getX());
-        this.position.incY(pair.getY());
-    }
+    @Override
+    public String toString() { return "P"; }
 }

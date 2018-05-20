@@ -1,13 +1,19 @@
 public class ChessPiece<T extends Enum<T> & ChessMove> {
-    protected OrderedPair position;
+    protected Team pieceTeam;
 
-    public ChessPiece(int x, int y){
-        this.position = new OrderedPair(x, y);
+    public ChessPiece(Team team){
+        this.pieceTeam = team;
     }
 
-    public void Move(T move){
-        OrderedPair pair = move.getMove();
-        this.position.incX(pair.getX());
-        this.position.incY(pair.getY());
+    public enum Team {
+        WHITE("W"),
+        BLACK("B");
+
+        private final String team;
+        Team(String team){ this.team = team; }
+        @Override
+        public String toString(){ return this.team; }
     }
+
+    public String getTeam() { return this.pieceTeam.toString(); }
 }
