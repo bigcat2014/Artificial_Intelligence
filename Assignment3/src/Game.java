@@ -125,6 +125,20 @@ public class Game {
     }
 
     private boolean pawnJumpsPlayer(int x1, int y1, int x2, int y2) {
+        if (board[y1][x1] instanceof Pawn) {
+            if(y2-y1==2){
+                if (board[y1][x1].getTeam() == ChessPiece.Team.BLACK) {
+                    if(isPieceExistent(x1,(y1+1))){
+                        return true;
+                    }
+                }
+                else if (board[y1][x1].getTeam() == ChessPiece.Team.WHITE){
+                    if(isPieceExistent(x1, (y1-1))){
+                        return true;
+                    }
+                }
+            }
+        }
         return false;
     }
 
