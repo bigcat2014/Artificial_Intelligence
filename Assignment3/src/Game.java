@@ -1,9 +1,36 @@
 public class Game {
     public static final int BOARD_SIZE = 8;
-    private ChessPiece board[][]=new ChessPiece[BOARD_SIZE][BOARD_SIZE];
+    private ChessPiece[][] board = new ChessPiece[BOARD_SIZE][BOARD_SIZE];
 
-    void printBoard() {
+    public Game() {
+        for (int y = 0; y < BOARD_SIZE; y++) {
+            board[BOARD_SIZE - 2][y] = new Pawn(ChessPiece.Team.WHITE);
+        }
+        board[BOARD_SIZE - 1][1] = new Knight(ChessPiece.Team.WHITE);
 
+        for (int y = 0; y < BOARD_SIZE; y++) {
+            board[1][y] = new Pawn(ChessPiece.Team.BLACK);
+        }
+        board[0][BOARD_SIZE - 2] = new Knight(ChessPiece.Team.BLACK);
+    }
+
+    public void printBoard() {
+        StringBuilder boardString = new StringBuilder();
+        for (int x = BOARD_SIZE - 1; x >= 0; x--) {
+            for (int y = BOARD_SIZE - 1; y >= 0; y--) {
+                if (board[x][y] == null) {
+                    boardString.append(" - ");
+                } else {
+                    boardString.append(board[x][y].toString());
+                    boardString.append(board[x][y].getTeam().toString());
+                    boardString.append(" ");
+                }
+                boardString.append(" ");
+            }
+            boardString.append("\n");
+        }
+
+        System.out.println(boardString.toString());
     }
 
     boolean isIllegalMove(Move currentMove) {
@@ -27,33 +54,29 @@ public class Game {
             if ((y1 == y2) && (x1 != x2)) { //Moves sideways
                 return true;
             }
-            if (board[y1][x1].getTeam()==ChessPiece.Team.WHITE) { //White team
+            if (board[y1][x1].getTeam() == ChessPiece.Team.WHITE) { //White team
                 if (y2 - y1 > 0) { //Moves Backwards
                     return true;
                 }
-            } else if (board[y1][x1].getTeam()==ChessPiece.Team.BLACK) { //Black team
+            } else if (board[y1][x1].getTeam() == ChessPiece.Team.BLACK) { //Black team
                 if (y1 - y2 > 0) { //Moves Backwards
                     return true;
                 }
             }
 
-        }
-        else if (board[y1][x1] instanceof  Knight){
-            if((Math.abs(x2-x1)==1) && (Math.abs(y2-y1)==2)){
+        } else if (board[y1][x1] instanceof Knight) {
+            if ((Math.abs(x2 - x1) == 1) && (Math.abs(y2 - y1) == 2)) {
                 return false;
-            }
-            else if((Math.abs(x2-x1)==2) && (Math.abs(y2-y1)==1)){
+            } else if ((Math.abs(x2 - x1) == 2) && (Math.abs(y2 - y1) == 1)) {
                 return false;
-            }
-            else if((Math.abs(y2-y1)==1) && (Math.abs(x2-x1)==2)) {
+            } else if ((Math.abs(y2 - y1) == 1) && (Math.abs(x2 - x1) == 2)) {
                 return false;
-            }
-            else if((Math.abs(y2-y1)==2) && (Math.abs(x2-x1)==1)) {
+            } else if ((Math.abs(y2 - y1) == 2) && (Math.abs(x2 - x1) == 1)) {
                 return false;
             }
 
         }
-            return  true;
+        return true;
     }
 
     private boolean invalidForwardMove(int x1, int x2, int y1, int y2){
@@ -85,13 +108,13 @@ public class Game {
     }
 
     private boolean isPieceExistent(int x1, int y1) {
-        if(board[x1][y1]==null) {
+        if (board[x1][y1] == null) {
             return false;
         }
         return true;
     }
 
-    private void MovePiece(int x1, int y1, int x2, int y2){
+    private void MovePiece(int x1, int y1, int x2, int y2) {
         ChessPiece temp = board[y1][x1];
         board[y1][x1] = board[y2][x2];
         board[y2][x2] = temp;
