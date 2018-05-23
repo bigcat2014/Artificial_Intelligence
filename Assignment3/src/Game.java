@@ -117,7 +117,8 @@ public class Game {
 
     private boolean invalidDiagonal(int x1, int y1, int x2, int y2) {
         if (board[y1][x1] instanceof Pawn) {
-            if ((Math.abs(x2 - x1) == Math.abs(PawnMove.CAPTURE_LEFT.getMove().getX())) && (Math.abs(y2 - y1) == Math.abs(PawnMove.CAPTURE_LEFT.getMove().getY()))) {
+            if ((Math.abs(x2 - x1) == Math.abs(PawnMove.CAPTURE_LEFT.getMove().getX())) && (Math.abs(y2 - y1) ==
+                    Math.abs(PawnMove.CAPTURE_LEFT.getMove().getY()))) {
                 return isPieceExistent(x2, y2);
             }
         }
@@ -143,10 +144,19 @@ public class Game {
     }
 
     private boolean pawnIllegalCapture(int x1, int y1, int x2, int y2) {
+        if (board[y1][x1] instanceof Pawn) {
+            if(!isPieceExistent(x2,y2)){
+                return true;
+            }
+        }
+
         return false;
     }
 
     private boolean landedOnFriendly(int x1, int y1, int x2, int y2) {
+        if(isPieceExistent(x2,y2)){
+            return true;
+        }
         return false;
     }
 
