@@ -7,7 +7,7 @@ public class ChessPiece {
     }
 
     public Boolean getIsmoved() {
-        return isMoved;
+        return this.isMoved;
     }
 
     public void move(ChessPiece piece) {
