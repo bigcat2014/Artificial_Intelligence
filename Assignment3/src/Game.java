@@ -4,10 +4,13 @@ class Game {
     static final int BOARD_SIZE = 8;
     private ChessPiece[][] board;
     private ArrayList<ChessPiece> capturedPieces;
+    private ChessPiece.Team winner;
+    private ArrayList<Move> movesList;
 
     Game() {
         this.board = new ChessPiece[BOARD_SIZE][BOARD_SIZE];
         this.capturedPieces = new ArrayList<ChessPiece>();
+        this.movesList = new ArrayList<Move>();
 
         for (int x = 0; x < BOARD_SIZE; x++) {
             board[x][BOARD_SIZE - 2] = new Pawn(ChessPiece.Team.WHITE);
@@ -51,7 +54,42 @@ class Game {
     }
 
     boolean isGameOver() {
-        return false;
+        boolean gameOver = false;
+        for (ChessPiece piece : capturedPieces) {
+            if (piece instanceof Knight) {
+                this.winner = piece.getTeam() == ChessPiece.Team.WHITE ? ChessPiece.Team.BLACK : ChessPiece.Team.WHITE;
+                return true;
+            }
+        }
+        for (int i = 0; i < BOARD_SIZE; i++) {
+            if (board[i][BOARD_SIZE - 1] instanceof Pawn) {
+                gameOver = board[i][BOARD_SIZE - 1].getTeam() == ChessPiece.Team.BLACK;
+                if (gameOver) {
+                    winner = board[i][BOARD_SIZE - 1].getTeam();
+                    break;
+                }
+            }
+        }
+        if (!gameOver) {
+            for (int i = 0; i < BOARD_SIZE; i++) {
+                if (board[i][0] instanceof Pawn) {
+                    gameOver = board[i][0].getTeam() == ChessPiece.Team.WHITE;
+                    if (gameOver) {
+                        winner = board[i][0].getTeam();
+                        break;
+                    }
+                }
+            }
+        }
+        return gameOver;
+    }
+
+    ChessPiece.Team getWinner() {
+        return this.winner;
+    }
+
+    Move getWinningMove() {
+        return this.movesList.remove(this.movesList.size() - 1);
     }
 
     void printBoard() {
@@ -74,6 +112,7 @@ class Game {
     }
 
     private void MovePiece(Move move) {
+        this.movesList.add(move);
         int x1 = move.getX1() - 1;
         int y1 = move.getY1() - 1;
         int x2 = move.getX2() - 1;
@@ -86,6 +125,7 @@ class Game {
     private boolean inBounds(int x, int y) {
         return (x > -1 && x < BOARD_SIZE && y > -1 && y < BOARD_SIZE);
     }
+
     private boolean invalidMoveDirection(int x1, int y1, int x2, int y2) {
         if (board[x1][y1] instanceof Pawn) {
             return invalidPawnMove(x1, y1, x2, y2);
@@ -149,6 +189,7 @@ class Game {
         }
         return true;
     }
+
     private boolean invalidForwardMove(int x1, int y1, int x2, int y2) {
         if (board[x1][y1] instanceof Pawn) {
             if (board[x1][y1].getTeam() == ChessPiece.Team.BLACK) {
@@ -166,6 +207,7 @@ class Game {
         }
         return false;
     }
+
     private boolean invalidDiagonal(int x1, int y1, int x2, int y2) {
         if (board[x1][y1] instanceof Pawn) {
             if (board[x1][y1].getTeam() == ChessPiece.Team.BLACK) {
@@ -191,6 +233,7 @@ class Game {
         }
         return false;
     }
+
     private boolean pawnJumpsPlayer(int x1, int y1, int x2, int y2) {
         if (board[x1][y1] instanceof Pawn) {
             if (board[x1][y1].getTeam() == ChessPiece.Team.BLACK) {
@@ -210,6 +253,7 @@ class Game {
         }
         return false;
     }
+
     private boolean pawnIllegalCapture(int x1, int y1, int x2, int y2) {
         if (board[x1][y1] instanceof Pawn) {
             if (board[x1][y1].getTeam() == ChessPiece.Team.BLACK) {
@@ -235,12 +279,14 @@ class Game {
         }
         return false;
     }
+
     private boolean landedOnFriendly(int x1, int y1, int x2, int y2) {
-        if(isPieceExistent(x2,y2)){
+        if (isPieceExistent(x2, y2)) {
             return board[x1][y1].getTeam() == board[x2][y2].getTeam();
         }
         return false;
     }
+
     private boolean isPieceExistent(int x1, int y1) {
         return board[x1][y1] != null;
     }

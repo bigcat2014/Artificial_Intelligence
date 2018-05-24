@@ -39,12 +39,18 @@ public class Driver {
             } else {
                 currentMove = getHumanMove(args[4]);
             }
-            //currentMove.printMove();
 
             if (gameBoard.isIllegalMove(currentMove) || (gameBoard.isGameOver())) {
                 done = true;
-                // FILL CODE HERE TO PRINT WHO MADE ILLEGAL MOVE AND WHY OR IF THE GAME IS
-                // OVER WHO THE WINNER IS OR IF TIME IS EXCEEDED EXPLAIN WHO THE WINNER IS
+                ChessPiece.Team winner = gameBoard.getWinner();
+                if (winner != null) {
+                    String winningTeam = winner == ChessPiece.Team.WHITE ? "White Player" : "Black Player";
+                    Move winningMove = gameBoard.getWinningMove();
+                    System.out.printf("%s has won the game with their move (%d, %d) -> (%d, %d)\n", winningTeam, winningMove.getX1(), winningMove.getY1(), winningMove.getX2(), winningMove.getY2());
+                } else {
+                    System.out.printf("Player has made a bad move! (%d, %d) -> (%d, %d)\n", currentMove.getX1(), currentMove.getY1(), currentMove.getX2(), currentMove.getY2());
+                }
+
             } else {
                 gameBoard.update(currentMove, turn);
                 gameBoard.printBoard();
