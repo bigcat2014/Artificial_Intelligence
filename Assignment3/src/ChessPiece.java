@@ -6,11 +6,16 @@ public class ChessPiece {
         this.pieceTeam = team;
     }
 
+    public ChessPiece(ChessPiece piece) {
+        this.pieceTeam = piece.getTeam();
+        this.isMoved = piece.getIsmoved();
+    }
+
     public Boolean getIsmoved() {
         return this.isMoved;
     }
 
-    public void move(ChessPiece piece) {
+    public void move() {
         this.isMoved = true;
     }
 

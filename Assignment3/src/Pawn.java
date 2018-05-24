@@ -3,6 +3,10 @@ public class Pawn extends ChessPiece {
         super(team);
     }
 
+    public Pawn(Pawn piece) {
+        super(piece);
+    }
+
     @Override
     public String toString() {
         return "P";

@@ -8,19 +8,25 @@ class Game {
     private ArrayList<Move> movesList;
 
     Game() {
-        this.board = new ChessPiece[BOARD_SIZE][BOARD_SIZE];
+        this.board = newBoard();
         this.capturedPieces = new ArrayList<ChessPiece>();
         this.movesList = new ArrayList<Move>();
+    }
+
+    ChessPiece[][] newBoard() {
+        ChessPiece[][] newBoard = new ChessPiece[BOARD_SIZE][BOARD_SIZE];
 
         for (int x = 0; x < BOARD_SIZE; x++) {
-            this.board[x][BOARD_SIZE - 2] = new Pawn(ChessPiece.Team.WHITE);
+            newBoard[x][BOARD_SIZE - 2] = new Pawn(ChessPiece.Team.WHITE);
         }
-        this.board[1][BOARD_SIZE - 1] = new Knight(ChessPiece.Team.WHITE);
+        newBoard[1][BOARD_SIZE - 1] = new Knight(ChessPiece.Team.WHITE);
 
         for (int x = 0; x < BOARD_SIZE; x++) {
-            this.board[x][1] = new Pawn(ChessPiece.Team.BLACK);
+            newBoard[x][1] = new Pawn(ChessPiece.Team.BLACK);
         }
-        this.board[BOARD_SIZE - 2][0] = new Knight(ChessPiece.Team.BLACK);
+        newBoard[BOARD_SIZE - 2][0] = new Knight(ChessPiece.Team.BLACK);
+
+        return newBoard;
     }
 
     void update(Move currentMove, String turn) {
@@ -38,19 +44,7 @@ class Game {
     }
 
     boolean isIllegalMove(Move currentMove) {
-        int x1 = currentMove.getX1() - 1;
-        int y1 = currentMove.getY1() - 1;
-        int x2 = currentMove.getX2() - 1;
-        int y2 = currentMove.getY2() - 1;
-
-        return !inBounds(x1, y1) ||
-                !isPieceExistent(x1, y1) ||
-                invalidMoveDirection(x1, y1, x2, y2) ||
-                invalidForwardMove(x1, y1, x2, y2) ||
-                invalidDiagonal(x1, y1, x2, y2) ||
-                pawnJumpsPlayer(x1, y1, x2, y2) ||
-                pawnIllegalCapture(x1, y1, x2, y2) ||
-                landedOnFriendly(x1, y1, x2, y2);
+        return MoveValidation.isIllegalMove(this.board, currentMove);
     }
 
     boolean isGameOver() {
@@ -120,174 +114,6 @@ class Game {
         ChessPiece temp = this.board[x1][y1];
         this.board[x1][y1] = this.board[x2][y2];
         this.board[x2][y2] = temp;
-    }
-
-    private boolean inBounds(int x, int y) {
-        return (x > -1 && x < BOARD_SIZE && y > -1 && y < BOARD_SIZE);
-    }
-
-    private boolean invalidMoveDirection(int x1, int y1, int x2, int y2) {
-        if (this.board[x1][y1] instanceof Pawn) {
-            return invalidPawnMove(x1, y1, x2, y2);
-        } else if (this.board[x1][y1] instanceof Knight) {
-            return invalidKnightMove(x1, y1, x2, y2);
-        }
-        return true;
-    }
-
-    private boolean invalidPawnMove(int x1, int y1, int x2, int y2) {
-        if (!(this.board[x1][y1] instanceof Pawn)) {
-            return true;
-        }
-        PawnMove currMove = PawnMove.FORWARD;
-        if (this.board[x1][y1].getTeam() == ChessPiece.Team.BLACK) {
-            for (int i = 0; i < PawnMove.getNumMoves(); i++) {
-                OrderedPair move = currMove.getMove();
-                if (y2 - y1 - move.getY() == 0 &&
-                        x2 - x1 - move.getX() == 0) {
-                    return false;
-                }
-                currMove = currMove.next();
-            }
-        } else if (this.board[x1][y1].getTeam() == ChessPiece.Team.WHITE) {
-            for (int i = 0; i < PawnMove.getNumMoves(); i++) {
-                OrderedPair move = currMove.getMove();
-                if (y2 - y1 + move.getY() == 0 &&
-                        x2 - x1 + move.getX() == 0) {
-                    return false;
-                }
-                currMove = currMove.next();
-            }
-        }
-        return true;
-    }
-
-    private boolean invalidKnightMove(int x1, int y1, int x2, int y2) {
-        if (!(this.board[x1][y1] instanceof Knight)) {
-            return true;
-        }
-        KnightMove currMove = KnightMove.LEFT_UP;
-
-        if (this.board[x1][y1].getTeam() == ChessPiece.Team.BLACK) {
-            for (int i = 0; i < KnightMove.getNumMoves(); i++) {
-                OrderedPair move = currMove.getMove();
-                if (y2 - y1 - move.getY() == 0 &&
-                        x2 - x1 - move.getX() == 0) {
-                    return false;
-                }
-                currMove = currMove.next();
-            }
-        } else if (this.board[x1][y1].getTeam() == ChessPiece.Team.WHITE) {
-            for (int i = 0; i < KnightMove.getNumMoves(); i++) {
-                OrderedPair move = currMove.getMove();
-                if (y2 - y1 + move.getY() == 0 &&
-                        x2 - x1 + move.getX() == 0) {
-                    return false;
-                }
-                currMove = currMove.next();
-            }
-        }
-        return true;
-    }
-
-    private boolean invalidForwardMove(int x1, int y1, int x2, int y2) {
-        if (this.board[x1][y1] instanceof Pawn) {
-            if (this.board[x1][y1].getTeam() == ChessPiece.Team.BLACK) {
-                if ((x2 - x1 - PawnMove.FORWARD_2.getMove().getX() == 0) &&
-                        (y2 - y1 - PawnMove.FORWARD_2.getMove().getY() == 0)) {
-                    return this.board[x1][y1].getIsmoved();
-                }
-            }
-            if (this.board[x1][y1].getTeam() == ChessPiece.Team.WHITE) {
-                if ((x2 - x1 + PawnMove.FORWARD_2.getMove().getX() == 0) &&
-                        (y2 - y1 + PawnMove.FORWARD_2.getMove().getY() == 0)) {
-                    return this.board[x1][y1].getIsmoved();
-                }
-            }
-        }
-        return false;
-    }
-
-    private boolean invalidDiagonal(int x1, int y1, int x2, int y2) {
-        if (this.board[x1][y1] instanceof Pawn) {
-            if (this.board[x1][y1].getTeam() == ChessPiece.Team.BLACK) {
-                if ((x2 - x1 - PawnMove.CAPTURE_LEFT.getMove().getX() == 0) &&
-                        (y2 - y1 - PawnMove.CAPTURE_LEFT.getMove().getY() == 0)) {
-                    return !isPieceExistent(x2, y2);
-                }
-                if ((x2 - x1 - PawnMove.CAPTURE_RIGHT.getMove().getX() == 0) &&
-                        (y2 - y1 - PawnMove.CAPTURE_RIGHT.getMove().getY() == 0)) {
-                    return !isPieceExistent(x2, y2);
-                }
-            }
-            if (this.board[x1][y1].getTeam() == ChessPiece.Team.WHITE) {
-                if ((x2 - x1 + PawnMove.CAPTURE_LEFT.getMove().getX() == 0) &&
-                        (y2 - y1 + PawnMove.CAPTURE_LEFT.getMove().getY() == 0)) {
-                    return !isPieceExistent(x2, y2);
-                }
-                if ((x2 - x1 + PawnMove.CAPTURE_RIGHT.getMove().getX() == 0) &&
-                        (y2 - y1 + PawnMove.CAPTURE_RIGHT.getMove().getY() == 0)) {
-                    return !isPieceExistent(x2, y2);
-                }
-            }
-        }
-        return false;
-    }
-
-    private boolean pawnJumpsPlayer(int x1, int y1, int x2, int y2) {
-        if (this.board[x1][y1] instanceof Pawn) {
-            if (this.board[x1][y1].getTeam() == ChessPiece.Team.BLACK) {
-                if ((x2 - x1 - PawnMove.FORWARD_2.getMove().getX() == 0) &&
-                        (y2 - y1 - PawnMove.FORWARD_2.getMove().getY() == 0)) {
-                    OrderedPair move = PawnMove.FORWARD.getMove();
-                    return isPieceExistent(x1 + move.getX(), y1 + move.getY());
-                }
-            }
-            if (this.board[x1][y1].getTeam() == ChessPiece.Team.WHITE) {
-                if ((x2 - x1 + PawnMove.FORWARD_2.getMove().getX() == 0) &&
-                        (y2 - y1 + PawnMove.FORWARD_2.getMove().getY() == 0)) {
-                    OrderedPair move = PawnMove.FORWARD.getMove();
-                    return isPieceExistent(x1 - move.getX(), y1 - move.getY());
-                }
-            }
-        }
-        return false;
-    }
-
-    private boolean pawnIllegalCapture(int x1, int y1, int x2, int y2) {
-        if (this.board[x1][y1] instanceof Pawn) {
-            if (this.board[x1][y1].getTeam() == ChessPiece.Team.BLACK) {
-                if ((x2 - x1 - PawnMove.FORWARD.getMove().getX() == 0) &&
-                        (y2 - y1 - PawnMove.FORWARD.getMove().getY() == 0)) {
-                    return isPieceExistent(x2, y2);
-                }
-                if ((x2 - x1 - PawnMove.FORWARD_2.getMove().getX() == 0) &&
-                        (y2 - y1 - PawnMove.FORWARD_2.getMove().getY() == 0)) {
-                    return isPieceExistent(x2, y2);
-                }
-            }
-            if (this.board[x1][y1].getTeam() == ChessPiece.Team.WHITE) {
-                if ((x2 - x1 + PawnMove.FORWARD.getMove().getX() == 0) &&
-                        (y2 - y1 + PawnMove.FORWARD.getMove().getY() == 0)) {
-                    return isPieceExistent(x2, y2);
-                }
-                if ((x2 - x1 + PawnMove.FORWARD_2.getMove().getX() == 0) &&
-                        (y2 - y1 + PawnMove.FORWARD_2.getMove().getY() == 0)) {
-                    return isPieceExistent(x2, y2);
-                }
-            }
-        }
-        return false;
-    }
-
-    private boolean landedOnFriendly(int x1, int y1, int x2, int y2) {
-        if (isPieceExistent(x2, y2)) {
-            return this.board[x1][y1].getTeam() == this.board[x2][y2].getTeam();
-        }
-        return false;
-    }
-
-    private boolean isPieceExistent(int x1, int y1) {
-        return this.board[x1][y1] != null;
+        this.board[x2][y2].move();
     }
 }

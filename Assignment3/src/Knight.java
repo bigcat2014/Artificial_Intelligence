@@ -3,6 +3,10 @@ public class Knight extends ChessPiece {
         super(team);
     }
 
+    public Knight(Knight piece) {
+        super(piece);
+    }
+
     @Override
     public String toString() {
         return "K";

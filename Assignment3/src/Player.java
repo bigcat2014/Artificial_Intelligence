@@ -2,18 +2,55 @@ import java.util.ArrayList;
 
 public class Player {
     private String name;
-    protected ChessPiece[][] board;
-    protected ArrayList<ChessPiece> capturedPieces;
-    protected ChessPiece.Team winner;
-    protected ArrayList<Move> movesList;
-//    protected Move currentMove;
+    private ArrayList<ChessPiece> capturedPieces;
+    private ChessPiece.Team winner;
+    private ArrayList<Move> movesList;
 
-    protected final int FINAL_DEPTH = 5;
+    protected ChessPiece[][] board;
+    protected final Move INVALID_MOVE = new Move(1, 1, 1, 1);
+    protected final int MAX_DEPTH = 5;
     protected int depth = 0;
 
 
     public Player(String name) {
         this.name = name;
+        this.board = newBoard();
+        this.capturedPieces = new ArrayList<ChessPiece>();
+        this.movesList = new ArrayList<Move>();
+    }
+
+    ChessPiece[][] newBoard() {
+        ChessPiece[][] newBoard = new ChessPiece[Game.BOARD_SIZE][Game.BOARD_SIZE];
+
+        for (int x = 0; x < Game.BOARD_SIZE; x++) {
+            newBoard[x][Game.BOARD_SIZE - 2] = new Pawn(ChessPiece.Team.WHITE);
+        }
+        newBoard[1][Game.BOARD_SIZE - 1] = new Knight(ChessPiece.Team.WHITE);
+
+        for (int x = 0; x < Game.BOARD_SIZE; x++) {
+            newBoard[x][1] = new Pawn(ChessPiece.Team.BLACK);
+        }
+        newBoard[Game.BOARD_SIZE - 2][0] = new Knight(ChessPiece.Team.BLACK);
+
+        return newBoard;
+    }
+
+    ChessPiece[][] newBoard(ChessPiece[][] currentBoard) {
+        ChessPiece[][] newBoard = new ChessPiece[Game.BOARD_SIZE][Game.BOARD_SIZE];
+
+        for (int y = 0; y < Game.BOARD_SIZE; y++) {
+            for (int x = 0; x < Game.BOARD_SIZE; x++) {
+                if (currentBoard[x][y] instanceof Pawn) {
+                    newBoard[x][y] = new Pawn((Pawn) currentBoard[x][y]);
+                } else if (currentBoard[x][y] instanceof Knight) {
+                    newBoard[x][y] = new Knight((Knight) currentBoard[x][y]);
+                } else {
+                    newBoard[x][y] = null;
+                }
+            }
+        }
+
+        return newBoard;
     }
 
     boolean isGameOver() {
@@ -47,75 +84,76 @@ public class Player {
         return gameOver;
     }
 
-    private int Utility(ChessPiece[][] state) {
+    boolean isIllegalMove(Move currentMove) {
+        return MoveValidation.isIllegalMove(this.board, currentMove);
+    }
+
+    protected int Utility(ChessPiece[][] state) {
         return 0;
     }
 
-    private ArrayList<ChessPiece[][]> Successors(ChessPiece[][] state) {
-        ArrayList<ChessPiece[][]> successors = new ArrayList<ChessPiece[][]>();
-        successors.add(state);
+    ArrayList<Move> Successors(ChessPiece.Team team) {
+        ArrayList<Move> successors = new ArrayList<Move>();
+        int x2;
+        int y2;
+        Move move;
+        int modifier = team == ChessPiece.Team.WHITE ? -1 : 1;
+        for (int y = 0; y < Game.BOARD_SIZE; y++) {
+            for (int x = 0; x < Game.BOARD_SIZE; x++) {
+                if (this.board[x][y] instanceof Pawn) {
+                    PawnMove currMove = PawnMove.FORWARD;
+                    for (int i = 0; i < PawnMove.getNumMoves(); i++) {
+                        OrderedPair moveVals = currMove.getMove();
+                        if (this.board[x][y].getTeam() == team) {
+                            x2 = x + (modifier * moveVals.getX()) + 1;
+                            y2 = y + (modifier * moveVals.getY()) + 1;
+                            move = new Move(x + 1, y + 1, x2, y2);
+                            if (!isIllegalMove(move)) {
+                                successors.add(move);
+                            }
+                            currMove = currMove.next();
+                        }
+                    }
+                } else if (this.board[x][y] instanceof Knight) {
+                    KnightMove currMove = KnightMove.LEFT_UP;
+                    for (int i = 0; i < KnightMove.getNumMoves(); i++) {
+                        OrderedPair moveVals = currMove.getMove();
+                        if (this.board[x][y].getTeam() == team) {
+                            x2 = x + (modifier * moveVals.getX()) + 1;
+                            y2 = y + (modifier * moveVals.getY()) + 1;
+                            move = new Move(x + 1, y + 1, x2, y2);
+                            if (!isIllegalMove(move)) {
+                                successors.add(move);
+                            }
+                        }
+                        currMove = currMove.next();
+                    }
+                }
+            }
+        }
         return successors;
     }
-
-    protected int Max(ChessPiece[][] state, int alpha, int beta) {
-//         TODO: Implement Max of min-max search
-        this.depth++;
-        if (isGameOver()) {
-            return Utility(state);
-        }
-        int v = Integer.MIN_VALUE;
-        ArrayList<ChessPiece[][]> successors = Successors(state);
-        for (ChessPiece[][] successor : successors) {
-            v = Math.max(v, Min(successor, alpha, beta));
-            if (v >= beta) {
-                break;
-            }
-            alpha = Math.max(v, alpha);
-        }
-        return v;
-    }
-
-    protected int Min(ChessPiece[][] state, int alpha, int beta) {
-//         TODO: Implement Max of min-max search
-        this.depth++;
-        if (isGameOver()) {
-            return Utility(state);
-        }
-        int v = Integer.MAX_VALUE;
-        ArrayList<ChessPiece[][]> successors = Successors(state);
-        for (ChessPiece[][] successor : successors) {
-            v = Math.min(v, Max(successor, alpha, beta));
-            if (v < alpha) {
-                break;
-            }
-            beta = Math.min(v, beta);
-        }
-        return v;
-    }
-
-//    public void update(Move currentMove) {
-//        this.currentMove = currentMove;
-//    }
 
     void update(Move currentMove) {
         int x1 = currentMove.getX1() - 1;
         int y1 = currentMove.getY1() - 1;
 
-        MovePiece(currentMove);
+        MovePiece(this.board, currentMove);
         if (this.board[x1][y1] != null) {
             this.capturedPieces.add(this.board[x1][y1]);
             this.board[x1][y1] = null;
         }
     }
 
-    private void MovePiece(Move move) {
+    protected void MovePiece(ChessPiece[][] board, Move move) {
         this.movesList.add(move);
         int x1 = move.getX1() - 1;
         int y1 = move.getY1() - 1;
         int x2 = move.getX2() - 1;
         int y2 = move.getY2() - 1;
-        ChessPiece temp = this.board[x1][y1];
-        this.board[x1][y1] = this.board[x2][y2];
-        this.board[x2][y2] = temp;
+        ChessPiece temp = board[x1][y1];
+        board[x1][y1] = board[x2][y2];
+        board[x2][y2] = temp;
+        board[x2][y2].move();
     }
 }
