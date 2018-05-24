@@ -5,6 +5,8 @@ public class Player {
     private ArrayList<ChessPiece> capturedPieces;
     private ChessPiece.Team winner;
     private ArrayList<Move> movesList;
+    private final int KNIGHT_VAL = 9;
+    private final int PAWN_VAL = 1;
 
     protected ChessPiece[][] board;
     protected final Move INVALID_MOVE = new Move(1, 1, 1, 1);
@@ -89,10 +91,20 @@ public class Player {
     }
 
     protected int Utility(ChessPiece[][] state) {
-        return 0;
+        int utility = 0;
+        for (int y = 0; y < board.length; y++) {
+            for (int x = 0; x < board[y].length; x++) {
+                if (board[x][y] instanceof Pawn) {
+                    utility += (board[x][y].getTeam() == ChessPiece.Team.WHITE ? 1 : -1) * PAWN_VAL;
+                } else if (board[x][y] instanceof Knight) {
+                    utility += (board[x][y].getTeam() == ChessPiece.Team.WHITE ? 1 : -1) * KNIGHT_VAL;
+                }
+            }
+        }
+        return utility;
     }
 
-    ArrayList<Move> Successors(ChessPiece.Team team) {
+    ArrayList<Move> Successors(ChessPiece[][] board, ChessPiece.Team team) {
         ArrayList<Move> successors = new ArrayList<Move>();
         int x2;
         int y2;
@@ -100,11 +112,11 @@ public class Player {
         int modifier = team == ChessPiece.Team.WHITE ? -1 : 1;
         for (int y = 0; y < Game.BOARD_SIZE; y++) {
             for (int x = 0; x < Game.BOARD_SIZE; x++) {
-                if (this.board[x][y] instanceof Pawn) {
+                if (board[x][y] instanceof Pawn) {
                     PawnMove currMove = PawnMove.FORWARD;
                     for (int i = 0; i < PawnMove.getNumMoves(); i++) {
                         OrderedPair moveVals = currMove.getMove();
-                        if (this.board[x][y].getTeam() == team) {
+                        if (board[x][y].getTeam() == team) {
                             x2 = x + (modifier * moveVals.getX()) + 1;
                             y2 = y + (modifier * moveVals.getY()) + 1;
                             move = new Move(x + 1, y + 1, x2, y2);
@@ -114,11 +126,11 @@ public class Player {
                             currMove = currMove.next();
                         }
                     }
-                } else if (this.board[x][y] instanceof Knight) {
+                } else if (board[x][y] instanceof Knight) {
                     KnightMove currMove = KnightMove.LEFT_UP;
                     for (int i = 0; i < KnightMove.getNumMoves(); i++) {
                         OrderedPair moveVals = currMove.getMove();
-                        if (this.board[x][y].getTeam() == team) {
+                        if (board[x][y].getTeam() == team) {
                             x2 = x + (modifier * moveVals.getX()) + 1;
                             y2 = y + (modifier * moveVals.getY()) + 1;
                             move = new Move(x + 1, y + 1, x2, y2);

@@ -32,12 +32,12 @@ public class Driver {
                 if (blackPlayer != null) {
                     currentMove = blackPlayer.getMove();
                 } else {
-                    currentMove = getHumanMove(args[2]);
+                    currentMove = getHumanMove(args[1]);
                 }
             } else if (whitePlayer != null) {
                 currentMove = whitePlayer.getMove();
             } else {
-                currentMove = getHumanMove(args[4]);
+                currentMove = getHumanMove(args[3]);
             }
 
             if (gameBoard.isIllegalMove(currentMove) || (gameBoard.isGameOver())) {
@@ -48,13 +48,13 @@ public class Driver {
                     Move winningMove = gameBoard.getWinningMove();
                     System.out.printf("%s has won the game with their move (%d, %d) -> (%d, %d)\n", winningTeam, winningMove.getX1(), winningMove.getY1(), winningMove.getX2(), winningMove.getY2());
                 } else {
-                    System.out.printf("Player has made a bad move! (%d, %d) -> (%d, %d)\n", currentMove.getX1(), currentMove.getY1(), currentMove.getX2(), currentMove.getY2());
+                    System.out.printf("%s player has made a bad move! (%d, %d) -> (%d, %d)\n", turn, currentMove.getX1(), currentMove.getY1(), currentMove.getX2(), currentMove.getY2());
                 }
 
             } else {
                 gameBoard.update(currentMove, turn);
                 gameBoard.printBoard();
-                //sc.nextLine();
+                // sc.nextLine();
                     if (turn.equals("black")) {
                         if (whitePlayer != null) { whitePlayer.update(currentMove); }
                         turn = "white";

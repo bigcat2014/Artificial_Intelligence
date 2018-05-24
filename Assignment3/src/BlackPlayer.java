@@ -15,11 +15,11 @@ public class BlackPlayer extends Player {
     }
 
     protected int Max(ChessPiece[][] state, int alpha, int beta) {
-        if (isGameOver() || this.depth++ > MAX_DEPTH) {
+        if (isGameOver() || ++this.depth > MAX_DEPTH) {
             return -Utility(state);
         }
         int v = Integer.MIN_VALUE;
-        ArrayList<Move> successors = Successors(ChessPiece.Team.BLACK);
+        ArrayList<Move> successors = Successors(state, ChessPiece.Team.BLACK);
         if (successors.size() == 0) {
             return -Utility(state);
         }
@@ -27,6 +27,7 @@ public class BlackPlayer extends Player {
             ChessPiece[][] tempBoard = newBoard(state);
             MovePiece(tempBoard, successor);
             v = Math.max(v, Min(tempBoard, alpha, beta));
+            this.depth--;
             if (v >= beta) {
                 break;
             }
@@ -38,11 +39,11 @@ public class BlackPlayer extends Player {
     }
 
     protected int Min(ChessPiece[][] state, int alpha, int beta) {
-        if (isGameOver() || this.depth++ > MAX_DEPTH) {
+        if (isGameOver() || ++this.depth > MAX_DEPTH) {
             return Utility(state);
         }
         int v = Integer.MAX_VALUE;
-        ArrayList<Move> successors = Successors(ChessPiece.Team.WHITE);
+        ArrayList<Move> successors = Successors(state, ChessPiece.Team.WHITE);
         if (successors.size() == 0) {
             return Utility(state);
         }
@@ -50,6 +51,7 @@ public class BlackPlayer extends Player {
             ChessPiece[][] tempBoard = newBoard(state);
             MovePiece(tempBoard, successor);
             v = Math.min(v, Max(tempBoard, alpha, beta));
+            this.depth--;
             if (v <= alpha) {
                 break;
             }
@@ -64,11 +66,11 @@ public class BlackPlayer extends Player {
         int alpha = Integer.MIN_VALUE;
         int beta = Integer.MAX_VALUE;
 
-        if (isGameOver() || this.depth++ > MAX_DEPTH) {
+        if (++this.depth > MAX_DEPTH) {
             return INVALID_MOVE;
         }
         int v = Integer.MIN_VALUE;
-        ArrayList<Move> successors = Successors(ChessPiece.Team.BLACK);
+        ArrayList<Move> successors = Successors(this.board, ChessPiece.Team.BLACK);
         if (successors.size() == 0) {
             return INVALID_MOVE;
         }
@@ -77,6 +79,7 @@ public class BlackPlayer extends Player {
             ChessPiece[][] tempBoard = newBoard(this.board);
             MovePiece(tempBoard, successor);
             v = Math.max(v, Min(tempBoard, alpha, beta));
+            this.depth--;
             if (v >= beta) {
                 break;
             }
@@ -85,8 +88,8 @@ public class BlackPlayer extends Player {
                 best = successor;
             }
         }
+        this.depth = 0;
+        MovePiece(this.board, best);
         return best;
-//        Max(this.board, Integer.MIN_VALUE, Integer.MAX_VALUE);
-//        return this.bestMove;
     }
 }
