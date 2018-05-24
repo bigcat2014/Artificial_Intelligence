@@ -24,15 +24,13 @@ class Game {
         int x1 = currentMove.getX1() - 1;
         int y1 = currentMove.getY1() - 1;
 
-        if (!isIllegalMove(currentMove)) {
-            if (!board[x1][y1].getTeam().toString().equalsIgnoreCase(turn.substring(0, 1))) {
-                return;
-            }
-            MovePiece(currentMove);
-            if (board[x1][y1] != null) {
-                capturedPieces.add(board[x1][y1]);
-                board[x1][y1] = null;
-            }
+        if (!board[x1][y1].getTeam().toString().equalsIgnoreCase(turn.substring(0, 1))) {
+            return;
+        }
+        MovePiece(currentMove);
+        if (board[x1][y1] != null) {
+            capturedPieces.add(board[x1][y1]);
+            board[x1][y1] = null;
         }
     }
 
@@ -91,7 +89,7 @@ class Game {
     private boolean invalidMoveDirection(int x1, int y1, int x2, int y2) {
         if (board[x1][y1] instanceof Pawn) {
             return invalidPawnMove(x1, y1, x2, y2);
-        } else if (board[y1][x1] instanceof Knight) {
+        } else if (board[x1][y1] instanceof Knight) {
             return invalidKnightMove(x1, y1, x2, y2);
         }
         return true;
@@ -103,7 +101,7 @@ class Game {
         }
         PawnMove currMove = PawnMove.FORWARD;
         if (board[x1][y1].getTeam() == ChessPiece.Team.BLACK) {
-            for (int i = 0; i < 3; i++) {
+            for (int i = 0; i < PawnMove.getNumMoves(); i++) {
                 OrderedPair move = currMove.getMove();
                 if (y2 - y1 - move.getY() == 0 &&
                         x2 - x1 - move.getX() == 0) {
@@ -112,7 +110,7 @@ class Game {
                 currMove = currMove.next();
             }
         } else if (board[x1][y1].getTeam() == ChessPiece.Team.WHITE) {
-            for (int i = 0; i < 3; i++) {
+            for (int i = 0; i < PawnMove.getNumMoves(); i++) {
                 OrderedPair move = currMove.getMove();
                 if (y2 - y1 + move.getY() == 0 &&
                         x2 - x1 + move.getX() == 0) {
@@ -131,7 +129,7 @@ class Game {
         KnightMove currMove = KnightMove.LEFT_UP;
 
         if (board[x1][y1].getTeam() == ChessPiece.Team.BLACK) {
-            for (int i = 0; i < 7; i++) {
+            for (int i = 0; i < KnightMove.getNumMoves(); i++) {
                 OrderedPair move = currMove.getMove();
                 if (y2 - y1 - move.getY() == 0 &&
                         x2 - x1 - move.getX() == 0) {
@@ -140,7 +138,7 @@ class Game {
                 currMove = currMove.next();
             }
         } else if (board[x1][y1].getTeam() == ChessPiece.Team.WHITE) {
-            for (int i = 0; i < 7; i++) {
+            for (int i = 0; i < KnightMove.getNumMoves(); i++) {
                 OrderedPair move = currMove.getMove();
                 if (y2 - y1 + move.getY() == 0 &&
                         x2 - x1 + move.getX() == 0) {
@@ -173,21 +171,21 @@ class Game {
             if (board[x1][y1].getTeam() == ChessPiece.Team.BLACK) {
                 if ((x2 - x1 - PawnMove.CAPTURE_LEFT.getMove().getX() == 0) &&
                         (y2 - y1 - PawnMove.CAPTURE_LEFT.getMove().getY() == 0)) {
-                    return isPieceExistent(x2, y2);
+                    return !isPieceExistent(x2, y2);
                 }
                 if ((x2 - x1 - PawnMove.CAPTURE_RIGHT.getMove().getX() == 0) &&
                         (y2 - y1 - PawnMove.CAPTURE_RIGHT.getMove().getY() == 0)) {
-                    return isPieceExistent(x2, y2);
+                    return !isPieceExistent(x2, y2);
                 }
             }
             if (board[x1][y1].getTeam() == ChessPiece.Team.WHITE) {
                 if ((x2 - x1 + PawnMove.CAPTURE_LEFT.getMove().getX() == 0) &&
                         (y2 - y1 + PawnMove.CAPTURE_LEFT.getMove().getY() == 0)) {
-                    return isPieceExistent(x2, y2);
+                    return !isPieceExistent(x2, y2);
                 }
                 if ((x2 - x1 + PawnMove.CAPTURE_RIGHT.getMove().getX() == 0) &&
                         (y2 - y1 + PawnMove.CAPTURE_RIGHT.getMove().getY() == 0)) {
-                    return isPieceExistent(x2, y2);
+                    return !isPieceExistent(x2, y2);
                 }
             }
         }

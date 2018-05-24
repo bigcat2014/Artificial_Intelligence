@@ -35,4 +35,8 @@ public enum KnightMove {
     public KnightMove previous() {
         return values()[ordinal() - 1];
     }
+
+    public static int getNumMoves() {
+        return values().length;
+    }
 }

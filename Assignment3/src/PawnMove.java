@@ -32,4 +32,8 @@ public enum PawnMove {
     public PawnMove previous() {
         return values()[ordinal() - 1];
     }
+
+    public static int getNumMoves() {
+        return values().length;
+    }
 }
