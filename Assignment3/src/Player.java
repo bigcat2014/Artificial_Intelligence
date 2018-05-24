@@ -56,6 +56,10 @@ public class Player {
     }
 
     boolean isGameOver() {
+        return isGameOver(this.board);
+    }
+
+    boolean isGameOver(ChessPiece[][] board) {
         boolean gameOver = false;
         for (ChessPiece piece : this.capturedPieces) {
             if (piece instanceof Knight) {
@@ -65,9 +69,9 @@ public class Player {
         }
         for (int i = 0; i < Game.BOARD_SIZE; i++) {
             if (this.board[i][Game.BOARD_SIZE - 1] instanceof Pawn) {
-                gameOver = this.board[i][Game.BOARD_SIZE - 1].getTeam() == ChessPiece.Team.BLACK;
+                gameOver = board[i][Game.BOARD_SIZE - 1].getTeam() == ChessPiece.Team.BLACK;
                 if (gameOver) {
-                    winner = this.board[i][Game.BOARD_SIZE - 1].getTeam();
+                    winner = board[i][Game.BOARD_SIZE - 1].getTeam();
                     break;
                 }
             }
@@ -75,9 +79,9 @@ public class Player {
         if (!gameOver) {
             for (int i = 0; i < Game.BOARD_SIZE; i++) {
                 if (this.board[i][0] instanceof Pawn) {
-                    gameOver = this.board[i][0].getTeam() == ChessPiece.Team.WHITE;
+                    gameOver = board[i][0].getTeam() == ChessPiece.Team.WHITE;
                     if (gameOver) {
-                        winner = this.board[i][0].getTeam();
+                        winner = board[i][0].getTeam();
                         break;
                     }
                 }
@@ -92,6 +96,9 @@ public class Player {
 
     protected int Utility(ChessPiece[][] state) {
         int utility = 0;
+        if (isGameOver()) {
+            return this.winner == ChessPiece.Team.WHITE ? Integer.MAX_VALUE : Integer.MIN_VALUE;
+        }
         for (int y = 0; y < board.length; y++) {
             for (int x = 0; x < board[y].length; x++) {
                 if (board[x][y] instanceof Pawn) {

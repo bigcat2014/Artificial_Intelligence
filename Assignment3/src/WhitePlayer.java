@@ -15,7 +15,7 @@ public class WhitePlayer extends Player{
     }
 
     protected int Max(ChessPiece[][] state, int alpha, int beta) {
-        if (isGameOver() || ++this.depth > MAX_DEPTH) {
+        if (isGameOver(this.board) || ++this.depth > MAX_DEPTH) {
             return Utility(state);
         }
         int v = Integer.MIN_VALUE;
@@ -39,7 +39,7 @@ public class WhitePlayer extends Player{
     }
 
     protected int Min(ChessPiece[][] state, int alpha, int beta) {
-        if (isGameOver() || ++this.depth > MAX_DEPTH) {
+        if (isGameOver(this.board) || ++this.depth > MAX_DEPTH) {
             return -Utility(state);
         }
         int v = Integer.MAX_VALUE;
