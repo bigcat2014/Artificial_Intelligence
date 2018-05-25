@@ -2,8 +2,7 @@ import java.util.ArrayList;
 
 class Game {
     //Variables
-    static final int BOARD_SIZE = 8
-            ;
+    static final int BOARD_SIZE = 8;
     private ChessPiece[][] board;
     private ArrayList<ChessPiece> capturedPieces;
     private ChessPiece.Team winner;
@@ -65,9 +64,9 @@ class Game {
             }
         }
         for (ChessPiece piece : this.capturedPieces) {
-            if (capturedPieces.size()==BOARD_SIZE*2) {
-            this.winner =piece.getTeam().DRAW;
-            return true;
+            if (capturedPieces.size() == BOARD_SIZE * 2) {
+                this.winner = piece.getTeam().DRAW;
+                return true;
             }
         }
         for (int i = 0; i < BOARD_SIZE; i++) {
@@ -95,7 +94,7 @@ class Game {
     }
 
     ChessPiece.Team getWinner() {
-            return this.winner;
+        return this.winner;
     }
 
     //Return the move which won the game
