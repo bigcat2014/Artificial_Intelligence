@@ -64,7 +64,7 @@ public final class UtilityEngine {
         utility += teamWeight * weights[3] * attackedByMore(board, team);
 
         //utility -= weights[4] * knightAttackers(board, ChessPiece.Team.WHITE);
-//        utility += teamWeight * weights[4] * knightAttackers(board, team);
+        utility += teamWeight * weights[4] * knightAttackers(board, team);
 
         //utility -= weights[5] * knightAttacksCount(board, ChessPiece.Team.WHITE);
         utility += teamWeight * weights[5] * knightAttacksCount(board, team);
@@ -120,12 +120,12 @@ public final class UtilityEngine {
         OrderedPair pawnMoveVals = PawnMove.FORWARD.getMove();
         x2 = x + (modifier * pawnMoveVals.getX());
         y2 = y + (modifier * pawnMoveVals.getY());
-        if (!MoveValidation.isIllegalMove(board, new Move(x + 1, y + 1, x2 + 1, y2 + 1), team)) {
+        if (!MoveValidation.isIllegalMove(board, new Move(x2 + 1, y2 + 1, x + 1, y + 1), team == ChessPiece.Team.WHITE ? ChessPiece.Team.BLACK : ChessPiece.Team.WHITE, false)) {
             if (board[x2][y2] != null) {
                 pawnMoveVals = PawnMove.CAPTURE_LEFT.getMove();
                 x2 = x + (modifier * pawnMoveVals.getX());
                 y2 = y + (modifier * pawnMoveVals.getY());
-                if (!MoveValidation.isIllegalMove(board, new Move(x + 1, y + 1, x2 + 1, y2 + 1), team)) {
+                if (!MoveValidation.isIllegalMove(board, new Move(x2 + 1, y2 + 1, x + 1, y + 1), team == ChessPiece.Team.WHITE ? ChessPiece.Team.BLACK : ChessPiece.Team.WHITE, false)) {
                     blocked = board[x2][y2] == null;
                 } else {
                     blocked = true;
@@ -134,7 +134,7 @@ public final class UtilityEngine {
                 pawnMoveVals = PawnMove.CAPTURE_RIGHT.getMove();
                 x2 = x + (modifier * pawnMoveVals.getX());
                 y2 = y + (modifier * pawnMoveVals.getY());
-                if (!MoveValidation.isIllegalMove(board, new Move(x + 1, y + 1, x2 + 1, y2 + 1), team)) {
+                if (!MoveValidation.isIllegalMove(board, new Move(x2 + 1, y2 + 1, x + 1, y + 1), team == ChessPiece.Team.WHITE ? ChessPiece.Team.BLACK : ChessPiece.Team.WHITE, false)) {
                     blocked &= board[x2][y2] == null;
                 }
             }
@@ -169,7 +169,7 @@ public final class UtilityEngine {
         return utility;
     }
 
-    private static int squareAttackedBy(ChessPiece[][] board, int x, int y, ChessPiece.Team team) {
+    static int squareAttackedBy(ChessPiece[][] board, int x, int y, ChessPiece.Team team) {
         int x2;
         int y2;
         int attackedBy = 0;
@@ -178,7 +178,7 @@ public final class UtilityEngine {
         OrderedPair pawnMoveVals = PawnMove.CAPTURE_RIGHT.getMove();
         x2 = x + (modifier * pawnMoveVals.getX());
         y2 = y + (modifier * pawnMoveVals.getY());
-        if (!MoveValidation.isIllegalMove(board, new Move(x + 1, y + 1, x2 + 1, y2 + 1), team)) {
+        if (!MoveValidation.isIllegalMove(board, new Move(x2 + 1, y2 + 1, x + 1, y + 1), team == ChessPiece.Team.WHITE ? ChessPiece.Team.BLACK : ChessPiece.Team.WHITE, false)) {
             if (board[x2][y2] instanceof Pawn && board[x2][y2].getTeam() != team) {
                 attackedBy++;
             }
@@ -187,7 +187,7 @@ public final class UtilityEngine {
         pawnMoveVals = PawnMove.CAPTURE_LEFT.getMove();
         x2 = x + (modifier * pawnMoveVals.getX());
         y2 = y + (modifier * pawnMoveVals.getY());
-        if (!MoveValidation.isIllegalMove(board, new Move(x + 1, y + 1, x2 + 1, y2 + 1), team)) {
+        if (!MoveValidation.isIllegalMove(board, new Move(x2 + 1, y2 + 1, x + 1, y + 1), team == ChessPiece.Team.WHITE ? ChessPiece.Team.BLACK : ChessPiece.Team.WHITE, false)) {
             if (board[x2][y2] instanceof Pawn && board[x2][y2].getTeam() != team) {
                 attackedBy++;
             }
@@ -198,7 +198,7 @@ public final class UtilityEngine {
             OrderedPair knightMoveVals = currMove.getMove();
             x2 = x + knightMoveVals.getX();
             y2 = y + knightMoveVals.getY();
-            if (!MoveValidation.isIllegalMove(board, new Move(x + 1, y + 1, x2 + 1, y2 + 1), team)) {
+            if (!MoveValidation.isIllegalMove(board, new Move(x2 + 1, y2 + 1, x + 1, y + 1), team == ChessPiece.Team.WHITE ? ChessPiece.Team.BLACK : ChessPiece.Team.WHITE, false)) {
                 if (board[x2][y2] instanceof Knight && board[x2][y2].getTeam() != team) {
                     attackedBy++;
                 }
@@ -231,7 +231,7 @@ public final class UtilityEngine {
         OrderedPair pawnMoveVals = PawnMove.CAPTURE_RIGHT.getMove();
         x2 = x + (modifier * pawnMoveVals.getX());
         y2 = y + (modifier * pawnMoveVals.getY());
-        if (!MoveValidation.isIllegalMove(board, new Move(x + 1, y + 1, x2 + 1, y2 + 1), team)) {
+        if (!MoveValidation.isIllegalMove(board, new Move(x2 + 1, y2 + 1, x + 1, y + 1), team == ChessPiece.Team.WHITE ? ChessPiece.Team.BLACK : ChessPiece.Team.WHITE, false)) {
             if (board[x2][y2] instanceof Pawn && board[x2][y2].getTeam() != team) {
                 if (!attackers.contains(board[x2][y2])) {
                     attackers.add(board[x2][y2]);
@@ -242,7 +242,7 @@ public final class UtilityEngine {
         pawnMoveVals = PawnMove.CAPTURE_LEFT.getMove();
         x2 = x + (modifier * pawnMoveVals.getX());
         y2 = y + (modifier * pawnMoveVals.getY());
-        if (!MoveValidation.isIllegalMove(board, new Move(x + 1, y + 1, x2 + 1, y2 + 1), team)) {
+        if (!MoveValidation.isIllegalMove(board, new Move(x2 + 1, y2 + 1, x + 1, y + 1), team == ChessPiece.Team.WHITE ? ChessPiece.Team.BLACK : ChessPiece.Team.WHITE, false)) {
             if (board[x2][y2] instanceof Pawn && board[x2][y2].getTeam() != team) {
                 if (!attackers.contains(board[x2][y2])) {
                     attackers.add(board[x2][y2]);
@@ -255,7 +255,7 @@ public final class UtilityEngine {
             OrderedPair knightMoveVals = currMove.getMove();
             x2 = x + knightMoveVals.getX();
             y2 = y + knightMoveVals.getY();
-            if (!MoveValidation.isIllegalMove(board, new Move(x, y, x2, y2), team)) {
+            if (!MoveValidation.isIllegalMove(board, new Move(x2 + 1, y2 + 1, x + 1, y + 1), team == ChessPiece.Team.WHITE ? ChessPiece.Team.BLACK : ChessPiece.Team.WHITE, false)) {
                 if (board[x2][y2] instanceof Knight && board[x2][y2].getTeam() != team) {
                     if (!attackers.contains(board[x2][y2])) {
                         attackers.add(board[x2][y2]);

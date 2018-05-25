@@ -3,13 +3,14 @@ public final class MoveValidation {
     }
 
     //Checks if Move passes all illegal checks and is Valid
-    static boolean isIllegalMove(ChessPiece[][] board, Move currentMove, ChessPiece.Team turn) {
+    static boolean isIllegalMove(ChessPiece[][] board, Move currentMove, ChessPiece.Team turn, boolean knightCheck) {
         int x1 = currentMove.getX1() - 1;
         int y1 = currentMove.getY1() - 1;
         int x2 = currentMove.getX2() - 1;
         int y2 = currentMove.getY2() - 1;
+        boolean isIllegalMove;
 
-        return !inBounds(board, x1, y1, x2, y2) ||
+        isIllegalMove = !inBounds(board, x1, y1, x2, y2) ||
                 wrongTeam(board, x1, y1, turn) ||
                 !isPieceExistent(board, x1, y1) ||
                 invalidMoveDirection(board, x1, y1, x2, y2) ||
@@ -18,6 +19,43 @@ public final class MoveValidation {
                 pawnJumpsPlayer(board, x1, y1, x2, y2) ||
                 pawnIllegalCapture(board, x1, y1, x2, y2) ||
                 landedOnFriendly(board, x1, y1, x2, y2);
+
+        if (knightCheck) {
+            isIllegalMove |= knightInCheck(board, x1, y1, x2, y2, turn);
+        }
+
+        return isIllegalMove;
+    }
+
+    //Populates board with Pieces
+    private static ChessPiece[][] newBoard(ChessPiece[][] currentBoard) {
+        ChessPiece[][] newBoard = new ChessPiece[Game.BOARD_SIZE][Game.BOARD_SIZE];
+
+        for (int y = 0; y < Game.BOARD_SIZE; y++) {
+            for (int x = 0; x < Game.BOARD_SIZE; x++) {
+                if (currentBoard[x][y] instanceof Pawn) {
+                    newBoard[x][y] = new Pawn((Pawn) currentBoard[x][y]);
+                } else if (currentBoard[x][y] instanceof Knight) {
+                    newBoard[x][y] = new Knight((Knight) currentBoard[x][y]);
+                } else {
+                    newBoard[x][y] = null;
+                }
+            }
+        }
+
+        return newBoard;
+    }
+
+    //Move piece on board
+    private static void MovePiece(ChessPiece[][] board, Move move) {
+        int x1 = move.getX1() - 1;
+        int y1 = move.getY1() - 1;
+        int x2 = move.getX2() - 1;
+        int y2 = move.getY2() - 1;
+        ChessPiece temp = board[x1][y1];
+        board[x1][y1] = board[x2][y2];
+        board[x2][y2] = temp;
+        board[x2][y2].move();
     }
 
     private static boolean wrongTeam(ChessPiece[][] board, int x, int y, ChessPiece.Team turn) {
@@ -205,5 +243,14 @@ public final class MoveValidation {
     //Checks if piece exists
     private static boolean isPieceExistent(ChessPiece[][] board, int x1, int y1) {
         return board[x1][y1] != null;
+    }
+
+    private static boolean knightInCheck(ChessPiece[][] board, int x1, int y1, int x2, int y2, ChessPiece.Team team) {
+        if (!(board[x1][y1] instanceof Knight)) {
+            return false;
+        }
+        ChessPiece[][] tempBoard = newBoard(board);
+        MovePiece(tempBoard, new Move(x1 + 1, y1 + 1, x2 + 1, y2 + 1));
+        return UtilityEngine.squareAttackedBy(tempBoard, x2, y2, team) > 0;
     }
 }

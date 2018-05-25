@@ -118,7 +118,7 @@ public class Player {
                                 x2 = x + (-1 * moveVals.getX()) + 1;
                                 y2 = y + (-1 * moveVals.getY()) + 1;
                                 move = new Move(x + 1, y + 1, x2, y2);
-                                if (!MoveValidation.isIllegalMove(board, move, team)) {
+                                if (!MoveValidation.isIllegalMove(board, move, team, true)) {
                                     successors.add(move);
                                 }
                                 currMove = currMove.next();
@@ -132,7 +132,7 @@ public class Player {
                                 x2 = x + (-1 * moveVals.getX()) + 1;
                                 y2 = y + (-1 * moveVals.getY()) + 1;
                                 move = new Move(x + 1, y + 1, x2, y2);
-                                if (!MoveValidation.isIllegalMove(board, move, team)) {
+                                if (!MoveValidation.isIllegalMove(board, move, team, true)) {
                                     successors.add(move);
                                 }
                             }
@@ -152,7 +152,7 @@ public class Player {
                                 x2 = x + moveVals.getX() + 1;
                                 y2 = y + moveVals.getY() + 1;
                                 move = new Move(x + 1, y + 1, x2, y2);
-                                if (!MoveValidation.isIllegalMove(board, move, team)) {
+                                if (!MoveValidation.isIllegalMove(board, move, team, true)) {
                                     successors.add(move);
                                 }
                                 currMove = currMove.next();
@@ -166,7 +166,7 @@ public class Player {
                                 x2 = x + moveVals.getX() + 1;
                                 y2 = y + moveVals.getY() + 1;
                                 move = new Move(x + 1, y + 1, x2, y2);
-                                if (!MoveValidation.isIllegalMove(board, move, team)) {
+                                if (!MoveValidation.isIllegalMove(board, move, team, true)) {
                                     successors.add(move);
                                 }
                             }

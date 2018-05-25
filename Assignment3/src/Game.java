@@ -51,7 +51,7 @@ class Game {
 
     //Checks if move attempting to be made is legal
     boolean isIllegalMove(Move currentMove) {
-        return MoveValidation.isIllegalMove(this.board, currentMove, this.turn);// == ChessPiece.Team.WHITE ? ChessPiece.Team.BLACK :ChessPiece.Team.WHITE);
+        return MoveValidation.isIllegalMove(this.board, currentMove, this.turn, true);// == ChessPiece.Team.WHITE ? ChessPiece.Team.BLACK :ChessPiece.Team.WHITE);
     }
 
     //Checks if the game is over
@@ -63,6 +63,9 @@ class Game {
                 return true;
             }
         }
+//        if (isCheckMate()){
+//            return true;
+//        }
         if (capturedPieces.size() == BOARD_SIZE * 2) {
             this.winner = ChessPiece.Team.DRAW;
             return true;
@@ -90,6 +93,98 @@ class Game {
         }
         return gameOver;
     }
+
+//    private boolean isCheckMate(){
+//        boolean whiteCheckMate = true;
+//        boolean blackCheckMate = true;
+//        for (int y = 0; y < BOARD_SIZE; y++){
+//            for (int x = 0; x < BOARD_SIZE; x++){
+//                if (this.board[x][y] instanceof Knight && this.board[x][y].getTeam() == ChessPiece.Team.WHITE) {
+//                    if (pieceAttacked(x, y, ChessPiece.Team.WHITE)) {
+//                        boolean whiteCheck = true;
+//                        KnightMove currMove = KnightMove.LEFT_UP;
+//                        int x2;
+//                        int y2;
+//                        for (int i = 0; i < KnightMove.getNumMoves(); i++) {
+//                            OrderedPair knightMoveVals = currMove.getMove();
+//                            x2 = x - knightMoveVals.getX();
+//                            y2 = y - knightMoveVals.getY();
+//                            if (!MoveValidation.isIllegalMove(board, new Move(x + 1, y + 1, x2 + 1, y2 + 1), ChessPiece.Team.WHITE)) {
+//                                whiteCheck = pieceAttacked(x2, y2, ChessPiece.Team.WHITE);
+//                                whiteCheckMate &= whiteCheck;
+//                            }
+//                            currMove = currMove.next();
+//                        }
+//                    }
+//                } else {
+//                    if (pieceAttacked(x, y, ChessPiece.Team.BLACK)){
+//                        boolean blackCheck = true;
+//                        KnightMove currMove = KnightMove.LEFT_UP;
+//                        int x2;
+//                        int y2;
+//                        for (int i = 0; i < KnightMove.getNumMoves(); i++) {
+//                            OrderedPair knightMoveVals = currMove.getMove();
+//                            x2 = x + knightMoveVals.getX();
+//                            y2 = y + knightMoveVals.getY();
+//                            if (!MoveValidation.isIllegalMove(board, new Move(x + 1, y + 1, x2 + 1, y2 + 1), ChessPiece.Team.BLACK)) {
+//                                blackCheck = pieceAttacked(x2, y2, ChessPiece.Team.BLACK);
+//                                blackCheckMate &= blackCheck;
+//                            }
+//                            currMove = currMove.next();
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//        if (blackCheckMate && whiteCheckMate){
+//            this.winner = ChessPiece.Team.DRAW;
+//        } else if (whiteCheckMate){
+//            this.winner = ChessPiece.Team.BLACK;
+//        } else if (blackCheckMate){
+//            this.winner = ChessPiece.Team.WHITE;
+//        }
+//        return blackCheckMate || whiteCheckMate;
+//    }
+//
+//    private boolean pieceAttacked(int x, int y, ChessPiece.Team team){
+//        int x2;
+//        int y2;
+//        boolean attacked = false;
+//        int modifier = team == ChessPiece.Team.WHITE ? -1 : 1;
+//
+//        OrderedPair pawnMoveVals = PawnMove.CAPTURE_RIGHT.getMove();
+//        x2 = x + (modifier * pawnMoveVals.getX());
+//        y2 = y + (modifier * pawnMoveVals.getY());
+//        if (!MoveValidation.isIllegalMove(board, new Move(x + 1, y + 1, x2 + 1, y2 + 1), team)) {
+//            if (board[x2][y2] instanceof Pawn && board[x2][y2].getTeam() != team) {
+//                attacked = true;
+//            }
+//        }
+//
+//        pawnMoveVals = PawnMove.CAPTURE_LEFT.getMove();
+//        x2 = x + (modifier * pawnMoveVals.getX());
+//        y2 = y + (modifier * pawnMoveVals.getY());
+//        if (!MoveValidation.isIllegalMove(board, new Move(x + 1, y + 1, x2 + 1, y2 + 1), team)) {
+//            if (board[x2][y2] instanceof Pawn && board[x2][y2].getTeam() != team) {
+//                attacked = true;
+//            }
+//        }
+//
+//        KnightMove currMove = KnightMove.LEFT_UP;
+//        for (int i = 0; i < KnightMove.getNumMoves(); i++) {
+//            OrderedPair knightMoveVals = currMove.getMove();
+//            x2 = x + knightMoveVals.getX();
+//            y2 = y + knightMoveVals.getY();
+//            if (!MoveValidation.isIllegalMove(board, new Move(x + 1, y + 1, x2 + 1, y2 + 1), team)) {
+//                if (board[x2][y2] instanceof Knight && board[x2][y2].getTeam() != team) {
+//                    attacked = true;
+//                    break;
+//                }
+//            }
+//            currMove = currMove.next();
+//        }
+//        return attacked;
+//    }
 
     ChessPiece.Team getWinner() {
         return this.winner;

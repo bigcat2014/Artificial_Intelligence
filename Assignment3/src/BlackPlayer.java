@@ -85,28 +85,6 @@ public class BlackPlayer extends Player {
                 best = successor;
             }
         }
-
-//        if (++this.depth > MAX_DEPTH) {
-//            return INVALID_MOVE;
-//        }
-//        int v = Integer.MAX_VALUE;
-//        ArrayList<Move> successors = Successors(this.board, ChessPiece.Team.BLACK);
-//        if (successors.size() == 0) {
-//            return INVALID_MOVE;
-//        }
-//        Move best = successors.get(0);
-//        for (Move successor : successors) {
-//            ChessPiece[][] tempBoard = newBoard(this.board);
-//            MovePiece(tempBoard, successor);
-//            v = Math.min(v, Max(tempBoard, alpha, beta));
-//            this.depth--;
-//            if (v <= alpha) {
-//                break;
-//            }
-//            if (v < beta) {
-//                beta = v;
-//            }
-//        }
         this.depth = 0;
         this.turn = this.turn == ChessPiece.Team.WHITE ? ChessPiece.Team.BLACK : ChessPiece.Team.WHITE;
         MovePiece(this.board, best);
