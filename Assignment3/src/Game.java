@@ -63,11 +63,9 @@ class Game {
                 return true;
             }
         }
-        for (ChessPiece piece : this.capturedPieces) {
-            if (capturedPieces.size() == BOARD_SIZE * 2) {
-                this.winner = piece.getTeam().DRAW;
-                return true;
-            }
+        if (capturedPieces.size() == BOARD_SIZE * 2) {
+            this.winner = ChessPiece.Team.DRAW;
+            return true;
         }
         for (int i = 0; i < BOARD_SIZE; i++) {
             if (this.board[i][BOARD_SIZE - 1] instanceof Pawn) {

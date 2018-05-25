@@ -52,11 +52,10 @@ public class Driver {
                     done = true;
                     ChessPiece.Team winner = gameBoard.getWinner();
                     if (winner != null) {
-                        if(winner== ChessPiece.Team.DRAW){
+                        if (winner == ChessPiece.Team.DRAW) {
                             System.out.println("The game ended as a draw");
 
-                        }
-                        else {
+                        } else {
                             String winningTeam = winner == ChessPiece.Team.WHITE ? "White Player" : "Black Player";
                             Move winningMove = gameBoard.getWinningMove();
                             System.out.printf("%s has won the game!\n", winningTeam);
@@ -65,13 +64,17 @@ public class Driver {
                     }
                 }
                 // sc.nextLine();
-                    if (turn.equals("black")) {
-                        if (whitePlayer != null) { whitePlayer.update(currentMove); }
-                        turn = "white";
-                    } else {
-                        if (blackPlayer != null) { blackPlayer.update(currentMove); }
-                        turn = "black";
+                if (turn.equals("black")) {
+                    if (whitePlayer != null) {
+                        whitePlayer.update(currentMove);
                     }
+                    turn = "white";
+                } else {
+                    if (blackPlayer != null) {
+                        blackPlayer.update(currentMove);
+                    }
+                    turn = "black";
+                }
             }
         } // end while
     } // end main
