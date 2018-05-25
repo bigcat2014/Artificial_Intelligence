@@ -53,6 +53,7 @@ class Game {
     boolean isIllegalMove(Move currentMove) {
         return MoveValidation.isIllegalMove(this.board, currentMove, this.turn);// == ChessPiece.Team.WHITE ? ChessPiece.Team.BLACK :ChessPiece.Team.WHITE);
     }
+
     //Checks if the game is over
     boolean isGameOver() {
         boolean gameOver = false;
@@ -60,6 +61,12 @@ class Game {
             if (piece instanceof Knight) {
                 this.winner = piece.getTeam() == ChessPiece.Team.WHITE ? ChessPiece.Team.BLACK : ChessPiece.Team.WHITE;
                 return true;
+            }
+        }
+        for (ChessPiece piece : this.capturedPieces) {
+            if (capturedPieces.size()==BOARD_SIZE*2) {
+            this.winner =piece.getTeam().DRAW;
+            return true;
             }
         }
         for (int i = 0; i < BOARD_SIZE; i++) {
@@ -71,6 +78,7 @@ class Game {
                 }
             }
         }
+
         if (!gameOver) {
             for (int i = 0; i < BOARD_SIZE; i++) {
                 if (this.board[i][0] instanceof Pawn) {
@@ -86,7 +94,7 @@ class Game {
     }
 
     ChessPiece.Team getWinner() {
-        return this.winner;
+            return this.winner;
     }
 
     //Return the move which won the game

@@ -27,7 +27,8 @@ public class ChessPiece {
     //Enum for Black and White teams
     public enum Team {
         WHITE("W"),
-        BLACK("B");
+        BLACK("B"),
+        DRAW("Draw");
 
         private final String team;
 
