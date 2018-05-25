@@ -1,9 +1,3 @@
-/*
- *   Logan Thomas
- *   Artificial Intelligence Lab
- *   Assignment 3
- */
-
 Setup:
     Open the files in IDE of choice and set Driver.main as the startup method.
 
@@ -17,5 +11,11 @@ Running:
 	printed with a "P", the color, and the pawn number. ex. "PW3" means the third pawn on the white team. Knights are only printed
 	with a "K" and the color. ex. "KB" is the Knight on the black team. The Dark Knight.
 
-Output:
+	****Run on command line using  java Driver  -c/-h "Name" -c/-h Name****
+
+
+	Enter coordinates of moves afterwards
+
+
+
     
