@@ -1,25 +1,28 @@
 import java.util.ArrayList;
 
 public class Player {
+    //Variables
     private String name;
     private ArrayList<ChessPiece> capturedPieces;
     private ChessPiece.Team winner;
     private ArrayList<Move> movesList;
 
     protected ChessPiece.Team turn = ChessPiece.Team.WHITE;
+    private final int KNIGHT_VAL = 9;
+    private final int PAWN_VAL = 1;
     protected ChessPiece[][] board;
     protected final Move INVALID_MOVE = new Move(1, 1, 1, 1);
     protected final int MAX_DEPTH = 6;
     protected int depth = 0;
 
-
+    //Constructor with name parameters
     public Player(String name) {
         this.name = name;
         this.board = newBoard();
         this.capturedPieces = new ArrayList<ChessPiece>();
         this.movesList = new ArrayList<Move>();
     }
-
+    //New board Object
     ChessPiece[][] newBoard() {
         ChessPiece[][] newBoard = new ChessPiece[Game.BOARD_SIZE][Game.BOARD_SIZE];
 
@@ -35,7 +38,7 @@ public class Player {
 
         return newBoard;
     }
-
+    //Populates board with Pieces
     ChessPiece[][] newBoard(ChessPiece[][] currentBoard) {
         ChessPiece[][] newBoard = new ChessPiece[Game.BOARD_SIZE][Game.BOARD_SIZE];
 
@@ -54,6 +57,10 @@ public class Player {
         return newBoard;
     }
 
+    //Checks if game is over recursively
+    boolean isGameOver() {
+        return isGameOver(this.board);
+    }
     boolean isGameOver(ChessPiece[][] board) {
         boolean gameOver = false;
         for (ChessPiece piece : this.capturedPieces) {
@@ -89,9 +96,9 @@ public class Player {
         return UtilityEngine.Utility(board, this.winner, isGameOver(board));
     }
 
-    boolean isIllegalMove(Move currentMove) {
-        return MoveValidation.isIllegalMove(this.board, currentMove, this.turn);
-    }
+//    boolean isIllegalMove(Move currentMove) {
+//        return MoveValidation.isIllegalMove(this.board, currentMove, this.turn);
+//    }
 
     ArrayList<Move> Successors(ChessPiece[][] board, ChessPiece.Team team) {
         ArrayList<Move> successors = new ArrayList<Move>();
@@ -134,7 +141,7 @@ public class Player {
         }
         return successors;
     }
-
+    //Updates move on Board
     void update(Move currentMove) {
         this.turn = this.turn == ChessPiece.Team.WHITE ? ChessPiece.Team.BLACK : ChessPiece.Team.WHITE;
         int x1 = currentMove.getX1() - 1;
@@ -146,7 +153,7 @@ public class Player {
             this.board[x1][y1] = null;
         }
     }
-
+    //Moves piece along board
     protected void MovePiece(ChessPiece[][] board, Move move) {
         this.movesList.add(move);
         int x1 = move.getX1() - 1;

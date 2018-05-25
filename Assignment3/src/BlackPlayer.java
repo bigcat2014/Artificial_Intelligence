@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class BlackPlayer extends Player {
+    //Creates the Black Players on Board
     public BlackPlayer(String name){
         super(name);
         for (int x = 0; Game.BOARD_SIZE > x; x++) {
@@ -15,6 +16,7 @@ public class BlackPlayer extends Player {
         this.board[Game.BOARD_SIZE - 2][0] = new Knight(ChessPiece.Team.BLACK);
     }
 
+    //Max Algorithm in MinMax
     protected int Max(ChessPiece[][] state, int alpha, int beta) {
         if (isGameOver(this.board) || ++this.depth > MAX_DEPTH) {
             return -Utility(state);
@@ -38,7 +40,7 @@ public class BlackPlayer extends Player {
         }
         return v;
     }
-
+    //Min algorithim in MinMax
     protected int Min(ChessPiece[][] state, int alpha, int beta) {
         if (isGameOver(this.board) || ++this.depth > MAX_DEPTH) {
             return Utility(state);
@@ -62,7 +64,7 @@ public class BlackPlayer extends Player {
         }
         return v;
     }
-
+    //Returns move made
     public Move getMove() {
         Random rand = new Random();
         int alpha = Integer.MIN_VALUE;

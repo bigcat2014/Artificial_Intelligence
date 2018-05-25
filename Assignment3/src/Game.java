@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
 class Game {
+    //Variables
     static final int BOARD_SIZE = 8;
     private ChessPiece[][] board;
     private ArrayList<ChessPiece> capturedPieces;
@@ -8,20 +9,22 @@ class Game {
     private ArrayList<Move> movesList;
     private ChessPiece.Team turn = ChessPiece.Team.WHITE;
 
+    //Constructor
     Game() {
         this.board = newBoard();
         this.capturedPieces = new ArrayList<ChessPiece>();
         this.movesList = new ArrayList<Move>();
     }
 
+    //Creating Board
     ChessPiece[][] newBoard() {
         ChessPiece[][] newBoard = new ChessPiece[BOARD_SIZE][BOARD_SIZE];
-
+        //Loop to create white team components
         for (int x = 0; x < BOARD_SIZE; x++) {
             newBoard[x][BOARD_SIZE - 2] = new Pawn(ChessPiece.Team.WHITE);
         }
         newBoard[1][BOARD_SIZE - 1] = new Knight(ChessPiece.Team.WHITE);
-
+        //Loop to create black team components
         for (int x = 0; x < BOARD_SIZE; x++) {
             newBoard[x][1] = new Pawn(ChessPiece.Team.BLACK);
         }
@@ -30,6 +33,7 @@ class Game {
         return newBoard;
     }
 
+    //Updates board with move made by users
     void update(Move currentMove, String turn) {
         this.turn = this.turn == ChessPiece.Team.WHITE ? ChessPiece.Team.BLACK : ChessPiece.Team.WHITE;
         int x1 = currentMove.getX1() - 1;
@@ -44,11 +48,11 @@ class Game {
             this.board[x1][y1] = null;
         }
     }
-
+    //Checks if move attempting to be made is legal
     boolean isIllegalMove(Move currentMove) {
         return MoveValidation.isIllegalMove(this.board, currentMove, this.turn);
     }
-
+    //Checks if the game is over
     boolean isGameOver() {
         boolean gameOver = false;
         for (ChessPiece piece : this.capturedPieces) {
@@ -83,11 +87,11 @@ class Game {
     ChessPiece.Team getWinner() {
         return this.winner;
     }
-
+    //Return the move which won the game
     Move getWinningMove() {
         return this.movesList.remove(this.movesList.size() - 1);
     }
-
+    //Print the board
     void printBoard() {
         StringBuilder boardString = new StringBuilder();
         for (int y = BOARD_SIZE - 1; y >= 0; y--) {
@@ -106,7 +110,7 @@ class Game {
 
         System.out.println(boardString.toString());
     }
-
+    //Move piece on board
     private void MovePiece(Move move) {
         this.movesList.add(move);
         int x1 = move.getX1() - 1;

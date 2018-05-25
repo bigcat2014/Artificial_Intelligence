@@ -66,6 +66,7 @@ public class Driver {
         } // end while
     } // end main
 
+    //Returns human move made
     public static Move getHumanMove(String name) {
         Scanner sc = new Scanner(System.in);
 

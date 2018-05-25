@@ -1,24 +1,29 @@
 public class ChessPiece {
+    //Object variables
     protected Team pieceTeam;
     protected Boolean isMoved = false;
 
+    //Constructor with parameter team
     public ChessPiece(Team team) {
         this.pieceTeam = team;
     }
 
+    //Constructor with parameter piece
     public ChessPiece(ChessPiece piece) {
         this.pieceTeam = piece.getTeam();
         this.isMoved = piece.getIsmoved();
     }
-
+    //Returns whether or not a piece has been moved
     public Boolean getIsmoved() {
         return this.isMoved;
     }
 
+    //movign a piece method
     public void move() {
         this.isMoved = true;
     }
 
+    //Enum for Black and White teams
     public enum Team {
         WHITE("W"),
         BLACK("B");
@@ -35,6 +40,7 @@ public class ChessPiece {
         }
     }
 
+    //Returns team
     public Team getTeam() {
         return this.pieceTeam;
     }
