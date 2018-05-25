@@ -8,12 +8,12 @@ public class WhitePlayer extends Player{
 
     protected int Max(ChessPiece[][] state, int alpha, int beta) {
         if (isGameOver(this.board) || ++this.depth > MAX_DEPTH) {
-            return Utility(state);
+            return Utility(state, ChessPiece.Team.WHITE);
         }
         int v = Integer.MIN_VALUE;
         ArrayList<Move> successors = Successors(state, ChessPiece.Team.WHITE);
         if (successors.size() == 0) {
-            return Utility(state);
+            return Utility(state, ChessPiece.Team.WHITE);
         }
         for (Move successor : successors) {
             ChessPiece[][] tempBoard = newBoard(state);
@@ -32,12 +32,12 @@ public class WhitePlayer extends Player{
 
     protected int Min(ChessPiece[][] state, int alpha, int beta) {
         if (isGameOver(this.board) || ++this.depth > MAX_DEPTH) {
-            return Utility(state);
+            return Utility(state, ChessPiece.Team.WHITE);
         }
         int v = Integer.MAX_VALUE;
-        ArrayList<Move> successors = Successors(state, ChessPiece.Team.BLACK);
+        ArrayList<Move> successors = Successors(state, ChessPiece.Team.WHITE);
         if (successors.size() == 0) {
-            return Utility(state);
+            return Utility(state, ChessPiece.Team.WHITE);
         }
         for (Move successor : successors) {
             ChessPiece[][] tempBoard = newBoard(state);

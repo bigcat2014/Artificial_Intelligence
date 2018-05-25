@@ -10,12 +10,12 @@ public class BlackPlayer extends Player {
     //Max Algorithm in MinMax
     protected int Max(ChessPiece[][] state, int alpha, int beta) {
         if (isGameOver(this.board) || ++this.depth > MAX_DEPTH) {
-            return -Utility(state);
+            return -Utility(state, ChessPiece.Team.BLACK);
         }
         int v = Integer.MIN_VALUE;
         ArrayList<Move> successors = Successors(state, ChessPiece.Team.BLACK);
         if (successors.size() == 0) {
-            return -Utility(state);
+            return -Utility(state, ChessPiece.Team.BLACK);
         }
         for (Move successor : successors) {
             ChessPiece[][] tempBoard = newBoard(state);
@@ -35,12 +35,12 @@ public class BlackPlayer extends Player {
     //Min algorithim in MinMax
     protected int Min(ChessPiece[][] state, int alpha, int beta) {
         if (isGameOver(this.board) || ++this.depth > MAX_DEPTH) {
-            return -Utility(state);
+            return -Utility(state, ChessPiece.Team.BLACK);
         }
         int v = Integer.MAX_VALUE;
         ArrayList<Move> successors = Successors(state, ChessPiece.Team.WHITE);
         if (successors.size() == 0) {
-            return -Utility(state);
+            return -Utility(state, ChessPiece.Team.BLACK);
         }
         for (Move successor : successors) {
             ChessPiece[][] tempBoard = newBoard(state);

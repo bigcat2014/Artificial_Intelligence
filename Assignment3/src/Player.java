@@ -92,8 +92,8 @@ public class Player {
         return gameOver;
     }
 
-    protected int Utility(ChessPiece[][] board) {
-        return UtilityEngine.Utility(board, this.winner, isGameOver(board));
+    protected int Utility(ChessPiece[][] board, ChessPiece.Team team) {
+        return UtilityEngine.Utility(board, this.winner, isGameOver(board), team);
     }
 
 //    boolean isIllegalMove(Move currentMove) {
@@ -107,35 +107,71 @@ public class Player {
         int y2;
         Move move;
         int modifier = team == ChessPiece.Team.WHITE ? -1 : 1;
-        for (int y = 0; y < Game.BOARD_SIZE; y++) {
-            for (int x = 0; x < Game.BOARD_SIZE; x++) {
-                if (board[x][y] instanceof Pawn) {
-                    PawnMove currMove = PawnMove.FORWARD;
-                    for (int i = 0; i < PawnMove.getNumMoves(); i++) {
-                        OrderedPair moveVals = currMove.getMove();
-                        if (board[x][y].getTeam() == team) {
-                            x2 = x + (modifier * moveVals.getX()) + 1;
-                            y2 = y + (modifier * moveVals.getY()) + 1;
-                            move = new Move(x + 1, y + 1, x2, y2);
-                            if (!MoveValidation.isIllegalMove(board, move, team)) {
-                                successors.add(move);
+        if (team == ChessPiece.Team.WHITE) {
+            for (int y = 0; y < Game.BOARD_SIZE; y++) {
+                for (int x = 0; x < Game.BOARD_SIZE; x++) {
+                    if (board[x][y] instanceof Pawn) {
+                        PawnMove currMove = PawnMove.FORWARD;
+                        for (int i = 0; i < PawnMove.getNumMoves(); i++) {
+                            OrderedPair moveVals = currMove.getMove();
+                            if (board[x][y].getTeam() == team) {
+                                x2 = x + (-1 * moveVals.getX()) + 1;
+                                y2 = y + (-1 * moveVals.getY()) + 1;
+                                move = new Move(x + 1, y + 1, x2, y2);
+                                if (!MoveValidation.isIllegalMove(board, move, team)) {
+                                    successors.add(move);
+                                }
+                                currMove = currMove.next();
+                            }
+                        }
+                    } else if (board[x][y] instanceof Knight) {
+                        KnightMove currMove = KnightMove.LEFT_UP;
+                        for (int i = 0; i < KnightMove.getNumMoves(); i++) {
+                            OrderedPair moveVals = currMove.getMove();
+                            if (board[x][y].getTeam() == team) {
+                                x2 = x + (-1 * moveVals.getX()) + 1;
+                                y2 = y + (-1 * moveVals.getY()) + 1;
+                                move = new Move(x + 1, y + 1, x2, y2);
+                                if (!MoveValidation.isIllegalMove(board, move, team)) {
+                                    successors.add(move);
+                                }
                             }
                             currMove = currMove.next();
                         }
                     }
-                } else if (board[x][y] instanceof Knight) {
-                    KnightMove currMove = KnightMove.LEFT_UP;
-                    for (int i = 0; i < KnightMove.getNumMoves(); i++) {
-                        OrderedPair moveVals = currMove.getMove();
-                        if (board[x][y].getTeam() == team) {
-                            x2 = x + (modifier * moveVals.getX()) + 1;
-                            y2 = y + (modifier * moveVals.getY()) + 1;
-                            move = new Move(x + 1, y + 1, x2, y2);
-                            if (!MoveValidation.isIllegalMove(board, move, team)) {
-                                successors.add(move);
+                }
+            }
+        } else {
+            for (int y = Game.BOARD_SIZE - 1; y >= 0; y--) {
+                for (int x = Game.BOARD_SIZE - 1; x >= 0; x--) {
+                    if (board[x][y] instanceof Pawn) {
+                        PawnMove currMove = PawnMove.FORWARD;
+                        for (int i = 0; i < PawnMove.getNumMoves(); i++) {
+                            OrderedPair moveVals = currMove.getMove();
+                            if (board[x][y].getTeam() == team) {
+                                x2 = x + moveVals.getX() + 1;
+                                y2 = y + moveVals.getY() + 1;
+                                move = new Move(x + 1, y + 1, x2, y2);
+                                if (!MoveValidation.isIllegalMove(board, move, team)) {
+                                    successors.add(move);
+                                }
+                                currMove = currMove.next();
                             }
                         }
-                        currMove = currMove.next();
+                    } else if (board[x][y] instanceof Knight) {
+                        KnightMove currMove = KnightMove.LEFT_UP;
+                        for (int i = 0; i < KnightMove.getNumMoves(); i++) {
+                            OrderedPair moveVals = currMove.getMove();
+                            if (board[x][y].getTeam() == team) {
+                                x2 = x + moveVals.getX() + 1;
+                                y2 = y + moveVals.getY() + 1;
+                                move = new Move(x + 1, y + 1, x2, y2);
+                                if (!MoveValidation.isIllegalMove(board, move, team)) {
+                                    successors.add(move);
+                                }
+                            }
+                            currMove = currMove.next();
+                        }
                     }
                 }
             }
