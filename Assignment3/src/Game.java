@@ -53,7 +53,6 @@ class Game {
     boolean isIllegalMove(Move currentMove) {
         return MoveValidation.isIllegalMove(this.board, currentMove, this.turn);// == ChessPiece.Team.WHITE ? ChessPiece.Team.BLACK :ChessPiece.Team.WHITE);
     }
-
     //Checks if the game is over
     boolean isGameOver() {
         boolean gameOver = false;
