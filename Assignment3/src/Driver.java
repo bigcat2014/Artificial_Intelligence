@@ -40,20 +40,24 @@ public class Driver {
                 currentMove = getHumanMove(args[3]);
             }
 
-            if (gameBoard.isIllegalMove(currentMove) || (gameBoard.isGameOver())) {
+            if (gameBoard.isIllegalMove(currentMove)) {
                 done = true;
-                ChessPiece.Team winner = gameBoard.getWinner();
-                if (winner != null) {
-                    String winningTeam = winner == ChessPiece.Team.WHITE ? "White Player" : "Black Player";
-                    Move winningMove = gameBoard.getWinningMove();
-                    System.out.printf("%s has won the game with their move (%d, %d) -> (%d, %d)\n", winningTeam, winningMove.getX1(), winningMove.getY1(), winningMove.getX2(), winningMove.getY2());
-                } else {
-                    System.out.printf("%s player has made a bad move! (%d, %d) -> (%d, %d)\n", turn, currentMove.getX1(), currentMove.getY1(), currentMove.getX2(), currentMove.getY2());
-                }
-
+                System.out.printf("%s player has made a bad move!\n", turn);
+                currentMove.printMove();
             } else {
                 gameBoard.update(currentMove, turn);
                 gameBoard.printBoard();
+
+                if (gameBoard.isGameOver()) {
+                    done = true;
+                    ChessPiece.Team winner = gameBoard.getWinner();
+                    if (winner != null) {
+                        String winningTeam = winner == ChessPiece.Team.WHITE ? "White Player" : "Black Player";
+                        Move winningMove = gameBoard.getWinningMove();
+                        System.out.printf("%s has won the game!\n", winningTeam);
+                        winningMove.printMove();
+                    }
+                }
                 // sc.nextLine();
                     if (turn.equals("black")) {
                         if (whitePlayer != null) { whitePlayer.update(currentMove); }

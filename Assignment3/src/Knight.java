@@ -3,6 +3,7 @@ public class Knight extends ChessPiece {
     public Knight(ChessPiece.Team team) {
         super(team);
     }
+
     //Knight Constructor with parameter piece
     public Knight(Knight piece) {
         super(piece);

@@ -20,22 +20,27 @@ public enum KnightMove {
     },;
     // ordered pair variable
     private final OrderedPair _pair;
+
     //Constructor with value parameter
     KnightMove(OrderedPair value) {
         this._pair = value;
     }
+
     //Returns Knight's move
     public OrderedPair getMove() {
         return this._pair;
     }
+
     //Gets next move
     public KnightMove next() {
         return values()[ordinal() + 1];
     }
+
     //Gets previous move
     public KnightMove previous() {
         return values()[ordinal() - 1];
     }
+
     //Returns number of moves
     public static int getNumMoves() {
         return values().length;

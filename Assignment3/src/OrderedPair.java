@@ -24,6 +24,7 @@ public class OrderedPair{
         this._x = pair.getX();
         this._y = pair.getY();
     }
+
     //Getters
     public int getX(){ return this._x; }
     public int getY(){ return this._y; }
@@ -53,6 +54,7 @@ public class OrderedPair{
         result = 31 * result + this._y;
         return result;
     }
+
     //ToString method for printing
     public String toString(){ return "(" + getX() + ", " + getY() + ")"; }
 }

@@ -13,6 +13,7 @@ public class ChessPiece {
         this.pieceTeam = piece.getTeam();
         this.isMoved = piece.getIsmoved();
     }
+
     //Returns whether or not a piece has been moved
     public Boolean getIsmoved() {
         return this.isMoved;

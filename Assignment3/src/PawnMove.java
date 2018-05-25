@@ -16,22 +16,27 @@ public enum PawnMove {
     };
     //Ordered Pair variables
     private final OrderedPair _pair;
+
     //Constructor with value parameter
     PawnMove(OrderedPair value) {
         this._pair = value;
     }
+
     //Gets move of the pair of coordinates fo pawn
     public OrderedPair getMove() {
         return this._pair;
     }
+
     //Return next moves possible
     public PawnMove next() {
         return values()[ordinal() + 1];
     }
+
     //Returns previous moves possible
     public PawnMove previous() {
         return values()[ordinal() - 1];
     }
+
     //Returns number of moves
     public static int getNumMoves() {
         return values().length;

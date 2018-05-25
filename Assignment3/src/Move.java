@@ -2,6 +2,7 @@
 public class Move {
     private int x1, y1;
     private int x2, y2;
+
     //Constructor  wiht move coordinates
     public Move(int x1, int y1, int x2, int y2) {
         this.x1 = x1;
@@ -9,6 +10,7 @@ public class Move {
         this.y1 = y1;
         this.y2 = y2;
     }
+
     //Getters and Setters
     int getX1() { return x1; }
     int getY1() { return y1; }

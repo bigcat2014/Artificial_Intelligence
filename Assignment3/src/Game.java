@@ -48,10 +48,12 @@ class Game {
             this.board[x1][y1] = null;
         }
     }
+
     //Checks if move attempting to be made is legal
     boolean isIllegalMove(Move currentMove) {
-        return MoveValidation.isIllegalMove(this.board, currentMove, this.turn);
+        return MoveValidation.isIllegalMove(this.board, currentMove, this.turn);// == ChessPiece.Team.WHITE ? ChessPiece.Team.BLACK :ChessPiece.Team.WHITE);
     }
+
     //Checks if the game is over
     boolean isGameOver() {
         boolean gameOver = false;
@@ -87,10 +89,12 @@ class Game {
     ChessPiece.Team getWinner() {
         return this.winner;
     }
+
     //Return the move which won the game
     Move getWinningMove() {
         return this.movesList.remove(this.movesList.size() - 1);
     }
+
     //Print the board
     void printBoard() {
         StringBuilder boardString = new StringBuilder();
@@ -110,6 +114,7 @@ class Game {
 
         System.out.println(boardString.toString());
     }
+
     //Move piece on board
     private void MovePiece(Move move) {
         this.movesList.add(move);

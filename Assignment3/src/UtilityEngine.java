@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public final class UtilityEngine {
     private static final int KNIGHT_VAL = 9;
     private static final int PAWN_VAL = 1;
-    private static final int[] weights = {1, 4, 5, 8, 30, 90};
+    private static final int[] weights = {1, 4, 8, 18, 50, 100};
 
     private UtilityEngine() {
     }
@@ -13,7 +13,7 @@ public final class UtilityEngine {
         if (isGameOver) {
             return winner == ChessPiece.Team.WHITE ? Integer.MAX_VALUE : Integer.MIN_VALUE;
         }
-//        utility += weights[0] * numPiecesLeft(board);
+        utility += weights[0] * numPiecesLeft(board);
 
         utility -= weights[1] * pawnsBlocked(board, ChessPiece.Team.WHITE);
         utility += weights[1] * pawnsBlocked(board, ChessPiece.Team.BLACK);
