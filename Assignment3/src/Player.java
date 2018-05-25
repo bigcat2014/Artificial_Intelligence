@@ -9,7 +9,7 @@ public class Player {
     protected ChessPiece.Team turn = ChessPiece.Team.WHITE;
     protected ChessPiece[][] board;
     protected final Move INVALID_MOVE = new Move(1, 1, 1, 1);
-    protected final int MAX_DEPTH = 100;
+    protected final int MAX_DEPTH = 6;
     protected int depth = 0;
 
 
