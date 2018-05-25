@@ -2,7 +2,8 @@ import java.util.ArrayList;
 
 class Game {
     //Variables
-    static final int BOARD_SIZE = 8;
+    static final int BOARD_SIZE = 8
+            ;
     private ChessPiece[][] board;
     private ArrayList<ChessPiece> capturedPieces;
     private ChessPiece.Team winner;
