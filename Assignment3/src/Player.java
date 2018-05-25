@@ -5,12 +5,11 @@ public class Player {
     private ArrayList<ChessPiece> capturedPieces;
     private ChessPiece.Team winner;
     private ArrayList<Move> movesList;
-    private final int KNIGHT_VAL = 9;
-    private final int PAWN_VAL = 1;
 
+    protected ChessPiece.Team turn = ChessPiece.Team.WHITE;
     protected ChessPiece[][] board;
     protected final Move INVALID_MOVE = new Move(1, 1, 1, 1);
-    protected final int MAX_DEPTH = 5;
+    protected final int MAX_DEPTH = 100;
     protected int depth = 0;
 
 
@@ -55,10 +54,6 @@ public class Player {
         return newBoard;
     }
 
-    boolean isGameOver() {
-        return isGameOver(this.board);
-    }
-
     boolean isGameOver(ChessPiece[][] board) {
         boolean gameOver = false;
         for (ChessPiece piece : this.capturedPieces) {
@@ -90,25 +85,12 @@ public class Player {
         return gameOver;
     }
 
-    boolean isIllegalMove(Move currentMove) {
-        return MoveValidation.isIllegalMove(this.board, currentMove);
+    protected int Utility(ChessPiece[][] board) {
+        return UtilityEngine.Utility(board, this.winner, isGameOver(board));
     }
 
-    protected int Utility(ChessPiece[][] state) {
-        int utility = 0;
-        if (isGameOver()) {
-            return this.winner == ChessPiece.Team.WHITE ? Integer.MAX_VALUE : Integer.MIN_VALUE;
-        }
-        for (int y = 0; y < board.length; y++) {
-            for (int x = 0; x < board[y].length; x++) {
-                if (board[x][y] instanceof Pawn) {
-                    utility += (board[x][y].getTeam() == ChessPiece.Team.WHITE ? 1 : -1) * PAWN_VAL;
-                } else if (board[x][y] instanceof Knight) {
-                    utility += (board[x][y].getTeam() == ChessPiece.Team.WHITE ? 1 : -1) * KNIGHT_VAL;
-                }
-            }
-        }
-        return utility;
+    boolean isIllegalMove(Move currentMove) {
+        return MoveValidation.isIllegalMove(this.board, currentMove, this.turn);
     }
 
     ArrayList<Move> Successors(ChessPiece[][] board, ChessPiece.Team team) {
@@ -127,7 +109,7 @@ public class Player {
                             x2 = x + (modifier * moveVals.getX()) + 1;
                             y2 = y + (modifier * moveVals.getY()) + 1;
                             move = new Move(x + 1, y + 1, x2, y2);
-                            if (!isIllegalMove(move)) {
+                            if (!MoveValidation.isIllegalMove(board, move, team)) {
                                 successors.add(move);
                             }
                             currMove = currMove.next();
@@ -141,7 +123,7 @@ public class Player {
                             x2 = x + (modifier * moveVals.getX()) + 1;
                             y2 = y + (modifier * moveVals.getY()) + 1;
                             move = new Move(x + 1, y + 1, x2, y2);
-                            if (!isIllegalMove(move)) {
+                            if (!MoveValidation.isIllegalMove(board, move, team)) {
                                 successors.add(move);
                             }
                         }
@@ -154,6 +136,7 @@ public class Player {
     }
 
     void update(Move currentMove) {
+        this.turn = this.turn == ChessPiece.Team.WHITE ? ChessPiece.Team.BLACK : ChessPiece.Team.WHITE;
         int x1 = currentMove.getX1() - 1;
         int y1 = currentMove.getY1() - 1;
 

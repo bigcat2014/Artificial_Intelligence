@@ -2,13 +2,14 @@ public final class MoveValidation {
     private MoveValidation() {
     }
 
-    static boolean isIllegalMove(ChessPiece[][] board, Move currentMove) {
+    static boolean isIllegalMove(ChessPiece[][] board, Move currentMove, ChessPiece.Team turn) {
         int x1 = currentMove.getX1() - 1;
         int y1 = currentMove.getY1() - 1;
         int x2 = currentMove.getX2() - 1;
         int y2 = currentMove.getY2() - 1;
 
         return !inBounds(board, x1, y1) ||
+                !wrongTeam(board, x1, y1, turn) ||
                 !inBounds(board, x2, y2) ||
                 !isPieceExistent(board, x1, y1) ||
                 invalidMoveDirection(board, x1, y1, x2, y2) ||
@@ -17,6 +18,13 @@ public final class MoveValidation {
                 pawnJumpsPlayer(board, x1, y1, x2, y2) ||
                 pawnIllegalCapture(board, x1, y1, x2, y2) ||
                 landedOnFriendly(board, x1, y1, x2, y2);
+    }
+
+    private static boolean wrongTeam(ChessPiece[][] board, int x, int y, ChessPiece.Team turn) {
+        if (board[x][y] == null) {
+            return true;
+        }
+        return (board[x][y].getTeam() == turn);
     }
 
     private static boolean inBounds(ChessPiece[][] board, int x, int y) {

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 public class WhitePlayer extends Player{
     public WhitePlayer(String name){
@@ -63,6 +64,7 @@ public class WhitePlayer extends Player{
     }
 
     public Move getMove() {
+        Random rand = new Random();
         int alpha = Integer.MIN_VALUE;
         int beta = Integer.MAX_VALUE;
 
@@ -74,7 +76,7 @@ public class WhitePlayer extends Player{
         if (successors.size() == 0) {
             return INVALID_MOVE;
         }
-        Move best = successors.get(0);
+        Move best = successors.get(rand.nextInt(successors.size()));
         for (Move successor : successors) {
             ChessPiece[][] tempBoard = newBoard(this.board);
             MovePiece(tempBoard, successor);
@@ -89,6 +91,7 @@ public class WhitePlayer extends Player{
             }
         }
         this.depth = 0;
+        this.turn = this.turn == ChessPiece.Team.WHITE ? ChessPiece.Team.BLACK : ChessPiece.Team.WHITE;
         MovePiece(this.board, best);
         return best;
     }

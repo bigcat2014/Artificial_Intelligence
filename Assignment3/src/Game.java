@@ -6,6 +6,7 @@ class Game {
     private ArrayList<ChessPiece> capturedPieces;
     private ChessPiece.Team winner;
     private ArrayList<Move> movesList;
+    private ChessPiece.Team turn = ChessPiece.Team.WHITE;
 
     Game() {
         this.board = newBoard();
@@ -30,6 +31,7 @@ class Game {
     }
 
     void update(Move currentMove, String turn) {
+        this.turn = this.turn == ChessPiece.Team.WHITE ? ChessPiece.Team.BLACK : ChessPiece.Team.WHITE;
         int x1 = currentMove.getX1() - 1;
         int y1 = currentMove.getY1() - 1;
 
@@ -44,7 +46,7 @@ class Game {
     }
 
     boolean isIllegalMove(Move currentMove) {
-        return MoveValidation.isIllegalMove(this.board, currentMove);
+        return MoveValidation.isIllegalMove(this.board, currentMove, this.turn);
     }
 
     boolean isGameOver() {
