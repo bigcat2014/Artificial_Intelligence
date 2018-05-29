@@ -63,7 +63,9 @@ public class Driver {
                         }
                     }
                 }
-                // sc.nextLine();
+                if (whitePlayer != null && blackPlayer != null) {
+                    sc.nextLine();
+                }
                 if (turn.equals("black")) {
                     if (whitePlayer != null) {
                         whitePlayer.update(currentMove);

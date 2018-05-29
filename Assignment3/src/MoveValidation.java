@@ -250,7 +250,11 @@ public final class MoveValidation {
             return false;
         }
         ChessPiece[][] tempBoard = newBoard(board);
-        MovePiece(tempBoard, new Move(x1 + 1, y1 + 1, x2 + 1, y2 + 1));
+        Move currMove = new Move(x1 + 1, y1 + 1, x2 + 1, y2 + 1);
+        if (isIllegalMove(tempBoard, currMove, team, false)) {
+            return false;
+        }
+        MovePiece(tempBoard, currMove);
         return UtilityEngine.squareAttackedBy(tempBoard, x2, y2, team) > 0;
     }
 }
