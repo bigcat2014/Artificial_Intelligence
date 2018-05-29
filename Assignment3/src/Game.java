@@ -7,7 +7,7 @@ class Game {
     private ArrayList<ChessPiece> capturedPieces;
     private ChessPiece.Team winner;
     private ArrayList<Move> movesList;
-    private ChessPiece.Team turn = ChessPiece.Team.WHITE;
+    private ChessPiece.Team turn = ChessPiece.Team.BLACK;
 
     //Constructor
     Game() {
@@ -198,7 +198,11 @@ class Game {
     //Print the board
     void printBoard() {
         StringBuilder boardString = new StringBuilder();
+        StringBuilder blackCaptured = new StringBuilder();
+        StringBuilder whiteCaptured = new StringBuilder();
         for (int y = BOARD_SIZE - 1; y >= 0; y--) {
+            boardString.append(y + 1);
+            boardString.append(' ');
             for (int x = 0; x < BOARD_SIZE; x++) {
                 if (this.board[x][y] == null) {
                     boardString.append(" - ");
@@ -211,6 +215,31 @@ class Game {
             }
             boardString.append("\n");
         }
+        boardString.append("  ");
+        for (int i = 0; i < BOARD_SIZE; i++) {
+            boardString.append(" ");
+            boardString.append(i + 1);
+            boardString.append("  ");
+        }
+        boardString.append("\n\n");
+
+        whiteCaptured.append("Captured white pieces: ");
+        blackCaptured.append("Captured black pieces: ");
+        for (ChessPiece piece : this.capturedPieces) {
+            if (piece.getTeam() == ChessPiece.Team.WHITE) {
+                whiteCaptured.append(piece.toString());
+                whiteCaptured.append(piece.getTeam().toString());
+                whiteCaptured.append(", ");
+            } else {
+                blackCaptured.append(piece.toString());
+                blackCaptured.append(piece.getTeam().toString());
+                blackCaptured.append(", ");
+            }
+        }
+        boardString.append(whiteCaptured);
+        boardString.append("\n");
+        boardString.append(blackCaptured);
+        boardString.append("\n");
 
         System.out.println(boardString.toString());
     }

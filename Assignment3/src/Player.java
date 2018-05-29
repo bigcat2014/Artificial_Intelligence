@@ -7,7 +7,7 @@ public class Player {
     private ChessPiece.Team winner;
     private ArrayList<Move> movesList;
 
-    protected ChessPiece.Team turn = ChessPiece.Team.WHITE;
+    protected ChessPiece.Team turn = ChessPiece.Team.BLACK;
     protected ChessPiece[][] board;
     protected final Move INVALID_MOVE = new Move(1, 1, 1, 1);
     protected final int MAX_DEPTH = 6;

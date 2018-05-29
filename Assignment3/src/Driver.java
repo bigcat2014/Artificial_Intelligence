@@ -25,7 +25,7 @@ public class Driver {
 
         Move currentMove;
         boolean done = false;
-        String turn = "white";
+        String turn = "black";
         gameBoard.printBoard();
         while (!done) {
             if (turn.equals("black")) {
@@ -42,7 +42,7 @@ public class Driver {
 
             if (gameBoard.isIllegalMove(currentMove)) {
                 done = true;
-                System.out.printf("%s player has made a bad move!\n", turn);
+                System.out.printf("%s player has made a bad move!\n", turn.substring(0, 1).toUpperCase() + turn.substring(1));
                 currentMove.printMove();
             } else {
                 gameBoard.update(currentMove, turn);
@@ -56,9 +56,9 @@ public class Driver {
                             System.out.println("The game ended as a draw");
 
                         } else {
-                            String winningTeam = winner == ChessPiece.Team.WHITE ? "White Player" : "Black Player";
+                            String winningTeam = winner == ChessPiece.Team.WHITE ? "White" : "Black";
                             Move winningMove = gameBoard.getWinningMove();
-                            System.out.printf("%s has won the game!\n", winningTeam);
+                            System.out.printf("%s player has won the game!\n", winningTeam);
                             winningMove.printMove();
                         }
                     }
