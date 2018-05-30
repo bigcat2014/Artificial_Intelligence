@@ -62,20 +62,21 @@ public class Driver {
                             winningMove.printMove();
                         }
                     }
-                }
-                if (whitePlayer != null && blackPlayer != null) {
-                    sc.nextLine();
-                }
-                if (turn.equals("black")) {
-                    if (whitePlayer != null) {
-                        whitePlayer.update(currentMove);
-                    }
-                    turn = "white";
                 } else {
-                    if (blackPlayer != null) {
-                        blackPlayer.update(currentMove);
+                    if (whitePlayer != null && blackPlayer != null) {
+                        sc.nextLine();
                     }
-                    turn = "black";
+                    if (turn.equals("black")) {
+                        if (whitePlayer != null) {
+                            whitePlayer.update(currentMove);
+                        }
+                        turn = "white";
+                    } else {
+                        if (blackPlayer != null) {
+                            blackPlayer.update(currentMove);
+                        }
+                        turn = "black";
+                    }
                 }
             }
         } // end while

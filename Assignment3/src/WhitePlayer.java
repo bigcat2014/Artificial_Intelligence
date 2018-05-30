@@ -35,7 +35,7 @@ public class WhitePlayer extends Player{
             return Utility(state, ChessPiece.Team.WHITE);
         }
         int v = Integer.MAX_VALUE;
-        ArrayList<Move> successors = Successors(state, ChessPiece.Team.WHITE);
+        ArrayList<Move> successors = Successors(state, ChessPiece.Team.BLACK);
         if (successors.size() == 0) {
             return Utility(state, ChessPiece.Team.WHITE);
         }
