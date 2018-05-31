@@ -30,11 +30,13 @@ public class Driver {
         while (!done) {
             if (turn.equals("black")) {
                 if (blackPlayer != null) {
+                    System.out.printf("%s, please enter your move\n", args[1]);
                     currentMove = blackPlayer.getMove();
                 } else {
                     currentMove = getHumanMove(args[1]);
                 }
             } else if (whitePlayer != null) {
+                System.out.printf("%s, please enter your move\n", args[3]);
                 currentMove = whitePlayer.getMove();
             } else {
                 currentMove = getHumanMove(args[3]);
